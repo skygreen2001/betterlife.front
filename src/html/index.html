@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>传赏</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="apple-touch-icon-precomposed" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="css/app.min.css" />
+    <link rel="stylesheet" href="css/responsive.min.css" />
+    <!-- inject:js -->
+    <script src="js/app.min.js"></script>
+    <!-- <base href="/">  -->
+  </head>
+  <body ng-app="cs" ng-controller="MainController as mainCtrl">
+
+    <!-- Sidebars -->
+    <div ng-include="'sidebar.html'"
+            ui-track-as-search-param='true'
+            class="sidebar sidebar-left"></div>
+
+    <div class="app">
+
+      <!-- Navbars -->
+
+      <div class="navbar navbar-app navbar-absolute-top">
+        <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
+          传赏
+        </div>
+        <div class="btn-group pull-left">
+          <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
+            <i class="fa fa-bars"></i> 导航
+          </div>
+        </div>
+        <div class="btn-group pull-right">
+          <div ui-toggle="uiSidebarRight" class="btn" ui-yield-to="navbarAction">
+            <i class="fa fa-coffee"></i> 操作
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar navbar-app navbar-absolute-bottom">
+        <div class="btn-group justified">
+          <a href="#/" class="btn btn-navbar"><i class="fa fa-home fa-navbar"></i> 首页</a>
+          <a href="#/edit?userId=1&amp;shareId=1" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> 发布</a>
+          <a href="#/view?userId=1&amp;shareId=1" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> 查看</a>
+          <a href="#/tipoff" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar"></i> 举报</a>
+        </div>
+      </div>
+
+      <!-- App Body -->
+      <div class="app-body" ng-class="{loading: loading}">
+        <div ng-show="loading" class="app-content-loading">
+          <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div class="app-content">
+          <ng-view></ng-view>
+        </div>
+      </div>
+
+    </div><!-- ~ .app -->
+
+    <div ui-yield-to="modals"></div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+.clear{
+    clear:both;
+    height:0px;
+}
+
+.break-line {
+    height: 15px;
+    background-color: #ededf2;
+}
+
+ng-view.ng-scope{
+  background-color: #ebebeb;
+}
+
+@media screen and (max-width: @screen-desktop) {
+  .navbar-absolute-top,.navbar-absolute-bottom{
+    display: none;
+  }
+  .has-navbar-top .app-body{
+    padding-top: 0;
+  }
+  .has-navbar-bottom .app-body{
+    padding-bottom: 0;
+  }
+}

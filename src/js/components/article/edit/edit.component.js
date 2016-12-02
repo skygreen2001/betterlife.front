@@ -1,0 +1,46 @@
+'use strict';
+
+// Register the `publishEdit` component on the `csArticle` module,
+angular.
+  module('csArticle').
+  component('publishEdit', {
+    templateUrl: 'template/article/edit/edit.template.html',
+    controller: ['$http', 'ShareObject', 'ShareService', '$location', '$window',
+      function($http, ShareObject, ShareService, $location, $window, $scope, $httpParamSerializerJQLike, $element, $attrs) {
+        this.content = ShareObject.getContent();
+        var ctrl = this;
+        this.saveContent = function(){
+          ShareService.saveShareItem(
+            ctrl.content
+          ).then(function(response) {
+            var shareId = ShareObject.getShareId(),
+                userId = ShareObject.getUserId();
+            $window.location.href = "#/edit?shareId=" + shareId + "&userId=" + userId;
+          });
+        };
+      }
+    ]
+  }).
+  component('publishTitle', {
+    templateUrl: 'template/article/edit/title.template.html',
+    controller: ['$http', '$routeParams', 'ShareObject', 'ShareService', '$location', '$window',
+      function($http, $routeParams, ShareObject, ShareService, $location, $window, $scope, $httpParamSerializerJQLike, $element, $attrs) {
+        this.title = ShareObject.getTitle();
+        var ctrl=this;
+        this.saveTitle = function() {
+          var saveShare = ShareService.saveShare(
+            ctrl.title
+          );
+          if (saveShare) {
+            saveShare.then(function(response) {
+              ShareObject.setShareId(response.data);
+              // console.log( "shareId:" + response.data );
+              var shareId = response.data,
+                  userId = ShareObject.getUserId();
+              $window.location.href = "#/edit?shareId=" + shareId + "&userId=" + userId;
+            });
+          }
+        }
+      }
+    ]
+  });
