@@ -52,36 +52,6 @@ module.exports = function(config) {
   config.server.port = '8000';
 
   //
-  // Weinre Remote debug server
-  //
-
-  /**
-   * Weinre server config.
-   *
-   * @type {Boolean}
-   * @property config.weinre
-   *
-   * @example Disable weinre
-   *   config.weinre = false;
-   */
-  config.weinre = false;
-
-  /**
-   * The host name to which weinre will be bound.
-   * @type {String}
-   */
-  // config.weinre.boundHost = 'localhost';
-
-
-  /**
-  * The port where weinre server will to listen.
-   * @type {String}
-   */
-  // config.weinre.httpPort = 8001;
-
-
-
-  //
   // Sources
   //
 

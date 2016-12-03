@@ -38,15 +38,6 @@ var config = {
   server: {
     host: '0.0.0.0',
     port: '8000'
-  },
-
-  weinre: {
-    httpPort:     8001,
-    boundHost:    'localhost',
-    verbose:      false,
-    debug:        false,
-    readTimeout:  5,
-    deathTimeout: 15
   }
 };
 
@@ -262,6 +253,7 @@ gulp.task('watch', function () {
 
 gulp.task('build', function(done) {
   var tasks = ['html', 'fonts', 'images','template', 'less', 'js'];
+  // tasks.push('install');
   seq('clean', tasks, done);
 });
 
@@ -281,13 +273,13 @@ gulp.task('install', function(done) {
 gulp.task('default', function(done){
   var tasks = [];
 
+  tasks.push('build');
+
   if (typeof config.server === 'object') {
     tasks.push('connect');
   }
 
   tasks.push('watch');
-  
-  tasks.push('install');
 
-  seq('build', tasks, done);
+  seq('install', tasks, done);
 });

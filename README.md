@@ -16,10 +16,6 @@
 
     下载地址: https://nodejs.org/en/download/
 
-* **安装Gulp**
-
-  npm install --global gulp
-
 * **安装目录下运行**
 
   npm install
