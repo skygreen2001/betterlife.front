@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-  module('cs.controllers.main', ['csArticle']).
+  module('bb.controllers.main', ['bbArticle']).
   controller('MainController',
     function($scope, $location, ShareObject) {
       var queryParams = $location.search();

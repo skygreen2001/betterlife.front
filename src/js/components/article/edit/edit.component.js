@@ -1,8 +1,8 @@
 'use strict';
 
-// Register the `publishEdit` component on the `csArticle` module,
+// Register the `publishEdit` component on the `bfArticle` module,
 angular.
-  module('csArticle').
+  module('bbArticle').
   component('publishEdit', {
     templateUrl: 'template/article/edit/edit.template.html',
     controller: ['$http', 'ShareObject', 'ShareService', '$location', '$window',

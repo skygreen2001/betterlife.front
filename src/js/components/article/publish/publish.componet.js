@@ -1,8 +1,8 @@
 'use strict';
 
-// Register the `publish` component on the `csArticle` module
+// Register the `publish` component on the `bfArticle` module
 angular.
-  module('csArticle').
+  module('bbArticle').
   component('publish', {
     templateUrl: 'template/article/publish/publish.template.html',
     controller: ['ShareObject', 'Constants', 'ShareService', 'Upload', '$timeout', '$route',

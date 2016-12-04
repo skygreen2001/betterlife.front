@@ -219,8 +219,9 @@ gulp.task('less', function () {
 gulp.task('js', function() {
     streamqueue({ objectMode: true },
       gulp.src(config.vendor.js),
+      gulp.src('./core/js/**/*.js'),
       gulp.src('./src/js/**/*.js').pipe(ngFilesort()),
-      gulp.src(['src/templates/**/*.html']).pipe(templateCache({ module: 'cs' }))
+      gulp.src(['src/templates/**/*.html']).pipe(templateCache({ module: 'bb' }))
     )
     .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
@@ -240,6 +241,10 @@ gulp.task('watch', function () {
   if (typeof config.server === 'object') {
     gulp.watch([config.dest + '/**/*'], ['livereload']);
   }
+
+  gulp.watch(['./core/js/**/*'], ['js']);
+  gulp.watch(['./core/less/**/*'], ['less']);
+
   gulp.watch(['./src/html/**/*'], ['html']);
   gulp.watch(['./src/less/**/*'], ['less']);
   gulp.watch(['./src/js/**/*', './src/templates/**/*', config.vendor.js], ['js']);

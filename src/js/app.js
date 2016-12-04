@@ -4,7 +4,7 @@
 // Here is how to define your module
 // has dependent on mobile-angular-ui
 //
-var app=angular.module('cs', [
+var app=angular.module('bb', [
   'ngRoute',
   'mobile-angular-ui',
 
@@ -14,8 +14,8 @@ var app=angular.module('cs', [
   // final pourpose to integrate gestures into default ui interactions like
   // opening sidebars, turning switches on/off ..
   'mobile-angular-ui.gestures',
-  'cs.controllers.main',
-  'cs.service'
+  'bb.controllers.main',
+  'bb.service'
 ]);
 
 
@@ -45,9 +45,6 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
       }).
       when('/view', {
         templateUrl: 'view.html', reloadOnSearch: false
-      }).
-      when('/tipoff', {
-        templateUrl: 'tipoff.html', reloadOnSearch: false
       }).
       otherwise('/');
   }

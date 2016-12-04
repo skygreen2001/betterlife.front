@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-  module('cs').
+  module('bb').
   constant('Constants', {
     'ITEM_TYPE': {
       'TEXT' : 0,

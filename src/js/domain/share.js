@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-  module('cs.domain.share',[]).
+  module('bb.domain.share',[]).
   factory('ShareObject',function(){
     var userId = 0, shareId = 0, shareItemId = 0, shareItemType = 0,
         itemLength = 0, items = [],

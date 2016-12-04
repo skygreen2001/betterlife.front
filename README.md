@@ -47,6 +47,19 @@
     * www     :发布在线Web访问目录
 
 ## 学习资料
+    Angular 1.*
+
+    * Think in AngularJS:http://www.angularjs.cn/A0bz
+
     * AngularJS 初识    :https://docs.angularjs.org/guide/concepts
     * AngularJS 官方教程:https://docs.angularjs.org/tutorial
     * AngularJS 教程    :http://www.runoob.com/angularjs/angularjs-tutorial.html
+
+    Angular 2.*
+
+    * Angular 中文: https://angular.cn/
+    * 大道至简：Angular2只有一个核心概念: http://www.angularjs.cn/A2Ar 
+
+    框架对比
+    * More Benchmarks: Virtual DOM vs Angular 1 & 2 vs Others:
+      https://auth0.com/blog/more-benchmarks-virtual-dom-vs-angular-12-vs-mithril-js-vs-the-rest/

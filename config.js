@@ -19,8 +19,6 @@ module.exports = function(config) {
    */
   config.cordova = true;
 
-
-
   //
   // Development web server
   //
@@ -92,7 +90,6 @@ module.exports = function(config) {
    * @type {Array}
    */
   config.vendor.js.push('./bower_components/angular-resource/angular-resource.js');
-  config.vendor.js.push('./src/js/mobile-angular-ui.gestures.min.js');
 
   // config.vendor.js.push('.bower_components/mylib/mylib.js');
 

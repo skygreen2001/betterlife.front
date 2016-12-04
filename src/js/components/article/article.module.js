@@ -1,8 +1,8 @@
 'use strict';
 
-// Define the `cs article` module
+// Define the `bf article` module
 angular.
-  module('csArticle', ['ngRoute', 'ngFileUpload', 'cs.domain.share', 'cs.service']).
+  module('bbArticle', ['ngRoute', 'ngFileUpload', 'bb.domain.share', 'bb.service']).
   config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
        $routeProvider.
