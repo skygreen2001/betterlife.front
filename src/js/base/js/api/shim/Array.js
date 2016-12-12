@@ -12,3 +12,14 @@
 Array.prototype.diff = function(a) {
   return this.filter(function(i) {return a.indexOf(i) < 0;});
 }
+
+//对象数组,根据指定对象key获取数组中指定对象
+Array.prototype.getObjectBy = function (name, value) {
+  var index=-1;
+  for (var i = 0; i < this.length; i++) {
+      if (this[i][name] == value) {
+          return this[i];
+      }
+  }
+  return null;
+}

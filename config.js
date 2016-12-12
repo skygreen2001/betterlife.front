@@ -39,7 +39,7 @@ module.exports = function(config) {
    * @property config.server.host
    * @type {String}
    */
-  config.server.host = '0.0.0.0';
+  config.server.host = '127.0.0.1';
 
   /**
    * The port where development server will to listen.
@@ -90,6 +90,8 @@ module.exports = function(config) {
    * @type {Array}
    */
   config.vendor.js.push('./bower_components/angular-resource/angular-resource.js');
+  config.vendor.js.push('./bower_components/ng-file-upload/ng-file-upload-shim.js');
+  config.vendor.js.push('./bower_components/ng-file-upload/ng-file-upload.js');
 
   // config.vendor.js.push('.bower_components/mylib/mylib.js');
 

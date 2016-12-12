@@ -12,7 +12,7 @@ var config = {
   cordova: true,
   less: {
     src: [
-      './src/less/app.less', './src/less/responsive.less'
+      './src/less/app.less', './src/less/common/responsive.less'
     ],
     paths: [
       './src/less', './bower_components'
@@ -107,7 +107,7 @@ gulp.task('clean', function (cb) {
         path.join(config.dest, 'js'),
         path.join(config.dest, 'fonts')
       ], { read: false })
-     .pipe(rimraf());
+     .pipe(rimraf({ force: true }));
 });
 
 
@@ -219,7 +219,6 @@ gulp.task('less', function () {
 gulp.task('js', function() {
     streamqueue({ objectMode: true },
       gulp.src(config.vendor.js),
-      gulp.src('./core/js/**/*.js'),
       gulp.src('./src/js/**/*.js').pipe(ngFilesort()),
       gulp.src(['src/templates/**/*.html']).pipe(templateCache({ module: 'bb' }))
     )
@@ -241,14 +240,10 @@ gulp.task('watch', function () {
   if (typeof config.server === 'object') {
     gulp.watch([config.dest + '/**/*'], ['livereload']);
   }
-
-  gulp.watch(['./core/js/**/*'], ['js']);
-  gulp.watch(['./core/less/**/*'], ['less']);
-
   gulp.watch(['./src/html/**/*'], ['html']);
   gulp.watch(['./src/less/**/*'], ['less']);
   gulp.watch(['./src/js/**/*', './src/templates/**/*', config.vendor.js], ['js']);
-  gulp.watch(['./src/images/**/*'], ['img']);
+  gulp.watch(['./src/images/**/*'], ['images']);
   gulp.watch(['./src/js/**/*.html'], ['template']);
 });
 
