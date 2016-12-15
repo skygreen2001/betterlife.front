@@ -1,16 +1,16 @@
 'use strict';
 
-// Define the `bf article` module
+// Define the `bbBlog` module
 angular.
-  module('bbArticle', ['ngRoute', 'ngFileUpload', 'bb.domain.share', 'bb.service']).
+  module('bbBlog', ['ngRoute', 'ngFileUpload', 'bb.domain.share', 'bb.service']).
   config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
        $routeProvider.
          when('/editContent', {
-           template: '<publish-edit></publish-edit>'
+           template: '<blog-edit></blog-edit>'
          }).
          when('/editTitle', {
-           template: '<publish-title></publish-title>'
+           template: '<blog-title></blog-title>'
          });
     }
   ]);

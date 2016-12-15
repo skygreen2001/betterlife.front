@@ -2,13 +2,20 @@
   "name": "betterlife.front",
   "version": "1.0.0",
   "private": false,
+  "license": "Apache-2.0",
+
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:skygreen2001/betterlife.front.git"
+  },
+
   "devDependencies": {
     "gulp": "^3.8.1",
     "gulp-bower": "^0.0.13",
 
     "gulp-connect": "^2.0.5",
     "gulp-ignore": "^1.2.0",
-    "gulp-rimraf": "^0.1.0",
+    "gulp-clean": "^0.3.2",
     "gulp-less": "^3.0.3",
     "gulp-concat": "^2.3.4",
     "gulp-order": "^1.1.1",

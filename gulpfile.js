@@ -66,7 +66,7 @@ var gulp           = require('gulp'),
     order          = require('gulp-order'),
     concat         = require('gulp-concat'),
     ignore         = require('gulp-ignore'),
-    rimraf         = require('gulp-rimraf'),
+    clean         = require('gulp-clean'),
     templateCache  = require('gulp-angular-templatecache'),
     mobilizer      = require('gulp-mobilizer'),
     ngAnnotate     = require('gulp-ng-annotate'),
@@ -107,7 +107,7 @@ gulp.task('clean', function (cb) {
         path.join(config.dest, 'js'),
         path.join(config.dest, 'fonts')
       ], { read: false })
-     .pipe(rimraf({ force: true }));
+     .pipe(clean({force: true}));
 });
 
 
@@ -252,9 +252,9 @@ gulp.task('watch', function () {
 ======================================*/
 
 gulp.task('build', function(done) {
-  var tasks = ['html', 'fonts', 'images','template', 'less', 'js'];
+  var tasks = ['fonts', 'images','template', 'less', 'js'];
   // tasks.push('install');
-  seq('clean', tasks, done);
+  seq('html', tasks, done);
 });
 
 /*======================================
@@ -270,7 +270,7 @@ gulp.task('install', function(done) {
 =            Default Task            =
 ====================================*/
 
-gulp.task('default', function(done){
+gulp.task('default', ['clean'], function(done){
   var tasks = [];
 
   tasks.push('build');

@@ -2,6 +2,7 @@
     下载地址：https://github.com/skygreen2001/betterlife.front
 
 ## 准备工作
+
 * **安装git工具**
 
     百度或者谷歌下载Git和图形化Git GUI工具
@@ -41,13 +42,13 @@
 
 ## 框架目录定义
 
-    * base    :Javascript基本函数库文件目录
     * src     :框架核心支持文件目录
     * src/less:框架css源文件目录
     * src/js  :框架js源文件目录
-    * src/html:框架web网页文件目录
+    * src/js/base :Javascript基本函数库文件目录
     * src/template:框架模版文件目录
-    * www     :发布在线Web访问目录
+    * src/html    :框架web网页文件目录
+    * www         :发布在线Web访问目录
 
 ## 学习资料
     Angular 1.*

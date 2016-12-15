@@ -2,9 +2,9 @@
 
 // Register the `publish` component on the `bfArticle` module,
 angular.
-  module('bbArticle').
+  module('bbBlog').
   component('showArticle', {
-    templateUrl: 'template/article/view/view.template.html',
+    templateUrl: 'template/blog/view/view.template.html',
     controller: ['ShareObject', 'Constants', 'ShareService',
     function(ShareObject, Constants, ShareService, $scope, $element, $attrs) {
       this.shareId = ShareObject.getShareId();

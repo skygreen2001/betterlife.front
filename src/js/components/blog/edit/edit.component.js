@@ -2,9 +2,9 @@
 
 // Register the `publishEdit` component on the `bfArticle` module,
 angular.
-  module('bbArticle').
-  component('publishEdit', {
-    templateUrl: 'template/article/edit/edit.template.html',
+  module('bbBlog').
+  component('blogEdit', {
+    templateUrl: 'template/blog/edit/edit.template.html',
     controller: ['$http', 'ShareObject', 'ShareService', '$location', '$window',
       function($http, ShareObject, ShareService, $location, $window, $scope, $httpParamSerializerJQLike, $element, $attrs) {
         this.content = ShareObject.getContent();
@@ -21,8 +21,8 @@ angular.
       }
     ]
   }).
-  component('publishTitle', {
-    templateUrl: 'template/article/edit/title.template.html',
+  component('blogTitle', {
+    templateUrl: 'template/blog/edit/title.template.html',
     controller: ['$http', '$routeParams', 'ShareObject', 'ShareService', '$location', '$window',
       function($http, $routeParams, ShareObject, ShareService, $location, $window, $scope, $httpParamSerializerJQLike, $element, $attrs) {
         this.title = ShareObject.getTitle();
