@@ -76,8 +76,8 @@ module.exports = function(config) {
    */
 
   // config.less.paths.push('./vendor/less');
-
-
+  config.vendor.cssbower.push('./bower_components/bootstrap/dist/css/*.min.css');
+  config.vendor.cssbower.push('./bower_components/eonasdan-bootstrap-datetimepicker/build/css/*.min.css');
 
   //
   // 3rd party components
@@ -89,11 +89,25 @@ module.exports = function(config) {
    * @property config.vendor.js
    * @type {Array}
    */
+  //浏览器兼容性Javascript原生对象函数支持
+  config.vendor.js.push('./bower_components/js-polyfills/polyfill.min.js');
+  config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
+
   config.vendor.js.push('./bower_components/angular-resource/angular-resource.js');
+  config.vendor.js.push('./bower_components/angular-scroll/angular-scroll.min.js');
+
+  //文件上传
   config.vendor.js.push('./bower_components/ng-file-upload/ng-file-upload-shim.js');
   config.vendor.js.push('./bower_components/ng-file-upload/ng-file-upload.js');
 
-  // config.vendor.js.push('.bower_components/mylib/mylib.js');
+  //日期选择器
+  config.vendor.js.push('./bower_components/moment/min/moment-with-locales.min.js');
+  config.vendor.js.push('./bower_components/jquery/dist/jquery.min.js');
+  config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.min.js');
+  config.vendor.js.push('./bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
+
+  //分页显示
+  config.vendor.js.push('./bower_components/angularUtils-pagination/dirPagination.js');
 
   /**
    * Vendor Fonts
@@ -103,6 +117,8 @@ module.exports = function(config) {
    */
 
    // config.vendor.fonts.push('.bower_components/mylib/fonts/**/*');
+  config.vendor.fonts.push('./bower_components/bootstrap/fonts/glyphicons-halflings-regular.*');
+  config.vendor.fonts.push('./bower_components/icomoon-bower/fonts/icomoon.*');
 
   /**
    * Vendor Css (prepended on compile time)

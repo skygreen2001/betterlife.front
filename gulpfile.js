@@ -30,6 +30,9 @@ var config = {
       append: [],
     },
 
+
+    cssbower: [],
+
     fonts: [
       './bower_components/font-awesome/fonts/fontawesome-webfont.*'
     ]
@@ -189,6 +192,10 @@ gulp.task('html', function() {
 ======================================================================*/
 
 gulp.task('less', function () {
+
+    gulp.src(config.vendor.cssbower)
+    .pipe(gulp.dest(path.join(config.dest, 'css')));
+
     return gulp.src(config.less.src).pipe(less({
       paths: config.less.paths.map(function(p){
         return path.resolve(__dirname, p);

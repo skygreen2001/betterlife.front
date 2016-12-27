@@ -30,8 +30,10 @@
 
     gulp
 
-    [说明]:Window操作系统下如无法正常运行,需先运行:npm install --global gulp
-
+        [说明]:
+            Windows操作系统下推荐安装Cmder[http://cmder.net/]
+            Window操作系统下需先运行: npm install --global gulp
+            然后运行gulp
 
 * **安装开发工具 IDE**
 
