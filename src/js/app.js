@@ -1,16 +1,25 @@
 'use strict';
 
+angular.module('bb.service', [
+    'ngResource'
+]);
+
+angular.module('bb.controllers', [
+    'mobile-angular-ui',
+    'angularUtils.directives.dirPagination',
+    'ngFileUpload',
+    'bbBlog'
+]);
+
 //
 // Here is how to define your module
 // has dependent on mobile-angular-ui
 //
 var app=angular.module('bb', [
   'ngRoute',
-  'mobile-angular-ui',
   'bb.controllers.main',
   'bb.service'
 ]);
-
 
 app.run();
 

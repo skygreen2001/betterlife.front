@@ -30,6 +30,9 @@ var config = {
       append: [],
     },
 
+
+    cssbower: [],
+
     fonts: [
       './bower_components/font-awesome/fonts/fontawesome-webfont.*'
     ]

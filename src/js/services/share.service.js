@@ -1,5 +1,5 @@
 angular.
-  module('bb.service', ['ngResource','bb.domain.share']).
+  module('bb.service').
   service('ShareService', ['$resource', 'ShareObject', '$http', '$httpParamSerializerJQLike',
     function($resource, ShareObject, $http, $httpParamSerializerJQLike) {
       this.saveShare = function(title) {

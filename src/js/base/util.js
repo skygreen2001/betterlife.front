@@ -1,3 +1,13 @@
+
+//显示当前日期
+//显示年月日 yyyy-MM-dd
+//显示年月日小时分钟 yyyy-MM-dd HH:mm
+function now(format) {
+  format = format || 'yyyy-MM-dd hh:mm';
+  var newDate = new Date();
+  return newDate.format(format);
+}
+
 //类似php的print_r方法，遍历数据类型和对象的属性和方法。
 function print_r(arr,level) {
   var dumped_text = "";
@@ -25,10 +35,15 @@ function print_r(arr,level) {
 }
 
 //如果只是希望在IE中不出现Firebug调试函数的错误信息，那么可以在页面中加入以下代码
+function log(msg){
+	if (window["console"]){
+		console.log(msg);
+	}
+}
+//
 // if (!window.console ||!console.firebug){
 //   var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml",
-//   "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile",
-// "profileEnd"];
+//                "group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"];
 //   window.console = {};
 //   for (var i = 0; i < names.length; ++i)
 //     window.console[names[i]] = function() {}
