@@ -2,7 +2,7 @@
 
 // Define the `bbBlog` module
 angular.
-  module('bbBlog', ['ngRoute', 'ngFileUpload', 'bb.domain.share', 'bb.service']).
+  module('bbBlog', ['ngRoute', 'ngFileUpload', 'bb.service']).
   config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
        $routeProvider.

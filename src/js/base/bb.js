@@ -515,11 +515,11 @@
       fnSuc: fnSuc,
       dataType: dataType
     };
-  }
+  };
 
   var eleNoInfo = function(fnName){
     console.warn('$bb.' + fnName + ' Function need el param, el param must be DOM Element');
-  }
+  };
 
 /*end*/
   window.$bb = bb;

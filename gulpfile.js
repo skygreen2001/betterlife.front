@@ -157,6 +157,12 @@ gulp.task('images', function () {
 =====================================*/
 
 gulp.task('template', function () {
+  gulp.src([
+      './src/templates/!(cache)*/*.html',
+      './src/templates/*.html'
+    ])
+    .pipe(gulp.dest(path.join(config.dest, 'template')));
+
   return gulp.src('src/js/components/**/*.html')
         .pipe(gulp.dest(path.join(config.dest, 'template')));
 });
@@ -181,7 +187,11 @@ gulp.task('html', function() {
   if (config.cordova) {
     inject.push('<script src="cordova.js"></script>');
   }
-  gulp.src(['src/html/**/*.html'])
+
+  gulp.src('./src/images/favicon.ico')
+  .pipe(gulp.dest(config.dest));
+
+  gulp.src(['./src/html/**/*.html'])
   .pipe(replace('<!-- inject:js -->', inject.join('\n    ')))
   .pipe(gulp.dest(config.dest));
 });
@@ -227,7 +237,7 @@ gulp.task('js', function() {
     streamqueue({ objectMode: true },
       gulp.src(config.vendor.js),
       gulp.src('./src/js/**/*.js').pipe(ngFilesort()),
-      gulp.src(['src/templates/**/*.html']).pipe(templateCache({ module: 'bb' }))
+      gulp.src(['./src/templates/cache/**/*.html']).pipe(templateCache({ module: 'bb' }))
     )
     .pipe(sourcemaps.init())
     .pipe(concat('app.js'))

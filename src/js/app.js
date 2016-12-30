@@ -6,6 +6,10 @@ angular.module('bb.service', [
 
 angular.module('bb.controllers', [
     'mobile-angular-ui',
+    'ngAnimate',
+    'ngTouch',
+    'ui.bootstrap',
+    'ng-fastclick',
     'angularUtils.directives.dirPagination',
     'ngFileUpload',
     'bbBlog'
@@ -17,7 +21,7 @@ angular.module('bb.controllers', [
 //
 var app=angular.module('bb', [
   'ngRoute',
-  'bb.controllers.main',
+  'bb.controllers',
   'bb.service'
 ]);
 
@@ -32,6 +36,7 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
     //   todo: 采用angular的方式实现$.param jqlite没有作用？
     // };
 
+    $locationProvider.hashPrefix("!");
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
     // $httpProvider.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -50,4 +55,20 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
       }).
       otherwise('/');
   }
+]);
+
+app.filter('trustHtml', function ($sce) {
+    return function (input) {
+        return $sce.trustAsHtml(input);
+    }
+});
+
+app.directive('go', ['$window',
+    function($window, $scope){
+        return function(scope, element ,attrs){
+            element.bind('mousedown', function() {
+                $window.location.href = attrs.go;
+            });
+        }
+    }
 ]);

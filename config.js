@@ -17,7 +17,7 @@ module.exports = function(config) {
    * @property config.cordova
    * @type {Boolean}
    */
-  config.cordova = true;
+  config.cordova = false;
 
   //
   // Development web server
@@ -94,7 +94,16 @@ module.exports = function(config) {
   config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
 
   config.vendor.js.push('./bower_components/angular-resource/angular-resource.js');
+  config.vendor.js.push('./bower_components/ngstorage/ngStorage.min.js');
+
+  config.vendor.js.push('./bower_components/angular-animate/angular-animate.min.js');
+  config.vendor.js.push('./bower_components/angular-touch/angular-touch.min.js');
+  config.vendor.js.push('./bower_components/angular-bootstrap/ui-bootstrap.min.js');
+
   config.vendor.js.push('./bower_components/angular-scroll/angular-scroll.min.js');
+
+  config.vendor.js.push('./bower_components/fastclick/lib/fastclick.js');
+  config.vendor.js.push('./bower_components/ng-fastclick/dist/index.min.js');
 
   //文件上传
   config.vendor.js.push('./bower_components/ng-file-upload/ng-file-upload-shim.js');
