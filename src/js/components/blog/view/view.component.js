@@ -5,12 +5,12 @@ angular.
   module('bbBlog').
   component('showArticle', {
     templateUrl: 'template/blog/view/view.template.html',
-    controller: ['ShareObject', 'Constants', 'ShareService',
-    function(ShareObject, Constants, ShareService, $scope, $element, $attrs) {
+    controller: ['ShareObject', 'Constants', 'ServerService',
+    function(ShareObject, Constants, ServerService, $scope, $element, $attrs) {
       this.shareId = ShareObject.getShareId();
       var ctrl = this;
       if (this.shareId>0) {
-        ShareService.getShare().query(function(response){
+        ServerService.getShare().query(function(response){
           ctrl.share = response;
           // console.log(response);
           if (ctrl.share) {
@@ -22,7 +22,7 @@ angular.
           // console.log($scope.title);
         });
       } else {
-        this.title="我的传赏";
+        this.title="我的Betterlife";
       }
 
       this.videoUrl = function(binarFileId, binarFileType){

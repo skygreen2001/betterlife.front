@@ -5,12 +5,12 @@ angular.
   module('bbBlog').
   component('blogEdit', {
     templateUrl: 'template/blog/edit/edit.template.html',
-    controller: ['$http', 'ShareObject', 'ShareService', '$location', '$window',
-      function($http, ShareObject, ShareService, $location, $window, $scope, $httpParamSerializerJQLike, $element, $attrs) {
+    controller: ['$http', 'ShareObject', 'ServerService', '$location', '$window',
+      function($http, ShareObject, ServerService, $location, $window, $scope, $element, $attrs) {
         this.content = ShareObject.getContent();
         var ctrl = this;
         this.saveContent = function(){
-          ShareService.saveShareItem(
+          ServerService.saveShareItem(
             ctrl.content
           ).then(function(response) {
             var shareId = ShareObject.getShareId(),
@@ -23,12 +23,12 @@ angular.
   }).
   component('blogTitle', {
     templateUrl: 'template/blog/edit/title.template.html',
-    controller: ['$http', '$routeParams', 'ShareObject', 'ShareService', '$location', '$window',
-      function($http, $routeParams, ShareObject, ShareService, $location, $window, $scope, $httpParamSerializerJQLike, $element, $attrs) {
+    controller: ['$http', '$routeParams', 'ShareObject', 'ServerService', '$location', '$window',
+      function($http, $routeParams, ShareObject, ServerService, $location, $window, $scope, $httpParamSerializerJQLike, $element, $attrs) {
         this.title = ShareObject.getTitle();
         var ctrl=this;
         this.saveTitle = function() {
-          var saveShare = ShareService.saveShare(
+          var saveShare = ServerService.saveShare(
             ctrl.title
           );
           if (saveShare) {

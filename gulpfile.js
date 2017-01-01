@@ -69,7 +69,7 @@ var gulp           = require('gulp'),
     order          = require('gulp-order'),
     concat         = require('gulp-concat'),
     ignore         = require('gulp-ignore'),
-    clean         = require('gulp-clean'),
+    clean          = require('gulp-clean'),
     templateCache  = require('gulp-angular-templatecache'),
     mobilizer      = require('gulp-mobilizer'),
     ngAnnotate     = require('gulp-ng-annotate'),
@@ -152,6 +152,16 @@ gulp.task('images', function () {
 });
 
 
+/*==================================
+=            Copy fonts            =
+==================================*/
+
+gulp.task('fonts', function() {
+  return gulp.src(config.vendor.fonts)
+  .pipe(gulp.dest(path.join(config.dest, 'fonts')));
+});
+
+
 /*=====================================
 =            Minify componet template            =
 =====================================*/
@@ -165,16 +175,6 @@ gulp.task('template', function () {
 
   return gulp.src('src/js/components/**/*.html')
         .pipe(gulp.dest(path.join(config.dest, 'template')));
-});
-
-
-/*==================================
-=            Copy fonts            =
-==================================*/
-
-gulp.task('fonts', function() {
-  return gulp.src(config.vendor.fonts)
-  .pipe(gulp.dest(path.join(config.dest, 'fonts')));
 });
 
 
@@ -234,7 +234,8 @@ gulp.task('less', function () {
 // - Precompile templates to ng templateCache
 
 gulp.task('js', function() {
-    streamqueue({ objectMode: true },
+    streamqueue(
+      { objectMode: true },
       gulp.src(config.vendor.js),
       gulp.src('./src/js/**/*.js').pipe(ngFilesort()),
       gulp.src(['./src/templates/cache/**/*.html']).pipe(templateCache({ module: 'bb' }))

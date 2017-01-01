@@ -1,4 +1,12 @@
 
+//判断字符串是否为空
+function empty(string){
+  if (typeof(string)=="undefined") return true;
+  if (!string) return true;
+  if (string.replace(/(^s*)|(s*$)/g, "").length ==0)return true;
+  return false;
+}
+
 //显示当前日期
 //显示年月日 yyyy-MM-dd
 //显示年月日小时分钟 yyyy-MM-dd HH:mm

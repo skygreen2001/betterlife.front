@@ -12,7 +12,7 @@
 // @example:["test1", "test2","test3","test4","test5","test6"].diff(["test1","test2","test3","test4"]);   => ["test5", "test6"]
 Array.prototype.diff = function(a) {
   return this.filter(function(i) {return a.indexOf(i) < 0;});
-}
+};
 
 //对象数组,根据指定对象key获取数组中指定对象
 //@example var array=[{"a":"1","n":"w"},{"a":"2","n":"h"},{"a":"3","n":"k"}}];  array.getObjectBy("a","2")=>{"a":"2","n":"h"}
@@ -24,7 +24,18 @@ Array.prototype.getObjectBy = function (name, value) {
       }
   }
   return null;
-}
+};
+
+//对象数组,根据指定对象key获取数组中指定对象
+//@example var array=[{"a":"1","n":"w"},{"a":"2","n":"h"},{"a":"3","n":"k"}}];  array.getIndexBy("a","2")=>1
+Array.prototype.getIndexBy = function (name, value) {
+  for (var i = 0; i < this.length; i++) {
+    if (this[i][name] == value) {
+      return i;
+    }
+  }
+  return -1;
+};
 
 //数组中去除指定值元素的数组
 //@example var a=[3,4,5]; a.remove(4); => [3,5]
@@ -41,7 +52,7 @@ Array.prototype.remove = function(element) {
 if (!Array.prototype.contains) {
   Array.prototype.contains = function(searchElement /*, fromIndex*/) {
     return this.includes(searchElement /*, fromIndex*/);
-  }
+  };
 }
 
 /*******************************Date Prototype Shim**************************************/
@@ -68,7 +79,7 @@ Date.prototype.format = function(fmt)
     if(new RegExp("("+ k +")").test(fmt))
       fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
   return fmt;
-}
+};
 
 
 /*******************************String Prototype Shim**************************************/
@@ -77,7 +88,7 @@ String.prototype.contains = function(substr) {
     if(substr==null||substr==""||this.length==0||substr.length>this.length)
         return false;
     return this.indexOf(substr)>0;
-}
+};
 
 //去除字符串中包含所有的空字符
 String.prototype.trimAll = function(str){
@@ -95,7 +106,7 @@ String.prototype.chineseLength = function() {
     }
   }
   return len;
-}
+};
 
 /**
  * JS截取字符串，中英文都能用
@@ -124,7 +135,7 @@ String.prototype.chineseSubstr = function(startIndex, length)
   }
   //如果给定字符串小于指定长度，则返回源字符串；
   if(str_length < length) return  this;
-}
+};
 
 //查看字符串是否手机号
 String.prototype.isMobile=function checkMobile(){
@@ -132,4 +143,4 @@ String.prototype.isMobile=function checkMobile(){
     return true;
   }
   return false;
-}
+};

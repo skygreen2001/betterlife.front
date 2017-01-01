@@ -523,5 +523,5 @@
 
 /*end*/
   window.$bb = bb;
-  window.$$ = $bb;
+  window.$$  = $bb;
 })(window);

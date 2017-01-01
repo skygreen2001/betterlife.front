@@ -5,13 +5,13 @@ angular.
   module('bbBlog').
   component('publish', {
     templateUrl: 'template/blog/publish/publish.template.html',
-    controller: ['ShareObject', 'Constants', 'ShareService', 'Upload', '$timeout', '$route',
-    function(ShareObject, Constants, ShareService, Upload, $timeout, $route, $scope, $element, $attrs) {
+    controller: ['ShareObject', 'Constants', 'ServerService', 'Upload', '$timeout', '$route',
+    function(ShareObject, Constants, ServerService, Upload, $timeout, $route, $scope, $element, $attrs) {
       this.shareId = ShareObject.getShareId();
       var ctrl = this;
       ctrl.title = "点击设置标题";
       if (this.shareId>0) {
-        ShareService.getShare().query(function(response){
+        ServerService.getShare().query(function(response){
           ctrl.share = response;
           // console.log(response);
           if (ctrl.share) {
@@ -27,7 +27,7 @@ angular.
             }
           }
         });
-      };
+      }
 
       this.videoUrl = function(binarFileId, binarFileType){
         var suffix = "mp4";
@@ -84,7 +84,7 @@ angular.
               iconCover.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
           });
         }
-      }
+      };
 
       this.editText = function(shareItemId, content) {
         ShareObject.setItemType(Constants.ITEM_TYPE.TEXT);
@@ -158,7 +158,7 @@ angular.
       };
 
       this.deleteItem = function(shareItemId) {
-        ShareService.deleteItem(
+        ServerService.deleteItem(
           shareItemId
         ).then(function(response) {
           $route.reload();
@@ -166,7 +166,7 @@ angular.
       };
 
       this.changeOrder = function(shareItemId,isUp) {
-        ShareService.changeOrder(
+        ServerService.changeOrder(
           shareItemId,
           isUp
         ).then(function(response) {

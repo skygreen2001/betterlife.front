@@ -19,10 +19,11 @@ angular.module('bb.controllers', [
 // Here is how to define your module
 // has dependent on mobile-angular-ui
 //
-var app=angular.module('bb', [
+var app = angular.module('bb', [
   'ngRoute',
-  'bb.controllers',
-  'bb.service'
+  'ngStorage',
+  'bb.service',
+  'bb.controllers'
 ]);
 
 app.run();
@@ -36,7 +37,7 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
     //   todo: 采用angular的方式实现$.param jqlite没有作用？
     // };
 
-    $locationProvider.hashPrefix("!");
+    // $locationProvider.hashPrefix("!");
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
     // $httpProvider.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -45,7 +46,7 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
 
     $routeProvider.
       when('/', {
-        templateUrl:'home.html',  reloadOnSearch: false
+        templateUrl: 'home.html',  reloadOnSearch: false
       }).
       when('/edit', {
         templateUrl: 'edit.html', reloadOnSearch: false

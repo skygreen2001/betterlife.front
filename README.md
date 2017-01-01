@@ -39,6 +39,14 @@
 
     Atom: https://atom.io/
 
+    推荐安装Package:
+        apm install bottom-dock gulp-manager atom-beautify git-plus atom-bootstrap3 atom-terminal-panel
+        * bottom-dock
+        * gulp-manager
+        * atom-beautify
+        * git-plus
+        * atom-bootstrap3
+        * atom-terminal-panel
 
 * **使用JS框架**
 

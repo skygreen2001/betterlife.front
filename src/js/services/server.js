@@ -1,6 +1,6 @@
 angular.
   module('bb.service').
-  service('ShareService', ['$resource', 'ShareObject', '$http', '$httpParamSerializerJQLike',
+  service('ServerService', ['$resource', 'ShareObject', '$http', '$httpParamSerializerJQLike',
     function($resource, ShareObject, $http, $httpParamSerializerJQLike) {
       this.saveShare = function(title) {
         var shareId = ShareObject.getShareId(),
@@ -48,16 +48,6 @@ angular.
           $httpParamSerializerJQLike(data)
         );
       };
-
-      //Reference:
-      Array.prototype.getIndexBy = function (name, value) {
-          for (var i = 0; i < this.length; i++) {
-              if (this[i][name] == value) {
-                  return i;
-              }
-          }
-          return -1;
-      }
 
       this.changeOrder = function(shareItemId,isUp) {
         var items = ShareObject.getItems();
