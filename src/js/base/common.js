@@ -1,9 +1,9 @@
 
 //判断字符串是否为空
-function empty(string){
-  if (typeof(string)=="undefined") return true;
-  if (!string) return true;
-  if (string.replace(/(^s*)|(s*$)/g, "").length ==0)return true;
+function empty(data){
+  if (typeof(data) == "undefined") return true;
+  if (!data) return true;
+  if ((typeof(data) == "data") && data.replace(/(^s*)|(s*$)/g, "").length ==0) return true;
   return false;
 }
 
@@ -15,6 +15,13 @@ function now(format) {
   var newDate = new Date();
   return newDate.format(format);
 }
+
+// 上几个月
+function nowBack(months){
+  var date = new Date();
+  date.setMonth(date.getMonth() - months);
+  return date.format('yyyy-MM-dd');
+};
 
 //类似php的print_r方法，遍历数据类型和对象的属性和方法。
 function print_r(arr,level) {
