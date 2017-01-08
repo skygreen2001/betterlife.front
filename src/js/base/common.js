@@ -3,7 +3,7 @@
 function empty(data){
   if (typeof(data) == "undefined") return true;
   if (!data) return true;
-  if ((typeof(data) == "data") && data.replace(/(^s*)|(s*$)/g, "").length ==0) return true;
+  if ((typeof(data) == "string") && data.replace(/(^s*)|(s*$)/g, "").length == 0) return true;
   return false;
 }
 
