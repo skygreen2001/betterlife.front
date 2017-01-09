@@ -1,6 +1,20 @@
 'use strict';
 
 module.exports = function(config) {
+  /**
+   * 是否开发模式, 在开发模式下
+   * -.不清除运行路径下的文件
+   * -.不编译文件
+   * [说明]:
+   *      在开发时，修改css或者js文件会重新编译和加载比较慢，因此希望在正式运行路径下编写css和js文件，最后再放在开发要求路径下，再编译发布在正式服务器上
+   */
+  config.isDev    = false,
+
+  /**
+   * 是否运行在手机上
+   * -.不包括桌面运行所需的css和js库
+   */
+  config.isMobile = false,
 
   /**
    * The output directory.
@@ -17,7 +31,7 @@ module.exports = function(config) {
    * @property config.cordova
    * @type {Boolean}
    */
-  config.cordova = false;
+  if (!config.isMobile) config.cordova = false;
 
   //
   // Development web server
@@ -74,10 +88,10 @@ module.exports = function(config) {
    * @default
    * 	 ['./src/less', './bower_components']
    */
-
-  // config.less.paths.push('./vendor/less');
-  config.vendor.cssbower.push('./bower_components/bootstrap/dist/css/*.min.css');
-  config.vendor.cssbower.push('./bower_components/eonasdan-bootstrap-datetimepicker/build/css/*.min.css');
+  if(!config.isMobile) {
+    // config.vendor.cssbower.push('./bower_components/bootstrap/dist/css/*.min.css*');
+    // config.vendor.cssbower.push('./bower_components/eonasdan-bootstrap-datetimepicker/build/css/*.min.css');
+  }
 
   //
   // 3rd party components
@@ -91,32 +105,47 @@ module.exports = function(config) {
    */
   //浏览器兼容性Javascript原生对象函数支持
   config.vendor.js.push('./bower_components/js-polyfills/polyfill.min.js');
-  config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
-
   config.vendor.js.push('./bower_components/angular-resource/angular-resource.js');
   config.vendor.js.push('./bower_components/ngstorage/ngStorage.min.js');
-
-  config.vendor.js.push('./bower_components/angular-animate/angular-animate.min.js');
-  config.vendor.js.push('./bower_components/angular-touch/angular-touch.min.js');
-  config.vendor.js.push('./bower_components/angular-bootstrap/ui-bootstrap.min.js');
-
   config.vendor.js.push('./bower_components/angular-scroll/angular-scroll.min.js');
 
-  config.vendor.js.push('./bower_components/fastclick/lib/fastclick.js');
-  config.vendor.js.push('./bower_components/ng-fastclick/dist/index.min.js');
+  if(!config.isMobile) {
+    config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
+    config.vendor.js.push('./bower_components/angular-animate/angular-animate.min.js');
+    config.vendor.js.push('./bower_components/angular-touch/angular-touch.min.js');
+    config.vendor.js.push('./bower_components/angular-bootstrap/ui-bootstrap.min.js');
+    config.vendor.js.push('./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js');
+
+    config.vendor.js.push('./bower_components/fastclick/lib/fastclick.js');
+    config.vendor.js.push('./bower_components/ng-fastclick/dist/index.min.js');
+
+    //日期选择器
+    config.vendor.js.push('./bower_components/moment/min/moment-with-locales.min.js');
+    config.vendor.js.push('./bower_components/jquery/dist/jquery.min.js');
+    config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.min.js');
+    config.vendor.js.push('./bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
+
+    //提示框
+    config.vendor.js.push('./bower_components/bootbox/bootbox.js');
+    config.vendor.js.push('./bower_components/ngBootbox/dist/ngBootbox.min.js');
+
+    //打开窗口显示图片
+    config.vendor.js.push('./bower_components/jquery-colorbox/jquery.colorbox-min.js');
+    config.vendor.js.push('./bower_components/angular-colorbox/js/angular-colorbox.js');
+
+    //分页显示
+    config.vendor.js.push('./bower_components/angularUtils-pagination/dirPagination.js');
+    //动画效果
+    config.vendor.js.push('./bower_components/jquery-smoove/dist/jquery.smoove.min.js');
+
+    // config.vendor.cssbower.push('./bower_components/css3-animate-it/css/animations.css');
+    // config.vendor.cssbower.push('./bower_components/css3-animate-it/css/animations-ie-fix.css');
+    // config.vendor.js.push('./bower_components/css3-animate-it/js/css3-animate-it.js');
+  }
 
   //文件上传
   config.vendor.js.push('./bower_components/ng-file-upload/ng-file-upload-shim.js');
   config.vendor.js.push('./bower_components/ng-file-upload/ng-file-upload.js');
-
-  //日期选择器
-  config.vendor.js.push('./bower_components/moment/min/moment-with-locales.min.js');
-  config.vendor.js.push('./bower_components/jquery/dist/jquery.min.js');
-  config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.min.js');
-  config.vendor.js.push('./bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
-
-  //分页显示
-  config.vendor.js.push('./bower_components/angularUtils-pagination/dirPagination.js');
 
   /**
    * Vendor Fonts
@@ -124,10 +153,10 @@ module.exports = function(config) {
    * @property config.vendor.fonts
    * @type {Array}
    */
-
-   // config.vendor.fonts.push('.bower_components/mylib/fonts/**/*');
-  config.vendor.fonts.push('./bower_components/bootstrap/fonts/glyphicons-halflings-regular.*');
-  config.vendor.fonts.push('./bower_components/icomoon-bower/fonts/icomoon.*');
+  if(!config.isMobile) {
+    config.vendor.fonts.push('./bower_components/bootstrap/fonts/glyphicons-halflings-regular.*');
+    config.vendor.fonts.push('./bower_components/icomoon-bower/fonts/icomoon.*');
+  }
 
   /**
    * Vendor Css (prepended on compile time)
@@ -146,5 +175,4 @@ module.exports = function(config) {
    */
 
   // config.vendor.css.append.push('.bower_components/mylib/mylib.css');
-
 };

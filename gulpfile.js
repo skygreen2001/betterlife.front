@@ -8,11 +8,13 @@
 // Please use config.js to override these selectively:
 
 var config = {
+  isDev   : true,
+  isMobile: false,
   dest: 'www',
   cordova: true,
   less: {
     src: [
-      './src/less/app.less', './src/less/common/responsive.less'
+      './src/less/app.less'
     ],
     paths: [
       './src/less', './bower_components'
@@ -27,7 +29,7 @@ var config = {
 
     css: {
       prepend: [],
-      append: [],
+      append: []
     },
 
 
@@ -78,7 +80,6 @@ var gulp           = require('gulp'),
     streamqueue    = require('streamqueue'),
     rename         = require('gulp-rename'),
     path           = require('path');
-
 
 /*================================================
 =            Report Errors to Console            =
@@ -203,10 +204,26 @@ gulp.task('html', function() {
 
 gulp.task('less', function () {
 
-    gulp.src(config.vendor.cssbower)
-    .pipe(gulp.dest(path.join(config.dest, 'css')));
+  gulp.src(config.vendor.cssbower)
+  .pipe(gulp.dest(path.join(config.dest, 'css')));
 
-    return gulp.src(config.less.src).pipe(less({
+  var cssTask;
+  if (!config.isMobile){
+    cssTask = gulp.src(config.less.src)
+    .pipe(less({
+      paths: config.less.paths.map(function(p){
+        return path.resolve(__dirname, p);
+      })
+    }))
+    .pipe(mobilizer('app.css', {
+      'app.css': {
+        screens: 'any'
+      }
+    }));
+  } else {
+    cssTask = gulp.src(
+        config.less.src
+      ).pipe(less({
       paths: config.less.paths.map(function(p){
         return path.resolve(__dirname, p);
       })
@@ -215,13 +232,13 @@ gulp.task('less', function () {
       'app.css': {
         hover: 'exclude',
         screens: ['0px']
-      },
-      'hover.css': {
-        hover: 'only',
-        screens: ['0px']
       }
-    }))
-    .pipe(cssmin())
+    }));
+  }
+
+  if (!config.DEV) cssTask.pipe(cssmin());
+
+  return cssTask
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(path.join(config.dest, 'css')));
 });
@@ -291,13 +308,13 @@ gulp.task('install', function(done) {
 gulp.task('default', ['clean'], function(done){
   var tasks = [];
 
-  tasks.push('build');
+  if (!config.DEV) tasks.push('build');
 
   if (typeof config.server === 'object') {
     tasks.push('connect');
   }
 
-  tasks.push('watch');
+  if (!config.DEV) tasks.push('watch');
 
   seq('install', tasks, done);
 });

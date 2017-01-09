@@ -6,13 +6,15 @@ angular.module('bb.service', [
 
 angular.module('bb.controllers', [
     'mobile-angular-ui',
+    'ngBootbox',
     'ngAnimate',
     'ngTouch',
     'ui.bootstrap',
     'ng-fastclick',
     'angularUtils.directives.dirPagination',
     'ngFileUpload',
-    'bbBlog'
+    'bbBlog',
+    'bb.common'
 ]);
 
 //
@@ -40,6 +42,13 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
     // $locationProvider.hashPrefix("!");
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
     // $httpProvider.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
+
+    bootbox.addLocale('zh_CN_OK', { OK : '确定', CANCEL  : "取消", CONFIRM : "确认" });
+    bootbox.setLocale("zh_CN_OK");
+    bootbox.setDefaults({
+        "title"  : "提示信息",
+        "animate": true
+    });
 
     // $locationProvider.html5Mode(true);
     // $locationProvider.html5Mode({enabled:true,requireBase:false,rewriteLinks:false});
