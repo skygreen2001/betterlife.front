@@ -14,7 +14,7 @@ var config = {
   cordova: true,
   less: {
     src: [
-      './src/less/app.less'
+      './src/less/bootstrap.less'
     ],
     paths: [
       './src/less', './bower_components'
@@ -215,8 +215,8 @@ gulp.task('less', function () {
         return path.resolve(__dirname, p);
       })
     }))
-    .pipe(mobilizer('app.css', {
-      'app.css': {
+    .pipe(mobilizer('bootstrap.css', {
+      'bootstrap.css': {
         screens: 'any'
       }
     }));
@@ -228,8 +228,8 @@ gulp.task('less', function () {
         return path.resolve(__dirname, p);
       })
     }))
-    .pipe(mobilizer('app.css', {
-      'app.css': {
+    .pipe(mobilizer('bootstrap.css', {
+      'bootstrap.css': {
         hover: 'exclude',
         screens: ['0px']
       }
@@ -239,7 +239,10 @@ gulp.task('less', function () {
   if (!config.DEV) cssTask.pipe(cssmin());
 
   return cssTask
-    .pipe(rename({suffix: '.min'}))
+    .pipe(rename({
+      basename: "app",
+      suffix: '.min'
+    }))
     .pipe(gulp.dest(path.join(config.dest, 'css')));
 });
 
@@ -277,9 +280,9 @@ gulp.task('watch', function () {
   }
   gulp.watch(['./src/html/**/*'], ['html']);
   gulp.watch(['./src/less/**/*'], ['less']);
-  gulp.watch(['./src/js/**/*', './src/templates/**/*', config.vendor.js], ['js']);
-  gulp.watch(['./src/images/**/*'], ['images']);
-  gulp.watch(['./src/js/**/*.html'], ['template']);
+  gulp.watch(['./src/js/**/*', './src/templates/cache/**/*.html', config.vendor.js], ['js']);
+  gulp.watch(['./src/images/**/*'], ['img']);
+  gulp.watch(['./src/js/**/*.html', './src/templates/!(cache)*/*.html', './src/templates/*.html'], ['template']);
 });
 
 /*======================================
