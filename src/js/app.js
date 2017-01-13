@@ -12,6 +12,7 @@ angular.module('bb.controllers', [
     'ui.bootstrap',
     'ng-fastclick',
     'angularUtils.directives.dirPagination',
+    'ngValidate',
     'ngFileUpload',
     'bbBlog',
     'bb.common'

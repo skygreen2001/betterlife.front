@@ -135,8 +135,16 @@ module.exports = function(config) {
 
     //分页显示
     config.vendor.js.push('./bower_components/angularUtils-pagination/dirPagination.js');
+
+    //表单校验
+    config.vendor.js.push('./bower_components/jquery-validation/dist/jquery.validate.min.js');
+    config.vendor.js.push('./bower_components/jpkleemans-angular-validate/dist/angular-validate.min.js');
+
     //动画效果
+    // config.vendor.js.push('./bower_components/particleground/jquery.particleground.min.js');
     config.vendor.js.push('./bower_components/jquery-smoove/dist/jquery.smoove.min.js');
+
+
 
     // config.vendor.cssbower.push('./bower_components/css3-animate-it/css/animations.css');
     // config.vendor.cssbower.push('./bower_components/css3-animate-it/css/animations-ie-fix.css');
