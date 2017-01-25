@@ -1,22 +1,27 @@
 'use strict';
 
-angular.module('bb.service', [
-    'ngResource'
-]);
+var ISMOBILE = false;
 
-angular.module('bb.controllers', [
+
+var loadedDependencies = [
     'mobile-angular-ui',
-    'ngBootbox',
     'ngAnimate',
-    'ngTouch',
     'ui.bootstrap',
-    'ng-fastclick',
     'angularUtils.directives.dirPagination',
-    'ngValidate',
     'ngFileUpload',
     'bbBlog',
     'bb.common'
-]);
+];
+if (ISMOBILE){
+    var mobileDependencies = ['ngTouch', 'ng-fastclick'];
+    loadedDependencies.concat(mobileDependencies);
+} else {
+    var webDependencies = [];
+    loadedDependencies.concat(webDependencies);
+}
+angular.module('bb.controllers', loadedDependencies);
+
+angular.module('bb.service', []);
 
 //
 // Here is how to define your module
@@ -25,6 +30,7 @@ angular.module('bb.controllers', [
 var app = angular.module('bb', [
   'ngRoute',
   'ngStorage',
+  'ngCookies',
   'bb.service',
   'bb.controllers'
 ]);

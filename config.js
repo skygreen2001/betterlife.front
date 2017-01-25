@@ -17,6 +17,11 @@ module.exports = function(config) {
   config.isMobile = false,
 
   /**
+   * 是否包含jquery及相关的组件
+   */
+  config.isJquery = true,
+
+  /**
    * The output directory.
    *
    * @property config.dest
@@ -105,50 +110,45 @@ module.exports = function(config) {
    */
   //浏览器兼容性Javascript原生对象函数支持
   config.vendor.js.push('./bower_components/js-polyfills/polyfill.min.js');
-  config.vendor.js.push('./bower_components/angular-resource/angular-resource.js');
   config.vendor.js.push('./bower_components/ngstorage/ngStorage.min.js');
+  config.vendor.js.push('./bower_components/angular-cookies/angular-cookies.min.js');
+  config.vendor.js.push('./bower_components/angular-animate/angular-animate.min.js');
+  //分页显示
+  config.vendor.js.push('./bower_components/angularUtils-pagination/dirPagination.js');
   config.vendor.js.push('./bower_components/angular-scroll/angular-scroll.min.js');
 
-  if(!config.isMobile) {
-    config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
-    config.vendor.js.push('./bower_components/angular-animate/angular-animate.min.js');
+  if(config.isMobile) {
     config.vendor.js.push('./bower_components/angular-touch/angular-touch.min.js');
-    config.vendor.js.push('./bower_components/angular-bootstrap/ui-bootstrap.min.js');
-    config.vendor.js.push('./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js');
 
     config.vendor.js.push('./bower_components/fastclick/lib/fastclick.js');
     config.vendor.js.push('./bower_components/ng-fastclick/dist/index.min.js');
+  } else {
+    if(config.isJquery) config.vendor.js.push('./bower_components/jquery/dist/jquery.min.js');
 
-    //日期选择器
-    config.vendor.js.push('./bower_components/moment/min/moment-with-locales.min.js');
-    config.vendor.js.push('./bower_components/jquery/dist/jquery.min.js');
-    config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.min.js');
-    config.vendor.js.push('./bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
+    config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
+    // config.vendor.js.push('./bower_components/angular-bootstrap/ui-bootstrap.min.js');
+    config.vendor.js.push('./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js');
 
-    //提示框
-    config.vendor.js.push('./bower_components/bootbox/bootbox.js');
-    config.vendor.js.push('./bower_components/ngBootbox/dist/ngBootbox.min.js');
+    if(config.isJquery) {
+      //日期选择器
+      config.vendor.js.push('./bower_components/moment/min/moment-with-locales.min.js');
+      config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.min.js');
+      config.vendor.js.push('./bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
 
-    //打开窗口显示图片
-    config.vendor.js.push('./bower_components/jquery-colorbox/jquery.colorbox-min.js');
-    config.vendor.js.push('./bower_components/angular-colorbox/js/angular-colorbox.js');
+      //提示框
+      config.vendor.js.push('./bower_components/bootbox/bootbox.js');
 
-    //分页显示
-    config.vendor.js.push('./bower_components/angularUtils-pagination/dirPagination.js');
+      //打开窗口显示图片
+      config.vendor.js.push('./bower_components/jquery-colorbox/jquery.colorbox-min.js');
+      config.vendor.js.push('./bower_components/angular-colorbox/js/angular-colorbox.js');
 
-    //表单校验
-    config.vendor.js.push('./bower_components/jquery-validation/dist/jquery.validate.min.js');
-    config.vendor.js.push('./bower_components/jpkleemans-angular-validate/dist/angular-validate.min.js');
-
-    //动画效果
-    // config.vendor.js.push('./bower_components/particleground/jquery.particleground.min.js');
-    config.vendor.js.push('./bower_components/jquery-smoove/dist/jquery.smoove.min.js');
-
-
-
-    // config.vendor.cssbower.push('./bower_components/css3-animate-it/css/animations.css');
-    // config.vendor.cssbower.push('./bower_components/css3-animate-it/css/animations-ie-fix.css');
-    // config.vendor.js.push('./bower_components/css3-animate-it/js/css3-animate-it.js');
+      //动画效果
+      // config.vendor.js.push('./bower_components/particleground/jquery.particleground.min.js');
+      config.vendor.js.push('./bower_components/jquery-smoove/dist/jquery.smoove.min.js');
+      // config.vendor.cssbower.push('./bower_components/css3-animate-it/css/animations.css');
+      // config.vendor.cssbower.push('./bower_components/css3-animate-it/css/animations-ie-fix.css');
+      // config.vendor.js.push('./bower_components/css3-animate-it/js/css3-animate-it.js');
+    }
   }
 
   //文件上传

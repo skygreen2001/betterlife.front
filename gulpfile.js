@@ -10,8 +10,9 @@
 var config = {
   isDev   : true,
   isMobile: false,
-  dest: 'www',
-  cordova: true,
+  isJquery: true,
+  dest    : 'www',
+  cordova : true,
   less: {
     src: [
       './src/less/bootstrap.less'
@@ -142,7 +143,7 @@ gulp.task('livereload', function () {
     .pipe(connect.reload());
 });
 
-
+var firstInit = true;
 /*=====================================
 =            Minify images            =
 =====================================*/
@@ -184,15 +185,19 @@ gulp.task('template', function () {
 =================================================*/
 
 gulp.task('html', function() {
-  var inject = [];
+  var inject = [], injectBefore = [], injectCss = [], injectCssBefore = [];
   if (config.cordova) {
     inject.push('<script src="cordova.js"></script>');
   }
+  injectBefore.push('<script src="js/bower/bower.min.js"></script>');
 
   gulp.src('./src/images/favicon.ico')
   .pipe(gulp.dest(config.dest));
 
   gulp.src(['./src/html/**/*.html'])
+  .pipe(replace('<!-- inject:css:before -->', injectCssBefore.join('\n    ')))
+  .pipe(replace('<!-- inject:css -->', injectCss.join('\n    ')))
+  .pipe(replace('<!-- inject:js:before -->', injectBefore.join('\n    ')))
   .pipe(replace('<!-- inject:js -->', inject.join('\n    ')))
   .pipe(gulp.dest(config.dest));
 });
@@ -203,9 +208,10 @@ gulp.task('html', function() {
 ======================================================================*/
 
 gulp.task('less', function () {
-
-  gulp.src(config.vendor.cssbower)
-  .pipe(gulp.dest(path.join(config.dest, 'css')));
+  if (firstInit){
+    gulp.src(config.vendor.cssbower)
+    .pipe(gulp.dest(path.join(config.dest, 'css')));
+  }
 
   var cssTask;
   if (!config.isMobile){
@@ -254,19 +260,31 @@ gulp.task('less', function () {
 // - Precompile templates to ng templateCache
 
 gulp.task('js', function() {
-    streamqueue(
-      { objectMode: true },
-      gulp.src(config.vendor.js),
-      gulp.src('./src/js/**/*.js').pipe(ngFilesort()),
-      gulp.src(['./src/templates/cache/**/*.html']).pipe(templateCache({ module: 'bb' }))
-    )
+  if (firstInit){
+    gulp.src(config.vendor.js)
     .pipe(sourcemaps.init())
-    .pipe(concat('app.js'))
+    .pipe(concat('bower.js'))
     .pipe(ngAnnotate())
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(path.join(config.dest, 'js')));
+    .pipe(gulp.dest(path.join(config.dest, 'js', 'bower')));
+  }
+  streamqueue(
+    { objectMode: true },
+    // gulp.src(config.vendor.js),
+    gulp.src('./src/js/**/*.js').pipe(ngFilesort()),
+    gulp.src(['./src/templates/cache/**/*.html']).pipe(templateCache('bower/templates.js', { module: 'bb' }))
+  )
+  .pipe(sourcemaps.init())
+  .pipe(concat('app.js'))
+  .pipe(ngAnnotate())
+  .pipe(uglify())
+  .pipe(rename({suffix: '.min'}))
+  .pipe(sourcemaps.write('.'))
+  .pipe(gulp.dest(path.join(config.dest, 'js')));
+
+  firstInit = false;
 });
 
 
@@ -280,7 +298,7 @@ gulp.task('watch', function () {
   }
   gulp.watch(['./src/html/**/*'], ['html']);
   gulp.watch(['./src/less/**/*'], ['less']);
-  gulp.watch(['./src/js/**/*', './src/templates/cache/**/*.html', config.vendor.js], ['js']);
+  gulp.watch(['./src/js/**/*', './src/templates/cache/**/*.html'], ['js']);
   gulp.watch(['./src/images/**/*'], ['img']);
   gulp.watch(['./src/js/**/*.html', './src/templates/!(cache)*/*.html', './src/templates/*.html'], ['template']);
 });
