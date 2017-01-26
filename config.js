@@ -140,7 +140,6 @@ module.exports = function(config) {
 
       //打开窗口显示图片
       config.vendor.js.push('./bower_components/jquery-colorbox/jquery.colorbox-min.js');
-      config.vendor.js.push('./bower_components/angular-colorbox/js/angular-colorbox.js');
 
       //动画效果
       // config.vendor.js.push('./bower_components/particleground/jquery.particleground.min.js');
