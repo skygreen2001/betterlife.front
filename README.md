@@ -2,6 +2,12 @@
 
     下载地址：https://github.com/skygreen2001/betterlife.front
 
+## 简介说明
+
+    框架目标定义分为两部分:
+    * 专用于移动APP开发的html5 UI界面，可发布成原生应用[ios,andriod],也可用于html5 web页面；嵌入微信；主要用于手机端。
+    * 专用于Web开发的html5自适应界面，可用于pc电脑端，也可用于html5 web页面；嵌入微信；
+
 ## 准备工作
 
 * **安装git工具**

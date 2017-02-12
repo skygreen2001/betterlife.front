@@ -64,11 +64,14 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
       when('/', {
         templateUrl: 'home.html',  reloadOnSearch: false
       }).
-      when('/edit', {
-        templateUrl: 'edit.html', reloadOnSearch: false
+      when('/music', {
+        templateUrl: 'music.html', reloadOnSearch: false
       }).
-      when('/view', {
-        templateUrl: 'view.html', reloadOnSearch: false
+      when('/news', {
+        templateUrl: 'news.html', reloadOnSearch: false
+      }).
+      when('/blog', {
+        templateUrl: 'blog.html', reloadOnSearch: false
       }).
       otherwise('/');
   }
@@ -81,8 +84,8 @@ app.filter('trustHtml', function ($sce) {
 });
 
 app.directive('go', ['$window',
-    function($window, $scope){
-        return function(scope, element ,attrs){
+    function($window, $scope) {
+        return function(scope, element ,attrs) {
             element.bind('mousedown', function() {
                 $window.location.href = attrs.go;
             });

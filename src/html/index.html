@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>betterlife front</title>
+    <title>Betterlife Front UI</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
@@ -31,13 +31,18 @@
             ui-track-as-search-param='true'
             class="sidebar sidebar-left"></div>
 
-    <div class="app">
+    <div ng-include="'sidebar.html'"
+            class="sidebar sidebar-right"></div>
+
+    <div class="app"
+         ui-swipe-right="Ui.turnOn('uiSidebarLeft')"
+         ui-swipe-left="Ui.turnOff('uiSidebarLeft')">
 
       <!-- Navbars -->
 
       <div class="navbar navbar-app navbar-absolute-top">
         <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
-          传赏
+          {{ appName }}
         </div>
         <div class="btn-group pull-left">
           <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
@@ -54,9 +59,9 @@
       <div class="navbar navbar-app navbar-absolute-bottom">
         <div class="btn-group justified">
           <a href="#/" class="btn btn-navbar"><i class="fa fa-home fa-navbar"></i> 首页</a>
-          <a href="#/edit?userId=1&amp;shareId=1" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> 发布</a>
-          <a href="#/view?userId=1&amp;shareId=1" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> 查看</a>
-          <a href="#/tipoff" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar"></i> 举报</a>
+          <a href="#/music" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> 音乐</a>
+          <a href="#/news" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar"></i> 新闻</a>
+          <a href="#/blog" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> 博客</a>
         </div>
       </div>
 
