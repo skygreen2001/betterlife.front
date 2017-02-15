@@ -143,7 +143,8 @@ module.exports = function(config) {
 
       //动画效果
       // config.vendor.js.push('./bower_components/particleground/jquery.particleground.min.js');
-      config.vendor.js.push('./bower_components/jquery-smoove/dist/jquery.smoove.min.js');
+      // config.vendor.js.push('./bower_components/jquery-smoove/dist/jquery.smoove.min.js');
+
       // config.vendor.cssbower.push('./bower_components/css3-animate-it/css/animations.css');
       // config.vendor.cssbower.push('./bower_components/css3-animate-it/css/animations-ie-fix.css');
       // config.vendor.js.push('./bower_components/css3-animate-it/js/css3-animate-it.js');
@@ -161,8 +162,8 @@ module.exports = function(config) {
    * @type {Array}
    */
   if(!config.isMobile) {
-    config.vendor.fonts.push('./bower_components/bootstrap/fonts/glyphicons-halflings-regular.*');
-    config.vendor.fonts.push('./bower_components/icomoon-bower/fonts/icomoon.*');
+    // config.vendor.fonts.push('./bower_components/bootstrap/fonts/glyphicons-halflings-regular.*');
+    // config.vendor.fonts.push('./bower_components/icomoon-bower/fonts/icomoon.*');
   }
 
   /**

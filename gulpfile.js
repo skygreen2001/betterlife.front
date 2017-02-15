@@ -242,7 +242,7 @@ gulp.task('less', function () {
     }));
   }
 
-  if (!config.DEV) cssTask.pipe(cssmin());
+  if (!config.isDev) cssTask = cssTask.pipe(cssmin({keepSpecialComments : 0}));
 
   return cssTask
     .pipe(rename({
@@ -260,17 +260,23 @@ gulp.task('less', function () {
 // - Precompile templates to ng templateCache
 
 gulp.task('js', function() {
+
+  var jsTask;
   if (firstInit){
-    gulp.src(config.vendor.js)
+    jsTask = gulp.src(config.vendor.js)
     .pipe(sourcemaps.init())
     .pipe(concat('bower.js'))
-    .pipe(ngAnnotate())
-    .pipe(uglify())
+    .pipe(ngAnnotate());
+
+    if (!config.isDev) jsTask.pipe(uglify());
+
+    jsTask
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(path.join(config.dest, 'js', 'bower')));
   }
-  streamqueue(
+
+  jsTask = streamqueue(
     { objectMode: true },
     // gulp.src(config.vendor.js),
     gulp.src('./src/js/**/*.js').pipe(ngFilesort()),
@@ -278,8 +284,11 @@ gulp.task('js', function() {
   )
   .pipe(sourcemaps.init())
   .pipe(concat('app.js'))
-  .pipe(ngAnnotate())
-  .pipe(uglify())
+  .pipe(ngAnnotate());
+
+  if (!config.isDev) jsTask.pipe(uglify());
+
+  jsTask
   .pipe(rename({suffix: '.min'}))
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest(path.join(config.dest, 'js')));
@@ -329,13 +338,13 @@ gulp.task('install', function(done) {
 gulp.task('default', ['clean'], function(done){
   var tasks = [];
 
-  if (!config.DEV) tasks.push('build');
+  tasks.push('build');
 
   if (typeof config.server === 'object') {
     tasks.push('connect');
   }
 
-  if (!config.DEV) tasks.push('watch');
+  tasks.push('watch');
 
   seq('install', tasks, done);
 });
