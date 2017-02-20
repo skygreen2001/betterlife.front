@@ -61,6 +61,7 @@ module.exports = function(config) {
    */
 
   // config.vendor.css.push('.bower_components/mylib/mylib.css');
+  config.vendor.css.push('.bower_components/angular-material/angular-material.min.css');
 
   /**
    * Vendor Javascripts
@@ -71,12 +72,13 @@ module.exports = function(config) {
   //浏览器兼容性Javascript原生对象函数支持
   config.vendor.js.push('./bower_components/js-polyfills/polyfill.min.js');
   config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
-  // config.vendor.js.push('./bower_components/sizzle/dist/sizzle.min.js');
 
   config.vendor.js.push('./bower_components/ngstorage/ngStorage.min.js');
   config.vendor.js.push('./bower_components/angular-cookies/angular-cookies.min.js');
   config.vendor.js.push('./bower_components/angular-animate/angular-animate.min.js');
-  //分页显示
-  config.vendor.js.push('./bower_components/angularUtils-pagination/dirPagination.js');
+
+  config.vendor.js.push('./bower_components/angular-aria/angular-aria.min.js');
+  config.vendor.js.push('./bower_components/angular-material/angular-material.min.js');
+
 
 };

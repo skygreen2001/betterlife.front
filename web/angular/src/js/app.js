@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('bb.controllers', [
-  'ngAnimate',
-  'angularUtils.directives.dirPagination',
+  // 'ngAnimate',
+  'ngMaterial',
   'bb.component.common',
   'bb.component.layout',
   'bb.component.blog'

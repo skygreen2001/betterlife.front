@@ -13,14 +13,16 @@
   };
 
   /************************* 定义静态方法:start ************************/
-  Bb.ua      = navigator.userAgent.toLowerCase();
-  Bb.browser =
-    {
+  Bb.t = Bb.u = Bb.tools = Bb.utils = {
+    ua      : navigator.userAgent.toLowerCase(),
+    browser : {
       trident : /trident/.test(ua),//IE内核
       mobile  : !!ua.match(/applewebkit.*mobile.*/) || !!ua.match(/applewebkit/),
       android : /android/.test(ua) || /linux/.test(ua),
       ios     : !!ua.match(/\(i[^;]+;( u;)? cpu.+mac os x/)
-    };
+    }
+  };
+  /************************* 定义静态方法:  end ************************/
 
   Bb.each   = function(obj, callback) {
       var len = obj.length,
@@ -44,8 +46,6 @@
           }
       }
   };
-
-  /************************* 定义静态方法:  end ************************/
 
   Bb.prototype =  {
     constructor : Bb,
@@ -514,5 +514,5 @@
   };
 
   window.$$ = window.$bb = Bb;
-
+  window.$$_ = Bb.utils;
 })(window, document);
