@@ -164,7 +164,7 @@ gulp.task('template', function () {
 gulp.task('html', function() {
   var inject = [], injectBefore = [], injectCss = [], injectCssBefore = [];
 
-  injectCssBefore.push('<link rel="stylesheet" href="bower.min.css">');
+  injectCssBefore.push('<link rel="stylesheet" href="css/bower.min.css">');
   //引入Roboto字体
   var css_roboto = "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic";
   injectCss.push('<link rel="stylesheet" href="' + css_roboto + '">');
@@ -188,9 +188,13 @@ gulp.task('html', function() {
 ======================================================================*/
 
 gulp.task('less', function () {
-  if (firstInit){
+  if ( firstInit ) {
     gulp.src(config.vendor.css)
-    .pipe(concat('bower.css'))
+    .pipe(cssmin({keepSpecialComments : 0}))
+    .pipe(rename({
+      basename: "bower",
+      suffix: '.min'
+    }))
     .pipe(gulp.dest(path.join(config.dest, 'css')));
   }
 
@@ -224,13 +228,13 @@ gulp.task('less', function () {
 
 gulp.task('js', function() {
   var jsTask;
-  if (firstInit){
+  if ( firstInit ) {
     jsTask = gulp.src(config.vendor.js)
     .pipe(sourcemaps.init())
     .pipe(concat('bower.js'))
     .pipe(ngAnnotate());
 
-    if (!config.isDev) jsTask.pipe(uglify());
+    if ( !config.isDev ) jsTask.pipe(uglify());
 
     jsTask
     .pipe(rename({suffix: '.min'}))

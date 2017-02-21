@@ -61,7 +61,7 @@ module.exports = function(config) {
    */
 
   // config.vendor.css.push('.bower_components/mylib/mylib.css');
-  config.vendor.css.push('.bower_components/angular-material/angular-material.min.css');
+  config.vendor.css.push('./bower_components/angular-material/angular-material.min.css');
 
   /**
    * Vendor Javascripts
