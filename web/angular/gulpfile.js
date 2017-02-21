@@ -164,6 +164,7 @@ gulp.task('template', function () {
 gulp.task('html', function() {
   var inject = [], injectBefore = [], injectCss = [], injectCssBefore = [];
 
+  injectCssBefore.push('<link rel="stylesheet" href="bower.min.css">');
   //引入Roboto字体
   var css_roboto = "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic";
   injectCss.push('<link rel="stylesheet" href="' + css_roboto + '">');
@@ -187,6 +188,12 @@ gulp.task('html', function() {
 ======================================================================*/
 
 gulp.task('less', function () {
+  if (firstInit){
+    gulp.src(config.vendor.css)
+    .pipe(concat('bower.css'))
+    .pipe(gulp.dest(path.join(config.dest, 'css')));
+  }
+
   var cssTask;
   cssTask = gulp.src(config.less.src).pipe(less({
     paths: config.less.paths.map(function(p){
