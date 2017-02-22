@@ -11,6 +11,11 @@ module.exports = function(config) {
   config.isDev    = false,
 
   /**
+   * 是否清理复制图片到目标路径
+   */
+  config.isImage  = true,
+
+  /**
    * The output directory.
    *
    * @property config.dest

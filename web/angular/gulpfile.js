@@ -9,6 +9,7 @@
 
 var config = {
   isDev   : true,
+  isImage : true,
   dest    : 'www',
   less: {
     src: [
@@ -55,6 +56,7 @@ var gulp           = require('gulp'),
     uglify         = require('gulp-uglify'),
     sourcemaps     = require('gulp-sourcemaps'),
     cssmin         = require('gulp-cssmin'),
+    image          = require('gulp-image'),
     order          = require('gulp-order'),
     concat         = require('gulp-concat'),
     ignore         = require('gulp-ignore'),
@@ -90,12 +92,15 @@ gulp.task('bower', function (cb) {
 =========================================*/
 
 gulp.task('clean', function (cb) {
+  if (config.isImage) {
+    gulp.src(path.join(config.dest, 'images'), { read: false })
+       .pipe(clean({force: true}));
+  }
   return gulp.src([
         path.join(config.dest, 'index.html'),
         path.join(config.dest, 'favicon.ico'),
         path.join(config.dest, 'data'),
         path.join(config.dest, 'template'),
-        path.join(config.dest, 'images'),
         path.join(config.dest, 'css'),
         path.join(config.dest, 'js')
       ], { read: false })
@@ -137,6 +142,7 @@ var firstInit = true;
 
 gulp.task('images', function () {
   return gulp.src('src/images/**/*')
+        .pipe(image())
         .pipe(gulp.dest(path.join(config.dest, 'images')));
 });
 
@@ -282,7 +288,7 @@ gulp.task('watch', function () {
   gulp.watch(['./src/html/**/*'], ['html']);
   gulp.watch(['./src/less/**/*'], ['less']);
   gulp.watch(['./src/js/**/*', './src/templates/cache/**/*.html'], ['js']);
-  gulp.watch(['./src/images/**/*'], ['img']);
+  if (config.isImage) gulp.watch(['./src/images/**/*'], ['images']);
   gulp.watch(['./src/js/**/*.html', './src/templates/!(cache)*/*.html', './src/templates/*.html'], ['template']);
 });
 
@@ -291,8 +297,8 @@ gulp.task('watch', function () {
 ======================================*/
 
 gulp.task('build', function(done) {
-  var tasks = ['images','template', 'less', 'js', 'data'];
-  // tasks.push('install');
+  var tasks = ['template', 'less', 'js', 'data'];
+  if (config.isImage) tasks.push('images');
   seq('html', tasks, done);
 });
 
