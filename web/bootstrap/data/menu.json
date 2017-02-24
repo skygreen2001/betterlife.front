@@ -1,0 +1,78 @@
+{
+    "iv":{
+        "id":"1",
+        "title":"身份验证",
+        "required":"1111",
+        "submenus":[
+            {"id":"jbxx", "title":"基本信息"},
+            {"id":"yhkxx", "title":"银行卡信息"},
+            {"id":"sxxx", "title":"失信未执行人信息"},
+            {"id":"sxyzxrxx", "title":"失信已执行人信息"},
+            {"id":"grgsfgdxx","title":"个人工商（担任股东）"},
+            {"id":"grgsffrxx","title":"个人工商（担任法人）"},
+            {"id":"grgsfggxx","title":"个人工商（担任高管）"},
+            {"id":"alqdxx","title":"阿里欠贷信息"}
+        ]
+    },
+    "ai":{
+        "id":"2",
+        "title":"资产查询",
+        "required":"1111",
+        "submenus":[
+            {"id":"clxx", "title":"车辆信息"},
+            {"id":"fcxx", "title":"房产信息"},
+            {"id":"zqtzxx", "title":"证券投资信息"},
+            {"id":"scpyspxx", "title":"奢侈品艺术品信息"}
+        ]
+    },
+    "fe":{
+        "id":"3",
+        "title":"欺诈评估",
+        "required":"1111",
+        "submenus":[
+            {"id":"dsfx","title":"盗刷风险"},
+            {"id":"txfx","title":"套现风险"}
+        ]
+    },
+    "ra":{
+        "id":"4",
+        "title":"风险偏好",
+        "required":"1111",
+        "submenus":[
+            {"id":"zqtzcx","title":"证券投资查询"},
+            {"id":"bxzccx","title":"保险支出查询"},
+            {"id":"scpyspzccx","title":"奢侈品艺术品支出查询"},
+            {"id":"bcxfcx","title":"博彩消费查询"}
+        ]
+    },
+    "tm":{
+        "id":"5",
+        "title":"交易监测",
+        "required":"1111",
+        "submenus":[
+            {"id":"xfjc","title":"消费检测"},
+            {"id":"xfqyjc","title":"消费区域检测"},
+            {"id":"xfhyjc","title":"消费行业监测"}
+        ]
+    },
+    "rw":{
+        "id":"6",
+        "title":"风险预警",
+        "required":"1111",
+        "submenus":[
+            {"id":"dezz","title":"大额转账"},
+            {"id":"kjjy","title":"跨境交易"},
+            {"id":"ycjy","title":"异常交易"},
+            {"id":"xfbd","title":"消费波动"},
+            {"id":"dybd","title":"地域变动"}
+        ]
+    },
+    "dpa":{
+        "id":"7",
+        "title":"偿债能力",
+        "required":"1111",
+        "submenus":[
+            {"id":"cznl","title":"偿债能力"}
+        ]
+    }
+}

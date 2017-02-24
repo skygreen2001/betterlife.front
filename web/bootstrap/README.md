@@ -5,15 +5,8 @@
 ## 简介说明
 
     框架目标定义分为两部分:
-    * 专用于移动APP开发的html5 UI界面，可发布成原生应用[ios,andriod],也可用于html5 web页面；可嵌入微信；手机端优先。
-      实现框架底层采用:
-          - Angular1 + Angular Material
-          - React    + React Material   
-          - Angular2 + Ionic  | Angular Material [尚待验证]
-    * 专用于Web开发的html5自适应界面，可用于pc电脑端，也可用于嵌入原生应用的[ios,andriod]的html5页面；可嵌入微信；Pc Web端优先。
-          - Jquery + Bootstrap  [前后台]
-          - Jquery + Semantic-Ui[后台]   [IE11+]
-          - Angular2 + Angular Material [尚待验证]
+    * 专用于移动APP开发的html5 UI界面，可发布成原生应用[ios,andriod],也可用于html5 web页面；嵌入微信；主要用于手机端。
+    * 专用于Web开发的html5自适应界面，可用于pc电脑端，也可用于html5 web页面；嵌入微信；
 
 ## 准备工作
 
@@ -79,14 +72,9 @@
 
 ## 学习资料
 
-    0⃣️
-
-    道
-    
-        * Code Guide     : http://alloyteam.github.io/CodeGuide/
-        * Material Design: https://material.io/
-        * Bootstrap      : http://getbootstrap.com/
-        * FIS            : https://github.com/fis-dev/fis
+    Material Design: https://material.io/
+    Bootstrap      : http://getbootstrap.com/
+    前端工程与性能优化: http://fex.baidu.com/blog/2014/03/fis-optimize/?qq-pf-to=pcqq.c2c
 
     🅰️
 
@@ -94,9 +82,6 @@
 
         * AngularJS 官方教程:https://docs.angularjs.org/tutorial
         * Angular Material :https://material.angularjs.org
-          [无table]
-            -. https://github.com/daniel-nagy/md-data-table
-            -. https://github.com/esvit/ng-table
 
         * Think in AngularJS:http://www.angularjs.cn/A0bz
         * AngularJS 初识    :https://docs.angularjs.org/guide/concepts
@@ -111,19 +96,18 @@
         * Angular 中文: https://angular.cn/
         * 大道至简：Angular2只有一个核心概念: http://www.angularjs.cn/A2Ar
 
+        * Native Javascript:https://www.nativescript.org/
+        * TypeScript:http://www.typescriptlang.org/
+        * Dart:http://www.dartlang.org/
+
     🅱
 
     React
 
-        * React 官方网站 : https://facebook.github.io/react/
-        * Material-UI设计: http://www.material-ui.com/
-        * React 入门教程 : https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
+        * React 官方网站: https://facebook.github.io/react/
+        * Material-UI设: http://www.material-ui.com/
+        * React 入门教程: https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
 
-    ☕
-
-        * Native Javascript: https://www.nativescript.org/
-        * TypeScript       : http://www.typescriptlang.org/
-        * Dart             : http://www.dartlang.org/
 
     Customize IDE:
         Electron:Build cross platform desktop apps with JavaScript, HTML, and CSS
@@ -137,7 +121,3 @@
 
         * Angular Material vs Semantic-Ui vs Bootstrap vs Foundation vs materialize
           https://medium.com/@thatisuday/angular-material-vs-semantic-ui-vs-bootstrap-vs-foundation-vs-materialize-8bd3646e6f0a#.1f9d86xwj
-
-    其它
-        给 Web 开发者的 25 款最有用的 AngularJS 工具: http://www.oschina.net/news/60200/bestl-angularjs-tools
-        Web Uploader: http://fex.baidu.com/webuploader/
