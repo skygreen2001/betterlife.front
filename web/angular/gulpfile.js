@@ -249,7 +249,7 @@ gulp.task('js', function() {
     { objectMode: true },
     // gulp.src(config.vendor.js),
     gulp.src('./src/js/**/*.js').pipe(ngFilesort()),
-    gulp.src(['./src/templates/cache/**/*.html']).pipe(templateCache('bower/templates.js', { module: 'bb' }))
+    gulp.src(['./src/templates/cache/**/*.html']).pipe(templateCache('templates.js', { module: 'bb' }))
   )
   .pipe(sourcemaps.init())
   .pipe(concat('app.js'))

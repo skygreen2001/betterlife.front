@@ -80,10 +80,5 @@ module.exports = function(config) {
 
   config.vendor.js.push('./bower_components/ngstorage/ngStorage.min.js');
   config.vendor.js.push('./bower_components/angular-cookies/angular-cookies.min.js');
-  config.vendor.js.push('./bower_components/angular-animate/angular-animate.min.js');
-
-  config.vendor.js.push('./bower_components/angular-aria/angular-aria.min.js');
-  config.vendor.js.push('./bower_components/angular-material/angular-material.min.js');
-
 
 };

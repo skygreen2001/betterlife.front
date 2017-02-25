@@ -21,8 +21,7 @@ var config = {
   },
   vendor: {
     js: [
-      './bower_components/angular/angular.js',
-      './bower_components/angular-route/angular-route.js'
+      './bower_components/jquery/dist/jquery.min.js'
     ],
 
     css: []
@@ -61,11 +60,8 @@ var gulp           = require('gulp'),
     concat         = require('gulp-concat'),
     ignore         = require('gulp-ignore'),
     clean          = require('gulp-clean'),
-    templateCache  = require('gulp-angular-templatecache'),
     mobilizer      = require('gulp-mobilizer'),
-    ngAnnotate     = require('gulp-ng-annotate'),
     replace        = require('gulp-replace'),
-    ngFilesort     = require('gulp-angular-filesort'),
     streamqueue    = require('streamqueue'),
     rename         = require('gulp-rename'),
     path           = require('path');
@@ -173,6 +169,7 @@ gulp.task('html', function() {
   injectCssBefore.push('<link rel="stylesheet" href="css/bower.min.css">');
 
   injectBefore.push('<script src="js/bower/bower.min.js"></script>');
+  injectBefore.push('<script src="js/base.min.js"></script>');
 
   gulp.src('./src/images/favicon.ico')
   .pipe(gulp.dest(config.dest));
@@ -227,15 +224,14 @@ gulp.task('less', function () {
 /*====================================================================
 =            Compile and minify js generating source maps            =
 ====================================================================*/
-// - Precompile templates to ng templateCache
+// - Precompile templates
 
 gulp.task('js', function() {
   var jsTask;
   if ( firstInit ) {
     jsTask = gulp.src(config.vendor.js)
     .pipe(sourcemaps.init())
-    .pipe(concat('bower.js'))
-    .pipe(ngAnnotate());
+    .pipe(concat('bower.js'));
 
     if ( !config.isDev ) jsTask.pipe(uglify());
 
@@ -247,19 +243,27 @@ gulp.task('js', function() {
 
   jsTask = streamqueue(
     { objectMode: true },
-    // gulp.src(config.vendor.js),
-    gulp.src('./src/js/**/*.js').pipe(ngFilesort()),
-    gulp.src(['./src/templates/cache/**/*.html']).pipe(templateCache('bower/templates.js', { module: 'bb' }))
+    gulp.src('./src/js/base/**/*.js')
   )
   .pipe(sourcemaps.init())
-  .pipe(concat('app.js'))
-  .pipe(ngAnnotate());
+  .pipe(concat('base.js'));
 
   if (!config.isDev) jsTask.pipe(uglify());
 
   jsTask
   .pipe(rename({suffix: '.min'}))
   .pipe(sourcemaps.write('.'))
+  .pipe(gulp.dest(path.join(config.dest, 'js')));
+
+  jsTask = gulp.src([
+    './src/js/*.js',
+    './src/js/!base/**/*.js'
+  ]);
+
+  if (!config.isDev) jsTask.pipe(uglify());
+
+  jsTask
+  .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest(path.join(config.dest, 'js')));
 
   firstInit = false;
@@ -284,9 +288,8 @@ gulp.task('watch', function () {
   gulp.watch(['./data/*'], ['data']);
   gulp.watch(['./src/html/**/*'], ['html']);
   gulp.watch(['./src/less/**/*'], ['less']);
-  gulp.watch(['./src/js/**/*', './src/templates/cache/**/*.html'], ['js']);
+  gulp.watch(['./src/js/**/*'], ['js']);
   if (config.isImage) gulp.watch(['./src/images/**/*'], ['images']);
-  gulp.watch(['./src/js/**/*.html', './src/templates/!(cache)*/*.html', './src/templates/*.html'], ['template']);
 });
 
 /*======================================

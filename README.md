@@ -5,15 +5,18 @@
 ## 简介说明
 
     框架目标定义分为两部分:
+
     * 专用于移动APP开发的html5 UI界面，可发布成原生应用[ios,andriod],也可用于html5 web页面；可嵌入微信；手机端优先。
       实现框架底层采用:
           - Angular1 + Angular Material
-          - React    + React Material   
-          - Angular2 + Ionic  | Angular Material [尚待验证]
+          - React    + React Material
+          - Angular2 + Ionic  | Angular Material [ 尚待验证 ]
+
     * 专用于Web开发的html5自适应界面，可用于pc电脑端，也可用于嵌入原生应用的[ios,andriod]的html5页面；可嵌入微信；Pc Web端优先。
-          - Jquery + Bootstrap  [前后台]
-          - Jquery + Semantic-Ui[后台]   [IE11+]
-          - Angular2 + Angular Material [尚待验证]
+          - Jquery + Bootstrap  [前后台] [ IE9 +  ]
+          - Jquery + Semantic-Ui[后台]   [ IE11 + ]
+          - Angular1 + Angular Material  [ IE11 + ]
+          - Angular2 + Angular Material  [ 尚待验证 ]
 
 ## 准备工作
 
@@ -82,7 +85,7 @@
     0⃣️
 
     道
-    
+
         * Code Guide     : http://alloyteam.github.io/CodeGuide/
         * Material Design: https://material.io/
         * Bootstrap      : http://getbootstrap.com/
