@@ -6,8 +6,8 @@
 
     框架目标定义分为三部分:
     * Html5开发生成Native原生应用[ios,andriod]
-      - NativeScript    [Angular + Typescript + Javascript]
-      - React Native [React + Javascript]
+          - NativeScript    [Angular + Typescript + Javascript]
+          - React Native [React + Javascript]
 
     * 专用于移动APP开发的html5 UI界面，可发布成原生应用[ios,andriod],也可用于html5 web页面；可嵌入微信；手机端优先。
       实现框架底层采用:
@@ -112,7 +112,7 @@
         * Mobile Angular Js:http://mobileangularui.com/
         * Ionic :http://ionicframework.com/
         * Onsen UI:https://onsen.io/
-        
+
         * Native Javascript: https://www.nativescript.org/
         * TypeScript       : http://www.typescriptlang.org/
 
