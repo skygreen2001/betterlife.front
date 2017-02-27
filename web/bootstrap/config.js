@@ -66,7 +66,6 @@ module.exports = function(config) {
    */
 
   // config.vendor.css.push('.bower_components/mylib/mylib.css');
-  config.vendor.css.push('./bower_components/angular-material/angular-material.min.css');
 
   /**
    * Vendor Javascripts
@@ -78,7 +77,15 @@ module.exports = function(config) {
   config.vendor.js.push('./bower_components/js-polyfills/polyfill.min.js');
   config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
 
-  config.vendor.js.push('./bower_components/ngstorage/ngStorage.min.js');
-  config.vendor.js.push('./bower_components/angular-cookies/angular-cookies.min.js');
+  config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.min.js');
+
+  /**
+   * Vendor Font
+   *
+   * @property config.vendor.font
+   * @type {Array}
+   */
+  // config.vendor.fonts.push('./bower_components/font-awesome/fonts/fontawesome-webfont.*');
+  // config.vendor.fonts.push('./bower_components/icomoon-bower/fonts/icomoon.*');
 
 };

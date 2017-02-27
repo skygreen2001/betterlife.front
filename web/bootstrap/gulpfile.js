@@ -16,7 +16,7 @@ var config = {
       './src/less/bootstrap.less'
     ],
     paths: [
-      './src/less'
+      './src/less', './bower_components'
     ]
   },
   vendor: {
@@ -24,13 +24,17 @@ var config = {
       './bower_components/jquery/dist/jquery.min.js'
     ],
 
-    css: []
+    fonts: [
+      './bower_components/bootstrap/fonts/glyphicons-halflings-regular.*'
+    ]
   },
 
   server: {
     host: '0.0.0.0',
     port: '8000'
   }
+
+
 };
 
 if (require('fs').existsSync('./config.js')) {
@@ -96,9 +100,9 @@ gulp.task('clean', function (cb) {
         path.join(config.dest, 'index.html'),
         path.join(config.dest, 'favicon.ico'),
         path.join(config.dest, 'data'),
-        path.join(config.dest, 'template'),
         path.join(config.dest, 'css'),
-        path.join(config.dest, 'js')
+        path.join(config.dest, 'js'),
+        path.join(config.dest, 'fonts')
       ], { read: false })
      .pipe(clean({force: true}));
 });
@@ -142,22 +146,14 @@ gulp.task('images', function () {
         .pipe(gulp.dest(path.join(config.dest, 'images')));
 });
 
+/*==================================
+=            Copy fonts            =
+==================================*/
 
-/*=====================================
-=            Minify componet template            =
-=====================================*/
-
-gulp.task('template', function () {
-  gulp.src([
-      './src/templates/!(cache)*/*.html',
-      './src/templates/*.html'
-    ])
-    .pipe(gulp.dest(path.join(config.dest, 'template')));
-
-  return gulp.src('src/js/components/**/*.html')
-        .pipe(gulp.dest(path.join(config.dest, 'template')));
+gulp.task('fonts', function() {
+  return gulp.src(config.vendor.fonts)
+        .pipe(gulp.dest(path.join(config.dest, 'fonts')));
 });
-
 
 /*=================================================
 =            Copy html files to dest              =
@@ -166,7 +162,7 @@ gulp.task('template', function () {
 gulp.task('html', function() {
   var inject = [], injectBefore = [], injectCss = [], injectCssBefore = [];
 
-  injectCssBefore.push('<link rel="stylesheet" href="css/bower.min.css">');
+  injectCssBefore.push('<link rel="stylesheet" href="css/common.min.css">');
 
   injectBefore.push('<script src="js/bower/bower.min.js"></script>');
   injectBefore.push('<script src="js/base.min.js"></script>');
@@ -188,15 +184,6 @@ gulp.task('html', function() {
 ======================================================================*/
 
 gulp.task('less', function () {
-  if ( firstInit ) {
-    gulp.src(config.vendor.css)
-    .pipe(cssmin({keepSpecialComments : 0}))
-    .pipe(rename({
-      basename: "bower",
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest(path.join(config.dest, 'css')));
-  }
 
   var cssTask;
   cssTask = gulp.src(config.less.src).pipe(less({
@@ -214,7 +201,7 @@ gulp.task('less', function () {
 
   return cssTask
     .pipe(rename({
-      basename: "app",
+      basename: "common",
       suffix: '.min'
     }))
     .pipe(gulp.dest(path.join(config.dest, 'css')));
@@ -297,7 +284,7 @@ gulp.task('watch', function () {
 ======================================*/
 
 gulp.task('build', function(done) {
-  var tasks = ['template', 'less', 'js', 'data'];
+  var tasks = ['fonts', 'less', 'js', 'data'];
   if (config.isImage) tasks.push('images');
   seq('html', tasks, done);
 });
