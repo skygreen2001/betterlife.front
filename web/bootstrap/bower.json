@@ -27,8 +27,9 @@
   "dependencies": {
     "js-polyfills": "^0.1.29",
     "jquery": "^3.1.1",
-    "font-awesome": "4.2",
     "bootstrap": "^3.3.7"
   },
-  "_dependencies_ignored": {}
+  "_dependencies_ignored": {
+    "font-awesome": "4.2"
+  }
 }

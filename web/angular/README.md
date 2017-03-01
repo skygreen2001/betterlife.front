@@ -44,7 +44,7 @@
     Atom: https://atom.io/
 
     推荐安装Package:
-        apm install bottom-dock gulp-manager atom-beautify git-plus atom-bootstrap3 atom-terminal-panel
+        apm install bottom-dock gulp-manager atom-beautify file-icons atom-terminal-panel
         * bottom-dock
         * gulp-manager
         * atom-beautify
@@ -54,7 +54,7 @@
 
 * **使用JS框架**
 
-    AngularJS | JQuery | React [todo]
+    AngularJS
 
 
 ## 框架目录定义
@@ -71,8 +71,6 @@
 ## 学习资料
 
     Material Design: https://material.io/
-    Bootstrap      : http://getbootstrap.com/
-
 
     🅰️
 
@@ -97,25 +95,3 @@
         * Native Javascript:https://www.nativescript.org/
         * TypeScript:http://www.typescriptlang.org/
         * Dart:http://www.dartlang.org/
-
-    🅱
-
-    React
-
-        * React 官方网站: https://facebook.github.io/react/
-        * Material-UI设: http://www.material-ui.com/
-        * React 入门教程: https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
-
-
-    Customize IDE:
-        Electron:Build cross platform desktop apps with JavaScript, HTML, and CSS
-            http://electron.atom.io/
-
-        Orion   :https://orionhub.org/
-
-    框架对比
-        * More Benchmarks: Virtual DOM vs Angular 1 & 2 vs Others:
-          https://auth0.com/blog/more-benchmarks-virtual-dom-vs-angular-12-vs-mithril-js-vs-the-rest/
-
-        * Angular Material vs Semantic-Ui vs Bootstrap vs Foundation vs materialize
-          https://medium.com/@thatisuday/angular-material-vs-semantic-ui-vs-bootstrap-vs-foundation-vs-materialize-8bd3646e6f0a#.1f9d86xwj

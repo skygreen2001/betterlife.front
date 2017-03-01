@@ -87,26 +87,6 @@ gulp.task('bower', function (cb) {
   return bower({});
 });
 
-/*=========================================
-=            Clean dest folder            =
-=========================================*/
-
-gulp.task('clean', function (cb) {
-  if (config.isImage) {
-    gulp.src(path.join(config.dest, 'images'), { read: false })
-       .pipe(clean({force: true}));
-  }
-  return gulp.src([
-        path.join(config.dest, 'index.html'),
-        path.join(config.dest, 'favicon.ico'),
-        path.join(config.dest, 'data'),
-        path.join(config.dest, 'css'),
-        path.join(config.dest, 'js'),
-        path.join(config.dest, 'fonts')
-      ], { read: false })
-     .pipe(clean({force: true}));
-});
-
 
 /*==========================================
 =            Start a web server            =
@@ -164,8 +144,8 @@ gulp.task('html', function() {
 
   injectCssBefore.push('<link rel="stylesheet" href="css/common.min.css">');
 
-  injectBefore.push('<script src="js/bower/bower.min.js"></script>');
   injectBefore.push('<script src="js/base.min.js"></script>');
+  inject.push('<script src="js/bower/bower.min.js"></script>');
 
   gulp.src('./src/images/favicon.ico')
   .pipe(gulp.dest(config.dest));
@@ -302,9 +282,10 @@ gulp.task('install', function(done) {
 =            Default Task            =
 ====================================*/
 
-gulp.task('default', ['clean'], function(done){
+gulp.task('default', function(done){
   var tasks = [];
 
+  tasks.push('install');
   tasks.push('build');
 
   if (typeof config.server === 'object') {
@@ -313,5 +294,5 @@ gulp.task('default', ['clean'], function(done){
 
   tasks.push('watch');
 
-  seq('install', tasks, done);
+  seq(tasks, done);
 });
