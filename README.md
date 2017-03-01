@@ -38,8 +38,6 @@
 
     0⃣️
 
-    道
-
         * Code Guide     : http://alloyteam.github.io/CodeGuide/
         * Material Design: https://material.io/
         * Bootstrap      : http://getbootstrap.com/
@@ -72,7 +70,7 @@
         * Angular 中文: https://angular.cn/
         * 大道至简：Angular2只有一个核心概念: http://www.angularjs.cn/A2Ar
 
-    🅱
+    ⚛️
 
     React
 
@@ -83,7 +81,9 @@
 
 
 ## 其他
-    ☕
+
+    🅾
+    
     Dart             : http://www.dartlang.org/
 
     Customize IDE:

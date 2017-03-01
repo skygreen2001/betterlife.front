@@ -91,6 +91,50 @@
       }
   };
 
+  Bb.ready = window.ready = function(fn){
+      if(document.addEventListener){//兼容非IE
+          document.addEventListener("DOMContentLoaded",function(){
+              //注销事件，避免反复触发
+              document.removeEventListener("DOMContentLoaded",arguments.callee,false);
+              fn();//调用参数函数
+          },false);
+      }else if(document.attachEvent){//兼容IE
+         IEContentLoaded (window, fn);
+      }
+
+      function IEContentLoaded (w, fn) {
+          var d = w.document, done = false,
+          // only fire once
+          init = function () {
+              if (!done) {
+                  done = true;
+                  fn();
+              }
+          };
+          // polling for no errors
+          (function () {
+              try {
+                  // throws errors until after ondocumentready
+                  d.documentElement.doScroll('left');
+              } catch (e) {
+                  setTimeout(arguments.callee, 50);
+                  return;
+              }
+              // no errors, fire
+
+              init();
+          })();
+          // trying to always fire before onload
+          d.onreadystatechange = function() {
+              if (d.readyState == 'complete') {
+                  d.onreadystatechange = null;
+                  init();
+              }
+          };
+      }
+  };
+
+
   Bb.prototype =  {
     constructor : Bb,
     //dom选择的一些判断
@@ -559,4 +603,5 @@
 
   window.$$ = window.$bb = Bb;
   window.$$_ = Bb.utils;
+
 })(window, document);

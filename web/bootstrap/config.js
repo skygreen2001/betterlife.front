@@ -76,6 +76,8 @@ module.exports = function(config) {
   //浏览器兼容性Javascript原生对象函数支持
   config.vendor.js.push('./bower_components/js-polyfills/polyfill.min.js');
   config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
+  // config.vendor.js.push('./bower_components/underscore/underscore-min.js');
+  // config.vendor.js.push('./bower_components/moment/min/moment-with-locales.min.js');
 
   config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.min.js');
 
