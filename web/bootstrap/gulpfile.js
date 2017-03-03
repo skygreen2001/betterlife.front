@@ -191,7 +191,6 @@ gulp.task('less', function () {
 /*====================================================================
 =            Compile and minify js generating source maps            =
 ====================================================================*/
-// - Precompile templates
 
 gulp.task('js', function() {
   var jsTask;
