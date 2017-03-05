@@ -1,0 +1,10 @@
+
+.linear-gradient(@from-color, @to-color){
+  background-color: @to-color;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(@from-color),to(@to-color));
+  background-image: -webkit-linear-gradient(top,@from-color 0,@to-color 100%);
+  background-image: -o-linear-gradient(top,@from-color 0,@to-color 100%);
+  background-image: linear-gradient(to bottom,@from-color 0,@to-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@from-color, endColorstr=@to-color, GradientType=0);
+
+}

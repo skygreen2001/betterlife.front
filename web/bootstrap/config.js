@@ -80,7 +80,7 @@ module.exports = function(config) {
   // config.vendor.js.push('./bower_components/moment/min/moment-with-locales.min.js');
 
   config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.min.js');
-
+  config.vendor.js.push('./bower_components/uilang/production/uilang.js');
   /**
    * Vendor Font
    *

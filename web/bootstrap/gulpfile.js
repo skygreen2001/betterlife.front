@@ -34,7 +34,6 @@ var config = {
     port: '8000'
   }
 
-
 };
 
 if (require('fs').existsSync('./config.js')) {
@@ -98,7 +97,8 @@ gulp.task('connect', function() {
       root: config.dest,
       host: config.server.host,
       port: config.server.port,
-      livereload: true
+      livereload: true,
+      fallback: config.dest + '/html/index.html'
     });
   } else {
     throw new Error('Connect is not configured');
@@ -111,7 +111,7 @@ gulp.task('connect', function() {
 ==============================================================*/
 
 gulp.task('livereload', function () {
-  gulp.src(path.join(config.dest, '*.html'))
+  gulp.src(path.join(config.dest, 'html', '*.html'))
     .pipe(connect.reload());
 });
 
@@ -142,20 +142,20 @@ gulp.task('fonts', function() {
 gulp.task('html', function() {
   var inject = [], injectBefore = [], injectCss = [], injectCssBefore = [];
 
-  injectCssBefore.push('<link rel="stylesheet" href="css/common.min.css">');
+  injectCssBefore.push('<link rel="stylesheet" href="../css/common.min.css">');
 
-  injectBefore.push('<script src="js/base.min.js"></script>');
-  inject.push('<script src="js/bower/bower.min.js"></script>');
+  injectBefore.push('<script src="../js/base.min.js"></script>');
+  inject.push('<script src="../js/bower/bower.min.js"></script>');
 
   gulp.src('./src/images/favicon.ico')
   .pipe(gulp.dest(config.dest));
 
-  gulp.src(['./src/html/**/*.html'])
+  gulp.src('./src/html/**/*.html')
   .pipe(replace('<!-- inject:css:before -->', injectCssBefore.join('\n    ')))
   .pipe(replace('<!-- inject:css -->', injectCss.join('\n    ')))
   .pipe(replace('<!-- inject:js:before -->', injectBefore.join('\n    ')))
   .pipe(replace('<!-- inject:js -->', inject.join('\n    ')))
-  .pipe(gulp.dest(config.dest));
+  .pipe(gulp.dest(path.join(config.dest, 'html')));
 });
 
 
