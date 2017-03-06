@@ -26,5 +26,8 @@
     "gulp-uglify": "^2.0.0",
     "run-sequence": "^0.3.6",
     "streamqueue": "^0.1.1"
+  },
+  "dependencies": {
+    "gulp-file-include": "^1.0.0"
   }
 }

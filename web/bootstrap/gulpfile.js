@@ -69,6 +69,9 @@ var gulp           = require('gulp'),
     rename         = require('gulp-rename'),
     path           = require('path');
 
+var fileinclude = require('gulp-file-include');
+
+
 /*================================================
 =            Report Errors to Console            =
 ================================================*/
@@ -97,8 +100,7 @@ gulp.task('connect', function() {
       root: config.dest,
       host: config.server.host,
       port: config.server.port,
-      livereload: true,
-      fallback: config.dest + '/html/index.html'
+      livereload: true
     });
   } else {
     throw new Error('Connect is not configured');
@@ -140,21 +142,27 @@ gulp.task('fonts', function() {
 =================================================*/
 
 gulp.task('html', function() {
-  var inject = [], injectBefore = [], injectCss = [], injectCssBefore = [];
+  var inject = [], injectBefore = [], injectCss = [];
 
-  injectCssBefore.push('<link rel="stylesheet" href="../css/common.min.css">');
+  injectCss.push('<link rel="stylesheet" href="css/common.min.css">');
 
-  injectBefore.push('<script src="../js/base.min.js"></script>');
-  inject.push('<script src="../js/bower/bower.min.js"></script>');
+  injectBefore.push('<script src="js/base.min.js"></script>');
+  inject.push('<script src="js/bower/bower.min.js"></script>');
 
   gulp.src('./src/images/favicon.ico')
   .pipe(gulp.dest(config.dest));
 
-  gulp.src('./src/html/**/*.html')
-  .pipe(replace('<!-- inject:css:before -->', injectCssBefore.join('\n    ')))
+  gulp.src('./src/html/index.html')
   .pipe(replace('<!-- inject:css -->', injectCss.join('\n    ')))
   .pipe(replace('<!-- inject:js:before -->', injectBefore.join('\n    ')))
   .pipe(replace('<!-- inject:js -->', inject.join('\n    ')))
+  .pipe(gulp.dest(config.dest));
+
+  gulp.src('./src/html/**/*.html')
+  .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
   .pipe(gulp.dest(path.join(config.dest, 'html')));
 });
 
