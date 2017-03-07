@@ -12,8 +12,74 @@
     <!--nav end-->
 
     <!--content begin-->
-    <div id="main-content-container" class="container-fluid">
-      list detail html
+    <div id="main-content-container" class="container-fluid list">
+        <div id="main-content" class="row up-container">
+            <!-- 上半部分 -->
+            <div class="filter-up">
+                <div class="filter-up-left col-sm-6">
+                    <div class="bright">全部26个</div>
+                    <div>待审核</div>
+                    <div>审核通过</div>
+                    <div>审核失败</div>
+                </div>
+                <div class="filter-up-right col-sm-6">
+                    <div>
+                        <i aria-label="search-menu" class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                        <input type="search" placeholder="公司名称" aria-controls="infoTable" />
+                        <button type="button" class="btn btn-query">搜索</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive col-xs-12">
+                <table id="infoTable" class="display dataTable table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>公司名称</th>
+                            <th>统一社会信用代码</th>
+                            <th>联系人</th>
+                            <th>手机号</th>
+                            <th>营业执照</th>
+                            <th>审核状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>上海阳光金融服务公司</td>
+                            <td>2013020598MCV2135A</td>
+                            <td>张三</td>
+                            <td>13312345678</td>
+                            <td><a href="#" class="view">查看</a></td>
+                            <td><span class="status-wait">待审核</span></td>
+                            <td><a href="#" class="pass">通过</a>&nbsp;<a href="#" class="refuse">拒绝</a></td>
+                        </tr>
+                        <tr>
+                            <td>001</td>
+                            <td>上海阳光金融服务公司</td>
+                            <td>2013020598MCV2135A</td>
+                            <td>张三</td>
+                            <td>13312345678</td>
+                            <td><a href="#" class="view">查看</a></td>
+                            <td><span class="status-pass">审核通过</span></td>
+                            <td><a href="#" class="pass">通过</a>&nbsp;<a href="#" class="refuse">拒绝</a></td>
+                        </tr>
+                        <tr>
+                            <td>001</td>
+                            <td>上海阳光金融服务公司</td>
+                            <td>2013020598MCV2135A</td>
+                            <td>张三</td>
+                            <td>13312345678</td>
+                            <td><a href="#" class="view">查看</a></td>
+                            <td><span class="status-fail">审核失败</span></td>
+                            <td><a href="#" class="pass">通过</a>&nbsp;<a href="#" class="refuse">拒绝</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     <!--content end-->
 
@@ -22,6 +88,36 @@
       "rel-prefix": "../.."
     })
     <!--footer end-->
+    <script src="../../js/normal/list.js"></script>
+    <script type="text/javascript">
+    <!--
+    $(function(){
+        $('#infoTable').dataTable({
+            language:{
+                url: '../../data/Chinese.json'
+            },
+            "searching"    : false,
+            "dom"          : '<"top">rt<"bottom"lp><"clear">',
+            "bLengthChange": true,
+            "aLengthMenu"  : [[10, 25, 50, 100,-1],[10, 25, 50, 100,'全部']],
+            "columnDefs"   : [{"orderable":false,"targets":5},{"orderable":false,"targets":7}],
+            "aoColumns"    : [
+                null,
+                { "sType": "chinese-string" },//中文排序列
+                null,
+                { "sType": "chinese-string" },
+                null,
+                null,
+                null
+            ],
+            initComplete:function(){ },
+            "drawCallback": function( settings ) {
+              $.dataTable.pageNumDisplay(this);
+            }
+        });
+    });
+    //-->
+    </script>
 
 </body>
 </html>

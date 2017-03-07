@@ -1,0 +1,175 @@
+
+#main-content-container.list{
+  background-color: #e0e3ec;
+  padding         : 20px;
+  min-height      : 568px;
+  #main-content.up-container{
+    border-top: 1px solid #c1c2c3;
+    margin    : 0px;
+    .filter-up{
+      background-color: #fff;
+      height          : 60px;
+      line-height     : 20px;
+      border          : 1px solid #c1c2c3;
+      border-top      : 0px;
+      .filter-up-left {
+        padding-left: 0px;
+        div{
+          float: left;
+          color: #343434;
+          font-size  : 18px;
+          // font-weight: 600;
+          padding: 0px 18px;
+          margin : 20px 0;
+          border-right: 1px solid #bebec0;
+          cursor      : pointer;
+          .flex;
+          .hover_animate;
+          &.bright,&:hover{
+            color: @color-text-hover;
+          }
+        }
+      }
+      .filter-up-right{
+        text-align : right;
+        line-height: 100%;
+        margin     : 10px 0;
+        font-family: @font-family;
+        input[type="search"]{
+          width : 230px;
+          height: 40px;
+          border: 1px solid #e9eaeb;
+          padding-left : 32px;
+          padding-right: 5px;
+          outline      : none;
+          .hover_animate;
+          &:hover, &:focus{
+            box-shadow: 0 0 5px @color-input-hover;
+            border    : 1px solid @color-input-hover;
+          }
+        }
+        i{
+          position      : absolute;
+          margin-left   : 8px;
+          margin-top    : 9px;
+          font-size     : 1.5em;
+          margin-right  : 5px;
+          vertical-align: middle;
+          -webkit-text-stroke: 2px #fff !important;
+        }
+        button{
+          float           : right;
+          background-color: @color-input;
+          color           : #fff;
+          border-radius   : 0px;
+          width           : 60px;
+          font-size       : 15px;
+          height          : 40px;
+          outline         : none;
+          &:hover, &:focus{
+            background-color: #fff;
+            border-color    : @color-input;
+            color           : @color-input;
+          }
+        }
+      }
+    }
+  }
+}
+
+.list{
+  .table-responsive{
+    padding: 0;
+    table.dataTable {
+      border    : 1px solid #c1c2c3;
+      border-top: 0px;
+      margin    : -1px 0 10px 0 !important;
+      th,td{
+        text-align : center;
+        height     : 45px;
+        line-height: 45px;
+        vertical-align: middle;
+
+        a {
+          width        : 70px;
+          height       : 28px;
+          line-height  : 28px;
+          color        : #fff;
+          border-radius: 5px;
+          display      : inline-block;
+          &:hover, &:focus{
+            text-decoration:none;
+          }
+          &.view{
+            background-color: @color-input;
+            border          : 1px solid @color-input;
+            &:hover, &:focus{
+              color           : @color-input;
+              background-color: #fff;
+            }
+          }
+          &.pass{
+            background-color: #2ba861;
+            border          : 1px solid #2ba861;
+            &:hover, &:focus{
+              color           : #2ba861;
+              background-color: #fff;
+            }
+          }
+          &.refuse{
+            background-color: #ed1f2d;
+            border          : 1px solid #ed1f2d;
+            &:hover, &:focus{
+              color           : #ed1f2d;
+              background-color: #fff;
+
+            }
+          }
+        }
+        span{
+          &.status-wait{
+            color: @color-input;
+          }
+          &.status-pass{
+            color: #2ba861;
+          }
+          &.status-fail{
+            color: #ed1f2d;
+          }
+        }
+      }
+      th{
+        background-color: #f0f1f6;
+        font-size  : 15px;
+        border: 0px;
+        &:last-child{
+          min-width:120px;
+        }
+      }
+      tbody{
+        tr{
+          &.even{
+            background-color: #f0f1f6;
+          }
+          &:hover{
+            background-color: #f6f6f6;
+            &.selected{
+              background-color: #aab7d1;
+            }
+          }
+        }
+      }
+    }
+    .pagination > .active > a{
+      background-color: @color-input;
+      border-color    : @color-input;
+      outline         : none;
+    }
+    div.dataTables_wrapper div.dataTables_length label{
+      float: left;
+      font-size: 15px;
+      font-family: @font-family;
+    }
+
+  }
+}

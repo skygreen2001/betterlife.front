@@ -8,7 +8,7 @@ module.exports = function(config) {
    * [说明]:
    *      在开发时，修改css或者js文件会重新编译和加载比较慢，因此希望在正式运行路径下编写css和js文件，最后再放在开发要求路径下，再编译发布在正式服务器上
    */
-  config.isDev    = false,
+  config.isDev    = true,
 
   /**
    * 是否清理复制图片到目标路径
@@ -81,6 +81,12 @@ module.exports = function(config) {
 
   config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.min.js');
   config.vendor.js.push('./bower_components/uilang/production/uilang.js');
+
+  config.vendor.js.push('./bower_components/datatables.net/js/jquery.dataTables.min.js');
+  config.vendor.js.push('./bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');
+  // config.vendor.js.push('./bower_components/datatables.net-responsive/js/dataTables.responsive.js');
+  // config.vendor.js.push('./bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.js');
+
   /**
    * Vendor Font
    *

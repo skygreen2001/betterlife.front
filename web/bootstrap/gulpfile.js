@@ -217,7 +217,7 @@ gulp.task('js', function() {
 
   jsTask = streamqueue(
     { objectMode: true },
-    gulp.src('./src/js/base/**/*.js')
+    gulp.src(['./src/js/base/**/*.js', './src/js/common/**/*.js'])
   )
   .pipe(sourcemaps.init())
   .pipe(concat('base.js'));
@@ -229,15 +229,10 @@ gulp.task('js', function() {
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest(path.join(config.dest, 'js')));
 
-  jsTask = gulp.src([
+  gulp.src([
     './src/js/*.js',
-    './src/js/!base/**/*.js'
-  ]);
-
-  if (!config.isDev) jsTask.pipe(uglify());
-
-  jsTask
-  .pipe(rename({suffix: '.min'}))
+    './src/js/!(base|common)*/*.js'
+  ])
   .pipe(gulp.dest(path.join(config.dest, 'js')));
 
   firstInit = false;
