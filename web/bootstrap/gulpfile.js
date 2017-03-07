@@ -158,7 +158,7 @@ gulp.task('html', function() {
   .pipe(replace('<!-- inject:js -->', inject.join('\n    ')))
   .pipe(gulp.dest(config.dest));
 
-  gulp.src('./src/html/**/*.html')
+  gulp.src('./src/html/core/**/*.html')
   .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'

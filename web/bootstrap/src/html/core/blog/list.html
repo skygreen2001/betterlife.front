@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    @@include('../../layout/header.html')
-    <link rel="stylesheet" href="../../../css/common.min.css">
-    <script type="text/javascript" src="../../../js/base.min.js"></script>
+    @@include('../../layout/header.html', {
+        "title"     : "Betterlife Front UI",
+        "rel-prefix": "../.."
+    })
 </head>
 <body>
     <!--nav begin-->
@@ -17,9 +18,10 @@
     <!--content end-->
 
     <!--footer begin-->
-    @@include('../../layout/footer.html')
+    @@include('../../layout/footer.html',{
+      "rel-prefix": "../.."
+    })
     <!--footer end-->
-    <script type="text/javascript" src="../../../js/bower/bower.min.js"></script>
 
 </body>
 </html>
