@@ -1,17 +1,17 @@
 
-#main-content-container.list{
+.list{
   background-color: #e0e3ec;
-  padding         : 20px;
+  padding         : 20px !important;
+  min-width       : 320px;
   min-height      : 568px;
-  #main-content.up-container{
-    border-top: 1px solid #c1c2c3;
+  .up-container{
     margin    : 0px;
     .filter-up{
       background-color: #fff;
       height          : 60px;
       line-height     : 20px;
       border          : 1px solid #c1c2c3;
-      border-top      : 0px;
+      border-bottom   : 0px;
       .filter-up-left {
         padding-left: 0px;
         div{
@@ -36,9 +36,11 @@
         margin     : 10px 0;
         font-family: @font-family;
         input[type="search"]{
-          width : 230px;
-          height: 40px;
-          border: 1px solid #e9eaeb;
+          width        : 75.8%;
+          min-width    : 188px;
+          max-width    : 268px;
+          height       : 40px;
+          border       : 1px solid #e9eaeb;
           padding-left : 32px;
           padding-right: 5px;
           outline      : none;
@@ -79,8 +81,10 @@
 
 .list{
   .table-responsive{
-    padding     : 0;
+    padding: 0px;
+    border : 0px;
     table.dataTable {
+      width           : 100% !important;
       border          : 1px solid #c1c2c3;
       border-top      : 0px;
       margin          : -1px 0 10px 0 !important;
@@ -110,10 +114,10 @@
             }
           }
           &.pass{
-            background-color: #2ba861;
-            border          : 1px solid #2ba861;
+            background-color: @color-input;
+            border          : 1px solid @color-input;
             &:hover, &:focus{
-              color           : #2ba861;
+              color           : @color-input;
               background-color: #fff;
             }
           }
@@ -129,10 +133,10 @@
         }
         span{
           &.status-wait{
-            color: @color-input;
+            color: #1f8dd8;
           }
           &.status-pass{
-            color: #2ba861;
+            color: @color-input;
           }
           &.status-fail{
             color: #ed1f2d;
@@ -166,11 +170,27 @@
       border-color    : @color-input;
       outline         : none;
     }
+    .dataTables_paginate{
+      text-align: right !important;
+    }
     div.dataTables_wrapper div.dataTables_length label{
       float: left;
       font-size: 15px;
       font-family: @font-family;
+      margin-top: 2px;
+      select{
+        height: 32px;
+        padding: 0px;
+        width: 48px;
+        text-align: center;
+      }
     }
 
   }
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before{
+  background-color: @color-input;
+  margin-top: 12px;
+  margin-left: 3px;
 }

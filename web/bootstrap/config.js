@@ -84,8 +84,8 @@ module.exports = function(config) {
 
   config.vendor.js.push('./bower_components/datatables.net/js/jquery.dataTables.min.js');
   config.vendor.js.push('./bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');
-  // config.vendor.js.push('./bower_components/datatables.net-responsive/js/dataTables.responsive.js');
-  // config.vendor.js.push('./bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.js');
+  config.vendor.js.push('./bower_components/datatables.net-responsive/js/dataTables.responsive.js');
+  config.vendor.js.push('./bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.js');
 
   /**
    * Vendor Font

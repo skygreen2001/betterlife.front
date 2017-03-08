@@ -81,15 +81,6 @@ gulp.on('error', function(e) {
 });
 
 
-/*=========================================
-=          Setup Bower Library            =
-=========================================*/
-
-gulp.task('bower', function (cb) {
-  return bower({});
-});
-
-
 /*==========================================
 =            Start a web server            =
 ==========================================*/
@@ -272,9 +263,10 @@ gulp.task('build', function(done) {
 =            Install Sequence          =
 ======================================*/
 
-gulp.task('install', function(done) {
-  var tasks = ['bower'];
-  seq(tasks, done);
+gulp.task('install', function() {
+  // Setup Bower Library
+  bower({});
+
 });
 
 /*====================================
@@ -285,6 +277,7 @@ gulp.task('default', function(done){
   var tasks = [];
 
   tasks.push('install');
+
   tasks.push('build');
 
   if (typeof config.server === 'object') {

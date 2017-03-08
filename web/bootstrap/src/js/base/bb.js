@@ -602,6 +602,6 @@
   };
 
   window.$$ = window.$bb = Bb;
-  window.$$_ = Bb.utils;
+  window.$_ = window.$$_ = Bb.utils;
 
 })(window, document);
