@@ -31,15 +31,16 @@
     "uilang": "bendc/uilang",
 
     "datatables.net": "^2.1.1",
-    "datatables.net-bs": "^2.1.1",
-    "datatables.net-responsive": "^2.1.1",
-    "datatables.net-responsive-bs": "^2.1.1"
-    
+    "datatables.net-bs": "^2.1.1"
+
   },
   "_dependencies_ignored": {
     "font-awesome": "4.2",
     "moment": "^2.17.1",
     "lodash": "^4.17.4",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    
+    "datatables.net-responsive": "^2.1.1",
+    "datatables.net-responsive-bs": "^2.1.1"
   }
 }
