@@ -19,8 +19,8 @@
                 <div class="filter-up-right col-sm-12">
                     <div>
                         <i aria-label="search-menu" class="glyphicon glyphicon-search" aria-hidden="true"></i>
-                        <input type="search" placeholder="搜索名称" aria-controls="infoTable" />
-                        <button type="button" class="btn btn-query">搜索</button>
+                        <input id="input-search" type="search" placeholder="搜索名称" aria-controls="infoTable" />
+                        <button id="btn-query" type="button" class="btn btn-query">搜索</button>
                     </div>
                 </div>
             </div>
@@ -32,45 +32,14 @@
                     <tr>
                         <th>序号</th>
                         <th>名称</th>
-                        <th>统一社会信用代码</th>
                         <th>联系人</th>
                         <th>手机号</th>
                         <th>封面</th>
-                        <th>审核状态</th>
+                        <th>状态</th>
                         <th>操作</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>001</td>
-                        <td>上海阳光金融服务公司</td>
-                        <td>2013020598MCV2135A</td>
-                        <td>张三</td>
-                        <td>13312345678</td>
-                        <td><a href="#" class="view">查看</a></td>
-                        <td><span class="status-wait">待审核</span></td>
-                        <td><a href="#" class="pass">通过</a>&nbsp;<a href="#" class="refuse">拒绝</a></td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>上海阳光金融服务公司</td>
-                        <td>2013020598MCV2135A</td>
-                        <td>张三</td>
-                        <td>13312345678</td>
-                        <td><a href="#" class="view">查看</a></td>
-                        <td><span class="status-pass">审核通过</span></td>
-                        <td><a href="#" class="pass">通过</a>&nbsp;<a href="#" class="refuse">拒绝</a></td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>上海阳光金融服务公司</td>
-                        <td>2013020598MCV2135A</td>
-                        <td>张三</td>
-                        <td>13312345678</td>
-                        <td><a href="#" class="view">查看</a></td>
-                        <td><span class="status-fail">审核失败</span></td>
-                        <td><a href="#" class="pass">通过</a>&nbsp;<a href="#" class="refuse">拒绝</a></td>
-                    </tr>
                 </tbody>
             </table>
         </div>
@@ -84,12 +53,42 @@
     <!--footer end-->
     <script src="../../js/normal/list.js"></script>
     <script type="text/javascript">
-    <!--
     $(function(){
+
         //Datatables中文网[帮助]: http://datatables.club/
-        $('#infoTable').dataTable({
-            language:{
-                url: '../../data/Chinese.json'
+        var infoTable = $('#infoTable').DataTable({
+            "language":{
+                url: '../../data/config/Chinese.json'
+            },
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url" : "../../data/list.json",
+                // "type": "GET",
+                // "contentType": "application/json",
+                "data": function ( d ) {
+                    d.query = $("#input-search").val();
+                    return d;
+                    // return JSON.stringify( d );
+                },
+                //可以对返回的结果进行改写
+                "dataFilter": function(data){
+                    // return data;
+                    
+                    var json = jQuery.parseJSON( data );
+                    var p = infoTable.ajax.params();
+                    json.draw = p.draw;
+                    var info = infoTable.page.info();
+                    var length= info.length;
+                    var page = p.start / length + 1;
+                    if (page == 1) {
+                      json.data = json.data.slice(0, p.length);
+                    } else {
+                      json.data = json.data.slice(p.length);
+                    }
+                    return JSON.stringify( json ); // return JSON string
+
+                }
             },
             "responsive"   : true,
             "searching"    : false,
@@ -97,24 +96,63 @@
             "dom"          : '<"top">rt<"bottom"lp><"clear">',
             "bLengthChange": true,
             "aLengthMenu"  : [[10, 25, 50, 100,-1],[10, 25, 50, 100,'全部']],
-            "columnDefs"   : [{"orderable":false,"targets":5},{"orderable":false,"targets":7}],
-            "aoColumns"    : [
-                null,
-                { "sType": "chinese-string" },//中文排序列
-                null,
-                { "sType": "chinese-string" },
-                null,
-                null,
-                null,
-                null
+            "columns": [
+                { data:"id" },
+                { data:"name" },
+                { data:"contactName" },
+                { data:"phone" },
+                { data:"imgUrl" },
+                { data:"status"},
+                { data:"id" }
             ],
-            initComplete:function(){ },
+            "columnDefs": [
+                {"orderable":false,"targets":6,
+                    "render" : function(data, type, row) {
+                        var result = '<a href="#?accountId='+data+'" class="pass">通过</a>&nbsp;<a href="#?accountId='+data+'" class="refuse">拒绝</a>';
+                        return result;
+                     }
+                },
+                {"orderable":false,"targets":5,
+                    "render" : function(data,type,row){
+                        if (data==0){
+                            return '<span class="status-fail">审核失败</span>';
+                        }else if ( data == 1 )
+                            return '<span class="status-pass">审核通过</span>';
+                        else{
+                            return '<span class="status-wait">待审核</span>';
+                        }
+                    }
+                },
+                {"orderable":false,"targets":4,
+                     "render" : function(data,type,row){
+                         if (data){
+                             return '<a title="'+row.name+'" href="'+data+'" target="_blank" class="view" data-rel="'+data+'">查看</a>';
+                         }else{
+                             return "";
+                         }
+                     }
+                }
+            ],
+            // "aoColumns"    : [
+            //     null,
+            //     { "sType": "chinese-string" },//中文排序列
+            //     { "sType": "chinese-string" },
+            //     null,
+            //     null,
+            //     null,
+            //     null
+            // ],
+            "initComplete":function(){ },
             "drawCallback": function( settings ) {
               $.dataTable.pageNumDisplay(this);
             }
         });
+
+        $("#btn-query").click(function(){infoTable.draw();});
+
+
     });
-    //-->
+
     </script>
 
 </body>

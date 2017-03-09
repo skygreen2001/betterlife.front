@@ -230,7 +230,7 @@ gulp.task('js', function() {
 =            mimic server request response json data                 =
 ====================================================================*/
 gulp.task('data', function() {
-    gulp.src('./data/*')
+    gulp.src('./data/**/*')
     .pipe(gulp.dest(path.join(config.dest, 'data')));
 });
 
