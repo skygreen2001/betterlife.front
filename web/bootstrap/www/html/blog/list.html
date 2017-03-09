@@ -43,7 +43,7 @@
             <li><a href="#contact">购物</a></li>
             <li><a href="#contact">话题</a></li>
             <li><a href="#contact">幽默</a></li>
-            <li class="search-toggle"><a href="#"><span><span class="menu-search-text">搜索</span><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></a></li>
+            <li class="search-toggle"><a href="view.html"><span><span class="menu-search-text">搜索</span><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
         <div id="searchform-header" class="hidden">
@@ -128,7 +128,7 @@
                 //可以对返回的结果进行改写
                 "dataFilter": function(data){
                     // return data;
-                    
+
                     var json = jQuery.parseJSON( data );
                     var p = infoTable.ajax.params();
                     json.draw = p.draw;

@@ -87,6 +87,8 @@ module.exports = function(config) {
   config.vendor.js.push('./bower_components/datatables.net-responsive/js/dataTables.responsive.js');
   config.vendor.js.push('./bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.js');
 
+  config.vendor.js.push('./bower_components/jsrender/jsrender.js');
+
   /**
    * Vendor Font
    *
