@@ -34,6 +34,17 @@
     * git clone git@github.com:skygreen2001/betterlife.front.git
 
 
+* **安装开发工具 IDE**
+
+    Atom: https://atom.io/
+
+    推荐安装Package:
+        apm install atom-beautify file-icons markdown-themeable-pdf
+        * atom-beautify
+        * file-icons
+        * markdown-themeable-pdf
+
+
 ## 学习资料
 
     0⃣️
