@@ -98,7 +98,7 @@
   };
 
   Bb.prototype.init.prototype = Bb.prototype;
-  window.$$ = window.$bb = Bb;
-  window.$_ = window.$$_ = Bb.utils;
+  window.$_ = window.$bb = Bb;
+  window.$$ = Bb.utils;
 
 })(window, document);

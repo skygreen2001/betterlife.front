@@ -82,12 +82,12 @@ module.exports = function(config) {
   config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.min.js');
   config.vendor.js.push('./bower_components/uilang/production/uilang.js');
 
+  config.vendor.js.push('./bower_components/jsrender/jsrender.js');
+
   config.vendor.js.push('./bower_components/datatables.net/js/jquery.dataTables.min.js');
   config.vendor.js.push('./bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');
-  config.vendor.js.push('./bower_components/datatables.net-responsive/js/dataTables.responsive.js');
-  config.vendor.js.push('./bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.js');
-
-  config.vendor.js.push('./bower_components/jsrender/jsrender.js');
+  config.vendor.js.push('./bower_components/datatables.net-responsive/js/dataTables.responsive.min.js');
+  config.vendor.js.push('./bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.min.js');
 
   /**
    * Vendor Font

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Betterlife Front UI</title>
-    <script src="www/js/base.min.js" charset="utf-8"></script>
+    <script src="www/js/common/base.min.js" charset="utf-8"></script>
     <script type="text/javascript">
       if($_.browser.android) console.log("android");
       else if($_.browser.ios) console.log("ios");
@@ -40,24 +40,6 @@
         <li>f</li>
       </ul>
     </body>
-    <script type="text/javascript">
-      $$.ready(function(){
-            $$("#content").append("Hello skygreen2001!");
-            console.log($$("#content"));
-            console.log($$("#content li"));
-            $$.each($$("#content li"), function(index, item){
-              console.log("bb" + "[" + index +"]: "+ item.innerHTML);
-            });
 
-            $("body").append("<br/>Now is jquery");
-            console.log($("#content"));
-            console.log($("#content li"));
-
-            $("#content li").each(function(index, item){
-              console.log("bb" + "[" + index +"]: "+ $(this).text());
-            });
-      });
-    </script>
-
-    <script src="www/js/bower/bower.min.js" charset="utf-8"></script>
+    <script src="www/js/common/bower/bower.min.js" charset="utf-8"></script>
 </html>

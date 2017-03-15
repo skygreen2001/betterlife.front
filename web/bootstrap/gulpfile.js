@@ -137,8 +137,9 @@ gulp.task('html', function() {
 
   injectCss.push('<link rel="stylesheet" href="css/common.min.css">');
 
-  injectBefore.push('<script src="js/base.min.js"></script>');
-  inject.push('<script src="js/bower/bower.min.js"></script>');
+  injectBefore.push('<script src="js/common/base.min.js"></script>');
+  inject.push('<script src="js/common/bower/bower.min.js"></script>');
+  inject.push('<script src="js/common/common.jquery.min.js"></script>');
 
   gulp.src('./src/images/favicon.ico')
   .pipe(gulp.dest(config.dest));
@@ -203,12 +204,12 @@ gulp.task('js', function() {
     jsTask
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(path.join(config.dest, 'js', 'bower')));
+    .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
   }
 
   jsTask = streamqueue(
     { objectMode: true },
-    gulp.src(['./src/js/base/**/*.js', './src/js/*.js', './src/js/common/**/*.js'])
+    gulp.src(['./src/js/base/**/*.js', './src/js/common.js'])
   )
   .pipe(sourcemaps.init())
   .pipe(concat('base.js'));
@@ -218,9 +219,15 @@ gulp.task('js', function() {
   jsTask
   .pipe(rename({suffix: '.min'}))
   .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(path.join(config.dest, 'js')));
+  .pipe(gulp.dest(path.join(config.dest, 'js', 'common')));
 
-  gulp.src('./src/js/!(base|common)*/*.js')
+  jsTask = gulp.src('./src/js/common.jquery.js');
+  if (!config.isDev) jsTask.pipe(uglify());
+  jsTask
+  .pipe(rename({suffix: '.min'}))
+  .pipe(gulp.dest(path.join(config.dest, 'js', 'common')));
+
+  gulp.src('./src/js/!(base)*/**/*.js')
   .pipe(gulp.dest(path.join(config.dest, 'js')));
 
   firstInit = false;
