@@ -127,11 +127,17 @@
                 },
                 {"orderable":false,"targets":4,
                      "render" : function(data,type,row){
-                         if (data){
-                             return '<a title="'+row.name+'" href="'+data+'" target="_blank" class="view" data-rel="'+data+'">查看</a>';
-                         }else{
-                             return "";
-                         }
+                          var result = '<a href="#" id ="user-edit'+data+'" class="view" data-toggle="modal" data-target="#user-modify-modal">修改</a>&nbsp;<a id="user-del'+data+'" href="#" class="view">删除</a>';
+                          $("body").off('click', 'a#user-edit'+data);
+                          $("body").on('click', 'a#user-edit'+data, function(){//通过
+                          });
+                          $("body").off('click', 'a#user-del'+data);
+                          $("body").on('click', 'a#user-del'+data, function(){//删除
+                              bootbox.confirm("确定要删除该用户:" + row.accountCode + "?",function(result){
+                                  if ( result == true ){
+                                  }
+                              });
+                          }
                      }
                 }
             ],

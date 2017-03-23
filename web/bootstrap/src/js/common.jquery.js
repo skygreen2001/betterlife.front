@@ -5,6 +5,19 @@ var commonLibrary = {
     url_province: '/address/selectProvinces',
     url_city    : '/address/selectCitys',
     url_district: '/address/selectDistricts',
+    init        : function(){
+        this.bootboxInit();
+    },
+    bootboxInit : function(){
+        if (bootbox) {
+            bootbox.addLocale('zh_CN_OK', { OK : '确定', CANCEL  : "取消", CONFIRM : "确认" });
+            bootbox.setLocale("zh_CN_OK");
+            bootbox.setDefaults({
+                "title"  : "提示信息",
+                "animate": true
+            });
+        }
+    },
     /** JSON提交POST请求 */
     post: function(url,data,func) {
         $.ajax({
@@ -97,12 +110,13 @@ var commonLibrary = {
             $(cityId).append("<option selected='selected' value=''>请选择</option>");
         }
 
+        var ctrl = this;
         $(proviceId).change(function(){//获取市
            var data = {"id":""}
            data.id = $(this).children('option:selected').val();
            $.ajax({
                type: "POST",
-               url: this.url_city,
+               url: ctrl.url_city,
                data: JSON.stringify(data),
                contentType:'application/json;charset=utf-8',
                success: function(res){
@@ -120,7 +134,7 @@ var commonLibrary = {
                   if (data.id>0) {
                       $.ajax({
                           type: "POST",
-                          url : this.url_district,
+                          url : ctrl.url_district,
                           data: JSON.stringify(data),
                           contentType:'application/json;charset=utf-8',
                           success: function(res){
@@ -173,13 +187,14 @@ var commonLibrary = {
             $(districtId).append("<option selected='selected' value=''>请选择</option>");
         }
 
+        var ctrl = this;
         $(cityId).change(function(){//获取区县
            var data = {"id":""}
            data.id = $(this).children('option:selected').val();
            if (data.id>0) {
                $.ajax({
                    type: "POST",
-                   url : this.url_district,
+                   url : ctrl.url_district,
                    data: JSON.stringify(data),
                    contentType:'application/json;charset=utf-8',
                    success: function(res){
@@ -202,4 +217,5 @@ var commonLibrary = {
 
 $(function(){
     $.extend({"common":commonLibrary});
+    $.common.init();
 });

@@ -74,20 +74,40 @@ module.exports = function(config) {
    * @type {Array}
    */
   //浏览器兼容性Javascript原生对象函数支持
-  config.vendor.js.push('./bower_components/js-polyfills/polyfill.min.js');
-  config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
-  // config.vendor.js.push('./bower_components/underscore/underscore-min.js');
-  // config.vendor.js.push('./bower_components/moment/min/moment-with-locales.min.js');
+  config.vendor.js.push('./bower_components/js-polyfills/polyfill.js');
+  config.vendor.js.push('./bower_components/js-polyfills/web.js');
+  // config.vendor.js.push('./bower_components/underscore/underscore.js');
+  // config.vendor.js.push('./bower_components/moment/min/moment-with-locales.js');
 
-  config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.min.js');
+  config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.js');
   config.vendor.js.push('./bower_components/uilang/production/uilang.js');
 
   config.vendor.js.push('./bower_components/jsrender/jsrender.js');
+  config.vendor.js.push('./bower_components/bootbox.js/bootbox.js');
 
-  config.vendor.js.push('./bower_components/datatables.net/js/jquery.dataTables.min.js');
-  config.vendor.js.push('./bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');
-  config.vendor.js.push('./bower_components/datatables.net-responsive/js/dataTables.responsive.min.js');
-  config.vendor.js.push('./bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.min.js');
+  config.vendor.js.push('./bower_components/datatables.net/js/jquery.dataTables.js');
+  config.vendor.js.push('./bower_components/datatables.net-bs/js/dataTables.bootstrap.js');
+  config.vendor.js.push('./bower_components/datatables.net-responsive/js/dataTables.responsive.js');
+  config.vendor.js.push('./bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.js');
+
+  // Production:start
+  // //浏览器兼容性Javascript原生对象函数支持
+  // config.vendor.js.push('./bower_components/js-polyfills/polyfill.min.js');
+  // config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
+  // // config.vendor.js.push('./bower_components/underscore/underscore-min.js');
+  // // config.vendor.js.push('./bower_components/moment/min/moment-with-locales.min.js');
+  //
+  // config.vendor.js.push('./bower_components/bootstrap/dist/js/bootstrap.min.js');
+  // config.vendor.js.push('./bower_components/uilang/production/uilang.js');
+  //
+  // config.vendor.js.push('./bower_components/jsrender/jsrender.js');
+  // config.vendor.js.push('./bower_components/bootbox.js/bootbox.js');
+  //
+  // config.vendor.js.push('./bower_components/datatables.net/js/jquery.dataTables.min.js');
+  // config.vendor.js.push('./bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');
+  // config.vendor.js.push('./bower_components/datatables.net-responsive/js/dataTables.responsive.min.js');
+  // config.vendor.js.push('./bower_components/datatables.net-responsive-bs/js/responsive.bootstrap.min.js');
+  // Production:  end
 
   /**
    * Vendor Font

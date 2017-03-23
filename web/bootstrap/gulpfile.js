@@ -21,7 +21,7 @@ var config = {
   },
   vendor: {
     js: [
-      './bower_components/jquery/dist/jquery.min.js'
+      './bower_components/jquery/dist/jquery.js'
     ],
 
     fonts: [
