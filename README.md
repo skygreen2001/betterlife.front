@@ -44,7 +44,7 @@
 
   - `Atom` 安装 Package
 
-    ```bash
+    ```
     > apm install atom-beautify file-icons markdown-themeable-pdf
     ```
 
