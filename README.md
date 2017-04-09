@@ -6,7 +6,7 @@
 
 框架目标定义分为三部分:
 * Html5开发生成Native原生应用[ios,andriod]
-  - `NativeScript` [Angular + Typescript + Javascript]
+  - `NativeScript` [Angular2 + Typescript + Javascript]
   - `React Native` [React + Javascript]
 
 
@@ -15,14 +15,14 @@
   实现框架底层采用:
     - Angular1 + Angular Material
     - React    + React Material
-    - Angular2 + Ionic  | Angular Material [ 尚待验证 ]
-
+    - Angular2 + [Angular Material | Ionic] [ 尚待验证 ]
 
 * 专用于Web开发的html5自适应界面，可用于pc电脑端，也可用于嵌入原生应用的[ios,andriod]的html5页面；可嵌入微信；Pc Web端优先。
-  - Jquery + Bootstrap           [ IE9  + ]
+  - Jquery + Bootstrap3          [ IE9  + ]
+  - Angular2 + Bootstrap4        [ IE9  + ]
   - Jquery + Semantic-Ui         [ IE11 + ]
-  - Angular1 + Angular Material  [ IE9  + ]
-  - Angular2 + Angular Material + Jquery + Bootstrap [ 尚待验证 ]
+  - Angular1 + [Angular Material | Bootstrap3]          [ IE9  + ]
+  - Angular2 + [Angular Material | Bootstrap4] + Jquery [ 尚待验证 ]
 
 ## 准备工作
 
@@ -96,6 +96,10 @@
 
 
 ## 其他
+-
+  - Appendix A: Webpack for React: http://www.pro-react.com/materials/appendixA/
+  - 入门Webpack，看这篇就够了: http://www.jianshu.com/p/42e11515c10f
+
 - 0⃣️
   - Dart         : http://www.dartlang.org/
   - Aurelia      : http://aurelia.io/
