@@ -89,6 +89,7 @@
         * Think in AngularJS:http://www.angularjs.cn/A0bz
         * AngularJS 初识    :https://docs.angularjs.org/guide/concepts
         * AngularJS 教程    :http://www.runoob.com/angularjs/angularjs-tutorial.html
+        * 学习AngularJS 1.x :https://hairui219.gitbooks.io/learning_angular/content/zh/index.html
 
         * Mobile Angular Js:http://mobileangularui.com/
         * Ionic :http://ionicframework.com/
