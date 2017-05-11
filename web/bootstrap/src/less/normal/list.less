@@ -95,6 +95,13 @@
         line-height: 45px;
         vertical-align: middle;
 
+        img{
+          width : 60px;
+          height: 48px;
+        }
+        #imgSlides-container{
+          display: none;
+        }
         a {
           width        : 70px;
           height       : 28px;
@@ -106,6 +113,14 @@
             text-decoration:none;
           }
           &.view{
+            background-color: #999;
+            border          : 1px solid #999;
+            &:hover, &:focus{
+              color           : #999;
+              background-color: #fff;
+            }
+          }
+          &.edit{
             background-color: @color-input;
             border          : 1px solid @color-input;
             &:hover, &:focus{
@@ -113,15 +128,7 @@
               background-color: #fff;
             }
           }
-          &.pass{
-            background-color: @color-input;
-            border          : 1px solid @color-input;
-            &:hover, &:focus{
-              color           : @color-input;
-              background-color: #fff;
-            }
-          }
-          &.refuse{
+          &.del{
             background-color: #ed1f2d;
             border          : 1px solid #ed1f2d;
             &:hover, &:focus{
