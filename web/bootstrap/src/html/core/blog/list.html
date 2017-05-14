@@ -46,7 +46,6 @@
             </table>
         </div>
     </div>
-
     <!--content end-->
 
     <!--footer begin-->
@@ -111,16 +110,15 @@
             "columnDefs": [
                 {"orderable":false,"targets":5,
                     "render" : function(data, type, row) {
-                        var result = '<a id="img'+row.id+'" target="_blank" href="'+data+'"><img src="'+data+'" alt="'+row.imgName+'" /></a>';
-                        // imgLists[] = data;
-                        //
-                        // $("body").off('click', 'a#img'+row.id);
-                        // $("body").on('click', 'a#img'+row.id, function(){//删除
-                        //     bootbox.confirm("确定要删除该用户:" + data + "?",function(result){
-                        //         if ( result == true ){
-                        //         }
-                        //     });
-                        // });
+                        var result = '<a id="imgUrl'+row.id+'" target="_blank" href="'+data+'"><img src="'+data+'" alt="'+row.imgName+'" /></a>';
+
+                        $("body").off('click', 'a#imgUrl'+row.id);
+                        $("body").on('click', 'a#imgUrl'+row.id, function(){//删除
+                            bootbox.confirm("确定要删除该用户:" + data + "?",function(result){
+                                if ( result == true ){
+                                }
+                            });
+                        });
                         return result;
                     }
                 },
@@ -139,7 +137,7 @@
                     "render" : function(data, type, row){
                         var result = '<a href="#" id ="user-view'+data+'" class="view" data-toggle="modal" data-target="#user-view-modal">查看</a>&nbsp;<a href="#" id ="user-edit'+data+'" class="edit" data-toggle="modal" data-target="#user-modify-modal">修改</a>&nbsp;<a id="user-del'+data+'" href="#" class="del">删除</a>';
                         $("body").off('click', 'a#user-edit'+data);
-                        $("body").on('click', 'a#user-edit'+data, function(){//通过
+                        $("body").on('click', 'a#user-edit'+data, function(){//修改
                         });
                         $("body").off('click', 'a#user-del'+data);
                         $("body").on('click', 'a#user-del'+data, function(){//删除
@@ -164,13 +162,8 @@
             "initComplete":function(){ },
             "drawCallback": function( settings ) {
                 $.dataTable.pageNumDisplay(this);
-                // var htmlOutput = template.render(imgLists);
-                // $("#imgSlides-container").html(htmlOutput);
-
             }
         });
-        // var template = $.templates("#slide-template");
-        // var imgLists = [];
         $("#btn-query").click(function(){infoTable.draw();});
     });
 
