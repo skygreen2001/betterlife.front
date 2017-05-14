@@ -92,9 +92,29 @@
             </table>
         </div>
     </div>
-
+    <div id="result"></div>
+    <script id="theTmpl" type="text/x-jsrender">
+    <div>
+       <em>Name:</em> {{:name}}
+       {{if showNickname && nickname}}
+          (Goes by <em>{{:nickname}}</em>)
+       {{/if}}
+    </div>
+    </script>
     <!--content end-->
-
+    <!-- Creates the bootstrap modal where the image will appear -->
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">X</span></button>
+          </div>
+          <div class="modal-body">
+            <a id="imagepreview-link" href="#" target="_blank"><img src="" id="imagepreview" style="width: 100%; height: 100%;" ></a>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--footer begin-->
     
     <footer>
@@ -110,6 +130,25 @@
     <script src="../../js/normal/list.js"></script>
     <script type="text/javascript">
     $(function(){
+        var data = [
+          {
+            "name": "Robert",
+            "nickname": "Bob",
+            "showNickname": true
+          },
+          {
+            "name": "Susan",
+            "nickname": "Sue",
+            "showNickname": false
+          }
+        ];
+
+        var template = $.templates("#theTmpl");
+
+        var htmlOutput = template.render(data);
+
+        $("#result").html(htmlOutput);
+
 
         //Datatables中文网[帮助]: http://datatables.club/
         var infoTable = $('#infoTable').DataTable({
@@ -164,16 +203,14 @@
             "columnDefs": [
                 {"orderable":false,"targets":5,
                     "render" : function(data, type, row) {
-                        var result = '<a id="img'+row.id+'" target="_blank" href="'+data+'"><img src="'+data+'" alt="'+row.imgName+'" /></a>';
-                        // imgLists[] = data;
-                        //
-                        // $("body").off('click', 'a#img'+row.id);
-                        // $("body").on('click', 'a#img'+row.id, function(){//删除
-                        //     bootbox.confirm("确定要删除该用户:" + data + "?",function(result){
-                        //         if ( result == true ){
-                        //         }
-                        //     });
-                        // });
+                        var result = '<a id="imgUrl'+row.id+'" href="#"><img src="'+data+'" alt="'+row.imgName+'" /></a>';
+
+                        $("body").off('click', 'a#imgUrl'+row.id);
+                        $("body").on('click', 'a#imgUrl'+row.id, function(){
+                            $('#imagepreview').attr('src', $('a#imgUrl' + row.id + " img").attr('src'));
+                            $('#imagepreview-link').attr('href', $('a#imgUrl' + row.id + " img").attr('src'));
+                            $('#imagemodal').modal('show');
+                        });
                         return result;
                     }
                 },
@@ -190,14 +227,28 @@
                 },
                 {"orderable":false, "targets":7,
                     "render" : function(data, type, row){
-                        var result = '<a href="#" id ="user-view'+data+'" class="view" data-toggle="modal" data-target="#user-view-modal">查看</a>&nbsp;<a href="#" id ="user-edit'+data+'" class="edit" data-toggle="modal" data-target="#user-modify-modal">修改</a>&nbsp;<a id="user-del'+data+'" href="#" class="del">删除</a>';
-                        $("body").off('click', 'a#user-edit'+data);
-                        $("body").on('click', 'a#user-edit'+data, function(){//通过
+                        var result = '<a href="#" id ="info-view'+data+'" class="view" data-toggle="modal" data-target="#infoModal">查看</a>&nbsp;<a href="#" id ="info-edit'+data+'" class="edit" data-toggle="modal" data-target="#infoModal">修改</a>&nbsp;<a id="info-del'+data+'" data-toggle="modal" data-target="#infoModal" href="#" class="del">删除</a>';
+                        $("body").off('click', 'a#info-view'+data);
+                        $("body").on('click', 'a#info-view'+data, function(){//查看
+                            bootbox.confirm("确定要查看该用户:" + data + "?",function(result){
+                                if ( result == true ){
+                                    console.log("查看用户:" + data);
+                                }
+                            });
                         });
-                        $("body").off('click', 'a#user-del'+data);
-                        $("body").on('click', 'a#user-del'+data, function(){//删除
+                        $("body").off('click', 'a#info-edit'+data);
+                        $("body").on('click', 'a#info-edit'+data, function(){//修改
+                            bootbox.confirm("确定要编辑该用户:" + data + "?",function(result){
+                                if ( result == true ){
+                                    console.log("编辑用户:" + data);
+                                }
+                            });
+                        });
+                        $("body").off('click', 'a#info-del'+data);
+                        $("body").on('click', 'a#info-del'+data, function(){//删除
                             bootbox.confirm("确定要删除该用户:" + data + "?",function(result){
                                 if ( result == true ){
+                                    console.log("删除用户:" + data);
                                 }
                             });
                         });
@@ -217,13 +268,8 @@
             "initComplete":function(){ },
             "drawCallback": function( settings ) {
                 $.dataTable.pageNumDisplay(this);
-                // var htmlOutput = template.render(imgLists);
-                // $("#imgSlides-container").html(htmlOutput);
-
             }
         });
-        // var template = $.templates("#slide-template");
-        // var imgLists = [];
         $("#btn-query").click(function(){infoTable.draw();});
     });
 

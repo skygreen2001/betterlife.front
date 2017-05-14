@@ -42,6 +42,9 @@ body {
     height: 100%;
     width: 100%;
   }
+  button {
+    outline: 0 !important;
+  }
   input {
     height: 100%;
     width: 100%;
@@ -89,10 +92,58 @@ footer {
     }
   }
 }
+.modal-open{
+  padding-right: 0px !important;
+  overflow: auto !important;
+}
+.modal-content {
+  margin-top: 320px;
+}
+
+#imagemodal{
+  padding: 0 10px !important;
+  .modal-dialog{
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    .modal-header{
+      padding: 6px;
+      .close{
+        margin-right: 5px;
+      }
+    }
+    .modal-content {
+      margin-top: 180px;
+    }
+    .modal-body{
+      padding: 0px;
+    }
+  }
+}
+
+.bootbox .btn-primary{
+  outline: 0;
+  background-color: @color-input !important;
+  border-color: @color-input !important;
+  &:active,&:focus,&:hover{
+    border-color: @color-input !important;
+  }
+}
+
+.modal-header .close {
+  outline: 0 !important;
+  &:hover{
+
+  }
+}
+
 /************************* Layout:  end ************************/
 @media (min-width: @screen-md-min) {
-  //bootbox 弹出框与顶部的距离
-  .modal-dialog {
-      padding-top: 320px;
+  #imagemodal{
+    .modal-dialog{
+      .modal-content {
+        margin-top: 20px;
+      }
+    }
   }
 }
