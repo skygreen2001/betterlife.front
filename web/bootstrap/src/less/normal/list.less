@@ -204,3 +204,58 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before, table
   color: @color-input;
   outline: none;
 }
+
+
+// .modal-open{
+//   padding-right: 0px !important;
+//   overflow: auto !important;
+// }
+.modal-content {
+  margin-top: 320px;
+  .modal-header .close {
+    outline: 0 !important;
+    &:hover{
+
+    }
+  }
+}
+
+#imageModal{
+  padding: 0 10px !important;
+  .modal-dialog{
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    .modal-header{
+      padding: 6px;
+      .close{
+        margin-right: 5px;
+      }
+    }
+    .modal-content {
+      margin-top: 180px;
+    }
+    .modal-body{
+      padding: 0px;
+    }
+  }
+}
+
+.bootbox .btn-primary{
+  outline: 0;
+  background-color: @color-input !important;
+  border-color: @color-input !important;
+  &:active,&:focus,&:hover{
+    border-color: @color-input !important;
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  #imageModal{
+    .modal-dialog{
+      .modal-content {
+        margin-top: 3.2%;
+      }
+    }
+  }
+}

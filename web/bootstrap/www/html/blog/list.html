@@ -20,6 +20,7 @@
 
 </head>
 <body>
+    <div id="wrapper">
     <!--nav begin-->
     
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -57,46 +58,80 @@
       </div>
     </nav>
 
+
+    
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="#">
+                Start Bootstrap
+            </a>
+        </li>
+        <li>
+            <a href="#">Dashboard</a>
+        </li>
+        <li>
+            <a href="#">Shortcuts</a>
+        </li>
+        <li>
+            <a href="#">Overview</a>
+        </li>
+        <li>
+            <a href="#">Events</a>
+        </li>
+        <li>
+            <a href="#">About</a>
+        </li>
+        <li>
+            <a href="#">Services</a>
+        </li>
+        <li>
+            <a href="#">Contact</a>
+        </li>
+    </ul>
+</div>
+<!-- /#sidebar-wrapper -->
+
     <!--nav end-->
 
     <!--content begin-->
-    <div class="container-fluid list">
-        <div class="row up-container">
-            <!-- 上半部分 -->
-            <div class="filter-up">
-                <div class="filter-up-right col-sm-12">
-                    <div>
-                        <i aria-label="search-menu" class="glyphicon glyphicon-search" aria-hidden="true"></i>
-                        <input id="input-search" type="search" placeholder="搜索名称" aria-controls="infoTable" />
-                        <button id="btn-query" type="button" class="btn btn-query">搜索</button>
+    <div id="page-content-wrapper">
+        <div class="container-fluid list">
+            <div class="row up-container">
+                <!-- 上半部分 -->
+                <div class="filter-up">
+                    <div class="filter-up-right col-sm-12">
+                        <div>
+                            <i aria-label="search-menu" class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                            <input id="input-search" type="search" placeholder="搜索名称" aria-controls="infoTable" />
+                            <button id="btn-query" type="button" class="btn btn-query">搜索</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="table-responsive col-xs-12">
+                <table id="infoTable" class="display nowrap dataTable table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>名称</th>
+                            <th>编码</th>
+                            <th>联系人</th>
+                            <th>手机号</th>
+                            <th>封面</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="table-responsive col-xs-12">
-            <table id="infoTable" class="display nowrap dataTable table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>序号</th>
-                        <th>名称</th>
-                        <th>编码</th>
-                        <th>联系人</th>
-                        <th>手机号</th>
-                        <th>封面</th>
-                        <th>状态</th>
-                        <th>操作</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
-    </div>
-    <!--content end-->
-
-
-    <!--footer begin-->
-    
+        <!--footer begin-->
+        
     <footer>
         <div id="footer-inner" class="container clr">
             <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div><!-- #copyright -->
@@ -106,8 +141,10 @@
     <script type="text/javascript" src="../../js/common/bower/bower.min.js"></script>
     <script type="text/javascript" src="../../js/common/common.jquery.min.js"></script>
 
-    <!--footer end-->
-
+        <!--footer end-->
+        </div>
+        <!--content end-->
+    </div>
 
     <!--Template begin-->
     <div id="image-model"></div>
@@ -137,28 +174,19 @@
     <!--Template end-->
 
     <script src="../../js/normal/list.js"></script>
+    <!-- Menu Toggle Script -->
+    <script type="text/javascript">
+        $(function(){
+            // $("#wrapper").toggleClass("toggled");
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        });
+    </script>
     <script type="text/javascript">
     $(function(){
         $("#image-model").html($.templates("#imgModalTmpl"));
-        var data = [
-          {
-            "name": "Robert",
-            "nickname": "Bob",
-            "showNickname": true
-          },
-          {
-            "name": "Susan",
-            "nickname": "Sue",
-            "showNickname": false
-          }
-        ];
-
-        var template = $.templates("#theTmpl");
-
-        var htmlOutput = template.render(data);
-
-        $("#result").html(htmlOutput);
-
 
         //Datatables中文网[帮助]: http://datatables.club/
         var infoTable = $('#infoTable').DataTable({
@@ -190,7 +218,6 @@
                     } else {
                       json.data = json.data.slice(p.length);
                     }
-                    // imgLists = [];
                     return JSON.stringify( json ); // return JSON string
                 }
             },

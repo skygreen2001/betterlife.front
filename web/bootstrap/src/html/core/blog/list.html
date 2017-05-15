@@ -7,54 +7,60 @@
     })
 </head>
 <body>
+    <div id="wrapper">
     <!--nav begin-->
     @@include('../../layout/menu.html', {
+        "rel-prefix": "../.."
+    })
+
+    @@include('../../layout/sidebar.html', {
         "rel-prefix": "../.."
     })
     <!--nav end-->
 
     <!--content begin-->
-    <div class="container-fluid list">
-        <div class="row up-container">
-            <!-- 上半部分 -->
-            <div class="filter-up">
-                <div class="filter-up-right col-sm-12">
-                    <div>
-                        <i aria-label="search-menu" class="glyphicon glyphicon-search" aria-hidden="true"></i>
-                        <input id="input-search" type="search" placeholder="搜索名称" aria-controls="infoTable" />
-                        <button id="btn-query" type="button" class="btn btn-query">搜索</button>
+    <div id="page-content-wrapper">
+        <div class="container-fluid list">
+            <div class="row up-container">
+                <!-- 上半部分 -->
+                <div class="filter-up">
+                    <div class="filter-up-right col-sm-12">
+                        <div>
+                            <i aria-label="search-menu" class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                            <input id="input-search" type="search" placeholder="搜索名称" aria-controls="infoTable" />
+                            <button id="btn-query" type="button" class="btn btn-query">搜索</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="table-responsive col-xs-12">
+                <table id="infoTable" class="display nowrap dataTable table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>名称</th>
+                            <th>编码</th>
+                            <th>联系人</th>
+                            <th>手机号</th>
+                            <th>封面</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="table-responsive col-xs-12">
-            <table id="infoTable" class="display nowrap dataTable table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>序号</th>
-                        <th>名称</th>
-                        <th>编码</th>
-                        <th>联系人</th>
-                        <th>手机号</th>
-                        <th>封面</th>
-                        <th>状态</th>
-                        <th>操作</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+        <!--footer begin-->
+        @@include('../../layout/footer.html',{
+          "rel-prefix": "../.."
+        })
+        <!--footer end-->
         </div>
+        <!--content end-->
     </div>
-    <!--content end-->
-
-
-    <!--footer begin-->
-    @@include('../../layout/footer.html',{
-      "rel-prefix": "../.."
-    })
-    <!--footer end-->
-
 
     <!--Template begin-->
     <div id="image-model"></div>
@@ -84,28 +90,19 @@
     <!--Template end-->
 
     <script src="../../js/normal/list.js"></script>
+    <!-- Menu Toggle Script -->
+    <script type="text/javascript">
+        $(function(){
+            // $("#wrapper").toggleClass("toggled");
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        });
+    </script>
     <script type="text/javascript">
     $(function(){
         $("#image-model").html($.templates("#imgModalTmpl"));
-        var data = [
-          {
-            "name": "Robert",
-            "nickname": "Bob",
-            "showNickname": true
-          },
-          {
-            "name": "Susan",
-            "nickname": "Sue",
-            "showNickname": false
-          }
-        ];
-
-        var template = $.templates("#theTmpl");
-
-        var htmlOutput = template.render(data);
-
-        $("#result").html(htmlOutput);
-
 
         //Datatables中文网[帮助]: http://datatables.club/
         var infoTable = $('#infoTable').DataTable({
@@ -137,7 +134,6 @@
                     } else {
                       json.data = json.data.slice(p.length);
                     }
-                    // imgLists = [];
                     return JSON.stringify( json ); // return JSON string
                 }
             },
