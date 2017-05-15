@@ -28,19 +28,20 @@
     "js-polyfills": "^0.1.29",
     "jquery": "^3.1.1",
     "bootstrap": "^3.3.7",
-    "uilang": "bendc/uilang",
     "datatables.net": "^2.1.1",
     "datatables.net-bs": "^2.1.1",
     "datatables.net-responsive": "^2.1.1",
     "datatables.net-responsive-bs": "^2.1.1",
     "jsrender": "^0.9.83",
-    "bootbox.js": "bootbox#^4.4.0"
+    "bootbox.js": "bootbox#^4.4.0",
+    "icomoon-bower": "^0.1.2"
   },
   "_dependencies_ignored": {
     "font-awesome": "4.2",
     "moment": "^2.17.1",
     "lodash": "^4.17.4",
     "underscore": "^1.8.3",
+    "uilang": "bendc/uilang",
     "jsviews": "^0.9.83",
     "jquery-colorbox": "^1.6.4"
   }

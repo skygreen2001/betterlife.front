@@ -19,15 +19,11 @@ var config = {
       './src/less', './bower_components'
     ]
   },
-  vendor: {
-    js: [
-      './bower_components/jquery/dist/jquery.js'
-    ],
-
-    fonts: [
-      './bower_components/bootstrap/fonts/glyphicons-halflings-regular.*'
-    ]
-  },
+  fonts: [
+    './bower_components/bootstrap/fonts/glyphicons-halflings-regular.*',
+    // './bower_components/font-awesome/fonts/fontawesome-webfont.*',
+    './bower_components/icomoon-bower/fonts/icomoon.*'
+  ],
 
   server: {
     host: '0.0.0.0',
@@ -47,29 +43,35 @@ if (require('fs').existsSync('./config.js')) {
 /*========================================
 =            Requiring stuffs            =
 ========================================*/
+var gulp = require('gulp'),
+    $    = require('gulp-load-plugins')(),
+    path = require('path'),
+    seq  = require('run-sequence'),
+    streamqueue = require('streamqueue'),
+    bowerFiles  = require('main-bower-files');
 
-var gulp           = require('gulp'),
+// var gulp           = require('gulp'),
+//
+//     bower          = require('gulp-bower'),
+//
+//     seq            = require('run-sequence'),
+//     connect        = require('gulp-connect'),
+//     less           = require('gulp-less'),
+//     uglify         = require('gulp-uglify'),
+//     sourcemaps     = require('gulp-sourcemaps'),
+//     cssmin         = require('gulp-cssmin'),
+//     image          = require('gulp-image'),
+//     order          = require('gulp-order'),
+//     concat         = require('gulp-concat'),
+//     ignore         = require('gulp-ignore'),
+//     clean          = require('gulp-clean'),
+//     mobilizer      = require('gulp-mobilizer'),
+//     replace        = require('gulp-replace'),
+//     streamqueue    = require('streamqueue'),
+//     rename         = require('gulp-rename'),
+//     path           = require('path');
 
-    bower          = require('gulp-bower'),
-
-    seq            = require('run-sequence'),
-    connect        = require('gulp-connect'),
-    less           = require('gulp-less'),
-    uglify         = require('gulp-uglify'),
-    sourcemaps     = require('gulp-sourcemaps'),
-    cssmin         = require('gulp-cssmin'),
-    image          = require('gulp-image'),
-    order          = require('gulp-order'),
-    concat         = require('gulp-concat'),
-    ignore         = require('gulp-ignore'),
-    clean          = require('gulp-clean'),
-    mobilizer      = require('gulp-mobilizer'),
-    replace        = require('gulp-replace'),
-    streamqueue    = require('streamqueue'),
-    rename         = require('gulp-rename'),
-    path           = require('path');
-
-var fileinclude = require('gulp-file-include');
+// var fileinclude = require('gulp-file-include');
 
 
 /*================================================
@@ -87,7 +89,7 @@ gulp.on('error', function(e) {
 
 gulp.task('connect', function() {
   if (typeof config.server === 'object') {
-    connect.server({
+    $.connect.server({
       root: config.dest,
       host: config.server.host,
       port: config.server.port,
@@ -105,7 +107,7 @@ gulp.task('connect', function() {
 
 gulp.task('livereload', function () {
   gulp.src(path.join(config.dest, 'html', '*.html'))
-    .pipe(connect.reload());
+    .pipe($.connect.reload());
 });
 
 var firstInit = true;
@@ -115,7 +117,7 @@ var firstInit = true;
 
 gulp.task('images', function () {
   return gulp.src('src/images/**/*')
-        .pipe(image())
+        .pipe($.image())
         .pipe(gulp.dest(path.join(config.dest, 'images')));
 });
 
@@ -124,7 +126,7 @@ gulp.task('images', function () {
 ==================================*/
 
 gulp.task('fonts', function() {
-  return gulp.src(config.vendor.fonts)
+  return gulp.src(config.fonts)
         .pipe(gulp.dest(path.join(config.dest, 'fonts')));
 });
 
@@ -145,13 +147,13 @@ gulp.task('html', function() {
   .pipe(gulp.dest(config.dest));
 
   gulp.src('./src/html/index.html')
-  .pipe(replace('<!-- inject:css -->', injectCss.join('\n    ')))
-  .pipe(replace('<!-- inject:js:before -->', injectBefore.join('\n    ')))
-  .pipe(replace('<!-- inject:js -->', inject.join('\n    ')))
+  .pipe($.replace('<!-- inject:css -->', injectCss.join('\n    ')))
+  .pipe($.replace('<!-- inject:js:before -->', injectBefore.join('\n    ')))
+  .pipe($.replace('<!-- inject:js -->', inject.join('\n    ')))
   .pipe(gulp.dest(config.dest));
 
   gulp.src('./src/html/core/**/*.html')
-  .pipe(fileinclude({
+  .pipe($.fileInclude({
       prefix: '@@',
       basepath: '@file'
     }))
@@ -166,21 +168,21 @@ gulp.task('html', function() {
 gulp.task('less', function () {
 
   var cssTask;
-  cssTask = gulp.src(config.less.src).pipe(less({
+  cssTask = gulp.src(config.less.src).pipe($.less({
     paths: config.less.paths.map(function(p){
       return path.resolve(__dirname, p);
     })
   }))
-  .pipe(mobilizer('bootstrap.css', {
+  .pipe($.mobilizer('bootstrap.css', {
     'bootstrap.css': {
       screens: 'any'
     }
   }));
 
-  if (!config.isDev) cssTask = cssTask.pipe(cssmin({keepSpecialComments : 0}));
+  if (!config.isDev) cssTask = cssTask.pipe($.cssmin({keepSpecialComments : 0}));
 
   return cssTask
-    .pipe(rename({
+    .pipe($.rename({
       basename: "common",
       suffix: '.min'
     }))
@@ -195,15 +197,15 @@ gulp.task('less', function () {
 gulp.task('js', function() {
   var jsTask;
   if ( firstInit ) {
-    jsTask = gulp.src(config.vendor.js)
-    .pipe(sourcemaps.init())
-    .pipe(concat('bower.js'));
+    jsTask = gulp.src(bowerFiles(), {read: false})
+    .pipe($.sourcemaps.init())
+    .pipe($.concat('bower.js'));
 
-    if ( !config.isDev ) jsTask.pipe(uglify());
+    if ( !config.isDev ) jsTask.pipe($.uglify());
 
     jsTask
-    .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('.'))
+    .pipe($.rename({suffix: '.min'}))
+    .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
   }
 
@@ -211,20 +213,20 @@ gulp.task('js', function() {
     { objectMode: true },
     gulp.src(['./src/js/base/**/*.js', './src/js/common.js'])
   )
-  .pipe(sourcemaps.init())
-  .pipe(concat('base.js'));
+  .pipe($.sourcemaps.init())
+  .pipe($.concat('base.js'));
 
-  if (!config.isDev) jsTask.pipe(uglify());
+  if (!config.isDev) jsTask.pipe($.uglify());
 
   jsTask
-  .pipe(rename({suffix: '.min'}))
-  .pipe(sourcemaps.write('.'))
+  .pipe($.rename({suffix: '.min'}))
+  .pipe($.sourcemaps.write('.'))
   .pipe(gulp.dest(path.join(config.dest, 'js', 'common')));
 
   jsTask = gulp.src('./src/js/common.jquery.js');
-  if (!config.isDev) jsTask.pipe(uglify());
+  if (!config.isDev) jsTask.pipe($.uglify());
   jsTask
-  .pipe(rename({suffix: '.min'}))
+  .pipe($.rename({suffix: '.min'}))
   .pipe(gulp.dest(path.join(config.dest, 'js', 'common')));
 
   gulp.src('./src/js/!(base)*/**/*.js')
@@ -272,7 +274,7 @@ gulp.task('build', function(done) {
 
 gulp.task('install', function() {
   // Setup Bower Library
-  bower({});
+  $.bower({});
 
 });
 

@@ -28,6 +28,8 @@
     "streamqueue": "^0.1.1"
   },
   "dependencies": {
-    "gulp-file-include": "^1.0.0"
+    "gulp-file-include": "^1.0.0",
+    "gulp-load-plugins": "^1.5.0",
+    "main-bower-files": "^2.13.1"
   }
 }
