@@ -46,37 +46,47 @@
             </table>
         </div>
     </div>
-    <div id="result"></div>
-    <script id="theTmpl" type="text/x-jsrender">
-    <div>
-       <em>Name:</em> {{:name}}
-       {{if showNickname && nickname}}
-          (Goes by <em>{{:nickname}}</em>)
-       {{/if}}
-    </div>
-    </script>
     <!--content end-->
+
+
+    <!--footer begin-->
+    @@include('../../layout/footer.html',{
+      "rel-prefix": "../.."
+    })
+    <!--footer end-->
+
+
+    <!--Template begin-->
+    <div id="image-model"></div>
+    <script id="imgModalTmpl" type="text/x-jsrender">
     <!-- Creates the bootstrap modal where the image will appear -->
-    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">X</span></button>
           </div>
           <div class="modal-body">
-            <a id="imagepreview-link" href="#" target="_blank"><img src="" id="imagepreview" style="width: 100%; height: 100%;" ></a>
+            <a id="imagePreview-link" href="#" target="_blank"><img src="" id="imagePreview" style="width: 100%; height: 100%;" ></a>
           </div>
         </div>
       </div>
     </div>
-    <!--footer begin-->
-    @@include('../../layout/footer.html',{
-      "rel-prefix": "../.."
-    })
-    <!--footer end-->
+    </script>
+    <script id="imgTmpl" type="text/x-jsrender">
+    <a id="{{:img_id}}" href="#"><img src="{{:img_src}}" alt="{{:img_name}}" /></a>
+    </script>
+    <script id="actionTmpl" type="text/x-jsrender">
+    <a id="info-view{{:id}}" href="#" class="view" data-toggle="modal" data-target="#infoModal">查看</a>&nbsp;
+    <a id="info-edit{{:id}}" href="#" class="edit" data-toggle="modal" data-target="#infoModal">修改</a>&nbsp;
+    <a id="info-dele{{:id}}" href="#" class="dele" data-toggle="modal" data-target="#infoModal">删除</a>
+    </script>
+    <!--Template end-->
+
     <script src="../../js/normal/list.js"></script>
     <script type="text/javascript">
     $(function(){
+        $("#image-model").html($.templates("#imgModalTmpl"));
         var data = [
           {
             "name": "Robert",
@@ -150,13 +160,19 @@
             "columnDefs": [
                 {"orderable":false,"targets":5,
                     "render" : function(data, type, row) {
-                        var result = '<a id="imgUrl'+row.id+'" href="#"><img src="'+data+'" alt="'+row.imgName+'" /></a>';
+                        // var result = '<a id="imgUrl'+row.id+'" href="#"><img src="'+data+'" alt="'+row.imgName+'" /></a>';
+                        var data     = {
+                            "img_id"  : "imgUrl"+row.id,
+                            "img_src" : data,
+                            "img_name": row.imgName
+                        };
+                        var result = $.templates("#imgTmpl").render(data);
 
                         $("body").off('click', 'a#imgUrl'+row.id);
                         $("body").on('click', 'a#imgUrl'+row.id, function(){
-                            $('#imagepreview').attr('src', $('a#imgUrl' + row.id + " img").attr('src'));
-                            $('#imagepreview-link').attr('href', $('a#imgUrl' + row.id + " img").attr('src'));
-                            $('#imagemodal').modal('show');
+                            $('#imagePreview').attr('src', $('a#imgUrl' + row.id + " img").attr('src'));
+                            $('#imagePreview-link').attr('href', $('a#imgUrl' + row.id + " img").attr('src'));
+                            $('#imageModal').modal('show');
                         });
                         return result;
                     }
@@ -174,7 +190,9 @@
                 },
                 {"orderable":false, "targets":7,
                     "render" : function(data, type, row){
-                        var result = '<a href="#" id ="info-view'+data+'" class="view" data-toggle="modal" data-target="#infoModal">查看</a>&nbsp;<a href="#" id ="info-edit'+data+'" class="edit" data-toggle="modal" data-target="#infoModal">修改</a>&nbsp;<a id="info-del'+data+'" data-toggle="modal" data-target="#infoModal" href="#" class="del">删除</a>';
+                        // var result = '<a href="#" id ="info-view'+data+'" class="view" data-toggle="modal" data-target="#infoModal">查看</a>&nbsp;<a href="#" id ="info-edit'+data+'" class="edit" data-toggle="modal" data-target="#infoModal">修改</a>&nbsp;<a id="info-del'+data+'" data-toggle="modal" data-target="#infoModal" href="#" class="del">删除</a>';
+                        var result = $.templates("#actionTmpl").render({ "id"  : data });
+
                         $("body").off('click', 'a#info-view'+data);
                         $("body").on('click', 'a#info-view'+data, function(){//查看
                             bootbox.confirm("确定要查看该用户:" + data + "?",function(result){
@@ -191,8 +209,8 @@
                                 }
                             });
                         });
-                        $("body").off('click', 'a#info-del'+data);
-                        $("body").on('click', 'a#info-del'+data, function(){//删除
+                        $("body").off('click', 'a#info-dele'+data);
+                        $("body").on('click', 'a#info-dele'+data, function(){//删除
                             bootbox.confirm("确定要删除该用户:" + data + "?",function(result){
                                 if ( result == true ){
                                     console.log("删除用户:" + data);
@@ -219,7 +237,6 @@
         });
         $("#btn-query").click(function(){infoTable.draw();});
     });
-
     </script>
 
 </body>
