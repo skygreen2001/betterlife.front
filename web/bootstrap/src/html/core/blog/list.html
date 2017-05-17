@@ -14,7 +14,7 @@
     <!-- main nav end -->
 
     <!-- page container begin -->
-    <div id="wrapper" class="page-container">
+    <div class="page-container">
 
         <!-- page content begin -->
         <div class="page-content">
@@ -25,68 +25,61 @@
             <!-- main sidebar end -->
 
             <!-- main content begin -->
-            <div id="page-content-wrapper">
-
+            <div id="content-wrapper">
                 <!-- page header begin -->
-                <div class="page-header" style="display:none;">
-
+                <div class="row">
                   <div class="breadcrumb-line">
                     <ul class="breadcrumb">
-                      <li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
-                      <li class="active">Dashboard</li>
+                      <li><a href="/"><i class="icon-home2 position-left"></i> 首页</a></li>
+                      <li class="active">读书</li>
                     </ul>
                   </div>
                 </div>
                 <!-- page header end -->
 
                 <!-- content area begin -->
-                <div class="container-fluid list">
-                    <div class="row">
-                    <!-- list header begin -->
-                    <div class="row up-container">
-                        <!-- 上半部分 -->
-                        <div class="filter-up">
-                            <div class="filter-up-right col-sm-12">
-                                <div>
-                                    <i aria-label="search-menu" class="glyphicon glyphicon-search" aria-hidden="true"></i>
-                                    <input id="input-search" type="search" placeholder="搜索名称" aria-controls="infoTable" />
-                                    <button id="btn-query" type="button" class="btn btn-query">搜索</button>
+                <div class="row">
+                    <div class="container-fluid list ">
+                        <div class="row up-container">
+                            <!-- 上半部分 -->
+                            <div class="filter-up">
+                                <div class="filter-up-right col-sm-12">
+                                    <div>
+                                        <i aria-label="search-menu" class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                                        <input id="input-search" type="search" placeholder="搜索名称" aria-controls="infoTable" />
+                                        <button id="btn-query" type="button" class="btn btn-query">搜索</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- list header end -->
 
-                    <!-- list content begin -->
-
-                    <div class="table-responsive col-xs-12">
-                        <table id="infoTable" class="display nowrap dataTable table table-striped table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>序号</th>
-                                    <th>名称</th>
-                                    <th>编码</th>
-                                    <th>联系人</th>
-                                    <th>手机号</th>
-                                    <th>封面</th>
-                                    <th>状态</th>
-                                    <th>操作</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                        <div class="table-responsive col-xs-12">
+                            <table id="infoTable" class="display nowrap dataTable table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>名称</th>
+                                        <th>编码</th>
+                                        <th>联系人</th>
+                                        <th>手机号</th>
+                                        <th>封面</th>
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
                     </div>
-                    <!-- list content end -->
-                    </div>
-
                 </div>
-                <!-- content area end -->
 
                 <!--footer begin-->
                 @@include('../../layout/footer.html',{
                   "rel-prefix": "../.."
                 })
                 <!--footer end-->
+
+                <!-- content area end -->
             </div>
             <!-- main content end -->
         </div>
@@ -124,10 +117,10 @@
     <!-- Menu Toggle Script -->
     <script type="text/javascript">
         $(function(){
-            // $("#wrapper").toggleClass("toggled");
+            // $(".page-container").toggleClass("toggled");
             $("#menu-toggle").click(function(e) {
                 e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
+                $(".page-container").toggleClass("toggled");
             });
         });
     </script>

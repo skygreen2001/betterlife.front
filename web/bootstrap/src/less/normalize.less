@@ -10,6 +10,13 @@ body {
 }
 
 /************************* Layout:start ************************/
+a{
+  color: @color-input;
+  &:hover{
+    color: #5BCD60;
+    text-decoration: none;
+  }
+}
 .menu-search-text{
   display: none;
 }
@@ -75,7 +82,7 @@ body {
 
 footer {
   background: #222;
-  color: #999;
+  color: #999 !important;
   font-size: 0.923em;
   text-align: center;
   #footer-inner {
@@ -100,51 +107,45 @@ footer {
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 /* Toggle Styles */
-#wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+.page-container {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  .page-sidebar {
+      z-index: 1000;
+      position: fixed;
+      left: 250px;
+      width: 0;
+      height: 100%;
+      margin-left: -250px;
+      overflow-y: auto;
+      background: #000;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+  }
+  #content-wrapper {
+      width: 100%;
+      position: absolute;
+  }
+  &.toggled {
+      padding-left: 250px;
+      .page-sidebar{
+          width: 250px;
+      }
+      #content-wrapper {
+          position: absolute;
+          margin-right: -250px;
+      }
+  }
 }
-
-#wrapper.toggled {
-    padding-left: 250px;
-}
-
-#sidebar-wrapper {
-    z-index: 1000;
-    position: fixed;
-    left: 250px;
-    width: 0;
-    height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    background: #000;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-    width: 250px;
-}
-
-#page-content-wrapper {
-    width: 100%;
-    position: absolute;
-}
-
-#wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: -250px;
-}
-
 /* Sidebar Styles */
 .sidebar-nav {
     position: absolute;
@@ -153,69 +154,68 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-}
+    i {
+      // font-size: 32px;
+      // color: @color-input;
+      // background-color: #ccc;
+    }
+    li {
+        text-indent: 20px;
+        line-height: 40px;
+        list-style: none;
+        a {
+            display: block;
+            text-decoration: none;
+            color: #999999;
+            &:hover {
+                text-decoration: none;
+                color: #fff;
+                background: rgba(255,255,255,0.2);
+            }
+            &:active,&:focus{
+                text-decoration: none;
+            }
 
-.sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
-}
-
-.sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    color: #999999;
-}
-
-.sidebar-nav li a:hover {
-    text-decoration: none;
-    color: #fff;
-    background: rgba(255,255,255,0.2);
-}
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-    text-decoration: none;
+        }
+    }
 }
 
 .sidebar-nav > .sidebar-brand {
     height: 65px;
     font-size: 18px;
     line-height: 60px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-    color: #999999;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
+    a {
+        color: #999999;
+        &:hover {
+            color: #fff;
+            background: none;
+        }
+    }
 }
 
 @media(min-width:@screen-sm-min) {
-    #wrapper {
+    .page-container {
         padding-left: 0;
-    }
-
-    #wrapper.toggled {
-        padding-left: 250px;
-    }
-
-    #sidebar-wrapper {
-        width: 0;
-    }
-
-    #wrapper.toggled #sidebar-wrapper {
-        width: 250px;
-    }
-
-    #page-content-wrapper {
-        position: relative;
-    }
-
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
+        .page-sidebar {
+            width: 0;
+        }
+        #content-wrapper {
+            position: relative;
+        }
+        &.toggled {
+            padding-left: 250px;
+            .page-sidebar {
+                width: 250px;
+            }
+            #content-wrapper {
+                position: relative;
+                margin-right: 0;
+            }
+        }
     }
 }
 /************************* Sidebar:  end ************************/
+.breadcrumb{
+  margin-bottom: 0px;
+  padding-left: 36px;
+}

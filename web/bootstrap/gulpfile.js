@@ -126,8 +126,9 @@ gulp.task('images', function () {
 ==================================*/
 
 gulp.task('fonts', function() {
+
   return gulp.src(config.fonts)
-        .pipe(gulp.dest(path.join(config.dest, 'fonts')));
+        .pipe(gulp.dest(path.join(config.dest, 'css', 'fonts')));
 });
 
 /*=================================================
