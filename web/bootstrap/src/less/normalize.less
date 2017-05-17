@@ -155,14 +155,21 @@ body {
     padding: 0;
     list-style: none;
     i {
-      // font-size: 32px;
-      // color: @color-input;
+      margin-right: 8px;
+      font-size: 16px;
+      color: #fff;//@color-input;
       // background-color: #ccc;
     }
     li {
         text-indent: 20px;
         line-height: 40px;
         list-style: none;
+        &.active{
+            background-color: @color-input;
+            i,a{
+              color: #fff;
+            }
+        }
         a {
             display: block;
             text-decoration: none;
@@ -177,18 +184,11 @@ body {
             }
 
         }
-    }
-}
-
-.sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-    a {
-        color: #999999;
-        &:hover {
-            color: #fff;
-            background: none;
+        &.navigation-header{
+          text-align: center;
+          a{
+            padding-right: 8px;
+          }
         }
     }
 }
