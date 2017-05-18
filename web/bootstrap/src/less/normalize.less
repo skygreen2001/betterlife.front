@@ -101,11 +101,6 @@ footer {
 }
 /************************* Layout:  end ************************/
 /************************* Sidebar:start ************************/
-/*!
- * Start Bootstrap - Simple Sidebar (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
 body {
   overflow-x: hidden;
 }
@@ -148,79 +143,85 @@ body {
 }
 /* Sidebar Styles */
 .sidebar-nav {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    i {
-      margin-right: 8px;
-      font-size: 16px;
-      color: #fff;
-    }
-    ul{
-      padding-left: 0px;
-      &.sub-menu{
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  i {
+    margin-right: 8px;
+    font-size: 16px;
+    color: #fff;
+  }
+  ul{
+    padding-left: 0px;
+    &.sub-menu{
+      li a{
+        padding-left: 30px;
+        .transition(padding-left 1s);
+      }
+      &.in{
         li a{
           padding-left: 40px;
-          // .transition(padding-left 1s);
+          .transition(padding-left 1s);
         }
       }
     }
-    li {
-        text-indent: 20px;
-        line-height: 40px;
-        list-style: none;
-        &.active{
-            background-color: @color-input;
-            i,a{
-              color: #fff;
-            }
-        }
-        a {
-            display: block;
-            text-decoration: none;
-            color: #999999;
-            &:hover {
-                text-decoration: none;
-                color: #fff;
-                background: rgba(255,255,255,0.2);
-            }
-            &:active,&:focus{
-                text-decoration: none;
-            }
-
-        }
-        &.navigation-header{
-          text-align: center;
-          a{
-            padding-right: 8px;
-          }
-        }
+  }
+  li {
+    text-indent: 20px;
+    line-height: 40px;
+    list-style: none;
+    a {
+      display: block;
+      text-decoration: none;
+      color: #999999;
+      span{
+        pointer-events: none;
+      }
+      &:hover {
+        text-decoration: none;
+        color: #fff;
+        background: rgba(255,255,255,0.2);
+      }
+      &:active,&:focus{
+        text-decoration: none;
+      }
+      &.active, &.active:hover{
+        background-color: @color-input;
+        color: #fff;
+      }
     }
+    &.navigation-header{
+      text-align: center;
+      a{
+        padding-right: 8px;
+      }
+    }
+  }
 }
 
 @media(min-width:@screen-sm-min) {
-    .page-container {
-        padding-left: 0;
-        .page-sidebar {
-            width: 0;
-        }
-        #content-wrapper {
-            position: relative;
-        }
-        &.toggled {
-            padding-left: 250px;
-            .page-sidebar {
-                width: 250px;
-            }
-            #content-wrapper {
-                position: relative;
-                margin-right: 0;
-            }
-        }
+  .page-container {
+    padding-left: 0;
+    .page-sidebar {
+      width: 0;
     }
+    #content-wrapper {
+      position: relative;
+    }
+    &.toggled {
+      padding-left: 250px;
+      .page-sidebar {
+        width: 250px;
+      }
+      #content-wrapper {
+        position: relative;
+        margin-right: 0;
+      }
+    }
+  }
 }
 /************************* Sidebar:  end ************************/
 .breadcrumb{
