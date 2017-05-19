@@ -209,8 +209,8 @@
             <li><a href="#contact">研发</a></li>
             <li><a href="#contact">购物</a></li>
             <li><a href="#contact">话题</a></li>
-            <li><a href="#contact">幽默</a></li>
-            <li class="search-toggle"><a href="../../html/model/preview.html"><span><span class="menu-search-text">搜索</span><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></a></li>
+            <li><a href="../../html/model/preview.html">幽默</a></li>
+            <li class="search-toggle"><a href="#"><span><span class="menu-search-text">搜索</span><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
         <div id="searchform-header" class="hidden">
@@ -691,6 +691,18 @@
 
     <script type="text/javascript" src="../../js/common/bower/bower.min.js"></script>
     <script type="text/javascript" src="../../js/common/common.jquery.min.js"></script>
+
+
+
+<code>
+  clicking on ".sidebar-nav li a" removes class "active" on ".sidebar-nav li a.active"
+  <!-- clicking on ".sidebar-nav li a" removes class "in" on ".sidebar-nav ul.in" -->
+  clicking on ".sidebar-nav li a" adds class "active" on "target"
+
+  <!-- 来自uilang: http://uilang.com/ -->
+  clicking on ".search-toggle" toggles class "hidden" on "#searchform-header"
+  clicking on ".page-container" adds class "hidden" on "#searchform-header"
+</code>
 
     <!--footer end-->
     <script type="text/javascript">

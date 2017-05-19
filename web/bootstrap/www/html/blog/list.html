@@ -42,8 +42,8 @@
             <li><a href="#contact">研发</a></li>
             <li><a href="#contact">购物</a></li>
             <li><a href="#contact">话题</a></li>
-            <li><a href="#contact">幽默</a></li>
-            <li class="search-toggle"><a href="../../html/model/preview.html"><span><span class="menu-search-text">搜索</span><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></a></li>
+            <li><a href="../../html/model/preview.html">幽默</a></li>
+            <li class="search-toggle"><a href="#"><span><span class="menu-search-text">搜索</span><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
         <div id="searchform-header" class="hidden">
@@ -78,37 +78,37 @@
               <li data-role="dropdown">
                 <a data-toggle="collapse" href="#collapse-it" aria-expanded="false" aria-controls="collapse-it"><i class="icon-book"></i> <span>科技类</span></a>
                 <ul class="sub-menu collapse" id="collapse-it">
-                  <li><a href="layout_navbar_fixed.html">Fixed navbar</a></li>
-                  <li><a href="layout_navbar_sidebar_fixed.html">Fixed navbar &amp; sidebar</a></li>
-                  <li><a href="layout_sidebar_fixed_native.html">Fixed sidebar native scroll</a></li>
-                  <li><a href="layout_navbar_hideable.html">Hideable navbar</a></li>
-                  <li><a href="layout_navbar_hideable_sidebar.html">Hideable &amp; fixed sidebar</a></li>
-                  <li><a href="layout_footer_fixed.html">Fixed footer</a></li>
+                  <li><a href="#">微信</a></li>
+                  <li><a href="#">百度</a></li>
+                  <li><a href="#">阿里巴巴</a></li>
+                  <li><a href="#">华为</a></li>
+                  <li><a href="#">vivo</a></li>
+                  <li><a href="#">小米</a></li>
                   <li class="navigation-divider"></li>
-                  <li><a href="boxed_default.html">Boxed with default sidebar</a></li>
-                  <li><a href="boxed_mini.html">Boxed with mini sidebar</a></li>
-                  <li><a href="boxed_full.html">Boxed full width</a></li>
+                  <li><a href="#">宇航</a></li>
+                  <li><a href="#">移动</a></li>
+                  <li><a href="#">交通</a></li>
                 </ul>
               </li>
               <li>
                 <a data-toggle="collapse" href="#collapse-philosophy" aria-expanded="false" aria-controls="collapse-philosophy"><i class="icon-user"></i> <span>哲学类</span></a>
                 <ul class="sub-menu collapse" id="collapse-philosophy">
-                  <li><a href="index.html" id="layout1">Layout 1 <span class="label bg-warning-400">Current</span></a></li>
-                  <li><a href="../../layout_2/LTR/index.html" id="layout2">Layout 2</a></li>
-                  <li><a href="../../layout_3/LTR/index.html" id="layout3">Layout 3</a></li>
-                  <li><a href="../../layout_4/LTR/index.html" id="layout4">Layout 4</a></li>
-                  <li class="disabled"><a href="../../layout_5/LTR/index.html" id="layout5">Layout 5 <span class="label">Coming soon</span></a></li>
+                  <li><a href="#">老子</a></li>
+                  <li><a href="#">基督</a></li>
+                  <li><a href="#">佛教</a></li>
+                  <li><a href="#">唯心主义</a></li>
+                  <li><a href="#">唯物主义</a></li>
                 </ul>
               </li>
               <li data-role="dropdown">
                 <a data-toggle="collapse" href="#collapse-art" aria-expanded="false" aria-controls="collapse-art"><i class="icon-music"></i> <span>艺术类</span></a>
                 <ul class="sub-menu collapse" id="collapse-art">
-                  <li><a href="layout_navbar_fixed.html">Fixed navbar</a></li>
-                  <li><a href="layout_navbar_sidebar_fixed.html">Fixed navbar &amp; sidebar</a></li>
-                  <li><a href="layout_sidebar_fixed_native.html">Fixed sidebar native scroll</a></li>
-                  <li><a href="layout_navbar_hideable.html">Hideable navbar</a></li>
-                  <li><a href="layout_navbar_hideable_sidebar.html">Hideable &amp; fixed sidebar</a></li>
-                  <li><a href="layout_footer_fixed.html">Fixed footer</a></li>
+                  <li><a href="#">音乐</a></li>
+                  <li><a href="#">电影</a></li>
+                  <li><a href="#">文学</a></li>
+                  <li><a href="#">舞蹈</a></li>
+                  <li><a href="#">绘画</a></li>
+                  <li><a href="#">雕塑</a></li>
                 </ul>
               </li>
               <li>
@@ -192,6 +192,18 @@
 
     <script type="text/javascript" src="../../js/common/bower/bower.min.js"></script>
     <script type="text/javascript" src="../../js/common/common.jquery.min.js"></script>
+
+
+
+<code>
+  clicking on ".sidebar-nav li a" removes class "active" on ".sidebar-nav li a.active"
+  <!-- clicking on ".sidebar-nav li a" removes class "in" on ".sidebar-nav ul.in" -->
+  clicking on ".sidebar-nav li a" adds class "active" on "target"
+
+  <!-- 来自uilang: http://uilang.com/ -->
+  clicking on ".search-toggle" toggles class "hidden" on "#searchform-header"
+  clicking on ".page-container" adds class "hidden" on "#searchform-header"
+</code>
 
                 <!--footer end-->
 
@@ -375,13 +387,6 @@
         $("#btn-query").click(function(){infoTable.draw();});
     });
     </script>
-
-
-    <code>
-      clicking on ".sidebar-nav li a" removes class "active" on ".sidebar-nav li a.active"
-      clicking on ".sidebar-nav li a" removes class "in" on ".sidebar-nav ul.in"
-      clicking on ".sidebar-nav li a" toggles class "active" on "target"
-    </code>
 
 </body>
 </html>
