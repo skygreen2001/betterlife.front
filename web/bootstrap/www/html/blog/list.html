@@ -25,11 +25,15 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle  collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <i class="glyphicon glyphicon-briefcase"></i>
+          </button>
+          <button id="btn-toggle-sidebar" type="button" class="navbar-toggle collapsed">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">Betterlife Front UI</a>
         </div>
@@ -60,7 +64,7 @@
     <!-- main nav end -->
 
     <!-- page container begin -->
-    <div class="page-container toggled">
+    <div class="page-container">
 
         <!-- page content begin -->
         <div class="page-content">
@@ -70,13 +74,13 @@
   <!-- main navigation -->
   <div class="sidebar-content">
     <ul class="navigation-header">
-      <li ><a href="#"><i class="icon-th-list"></i></a></li>
+      <li ><a href="#"><i class="icon-th-list" title="功能导航"></i></a></li>
     </ul>
     <ul class="sidebar-nav">
         <!-- main -->
         <li><a href="#" class="active"><i class="icon-dashboard"></i> <span>控制台</span></a></li>
         <li data-role="dropdown">
-          <a class="has-ul" href="#collapse-it" aria-expanded="false" aria-controls="collapse-it"><i class="icon-book"></i> <span>科技类</span><i class="glyphicon glyphicon-chevron-right menu-right"></i></a>
+          <a class="has-ul" href="#collapse-it" aria-expanded="false" aria-controls="collapse-it"><i class="icon-book"></i> <span>科技类</span><i class="glyphicon glyphicon-menu-right menu-right"></i></a>
           <ul class="sub-menu" id="collapse-it">
             <li><a href="#">微信</a></li>
             <li><a href="#">百度</a></li>
@@ -84,14 +88,14 @@
             <li><a href="#">华为</a></li>
             <li><a href="#">vivo</a></li>
             <li><a href="#">小米</a></li>
-            <li class="navigation-divider"></li>
+            <li class="nav-splitter"></li>
             <li><a href="#">宇航</a></li>
             <li><a href="#">移动</a></li>
             <li><a href="#">交通</a></li>
           </ul>
         </li>
         <li>
-          <a class="has-ul" href="#collapse-philosophy" aria-expanded="false" aria-controls="collapse-philosophy"><i class="icon-user"></i> <span>哲学类</span></a>
+          <a class="has-ul" href="#collapse-philosophy" aria-expanded="false" aria-controls="collapse-philosophy"><i class="icon-user"></i> <span>哲学类</span><i class="glyphicon glyphicon-menu-right menu-right"></i></a>
           <ul class="sub-menu" id="collapse-philosophy">
             <li><a href="#">老子</a></li>
             <li><a href="#">基督</a></li>
@@ -101,7 +105,7 @@
           </ul>
         </li>
         <li data-role="dropdown">
-          <a class="has-ul" href="#collapse-art" aria-expanded="false" aria-controls="collapse-art"><i class="icon-music"></i> <span>艺术类</span></a>
+          <a class="has-ul" href="#collapse-art" aria-expanded="false" aria-controls="collapse-art"><i class="icon-music"></i> <span>艺术类</span><i class="glyphicon glyphicon-menu-right menu-right"></i></a>
           <ul class="sub-menu" id="collapse-art">
             <li><a href="#">音乐</a></li>
             <li><a href="#">电影</a></li>
@@ -190,16 +194,6 @@
     <script type="text/javascript" src="../../js/common/bower/bower.min.js"></script>
     <script type="text/javascript" src="../../js/common/common.jquery.min.js"></script>
     <script type="text/javascript" src="../../js/normal/layout.js"></script>
-
-<code>
-  clicking on ".sidebar-nav li a" removes class "active" on ".sidebar-nav li a.active"
-  <!-- clicking on ".sidebar-nav li a" removes class "in" on ".sidebar-nav ul.in" -->
-  clicking on ".sidebar-nav li a" adds class "active" on "target"
-
-  <!-- 来自uilang: http://uilang.com/ -->
-  clicking on ".search-toggle" toggles class "hidden" on "#searchform-header"
-  clicking on ".page-container" adds class "hidden" on "#searchform-header"
-</code>
 
                 <!--footer end-->
 
