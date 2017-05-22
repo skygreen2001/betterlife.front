@@ -29,14 +29,11 @@ a{
   .navbar-header{
     button{
       height: 36px;
-      .icon-bar{
-        width: 16px;
-      }
-      i{
-        color: #fff;
-        font-size: 16px;
-      }
     }
+  }
+  i{
+    color: #fff;
+    font-size: @font-size-ico;
   }
   #searchform-header {
     position: absolute;
@@ -126,7 +123,7 @@ footer {
     position: absolute;
     display: none;
     z-index: 1000;
-    width: 250px;
+    width: @sidebar-width;
     height: 100%;
     margin-top: 3px;
     background: #000;
@@ -154,14 +151,14 @@ footer {
         }
         i{
           display: block;
-          font-size: 16px;
+          font-size: @font-size-ico;
           padding-top: 2px;
         }
       }
     }
   }
   .sidebar-nav {
-    width: 250px;
+    width: @sidebar-width;
     .transition(width 0.5s);
     margin: 0;
     padding: 0;
