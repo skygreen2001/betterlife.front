@@ -120,9 +120,7 @@
 
         //Datatables中文网[帮助]: http://datatables.club/
         var infoTable = $('#infoTable').DataTable({
-            "language":{
-                url: '../../data/config/Chinese.json'
-            },
+            "language"  : $.dataTable.chinese, 
             "processing": true,
             "serverSide": true,
             "ajax": {
