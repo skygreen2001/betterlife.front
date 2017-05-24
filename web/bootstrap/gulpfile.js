@@ -50,30 +50,6 @@ var gulp = require('gulp'),
     streamqueue = require('streamqueue'),
     bowerFiles  = require('main-bower-files');
 
-// var gulp           = require('gulp'),
-//
-//     bower          = require('gulp-bower'),
-//
-//     seq            = require('run-sequence'),
-//     connect        = require('gulp-connect'),
-//     less           = require('gulp-less'),
-//     uglify         = require('gulp-uglify'),
-//     sourcemaps     = require('gulp-sourcemaps'),
-//     cssmin         = require('gulp-cssmin'),
-//     image          = require('gulp-image'),
-//     order          = require('gulp-order'),
-//     concat         = require('gulp-concat'),
-//     ignore         = require('gulp-ignore'),
-//     clean          = require('gulp-clean'),
-//     mobilizer      = require('gulp-mobilizer'),
-//     replace        = require('gulp-replace'),
-//     streamqueue    = require('streamqueue'),
-//     rename         = require('gulp-rename'),
-//     path           = require('path');
-
-// var fileinclude = require('gulp-file-include');
-
-
 /*================================================
 =            Report Errors to Console            =
 ================================================*/
