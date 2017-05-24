@@ -239,7 +239,7 @@
 
         //Datatables中文网[帮助]: http://datatables.club/
         var infoTable = $('#infoTable').DataTable({
-            "language"  : $.dataTable.chinese, 
+            "language"  : $.dataTable.chinese,
             "processing": true,
             "serverSide": true,
             "ajax": {
@@ -272,6 +272,8 @@
             "searching"    : false,
             "ordering"     : false,
             "dom"          : '<"top">rt<"bottom"lp><"clear">',
+            "deferRender"  : true,
+            "bStateSave"   : true,
             "bLengthChange": true,
             "aLengthMenu"  : [[10, 25, 50, 100,-1],[10, 25, 50, 100,'全部']],
             "columns": [
