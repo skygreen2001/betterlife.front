@@ -1,4 +1,22 @@
 $(function(){
+  //自动高亮当前页面链接地址对应的导航菜单
+  var urlstr = location.href;
+  var urlstatus=false;
+  $(".sidebar-nav li a").each(function () {
+    if (((urlstr + '/').indexOf($(this).attr('href')) > -1)&&($(this).attr('href')!='')&&($(this).attr('href')!='#')) {
+      $(this).addClass('active');
+      urlstatus = true;
+    } else {
+      $(this).removeClass('active');
+    }
+    if($(".sidebar-nav li a.active").length>1){
+      $(".sidebar-nav li a").eq(0).removeClass('active');
+    }
+  });
+  if (!urlstatus) {
+    $(".sidebar-nav li a").eq(0).addClass('active');
+  }
+
   //左侧导航条有子菜单点选
   $(".sidebar-nav >li > a.has-ul").click(function(e){
     e.preventDefault();
@@ -47,14 +65,15 @@ $(function(){
         $(".page-sidebar .sidebar-nav ul").css("display","none");
         $('.page-sidebar.pin .sidebar-nav > li > a span i').remove();
         $('.page-sidebar.pin .sidebar-nav > li > a span').css("display","none");
-        if($(this).hasClass('has-ul')){
-          $(this).find("span").prepend("<i class='glyphicon glyphicon-triangle-left'></i>");
-          $(this).find("span").css("top",$(this).position().top);
-          $(this).next("ul").css("top",$(this).position().top+40);
-          $(this).find("span").css("display","block");
-          $(this).find("span").css("pointer-events","auto");
-          $(this).next("ul").css("display","block");
 
+        $(this).find("span").prepend("<i class='glyphicon glyphicon-triangle-left'></i>");
+        $(this).find("span").css("top",$(this).position().top);
+        $(this).find("span").css("display","block");
+        $(this).find("span").css("pointer-events","auto");
+
+        if($(this).hasClass('has-ul')){
+          $(this).next("ul").css("top",$(this).position().top+40);
+          $(this).next("ul").css("display","block");
         }
       });
 
@@ -65,6 +84,7 @@ $(function(){
     }else{
       $('.page-sidebar .sidebar-nav > li > a span').removeAttr("style");
       $(".page-sidebar .sidebar-nav ul").removeAttr("style");
+      $('.page-sidebar .sidebar-nav > li > a span i').remove();
     }
   });
 
