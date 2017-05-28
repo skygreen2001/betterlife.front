@@ -10,22 +10,29 @@ $(function(){
             "ajax": {
                 "url" : "../../data/list.json",
                 "data": function ( d ) {
-                    d.query = $("#input-search").val();
+                    d.query    = $("#input-search").val();
+                    d.pageSize = d.length;
+                    d.page     = d.start / d.length + 1;
+                    d.limit    = d.start + d.length;
                     return d;
                     // return JSON.stringify( d );
                 },
                 //可以对返回的结果进行改写
                 "dataFilter": function(data){
+                    // return data;
+                    // //可以对返回的结果进行改写
+                    // var json = jQuery.parseJSON( data );
+                    // return JSON.stringify( json );
+
+                    // 示例:静态代码修改返回结果如下
                     var json = jQuery.parseJSON( data );
                     var p = infoTable.ajax.params();
                     json.draw = p.draw;
                     var info = infoTable.page.info();
-                    var length= info.length;
-                    var page = p.start / length + 1;
-                    if (page == 1) {
-                      json.data = json.data.slice(0, p.length);
-                    } else {
-                      json.data = json.data.slice(p.length);
+                    if ((info.end-info.start) >= info.length){
+                        json.data = json.data.slice(p.start, p.length);
+                    }else{
+                        json.data = json.data.slice(p.start);
                     }
                     return JSON.stringify( json );
                 }
@@ -33,7 +40,7 @@ $(function(){
             "responsive"   : true,
             "searching"    : false,
             "ordering"     : false,
-            "dom"          : '<"top">rt<"bottom"lp><"clear">',
+            "dom"          : '<"top">rt<"bottom"ilp><"clear">',
             "deferRender"  : true,
             "bStateSave"   : true,
             "bLengthChange": true,
