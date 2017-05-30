@@ -36,7 +36,9 @@
     "bootbox.js": "bootbox#^4.4.0",
     "uilang": "bendc/uilang",
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
-    "icomoon-bower": "^0.1.2"
+    "icomoon-bower": "^0.1.2",
+    "bootstrap-multiselect": "^0.9.13",
+    "jquery-validation": "jquery-validation/jquery-validation#^1.16.0"
   },
   "_dependencies_ignored": {
     "font-awesome": "4.2",

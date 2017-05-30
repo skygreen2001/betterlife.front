@@ -24,7 +24,6 @@ var config = {
     // './bower_components/font-awesome/fonts/fontawesome-webfont.*',
     './bower_components/icomoon-bower/fonts/icomoon.*'
   ],
-
   server: {
     host: '0.0.0.0',
     port: '8000'
@@ -174,10 +173,20 @@ gulp.task('less', function () {
 gulp.task('js', function() {
   var jsTask;
   if ( firstInit ) {
-    jsTask = gulp.src(bowerFiles({
-      filter:'**/*.js'
-      // ,debugging: true
-    }))
+    jsTask = gulp.src(
+      bowerFiles({
+        filter:'**/*.js',
+        // debugging: true,
+        overrides:{
+          'moment':{
+            'main':[
+              'moment.js',
+              'locale/zh-cn.js'
+            ]
+          }
+        }
+      })
+    )
     .pipe($.sourcemaps.init())
     .pipe($.concat('bower.js'));
 
