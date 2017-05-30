@@ -174,7 +174,10 @@ gulp.task('less', function () {
 gulp.task('js', function() {
   var jsTask;
   if ( firstInit ) {
-    jsTask = gulp.src(bowerFiles(), {read: false})
+    jsTask = gulp.src(bowerFiles({
+      filter:'**/*.js'
+      // ,debugging: true
+    }))
     .pipe($.sourcemaps.init())
     .pipe($.concat('bower.js'));
 
