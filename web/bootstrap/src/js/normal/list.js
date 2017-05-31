@@ -1,4 +1,4 @@
-var dataTable={
+var dataTable = {
     pageSelectType: 1,
     chinese: {
         "sProcessing"    : "处理中...",

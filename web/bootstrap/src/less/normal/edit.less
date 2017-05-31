@@ -6,6 +6,9 @@
     height: 36px;
     line-height: 36px;
   }
+  textarea{
+    width: 75%;
+  }
   button{
     font-size: 15px;
     min-width: 68px;
@@ -33,6 +36,23 @@
     text-align: center;
     width: 72px;
   }
+  select{
+    & +.btn-group{
+      & > .btn:first-child{
+        color: #333;
+        font-size: 14px;
+      }
+      .multiselect-container{
+        & > li {
+          width: 300px;
+          & > a > label > input[type=checkbox]{
+            margin-top: -9px;
+          }
+        }
+      }
+    }
+  }
+
   .form-actions {
     display: block;
     text-align: center;
