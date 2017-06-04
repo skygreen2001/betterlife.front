@@ -1,13 +1,13 @@
-
 .edit{
   margin-top: 20px;
   min-height      : 653px;
   input{
     height: 36px;
     line-height: 36px;
+    width: 100%;
   }
   textarea{
-    width: 75%;
+    width: 100%;
   }
   button{
     font-size: 15px;
@@ -21,26 +21,30 @@
       }
     }
   }
+  .form-group{
+    margin-bottom: 6px;
+  }
   .btn-file-browser{
-    background: #5cb85c none repeat scroll 0 0;
-    border: 1px solid #4cae4c;
+    background: @color-input none repeat scroll 0 0;
+    border: 1px solid @color-input;
     color: #fff;
     cursor: pointer;
-    display: inline;
-    float: left;
     font-size: 14px;
-    height: 36px;
-    line-height: 20px;
-    margin-left: 9px;
-    overflow: hidden;
-    text-align: center;
-    width: 72px;
+    margin-top: 2px;
   }
   select{
     & +.btn-group{
-      & > .btn:first-child{
+      width: 100%;
+      & > .multiselect:first-child{
         color: #333;
         font-size: 14px;
+        text-align: left;
+        width: 100%;
+        b.caret {
+          position: absolute;
+          top: 14px;
+          right: 8px;
+        }
       }
       .multiselect-container{
         & > li {
@@ -49,7 +53,19 @@
             margin-top: -9px;
           }
         }
+        &.dropdown-menu > .active > a{
+          background-color: @color-input;
+          &:hover, &:focus{
+            background-color: @color-input;
+          }
+        }
       }
+    }
+  }
+
+  .has-error{
+    .help-block{
+      margin-bottom: 0px;
     }
   }
 
@@ -60,5 +76,24 @@
     margin-bottom: 20px;
     margin-top: 20px;
     padding: 19px 20px 20px;
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  .edit{
+    input,textarea{
+      width: 75%;
+    }
+    .btn-file-browser{
+      margin-top: 0px;
+    }
+    select{
+      & +.btn-group{
+        width: 86.5%;
+        & > .multiselect:first-child{
+          width: 86.5%;
+        }
+      }
+    }
   }
 }

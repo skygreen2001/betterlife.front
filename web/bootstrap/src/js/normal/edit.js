@@ -24,9 +24,7 @@ var edit = {
         nonSelectedText: promptText,
         selectAllText: '全部',
         allSelectedText: '选中全部',
-        maxHeight: 200,
-        dropUp: true,
-        buttonWidth: '86.5%'
+        maxHeight: 200
     });
   }
 };

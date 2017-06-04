@@ -1,6 +1,7 @@
 var dataTable = {
     pageSelectType: 1,
-    chinese: {
+    maxMorePages  : 8,
+    chinese       : {
         "sProcessing"    : "处理中...",
         "sLengthMenu"    : "显示 _MENU_ 项结果",
         "sZeroRecords"   : "没有匹配结果",
@@ -26,46 +27,49 @@ var dataTable = {
         }
     },
     pageNumDisplay:function(dataTableThis){
-        var self=dataTableThis;
-        if (this.pageSelectType==1){
-            var info = self.api().page.info();
-            var currentPage=info.page+1;
-            var totalPages=info.pages;
-            var pageSelectOptions="";
-            for (var int = 0; int < totalPages; int++) {
-                var showPageNum=int+1;
-                if (int==currentPage-1){
-                    pageSelectOptions+='<option value="'+showPageNum+'" selected>'+showPageNum+'</option>';
-                }else{
-                    pageSelectOptions+='<option value="'+showPageNum+'">'+showPageNum+'</option>';
-                }
-            }
-            $(dataTableThis.selector+'_ellipsis').before('<li class="paginate_button "><a href="#" tabindex="1" style="padding:2px 12px; margin-bottom: 0px;"><select class="redirect_page" style="height: 26px; font-size: 14px;text-align: center; margin:0 -5px;">'+pageSelectOptions+'</select></a></li>');
-            $('.redirect_page').change(function(e){
-                var sefRedirect=this;
-                if($(sefRedirect).val() && $(sefRedirect).val()>0){
-                    var redirectpage = $(sefRedirect).val()-1;
-                }else{
-                    var redirectpage = 0;
-                }
-                self.fnPageChange( redirectpage );
-            });
-        }else{
-            $(dataTableThis.selector+'_ellipsis').before('<li class="paginate_button "><a href="#" tabindex="1" style="padding:2px 12px; margin-bottom: 0px;"><input type="text" class="redirect_page" style="width: 30px; height: 26px; font-size: 14px;text-align: center; margin:0 -5px;"></a></li>');
-            var globalTimeout = null;
-            $('.redirect_page').keyup(function(e){
-                var sefRedirect=this;
-                if(globalTimeout != null) clearTimeout(globalTimeout);
-                   globalTimeout=setTimeout(function(){
-                   if($(sefRedirect).val() && $(sefRedirect).val()>0){
-                       var redirectpage = $(sefRedirect).val()-1;
-                   }else{
-                       var redirectpage = 0;
-                   }
-                   self.fnPageChange( redirectpage );
-                   if(globalTimeout != null) clearTimeout(globalTimeout);
-                },500);
-            });
+        var self       = dataTableThis;
+        var info       = self.api().page.info();
+        var totalPages = info.pages
+        if ( totalPages > this.maxMorePages ){
+          if ( this.pageSelectType == 1 ){
+              var currentPage       = info.page+1;
+              var pageSelectOptions = "";
+              for ( var int = 0; int < totalPages; int++ ) {
+                  var showPageNum=int+1;
+                  if (int==currentPage-1){
+                      pageSelectOptions+='<option value="'+showPageNum+'" selected>'+showPageNum+'</option>';
+                  }else{
+                      pageSelectOptions+='<option value="'+showPageNum+'">'+showPageNum+'</option>';
+                  }
+              }
+              if ( !self.selector ) self.selector = "#" + self[0].id;
+              $(self.selector+'_ellipsis').before('<li class="paginate_button "><a href="#" tabindex="1" style="padding:2px 12px; margin-bottom: 0px;"><select class="redirect_page" style="height: 26px; font-size: 14px;text-align: center; margin:0 -5px;">'+pageSelectOptions+'</select></a></li>');
+              $('.redirect_page').change(function(e){
+                  var sefRedirect=this;
+                  if($(sefRedirect).val() && $(sefRedirect).val()>0){
+                      var redirectpage = $(sefRedirect).val()-1;
+                  }else{
+                      var redirectpage = 0;
+                  }
+                  self.fnPageChange( redirectpage );
+              });
+          }else{
+              $(self.selector+'_ellipsis').before('<li class="paginate_button "><a href="#" tabindex="1" style="padding:2px 12px; margin-bottom: 0px;"><input type="text" class="redirect_page" style="width: 30px; height: 26px; font-size: 14px;text-align: center; margin:0 -5px;"></a></li>');
+              var globalTimeout = null;
+              $('.redirect_page').keyup(function(e){
+                  var sefRedirect=this;
+                  if(globalTimeout != null) clearTimeout(globalTimeout);
+                     globalTimeout=setTimeout(function(){
+                     if($(sefRedirect).val() && $(sefRedirect).val()>0){
+                         var redirectpage = $(sefRedirect).val()-1;
+                     }else{
+                         var redirectpage = 0;
+                     }
+                     self.fnPageChange( redirectpage );
+                     if(globalTimeout != null) clearTimeout(globalTimeout);
+                  },500);
+              });
+          }
         }
         $('.redirect_page').parent().click(function(e){
             e.preventDefault();
@@ -82,5 +86,6 @@ $(function(){
   jQuery.fn.dataTableExt.oSort['chinese-string-desc'] = function(s1,s2) {
       return s2.localeCompare(s1);
   };
-
+  //设置超过多少页页数导航中间显示省略号
+  $.fn.DataTable.ext.pager.numbers_length = dataTable.maxMorePages;
 });
