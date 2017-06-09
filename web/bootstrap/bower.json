@@ -38,6 +38,8 @@
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
     "icomoon-bower": "^0.1.2",
     "bootstrap-multiselect": "^0.9.13",
+    "select2": "^4.0.3",
+    "bootstrap-switch": "^3.3.4",
     "jquery-validation": "jquery-validation/jquery-validation#^1.16.0"
   },
   "_dependencies_ignored": {

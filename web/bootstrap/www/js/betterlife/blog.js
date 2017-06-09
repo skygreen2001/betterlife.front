@@ -124,4 +124,8 @@ $(function(){
         });
         $("#btn-query").click(function(){infoTable.draw();});
     }
+
+    if( $("form").length ){
+      
+    }
 });
