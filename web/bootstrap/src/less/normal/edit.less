@@ -49,7 +49,7 @@
       .multiselect-container{
         & > li {
           width: 300px;
-          & > a > label > input[type=checkbox]{
+          & > a > label > input[type=checkbox], & > a > label > input[type=radio]{
             margin-top: -9px;
           }
         }
@@ -79,9 +79,14 @@
   }
 }
 
+.select2-container--default .select2-results__option--highlighted[aria-selected],
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary{
+  background-color: @color-input;
+}
+
 @media (min-width: @screen-sm-min) {
   .edit{
-    input,textarea{
+    input,textarea,select{
       width: 75%;
     }
     .btn-file-browser{
