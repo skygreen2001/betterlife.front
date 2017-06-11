@@ -1,7 +1,7 @@
 
 .list{
   background-color: #e0e3ec;
-  padding         : 20px 35px !important;
+  padding         : 20px !important;
   min-width       : 320px;
   // min-height      : 568px;
   min-height      : 673px;
@@ -76,6 +76,13 @@
             color           : @color-input;
           }
         }
+        .icon-remove {
+            margin-left: -20px;
+            margin-top: 10px;
+            cursor: pointer;
+            position: absolute;
+            display: none;
+        }
       }
     }
   }
@@ -88,7 +95,7 @@
     table.dataTable {
       width           : 100% !important;
       border          : 1px solid #c1c2c3;
-      border-top      : 0px;
+      // border-top      : 0px;
       margin          : -1px 0 10px 0 !important;
       background-color: #fff;
       th,td{

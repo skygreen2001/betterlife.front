@@ -26,6 +26,22 @@ var dataTable = {
             "sSortDescending": ": 以降序排列此列"
         }
     },
+    filterDisplay:function(){
+        $(".filter-up .icon-remove").remove();
+        $(".filter-up #input-search").after('<i class="icon-remove"></i>');
+        $(".filter-up .icon-remove").click(function(){
+            $(".filter-up input").val("");
+            $(".filter-up input").trigger("keyup");
+            $(".filter-up .icon-remove").css("display","none");
+        });
+        $(".filter-up input").keyup(function(){
+            if ($(this).val()==""){
+                $(this).siblings(".icon-remove").css("display","none");
+            }else{
+                $(this).siblings(".icon-remove").show();
+            }
+        });
+    },
     pageNumDisplay:function(dataTableThis){
         var self       = dataTableThis;
         var info       = self.api().page.info();

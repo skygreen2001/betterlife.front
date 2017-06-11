@@ -117,15 +117,20 @@ $(function(){
                 }
              }
             ],
-            "initComplete":function(){ },
+            "initComplete":function(){
+                $.dataTable.filterDisplay();
+            },
             "drawCallback": function( settings ) {
                 $.dataTable.pageNumDisplay(this);
+                $.dataTable.filterDisplay();
             }
         });
-        $("#btn-query").click(function(){infoTable.draw();});
+        $("#btn-query").click(function(){
+          infoTable.draw();
+        });
     }
 
     if( $("form").length ){
-      
+
     }
 });
