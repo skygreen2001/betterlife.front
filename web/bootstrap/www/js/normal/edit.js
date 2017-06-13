@@ -26,6 +26,34 @@ var edit = {
         allSelectedText: '选中全部',
         maxHeight: 200
     });
+  },
+  select2: function(selectName, ajaxUrl, defaultId, defaultText, cache, delay){
+    if(!cache) cache = true;
+    if(!delay) delay = 250;
+    $(selectName).select2({
+        placeholder: {
+          id: '-1',
+          text: '请选择'
+        },
+        allowClear: true,
+        data:[{"id":defaultId,"text":defaultText}],
+        ajax: {
+          url: ajaxUrl,
+          dataType: 'json',
+          delay: delay,
+          cache: cache,
+          data: function (query) {
+            return query;
+          },
+          processResults: function (response,params) {
+            return {
+              results: response.data
+            };
+          }
+        }
+    });
+
+    $(selectName).val(defaultId).trigger("change");
   }
 };
 

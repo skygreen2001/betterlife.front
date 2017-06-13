@@ -26,6 +26,22 @@ var dataTable = {
             "sSortDescending": ": 以降序排列此列"
         }
     },
+    filterDisplay:function(){
+        $(".filter-up .icon-remove").remove();
+        $(".filter-up #input-search").after('<i class="icon-remove"></i>');
+        $(".filter-up .icon-remove").click(function(){
+            $(".filter-up input").val("");
+            $(".filter-up input").trigger("keyup");
+            $(".filter-up .icon-remove").css("display","none");
+        });
+        $(".filter-up input").keyup(function(){
+            if ($(this).val()==""){
+                $(this).siblings(".icon-remove").css("display","none");
+            }else{
+                $(this).siblings(".icon-remove").show();
+            }
+        });
+    },
     pageNumDisplay:function(dataTableThis){
         var self       = dataTableThis;
         var info       = self.api().page.info();
@@ -43,7 +59,7 @@ var dataTable = {
                   }
               }
               if ( !self.selector ) self.selector = "#" + self[0].id;
-              $(self.selector+'_ellipsis').before('<li class="paginate_button "><a href="#" tabindex="1" style="padding:2px 12px; margin-bottom: 0px;"><select class="redirect_page" style="height: 26px; font-size: 14px;text-align: center; margin:0 -5px;">'+pageSelectOptions+'</select></a></li>');
+              $(self.selector+'_ellipsis').before('<li class="paginate_button "><a class="page_select" href="#" tabindex="1"><select class="redirect_page form-control input-sm">'+pageSelectOptions+'</select></a></li>');
               $('.redirect_page').change(function(e){
                   var sefRedirect=this;
                   if($(sefRedirect).val() && $(sefRedirect).val()>0){
@@ -54,7 +70,7 @@ var dataTable = {
                   self.fnPageChange( redirectpage );
               });
           }else{
-              $(self.selector+'_ellipsis').before('<li class="paginate_button "><a href="#" tabindex="1" style="padding:2px 12px; margin-bottom: 0px;"><input type="text" class="redirect_page" style="width: 30px; height: 26px; font-size: 14px;text-align: center; margin:0 -5px;"></a></li>');
+              $(self.selector+'_ellipsis').before('<li class="paginate_button "><a href="#" tabindex="1" style="display:block;"><input type="text" class="redirect_page"></a></li>');
               var globalTimeout = null;
               $('.redirect_page').keyup(function(e){
                   var sefRedirect=this;

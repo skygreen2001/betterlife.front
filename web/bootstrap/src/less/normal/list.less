@@ -182,10 +182,42 @@
         }
       }
     }
-    .pagination > .active > a{
-      background-color: @color-input;
-      border-color    : @color-input;
-      outline         : none;
+    .pagination {
+      & > .active > a{
+        background-color: @color-input;
+        border-color    : @color-input;
+        color           : #fff;
+        outline         : none;
+      }
+      & > li > span{
+        color: @color-input;
+        outline: none;
+      }
+      & > li > a{
+        color: @color-input;
+        outline: none;
+        display: none;
+        margin-bottom: 0px;
+        &.page_select{
+          background-color: transparent;
+          padding-right: 0px;
+          border: 0px;
+          select{
+            padding: 0px 10px;
+            margin-top: -6px;
+            min-width: 48px;
+            height: 32px;
+            text-align: center;
+          }
+        }
+        input{
+          width: 30px;
+          height: 26px;
+          font-size: 14px;
+          text-align: center;
+          margin:0 -5px;
+        }
+      }
     }
     .dataTables_paginate{
       text-align: right !important;
@@ -210,10 +242,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before, table
   margin-top: 12px;
   margin-left: 3px;
 }
-.pagination > li > a, .pagination > li > span{
-  color: @color-input;
-  outline: none;
-}
+
 div.dataTables_wrapper div.dataTables_info{
     float: left;
     font-size: 15px;
@@ -263,6 +292,27 @@ div.dataTables_wrapper div.dataTables_info{
   border-color: @color-input !important;
   &:active,&:focus,&:hover{
     border-color: @color-input !important;
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  .list .table-responsive .pagination > li > a{
+    display: block;
+    &.page_select{
+      padding: 4px 12px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      select{
+        height: 22px;
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: 880px) {
+  .dataTables_paginate{
+    display: inline-block;
   }
 }
 
