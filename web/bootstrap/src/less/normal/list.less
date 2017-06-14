@@ -113,7 +113,7 @@
           display: none;
         }
         a {
-          width        : 70px;
+          width        : 45px;
           height       : 28px;
           line-height  : 28px;
           color        : #fff;
@@ -194,19 +194,16 @@
         outline: none;
       }
       & > li > a{
-        color: @color-input;
-        outline: none;
-        display: none;
+        color        : @color-input;
+        outline      : none;
+        padding-left : 6px;
+        padding-right: 6px;
         margin-bottom: 0px;
         &.page_select{
-          background-color: transparent;
-          padding-right: 0px;
-          border: 0px;
+          padding: 2px 6px;
           select{
-            padding: 0px 10px;
-            margin-top: -6px;
-            min-width: 48px;
-            height: 32px;
+            min-width : 48px;
+            height    : 26px;
             text-align: center;
           }
         }
@@ -221,6 +218,9 @@
     }
     .dataTables_paginate{
       text-align: right !important;
+      span {
+        display: none;
+      }
     }
     div.dataTables_wrapper div.dataTables_length label{
       float: left;
@@ -237,7 +237,8 @@
   }
 }
 
-table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before{
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before{
   background-color: @color-input;
   margin-top: 12px;
   margin-left: 3px;
@@ -295,9 +296,16 @@ div.dataTables_wrapper div.dataTables_info{
   }
 }
 
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .dataTables_paginate{
+    display: inline-block;
+    float: right;
+  }
+}
+
 @media (min-width: @screen-sm-min) {
   .list .table-responsive .pagination > li > a{
-    display: block;
+    padding: 6px 12px;
     &.page_select{
       padding: 4px 12px;
       background-color: #fff;
@@ -310,13 +318,31 @@ div.dataTables_wrapper div.dataTables_info{
   }
 }
 
-@media (min-width: @screen-sm-min) and (max-width: 880px) {
-  .dataTables_paginate{
-    display: inline-block;
+@media screen and (max-width: @screen-xs-max) {
+  li.paginate_button {
+    display: none;
+    &.page_select_li{
+      display: inline;
+    }
+    &.previous,&.next{
+      display: inline;
+    }
   }
 }
 
 @media (min-width: @screen-md-min) {
+  .list{
+    .table-responsive{
+      table.dataTable {
+        th,td{
+          &:last-child{
+            line-height: 32px;
+          }
+        }
+      }
+    }
+  }
+
   #imageModal{
     .modal-dialog{
       .modal-content {

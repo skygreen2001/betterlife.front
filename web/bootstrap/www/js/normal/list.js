@@ -59,7 +59,7 @@ var dataTable = {
                   }
               }
               if ( !self.selector ) self.selector = "#" + self[0].id;
-              $(self.selector+'_ellipsis').before('<li class="paginate_button "><a class="page_select" href="#" tabindex="1"><select class="redirect_page form-control input-sm">'+pageSelectOptions+'</select></a></li>');
+              $(self.selector+'_ellipsis').before('<li class="paginate_button page_select_li"><a href="#" class="page_select" tabindex="1" style="display:block;"><select class="redirect_page">'+pageSelectOptions+'</select></a></li>');
               $('.redirect_page').change(function(e){
                   var sefRedirect=this;
                   if($(sefRedirect).val() && $(sefRedirect).val()>0){
@@ -70,7 +70,7 @@ var dataTable = {
                   self.fnPageChange( redirectpage );
               });
           }else{
-              $(self.selector+'_ellipsis').before('<li class="paginate_button "><a href="#" tabindex="1" style="display:block;"><input type="text" class="redirect_page"></a></li>');
+              $(self.selector+'_ellipsis').before('<li class="paginate_button"><a href="#" tabindex="1" style="display:block;"><input type="text" class="redirect_page"></a></li>');
               var globalTimeout = null;
               $('.redirect_page').keyup(function(e){
                   var sefRedirect=this;
