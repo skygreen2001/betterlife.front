@@ -26,7 +26,18 @@ var dataTable = {
             "sSortDescending": ": 以降序排列此列"
         }
     },
-    filterDisplay:function(){
+    doFilter      : function(table){
+        if ( $(".filter-up").has('#btn-query').length ){
+          $(".filter-up #btn-query").click(function(){
+            table.search($(".filter-up #input-search").val()).draw();
+          });
+        }else{
+          $(".filter-up #input-search").on( 'keyup', function () {
+              table.search( this.value ).draw();
+          });
+        }
+    },
+    filterDisplay : function(){
         $(".filter-up .icon-remove").remove();
         $(".filter-up #input-search").after('<i class="icon-remove"></i>');
         $(".filter-up .icon-remove").click(function(){
@@ -42,7 +53,7 @@ var dataTable = {
             }
         });
     },
-    pageNumDisplay:function(dataTableThis){
+    pageNumDisplay: function(dataTableThis){
         var self       = dataTableThis;
         var info       = self.api().page.info();
         var totalPages = info.pages

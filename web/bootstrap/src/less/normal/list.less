@@ -43,7 +43,7 @@
           height       : 40px;
           border       : 1px solid #e9eaeb;
           padding-left : 32px;
-          padding-right: 5px;
+          padding-right: 30px;
           outline      : none;
           .hover_animate;
           &:hover, &:focus{
@@ -77,11 +77,11 @@
           }
         }
         .icon-remove {
-            margin-left: -20px;
-            margin-top: 10px;
-            cursor: pointer;
-            position: absolute;
-            display: none;
+            margin-left: -25px;
+            margin-top : 10px;
+            cursor     : pointer;
+            position   : absolute;
+            display    : none;
         }
       }
     }
@@ -95,7 +95,6 @@
     table.dataTable {
       width           : 100% !important;
       border          : 1px solid #c1c2c3;
-      // border-top      : 0px;
       margin          : -1px 0 10px 0 !important;
       background-color: #fff;
       th,td{
@@ -267,9 +266,10 @@ div.dataTables_wrapper div.dataTables_info{
 }
 
 #imageModal{
-  padding: 0 10px !important;
+  padding   : 0 10px !important;
+  max-height: 98%;
   .modal-dialog{
-    width: 90%;
+    width : 90%;
     height: 90%;
     margin: auto;
     .modal-header{
@@ -283,6 +283,9 @@ div.dataTables_wrapper div.dataTables_info{
     }
     .modal-body{
       padding: 0px;
+      img{
+        max-height: 98%;
+      }
     }
   }
 }

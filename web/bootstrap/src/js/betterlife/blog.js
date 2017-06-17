@@ -20,7 +20,6 @@ $(function(){
                 },
                 //可以对返回的结果进行改写
                 "dataFilter": function(data){
-                    // return data;
                     // //可以对返回的结果进行改写
                     // var json = jQuery.parseJSON( data );
                     // return JSON.stringify( json );
@@ -125,9 +124,7 @@ $(function(){
                 $.dataTable.filterDisplay();
             }
         });
-        $("#btn-query").click(function(){
-          infoTable.draw();
-        });
+        $.dataTable.doFilter(infoTable);
     }
 
     if( $("form").length ){
