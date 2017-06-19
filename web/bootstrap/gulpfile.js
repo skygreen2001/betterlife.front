@@ -46,6 +46,7 @@ var gulp = require('gulp'),
     $    = require('gulp-load-plugins')(),
     path = require('path'),
     seq  = require('run-sequence'),
+    strip= require('gulp-strip-comments'),
     streamqueue = require('streamqueue'),
     bowerFiles  = require('main-bower-files');
 
@@ -122,18 +123,24 @@ gulp.task('html', function() {
   gulp.src('./src/images/favicon.ico')
   .pipe(gulp.dest(config.dest));
 
-  gulp.src('./src/html/index.html')
+  var htmlTask = gulp.src('./src/html/index.html')
   .pipe($.replace('<!-- inject:css -->', injectCss.join('\n    ')))
   .pipe($.replace('<!-- inject:js:before -->', injectBefore.join('\n    ')))
-  .pipe($.replace('<!-- inject:js -->', inject.join('\n    ')))
-  .pipe(gulp.dest(config.dest));
+  .pipe($.replace('<!-- inject:js -->', inject.join('\n    ')));
 
-  gulp.src('./src/html/core/**/*.html')
+  if (!config.isDev) htmlTask.pipe(strip());
+
+  htmlTask.pipe(gulp.dest(config.dest));
+
+  htmlTask = gulp.src('./src/html/core/**/*.html')
   .pipe($.fileInclude({
       prefix: '@@',
       basepath: '@file'
-    }))
-  .pipe(gulp.dest(path.join(config.dest, 'html')));
+    }));
+
+  if (!config.isDev) htmlTask.pipe(strip());
+
+  htmlTask.pipe(gulp.dest(path.join(config.dest, 'html')));
 });
 
 

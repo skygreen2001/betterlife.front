@@ -33,7 +33,7 @@ var dataTable = {
           });
         }else{
           $(".filter-up #input-search").on( 'keyup', function () {
-              table.search( this.value ).draw();
+            table.search( this.value ).draw();
           });
         }
     },

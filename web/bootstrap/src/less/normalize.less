@@ -42,6 +42,9 @@ a{
     button{
       height: 36px;
     }
+    a{
+      width : @sidebar-width;
+    }
   }
   i{
     color: #fff;
@@ -129,14 +132,14 @@ footer {
 .page-container {
   padding-left: 0;
   overflow-x: hidden;
-  width: 100%;
+  // width: 100%;
   .transition(all 0.5s ease);
   .page-sidebar {
     position: absolute;
     display: none;
     z-index: 1000;
-    width: @sidebar-width;
-    height: 100%;
+    width  : @sidebar-width;
+    height : 100%;
     margin-top: 3px;
     background: #000;
     .transition(all 0.5s ease);
@@ -152,10 +155,13 @@ footer {
   .navigation-header{
     height: @line-height;
     line-height: @line-height;
+    // width : @sidebar-width;
     margin-bottom: 0px;
     padding-left: 0px !important;
     li{
       text-align: center;
+      list-style: none;
+      height: 100%;
       a{
         &.active, &.active:hover, &:focus{
           color: @color-input;
@@ -164,7 +170,7 @@ footer {
         i{
           display: block;
           font-size: @font-size-ico;
-          padding-top: 2px;
+          line-height: @line-height;
         }
       }
     }
@@ -289,6 +295,12 @@ footer {
   }
 }
 
+.page-container.container{
+  display      : block;
+  padding-right: 0px;
+}
+
+
 @media(min-width:@screen-sm-min) {
   .sidebar{
     display: block;
@@ -313,6 +325,7 @@ footer {
     }
   }
 }
+
 /************************* Sidebar:  end ************************/
 .breadcrumb-line{
   height: @line-height;
