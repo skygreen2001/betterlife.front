@@ -38,26 +38,27 @@ $(function(){
 
   $("#btn-toggle-sidebar").click(function(){
     $(".sidebar").toggle();
-//   $(".sidebar").animate({width : "hide"});
   })
+
   $(window).resize(function(){
     if($(window).width()>752)$(".sidebar").removeAttr("style");
   });
+
+  //左侧导航条顶部切换按钮提示
+  $('.navigation-header i').tooltip({
+      placement: 'right',
+      container: 'body'
+  });
+
   //左侧导航条点选是否折叠
   $(".navigation-header").click(function(){
-    $('.navigation-header i').tooltip('destroy');
     $(".page-sidebar .sidebar-nav ul").removeAttr("style");
     $(".page-sidebar").toggleClass("pin");
+    $(".content-wrapper").toggleClass("pin");
     $('.page-sidebar.pin .sidebar-nav > li > a span').removeAttr("style");
 
     // 左侧导航条折叠后
     if($('.page-sidebar').hasClass('pin')){
-      //左侧导航条顶部切换按钮提示
-      $('.navigation-header i').tooltip({
-          placement: 'right',
-          container: 'body'
-      });
-
       //鼠标移动到图标上
       $(".page-content").off('mouseenter', '.page-sidebar.pin .sidebar-nav > li > a');
 
@@ -77,7 +78,7 @@ $(function(){
         }
       });
 
-      $(".content-wrapper").hover(function(){
+      $(".content-wrapper,.navigation-header").hover(function(){
         $(".page-sidebar .sidebar-nav ul").css("display","none");
         if($('.page-sidebar').hasClass('pin'))$('.sidebar-nav > li > a').find("span").css("display","none");
       });
@@ -97,5 +98,18 @@ $(function(){
     $("#searchform-header").addClass("hidden");
   });
 
+  // 页面整体布局宽窄屏切换
+  $("#btn-layout-container").click(function(){
+    if ($(this).find("i").hasClass("glyphicon-resize-full")){
+      $(this).find("i").removeClass("glyphicon-resize-full").addClass("glyphicon-resize-small");
+      $(".navbar .navbar-container").removeClass("container");
+      $(".page-container").removeClass("container");
+    }else{
+      $(this).find("i").removeClass("glyphicon-resize-small").addClass("glyphicon-resize-full");
+      $(".navbar .navbar-container").addClass("container");
+      $(".page-container").addClass("container");
+      $(window).resize();
+    }
+  });
 
 });

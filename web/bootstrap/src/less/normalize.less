@@ -36,8 +36,7 @@ a{
 
 .navbar{
   &.navbar-fixed-top{
-    // border-width: 0px;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #222;
   }
   .navbar-container{
     #navbar {
@@ -283,16 +282,16 @@ footer {
     }
   }
   &.page-sidebar.pin{
-    width: 56px !important;
+    width: @sidebar-width-pin !important;
     .sidebar-nav{
-      width: 56px !important;
+      width: @sidebar-width-pin !important;
       .transition(width 0.5s);
       span{
         position: absolute;
         display: none;
         z-index: 1200;
         top: 0;
-        left: 56px;
+        left: @sidebar-width-pin;
         background-color:@color-input;
         border-color: @color-sidebar;
         padding: inherit;
@@ -317,7 +316,7 @@ footer {
       ul{
         position: absolute;
         z-index: 1100;
-        left: 56px;
+        left: @sidebar-width-pin;
         top: 44px;
         width: 260px;
         .transition(all 0.25s);
@@ -336,6 +335,17 @@ footer {
 
 
 @media(min-width:@screen-sm-min) {
+  .navbar{
+    &.navbar-fixed-top{
+      border: 0px;
+    }
+    .navbar-container{
+      #navbar .navbar-nav{
+        margin-right: 0px;
+      }
+    }
+  }
+
   .page-container {
     display: table;
     table-layout: fixed;
@@ -360,20 +370,33 @@ footer {
   }
 }
 
-
-// @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
-//     .page-container.container {
-//       .page-content {
-//         .page-sidebar {
-//           display: none;
-//         }
-//         .content-wrapper {
-//           display: block;
-//         }
-//       }
-//     }
-//
-// }
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+    .page-container.container {
+      .page-content {
+        display: block;
+        position: relative;
+        background-color: #000;
+        .page-sidebar {
+          float: left;
+        }
+        .content-wrapper {
+          display: block;
+          margin-left:-@sidebar-width;
+          float:right;
+          border-right: 1px solid #ccc;
+          .main-content{
+            margin-left: @sidebar-width;
+          }
+          &.pin{
+            margin-left:-@sidebar-width-pin;
+            .main-content{
+              margin-left: @sidebar-width-pin;
+            }
+          }
+        }
+      }
+    }
+}
 
 /************************* Sidebar:  end ************************/
 .breadcrumb-line{
