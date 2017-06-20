@@ -33,22 +33,56 @@ a{
   display: none;
 }
 
-#navbar li{
-  border-bottom: 1px solid rgba( 255, 255, 255, 0.035 );
-}
 
 .navbar{
-  .navbar-header{
-    button{
-      height: 36px;
-    }
-    a{
-      width : @sidebar-width;
-    }
+  &.navbar-fixed-top{
+    // border-width: 0px;
+    border-bottom: 1px solid #444;
   }
-  i{
-    color: #fff;
-    font-size: @font-size-ico;
+  .navbar-container{
+    #navbar {
+      li{
+        border-bottom: 1px solid rgba( 255, 255, 255, 0.035 );
+      }
+      .navbar-nav{
+        margin: 0px -15px;
+      }
+
+    }
+    .navbar-header{
+      margin: 0px;
+      height: @nav-height;
+      button{
+        height: 34px;
+      }
+      a.navbar-brand{
+        margin-left: 0px;
+        height: @nav-height;
+        background-color: #444;
+        width: @sidebar-width;
+        color: #fff;
+      }
+    }
+    i{
+      color: #fff;
+      font-size: @font-size-ico;
+    }
+    .navbar-right{
+      margin-right: 0px;
+      padding-left: 15px;
+      a{
+        padding: 0px 15px;
+        height: @nav-height;
+        line-height: @nav-height;
+        &:hover,&:active,&.active {
+          color: #fff;
+          background: rgba(255,255,255,0.2);
+        }
+      }
+    }
+    &.container{
+      padding:0px;
+    }
   }
   #searchform-header {
     position: absolute;
@@ -140,7 +174,7 @@ footer {
     z-index: 1000;
     width  : @sidebar-width;
     height : 100%;
-    margin-top: 3px;
+    // margin-top: 3px;
     background: #000;
     .transition(all 0.5s ease);
   }
@@ -302,13 +336,13 @@ footer {
 
 
 @media(min-width:@screen-sm-min) {
-  .sidebar{
-    display: block;
-  }
   .page-container {
     display: table;
     table-layout: fixed;
     padding-left: 0;
+    .sidebar{
+      display: block;
+    }
     .page-content {
       display: table-row;
       .page-sidebar {
@@ -325,6 +359,21 @@ footer {
     }
   }
 }
+
+
+// @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+//     .page-container.container {
+//       .page-content {
+//         .page-sidebar {
+//           display: none;
+//         }
+//         .content-wrapper {
+//           display: block;
+//         }
+//       }
+//     }
+//
+// }
 
 /************************* Sidebar:  end ************************/
 .breadcrumb-line{
