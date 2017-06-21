@@ -13,7 +13,7 @@ var edit = {
       format: formatStr,
       locale: 'zh-cn',
       allowInputToggle: true,
-      debug: true,
+      // debug: true,
       useCurrent: true
     });
   },

@@ -45,8 +45,8 @@ $(function(){
             "bLengthChange": true,
             "aLengthMenu"  : [[10, 25, 50, 100,-1],[10, 25, 50, 100,'全部']],
             "columns": [
-                { data:"id" },
-                { data:"name" },
+                { data:"sequenceNo" },
+                { data:"title" },
                 { data:"code" },
                 { data:"contactName" },
                 { data:"phone" },
@@ -96,14 +96,6 @@ $(function(){
                             }
                         });
                     });
-                    $("body").off('click', 'a#info-edit'+data);
-                    $("body").on('click', 'a#info-edit'+data, function(){//修改
-                        bootbox.confirm("确定要编辑该博客:" + data + "?",function(result){
-                            if ( result == true ){
-                                console.log("编辑博客:" + data);
-                            }
-                        });
-                    });
                     $("body").off('click', 'a#info-dele'+data);
                     $("body").on('click', 'a#info-dele'+data, function(){//删除
                         bootbox.confirm("确定要删除该博客:" + data + "?",function(result){
@@ -128,6 +120,89 @@ $(function(){
     }
 
     if( $("form").length ){
+        $.edit.datetimePicker('#creationTime, #deadTime');
+        $("#creationTime").on("dp.change", function (e) {
+            if(e.date){
+                $('#deadTime').data("DateTimePicker").minDate(e.date);
+            }
+        });
 
+        $("#deadTime").on("dp.change", function (e) {
+            if(e.date){
+                $('#creationTime').data("DateTimePicker").maxDate(e.date);
+            }
+        });
+        $.edit.fileBrowser("#iconImage", "#iconImageTxt", "#iconImageDiv");
+        $.edit.fileBrowser("#authorImage", "#authorImageTxt", "#authorImageDiv");
+        $.edit.multiselect('#categoryIds');
+
+        $("input[name='isPublic']").bootstrapSwitch();
+
+        $('input[name="isPublic"]').on('switchChange.bootstrapSwitch', function(event, state) {
+            console.log(state);
+        });
+
+        var default_keyword_id   = 6;
+        var default_keyword_text = "音乐";
+        $.edit.select2("select[name='keyword_id']", "../../data/keyword.json", default_keyword_id, default_keyword_text);
+
+        $('#editBlogForm').validate({
+            errorElement: 'div',
+            errorClass: 'help-block',
+            // focusInvalid: false,
+            focusInvalid: true,
+            // debug:true,
+            rules: {
+                title:{
+                    required:true
+                },
+                content:{
+                    required:true
+                },
+                authorName:{
+                    required:true
+                },
+                sequenceNo: {
+                    required:true,
+                    number:true,
+                },
+                authorUrl:{
+                    url:true
+                }
+            },
+            messages: {
+                title:"此项为必填项",
+                content:"此项为必填项",
+                authorName:"此项为必填项",
+                sequenceNo:{
+                    required:"此项为必填项",
+                    number:"此项必须为数字"
+                },
+                authorUrl:{
+                    url:"必须输入正确格式的网址"
+                }
+            },
+            invalidHandler: function (event, validator) { //display error alert on form submit
+                $('.alert-danger', $('.login-form')).show();
+            },
+
+            highlight: function (e) {
+                $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+            },
+
+            success: function (e) {
+                $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                $(e).remove();
+            },
+
+            errorPlacement: function (error, element) {
+                error.insertAfter(element.parent());
+            },
+            submitHandler: function (form) {
+                form.submit();
+            },
+            invalidHandler: function (form) {
+            }
+        });
     }
 });
