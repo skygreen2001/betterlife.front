@@ -34,7 +34,6 @@
     "datatables.net-responsive-bs": "^2.1.1",
     "jsrender": "^0.9.83",
     "bootbox.js": "bootbox#^4.4.0",
-    "uilang": "bendc/uilang",
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
     "icomoon-bower": "^0.1.2",
     "bootstrap-multiselect": "^0.9.13",
@@ -47,6 +46,7 @@
     "lodash": "^4.17.4",
     "underscore": "^1.8.3",
     "jsviews": "^0.9.83",
+    "uilang": "bendc/uilang",
     "jquery-colorbox": "^1.6.4"
   }
 }
