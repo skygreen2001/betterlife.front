@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Betterlife Front UI</title>
+
+    <link rel="stylesheet" href="css/common.min.css">
+
+    <script src="js/common/base.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!--content begin-->
+    <div id="main-content-container" class="container-fluid">
+      <main tabindex="-1">
+        <div class="container">
+          <span class="bb-icon">B</span>
+          <p class="lead">Betterlife Front UI is the most popular front-end framework for developing responsive, web first projects on the web.</p>
+          <p class="lead"><a href="https://github.com/skygreen2001/betterlife.front/archive/master.zip" target="_blank" class="btn btn-outline-inverse btn-lg">下载 Betterlife Front UI</a></p>
+          <p class="version">版本 v1.0.0</p>
+          <div id="carbonads-container">
+          </div>
+        </div>
+      </main>
+
+      <div class="container content-head">
+        <h1 class="page-header">Betterlife Front UI</h1>
+        <p class="lead">专用于Web开发的html5自适应界面 <br/> 可用于pc电脑端的Web页面 <br/> 可用于嵌入原生应用的[ios, andriod]的html5页面 <br/> 可嵌入微信 <br/> Pc Web端优先</p>
+      </div>
+    </div>
+    <!--content end-->
+
+    <!--footer begin-->
+    <footer>
+      <div id="footer-inner" class="container clr">
+        <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div><!-- #copyright -->
+      </div>
+    </footer>
+    <!--footer end-->
+
+    <script src="js/common/bower/bower.min.js"></script>
+    <script src="js/common/common.jquery.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        // 顶部导航条搜索展开
+        $(".search-toggle").click(function(){
+          $("#searchform-header").toggleClass("hidden");
+        });
+
+        $(".page-container").click(function(){
+          $("#searchform-header").addClass("hidden");
+        });
+      });
+    </script>
+</body>
+</html>

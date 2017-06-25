@@ -123,7 +123,7 @@ gulp.task('html', function() {
   gulp.src('./src/images/favicon.ico')
   .pipe(gulp.dest(config.dest));
 
-  var htmlTask = gulp.src('./src/html/index.html')
+  var htmlTask = gulp.src('./src/html/*.html')
   .pipe($.replace('<!-- inject:css -->', injectCss.join('\n    ')))
   .pipe($.replace('<!-- inject:js:before -->', injectBefore.join('\n    ')))
   .pipe($.replace('<!-- inject:js -->', inject.join('\n    ')));
