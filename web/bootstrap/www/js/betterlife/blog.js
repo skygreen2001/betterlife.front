@@ -119,7 +119,7 @@ $(function(){
         $.dataTable.doFilter(infoTable);
     }
 
-    if( $("form").length ){
+    if( $(".content-wrapper form").length ){
         $.edit.datetimePicker('#creationTime, #deadTime');
         $("#creationTime").on("dp.change", function (e) {
             if(e.date){

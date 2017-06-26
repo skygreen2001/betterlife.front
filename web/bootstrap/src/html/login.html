@@ -8,6 +8,7 @@
     <title>Betterlife Front UI</title>
 
     <link rel="stylesheet" href="css/common.min.css">
+    <style type="text/css"></style>
 
     <script src="js/common/base.min.js"></script>
 
@@ -18,48 +19,93 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body class="login">
     <!--content begin-->
-    <div id="main-content-container" class="container-fluid">
-      <main tabindex="-1">
-        <div class="container">
-          <span class="bb-icon">B</span>
-          <p class="lead">Betterlife Front UI is the most popular front-end framework for developing responsive, web first projects on the web.</p>
-          <p class="lead"><a href="https://github.com/skygreen2001/betterlife.front/archive/master.zip" target="_blank" class="btn btn-outline-inverse btn-lg">下载 Betterlife Front UI</a></p>
-          <p class="version">版本 v1.0.0</p>
-          <div id="carbonads-container">
+    <div class="page-container login-container">
+      <main>
+        <div class="content-wrapper">
+          <div class="content">
+            <form action="index.html">
+              <div class="panel panel-body login-form">
+                <span class="bb-icon">B</span>
+
+                <div class="text-center">
+                  <div class="icon-object border-warning-400 text-warning-400"><i class="icon-people"></i></div>
+                  <h5 class="content-group-lg">登录您的账号</h5>
+                </div>
+
+                <div class="form-group has-feedback has-feedback-left">
+                  <input type="text" class="form-control" placeholder="用户名">
+                  <div class="form-control-feedback">
+                    <i class="icon-user text-muted"></i>
+                  </div>
+                </div>
+
+                <div class="form-group has-feedback has-feedback-left">
+                  <input type="password" class="form-control" placeholder="密码">
+                  <div class="form-control-feedback">
+                    <i class="icon-lock2 text-muted"></i>
+                  </div>
+                </div>
+
+                <div class="form-group login-options">
+                  <div class="row">
+                    <div class="col-sm-6 has-login-remember">
+                      <label class="checkbox-inline" for="login-remember">
+                        <div class="checker"><span><input type="checkbox" id="login-remember" class="styled"></span></div>
+                        记住密码
+                      </label>
+                    </div>
+
+                    <div class="col-sm-6 text-right">
+                      <a href="login.html">忘记密码? </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <button type="submit" class="btn bg-blue btn-block">登录 <i class="icon-circle-right2 position-right"></i></button>
+                </div>
+
+                <div class="content-divider text-muted form-group"><span>测试账户</span></div>
+                <div class="test-info">
+                  <div>[超级用户] 账户名: admin     密码: admin</div>
+                  <div>[普通用户] 账户名: skygreen  密码: iloveu</div>
+                </div>
+
+              </div>
+            </form>
           </div>
         </div>
       </main>
 
-      <div class="container content-head">
-        <h1 class="page-header">Betterlife Front UI</h1>
-        <p class="lead">专用于Web开发的html5自适应界面 <br/> 可用于pc电脑端的Web页面 <br/> 可用于嵌入原生应用的[ios, andriod]的html5页面 <br/> 可嵌入微信 <br/> Pc Web端优先</p>
-      </div>
+      <!--footer begin-->
+      <footer>
+        <div id="footer-inner" class="container clr">
+          <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div>
+        </div>
+      </footer>
+      <!--footer end-->
     </div>
     <!--content end-->
 
-    <!--footer begin-->
-    <footer>
-      <div id="footer-inner" class="container clr">
-        <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div><!-- #copyright -->
-      </div>
-    </footer>
-    <!--footer end-->
 
     <script src="js/common/bower/bower.min.js"></script>
     <script src="js/common/common.jquery.min.js"></script>
 
     <script type="text/javascript">
       $(function(){
-        // 顶部导航条搜索展开
-        $(".search-toggle").click(function(){
-          $("#searchform-header").toggleClass("hidden");
+        $(".checker").click(function(){
+          if ($(this).find("span").hasClass("checked")){
+            $(this).find("span").removeClass("checked");
+            $(this).find("input").removeAttr("checked");
+          }else{
+            $(this).find("span").addClass("checked");
+            $(this).find("input").attr("checked","checked");
+          }
         });
+        $(".login-container").css("min-height",$(window).height());
 
-        $(".page-container").click(function(){
-          $("#searchform-header").addClass("hidden");
-        });
       });
     </script>
 </body>
