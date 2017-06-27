@@ -85,12 +85,18 @@
     <!--footer end-->
 
     <!-- inject:js -->
+    <script type="text/javascript">
+      $(function(){
+        // 顶部导航条搜索展开
+        $(".search-toggle").click(function(){
+          $("#searchform-header").toggleClass("hidden");
+        });
 
-    <!-- 来自uilang: http://uilang.com/ -->
-    <code>
-      clicking on ".search-toggle" toggles class "hidden" on "#searchform-header"
-      clicking on "#main-content-container" adds class "hidden" on "#searchform-header"
-    </code>
+        $(".page-container").click(function(){
+          $("#searchform-header").addClass("hidden");
+        });
 
+      });
+    </script>
 </body>
 </html>

@@ -4,6 +4,7 @@ body.login{
   min-height      : 100%;
   .login-container{
     width: 100%;
+    display: table;
     main{
       display: table-row;
       height: 100%;
@@ -35,6 +36,10 @@ body.login{
                 padding-right: 12px;
                 padding-left: 36px;
                 height: 36px;
+                &:hover, &:focus{
+                  box-shadow: 0 0 5px @color-input-hover;
+                  border: 1px solid @color-input-hover;
+                }
               }
             }
             .form-control-feedback {
@@ -54,6 +59,8 @@ body.login{
             }
             .col-sm-6{
               padding: 0px;
+              float: left;
+              width: 50%;
             }
             .has-login-remember{
               text-align: left;
