@@ -21,7 +21,7 @@
 <body>
     <!--nav begin-->
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+      <div class="navbar-container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only"></span>
@@ -38,9 +38,18 @@
             <li><a href="#contact">电影</a></li>
             <li><a href="#about">音乐</a></li>
             <li><a href="#contact">研发</a></li>
-            <li><a href="#contact">购物</a></li>
-            <li><a href="#contact">话题</a></li>
-            <li><a href="html/model/preview.html">幽默</a></li>
+            <li class="dropdown">
+              <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                其它
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dLabel">
+                <li><a href="#contact">购物</a></li>
+                <li><a href="#contact">话题</a></li>
+                <li><a href="html/model/preview.html">幽默</a></li>
+              </ul>
+            </li>
+            <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>登录</a></li>
             <li class="search-toggle"><a href="#"><span><span class="menu-search-text">搜索</span><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
