@@ -1,6 +1,6 @@
-var stats = new Stats();
-stats.showPanel(0);
-document.body.appendChild(stats.dom);
+// var stats = new Stats();
+// stats.showPanel(0);
+// document.body.appendChild(stats.dom);
 /**
  * A jQuery plugin that generates an interactive starfield inside a canvas element.
  *
@@ -220,7 +220,7 @@ document.body.appendChild(stats.dom);
 
         // Iterate over every star on the field and move it slightly
         anim: function(){
-      stats.begin()
+      // stats.begin()
             this.mouse_x    = this.cursor_x - this.x;
             this.mouse_y    = this.cursor_y - this.y;
             this.context.fillRect(0, 0, this.w, this.h);
@@ -279,7 +279,7 @@ document.body.appendChild(stats.dom);
                     this.context.closePath();
                 }
             }
-      stats.end()
+      // stats.end()
         },
 
         loop: function(){

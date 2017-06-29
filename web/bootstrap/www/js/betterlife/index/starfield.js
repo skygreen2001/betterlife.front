@@ -1,7 +1,6 @@
 // var stats = new Stats();
 // stats.showPanel(0);
 // document.body.appendChild(stats.dom);
-
 /**
  * A jQuery plugin that generates an interactive starfield inside a canvas element.
  *
@@ -11,7 +10,7 @@
 ;(function ( $, window, document, undefined ) {
     // Plugin constructor
     var Starfield = function(el, options) {
-        this.el         = el;
+        this.el            = el;
         this.$el        = $(el);
         this.options    = options;
 
@@ -73,7 +72,7 @@
 
         // Resize the canvas
         resizer: function() {
-            var oldStar              = this.star;
+            var oldStar                = this.star;
             var initW                = this.context.canvas.width;
             var initH                = this.context.canvas.height;
 
