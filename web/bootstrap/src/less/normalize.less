@@ -33,7 +33,6 @@ a{
   display: none;
 }
 
-
 .navbar{
   &.navbar-fixed-top{
     border-bottom: 1px solid #222;
@@ -52,6 +51,7 @@ a{
     .navbar-header{
       margin: 0px;
       height: @nav-height;
+      min-width: @width-min;
       button{
         height: 34px;
       }
@@ -96,12 +96,17 @@ a{
           a{
             height: 36px;
             line-height: 36px;
+            border-bottom: 1px solid #eee;
             &:hover,&:active,&.active {
               color: #eee;
               border: 0px;
               background: #333;
             }
+            span{
+              margin-right: 5px;
+            }
           }
+          li:last-child{a{border-bottom: 0px;}}
         }
       }
       #btn-layout-container{
