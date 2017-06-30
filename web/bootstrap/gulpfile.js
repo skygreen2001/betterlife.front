@@ -19,6 +19,9 @@ var config = {
       './src/less', './bower_components'
     ]
   },
+  js: {
+    index: './src/js/betterlife/index/*.js'
+  },
   fonts: [
     './bower_components/bootstrap/fonts/glyphicons-halflings-regular.*',
     // './bower_components/font-awesome/fonts/fontawesome-webfont.*',
@@ -203,6 +206,11 @@ gulp.task('js', function() {
     .pipe($.rename({suffix: '.min'}))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
+
+    gulp.src(path.join(config.js.index))
+    // .pipe($.uglify())
+    .pipe($.concat('index.js'))
+    .pipe(gulp.dest(path.join(config.dest, "js", "betterlife")));
   }
 
   jsTask = streamqueue(
@@ -225,7 +233,7 @@ gulp.task('js', function() {
   .pipe($.rename({suffix: '.min'}))
   .pipe(gulp.dest(path.join(config.dest, 'js', 'common')));
 
-  gulp.src('./src/js/!(base)*/**/*.js')
+  gulp.src(['./src/js/normal/**/*.js', './src/js/betterlife/!(index)*/**/*.js'])
   .pipe(gulp.dest(path.join(config.dest, 'js')));
 
   firstInit = false;

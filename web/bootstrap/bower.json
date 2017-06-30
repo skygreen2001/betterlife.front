@@ -48,6 +48,7 @@
     "underscore": "^1.8.3",
     "jsviews": "^0.9.83",
     "uilang": "bendc/uilang",
-    "jquery-colorbox": "^1.6.4"
+    "jquery-colorbox": "^1.6.4",
+    "countUp.js": "^1.8.5"
   }
 }

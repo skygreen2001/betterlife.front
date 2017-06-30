@@ -53,4 +53,11 @@ module.exports = function(config) {
    */
   config.server.port = '8000';
 
+  /**
+   * The js files only for index.html.
+   *
+   * @property config.js.index
+   * @type {String}
+   */
+  config.js.index = './src/js/betterlife/index/*.js';
 };
