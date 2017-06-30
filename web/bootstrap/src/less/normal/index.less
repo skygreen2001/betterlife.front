@@ -77,6 +77,7 @@ main{
   .title{
     text-align: center;
     margin-bottom: 70px;
+    opacity: 0;
     font-size : 40px;
     color     : #333;
     font-weight: normal;
@@ -99,12 +100,9 @@ main{
       font-size: 18px;
       color: #666;
     }
-    &:focus{
-      outline: -webkit-focus-ring-color auto 5px;
-    }
     &:hover{
       p{
-        color: #2569FF;
+        color: @color-main;
       }
     }
     .content-list-bg {
@@ -115,6 +113,20 @@ main{
       border-radius: 6px;
       margin-bottom: 12px;
       .transition(all .2s ease);
+      &:hover {
+        box-shadow: 0 3px 5px rgba(0,0,0,.4);
+        .content-num {
+          .translate(@x: 0%;@y: -100%);
+          opacity: 0;
+        }
+        .content-list-txt-bg {
+          opacity: .8;
+        }
+        .content-list-txt {
+          .translate(@x: 0%;@y: -50%);
+          opacity: 1;
+        }
+      }
       .content-num {
         position: absolute;
         z-index: 3;
@@ -168,9 +180,10 @@ main{
   }
   &.animation{
     .title{
+      .translate(@x: 0%;@y: 0%);
+      opacity: 1;
       small {
-        transform: translateY(0);
-        -webkit-transform: translateY(0);
+        .translate(@x: 0%;@y: 0%);
         opacity: 1;
       }
     }

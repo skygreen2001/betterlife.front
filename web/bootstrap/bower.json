@@ -39,7 +39,8 @@
     "bootstrap-multiselect": "^0.9.13",
     "select2": "^4.0.3",
     "bootstrap-switch": "^3.3.4",
-    "jquery-validation": "jquery-validation/jquery-validation#^1.16.0"
+    "jquery-validation": "jquery-validation/jquery-validation#^1.16.0",
+    "swiper": "^3.4.2"
   },
   "_dependencies_ignored": {
     "font-awesome": "4.2",
