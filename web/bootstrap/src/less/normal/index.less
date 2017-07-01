@@ -220,7 +220,7 @@ html#index{
             opacity: 0;
           }
           .content-list-txt-bg {
-            opacity: .8;
+            opacity: .6;
           }
           .content-list-txt {
             .translate(@x: 0%;@y: -50%);
@@ -274,7 +274,7 @@ html#index{
           right: 0;
           top: 0;
           bottom: 0;
-          background: rgba(0,0,0,.6);
+          background: rgba(0,0,0,.5);
         }
       }
     }
@@ -312,6 +312,7 @@ html#index{
         font-size: 18px;
         font-weight: 200;
         padding-bottom: 12px;
+        box-shadow: 0 3px 5px rgba(255,255,255,.4);
         .slogan-top{
           color: @color-main;
           font-size: 24px;
@@ -324,8 +325,35 @@ html#index{
         }
       }
       .content-head {
-        padding: 160px 36px 0px;
+        padding: 160px 6px 0px;
         text-align: center;
+        .col-md-4{
+          float: left;
+          font-size: 20px;
+          width: 33.3%;
+          text-align: center;
+
+          i {
+            margin: 0 auto 30px;
+            background-color: transparent;
+            border: 2px solid #fff;
+            width: 90px;
+            height: 90px;
+            font-size: 32px;
+            font-style: normal;
+            line-height: 90px;
+            display: block;
+            font-weight: 300;
+            color: #fff;
+            text-align: center;
+            cursor: default;
+            border-radius: 90px;
+          }
+          span{
+            font-size: 16px;
+            text-align: center;
+          }
+        }
       }
     }
   }
