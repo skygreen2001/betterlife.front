@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" id="index">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -78,11 +78,40 @@
         </div>
         <div class="starfield"></div>
       </main>
+
+
       <div class="section page" id="page2">
+          <div class="container section-container">
+              <h2 class="title slogan">I'm <span>BB</span>, 每一天<small class="flag">只 · 为 · 更 · 好</small></h2>
+          </div>
+      </div>
+
+      <div class="section page darker" id="page3">
+        <div class="container-flex">
+          <div class="horizontal">
+            <div class="col-md">
+              <div class="page-over-header text-center">
+                <div class="slogan-top">Betterlife Front UI</div>
+                <div class="slogan-bottom">
+                  Just Do It.
+                  <div>Nothing Impossible!</div>
+                  It sounds good!
+                </div>
+              </div>
+              <div class="container content-head">
+                <h1 class="page-header">Betterlife Front UI</h1>
+                <p class="lead">专用于Web开发的html5自适应界面 <br/> 可用于pc电脑端的Web页面 <br/> 可用于嵌入原生应用的[ios, andriod]的html5页面 <br/> 可嵌入微信 <br/> Pc Web端优先</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section page" id="page4">
           <div class="container section-container">
               <h2 class="title">四大前端框架 完美快速开发<small>四大前端框架始终坚持在技术创新中前行，引领行业重新定义前端开发时尚潮流</small></h2>
               <div class="content-box" id="page-four-framework">
-                  <div class="content-list col-xs-6 col-sm-3">
+                  <div class="content-list">
                       <div class="content-list-bg">
                           <div class="content-num"><span class="content-num-digital" id="countE1">1</span> km</div>
                           <div class="content-list-txt-bg"></div>
@@ -92,7 +121,7 @@
                       </div>
                       <p>Jquery</p>
                   </div>
-                  <div class="content-list col-xs-6 col-sm-3">
+                  <div class="content-list">
                       <div class="content-list-bg">
                           <div class="content-num"><span class="content-num-digital" id="countE2">100</span> 万</div>
                           <div class="content-list-txt-bg"></div>
@@ -102,7 +131,7 @@
                       </div>
                       <p>Bootstrap</p>
                   </div>
-                  <div class="content-list col-xs-6 col-sm-3">
+                  <div class="content-list">
                       <div class="content-list-bg">
                           <div class="content-num"><span class="content-num-digital" id="countE3">100</span> %</div>
                           <div class="content-list-txt-bg"></div>
@@ -112,7 +141,7 @@
                       </div>
                       <p>Angular</p>
                   </div>
-                  <div class="content-list col-xs-6 col-sm-3">
+                  <div class="content-list">
                       <div class="content-list-bg">
                           <div class="content-num"><span class="content-num-digital" id="countE4">10</span> 倍</div>
                           <div class="content-list-txt-bg"></div>
@@ -126,33 +155,21 @@
           </div>
       </div>
 
-      <div class="section page darker" id="page3">
-        <div class="container content-head">
-          <h1 class="page-header">Betterlife Front UI</h1>
-          <p class="lead">专用于Web开发的html5自适应界面 <br/> 可用于pc电脑端的Web页面 <br/> 可用于嵌入原生应用的[ios, andriod]的html5页面 <br/> 可嵌入微信 <br/> Pc Web端优先</p>
+      <!--footer begin-->
+      <footer>
+        <div id="footer-inner" class="container clr">
+          <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div><!-- #copyright -->
         </div>
-      </div>
-
-
-      <div class="section page" id="page4">
-          <div class="container section-container">
-              <h2 class="title">四大前端框架 完美快速开发<small>四大前端框架始终坚持在技术创新中前行，引领行业重新定义前端开发时尚潮流</small></h2>
-          </div>
-      </div>
+      </footer>
+      <!--footer end-->
     </div>
     <!--content end-->
 
-    <!--footer begin-->
-    <footer>
-      <div id="footer-inner" class="container clr">
-        <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div><!-- #copyright -->
-      </div>
-    </footer>
-    <!--footer end-->
 
     <script src="js/common/bower/bower.min.js"></script>
     <script src="js/common/common.jquery.min.js"></script>
     <script src="js/betterlife/index.js"></script>
+
     <script type="text/javascript">
       $(function(){
         // 顶部导航条搜索展开
@@ -167,7 +184,12 @@
         //首页内容顶部显示星云效果
         $('.starfield').starfield();
 
+        $(document).scrollTop() <= 0 ? $(".navbar").removeClass("nav-scroll") : $(".navbar").addClass("nav-scroll")
+        $(document).on("scroll", function() {
+            $(document).scrollTop() <= 0 ? $(".navbar").removeClass("nav-scroll") : $(".navbar").addClass("nav-scroll")
+        });
 
+        //coutUp
         var options = {
             useEasing : true,
             useGrouping : true,
@@ -176,34 +198,33 @@
             prefix : '',
             suffix : ''
         };
-        var demo = new CountUp("countE1", 10, 1, 0, 2.5, options);
-        var demo2 = new CountUp("countE2", 0, 100, 0, 2.5, options);
-        var demo3 = new CountUp("countE3", 0, 100, 0, 2.5, options);
-        var demo4 = new CountUp("countE4", 0, 10, 0, 2.5, options);
+        var countE1 = new CountUp("countE1", 10, 1, 0, 2.5, options);
+        var countE2 = new CountUp("countE2", 0, 100, 0, 2.5, options);
+        var countE3 = new CountUp("countE3", 0, 100, 0, 2.5, options);
+        var countE4 = new CountUp("countE4", 0, 10, 0, 2.5, options);
 
         if(navigator.userAgent.match(/mobile/i)) {
-            demo.start();
-            demo2.start();
-            demo3.start();
-            demo4.start();
+            countE1.start();
+            countE2.start();
+            countE3.start();
+            countE4.start();
         }else{
-            if($(window).height() >= $("#page2").offset().top+300){
-                demo.start();
-                demo2.start();
-                demo3.start();
-                demo4.start();
+            if($(window).height() >= $("#page4").offset().top+300){
+                countE1.start();
+                countE2.start();
+                countE3.start();
+                countE4.start();
             }else{
                 $(window).scroll(function(){
-                    if($(window).scrollTop() >= $("#page2").offset().top-$(window).height()/4){
-                        demo.start();
-                        demo2.start();
-                        demo3.start();
-                        demo4.start();
+                    if($(window).scrollTop() >= $("#page4").offset().top-$(window).height()/4){
+                        countE1.start();
+                        countE2.start();
+                        countE3.start();
+                        countE4.start();
                     }
                 })
             }
         }
-
 
         //滑屏逐个出现
         if($(".section")){
@@ -236,6 +257,7 @@
           }
           pageAni(sTop);
           pageAniWin(sTop);
+          $(".section").removeClass("animation");
         }
 
       });
