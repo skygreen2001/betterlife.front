@@ -39,8 +39,7 @@
     "bootstrap-multiselect": "^0.9.13",
     "select2": "^4.0.3",
     "bootstrap-switch": "^3.3.4",
-    "jquery-validation": "jquery-validation/jquery-validation#^1.16.0",
-    "swiper": "^3.4.2"
+    "jquery-validation": "jquery-validation/jquery-validation#^1.16.0"
   },
   "_dependencies_ignored": {
     "font-awesome": "4.2",
@@ -49,6 +48,7 @@
     "jsviews": "^0.9.83",
     "uilang": "bendc/uilang",
     "jquery-colorbox": "^1.6.4",
-    "countUp.js": "^1.8.5"
+    "countUp.js": "^1.8.5",
+    "swiper": "^3.4.2"
   }
 }

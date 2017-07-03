@@ -5,23 +5,22 @@
 ## 简介说明
 
 框架目标定义分为三部分:
-* Html5开发生成Native原生应用[ios,andriod]
+* Html5开发生成Native原生应用[iOS,Andriod]
   - `NativeScript` [Angular2 + Typescript + Javascript]
   - `React Native` [React + Javascript]
 
-
-* 专用于移动APP开发的html5 UI界面，可发布成原生应用[ios,andriod],也可用于html5 web页面；可嵌入微信；手机端优先。
+* 专用于移动APP开发的html5 UI界面，可发布成原生应用[iOS,Andriod],也可用于html5 web页面；可嵌入微信；手机端优先。
 
   实现框架底层采用:
     - Angular1 + Angular Material
     - React    + React Material
     - Angular2 + [Angular Material | Ionic] [ 尚待验证 ]
 
-* 专用于Web开发的html5自适应界面，可用于pc电脑端，也可用于嵌入原生应用的[ios,andriod]的html5页面；可嵌入微信；Pc Web端优先。
-  - Jquery + Bootstrap3          [ IE9  + ]
+* 专用于Web开发的html5自适应界面，可用于pc电脑端，也可用于嵌入原生应用的[iOS,Andriod]的html5页面；可嵌入微信；Pc Web端优先。
+  - Jquery + Bootstrap3                         [ IE9  + ]
+  - Angular1 + [Angular Material | Bootstrap3]  [ IE9  + ]
   - Angular2 + Bootstrap4        [ IE9  + ]
   - Jquery + Semantic-Ui         [ IE11 + ]
-  - Angular1 + [Angular Material | Bootstrap3]          [ IE9  + ]
   - Angular2 + [Angular Material | Bootstrap4] + Jquery [ 尚待验证 ]
 
 ## 准备工作

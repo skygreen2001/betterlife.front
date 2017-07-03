@@ -296,7 +296,7 @@ html#index{
       background-color: #fff;
     }
     &#page3{
-      padding-top: 0px;
+      padding  : 0px;
       .page-over-header {
         padding: 90px 40px;
         position: absolute;
@@ -325,16 +325,50 @@ html#index{
         }
       }
       .content-head {
-        padding: 160px 6px 0px;
+        padding: 200px 6px 0px;
         text-align: center;
+        .page-detail{
+          text-align: left;
+          margin-bottom: 60px;
+          h2 {
+            margin: 0 auto;
+            text-align: center;
+            font-size: 34px;
+          }
+          i {
+            position: absolute;
+            font-size: 40px;
+            &.icon-quote-left {
+              margin-top: 60px;
+              left: 40px;
+            }
+            &.icon-quote-right {
+              margin-top: 170px;
+              right: 40px;
+            }
+          }
+          p {
+            margin: 60px 60px 0;
+            color: #fff;
+            font-size: 22px;
+            line-height: 48px;
+            display: none;
+          }
+        }
+        .row{
+          border-top: 2px solid @color-input;
+        }
         .col-md-4{
           float: left;
           font-size: 20px;
           width: 33.3%;
           text-align: center;
-
+          padding-top   : 90px;
+          padding-bottom: 70px;
           i {
+            float: left;
             margin: 0 auto 30px;
+            margin-right: 12px;
             background-color: transparent;
             border: 2px solid #fff;
             width: 90px;
@@ -350,9 +384,22 @@ html#index{
             border-radius: 90px;
           }
           span{
-            font-size: 16px;
-            text-align: center;
+            margin-left: 15px;
+            margin-top : 8px;
+            display    : block;
+            line-height: 36px;
+            font-size  : 16px;
+            text-align : left;
           }
+        }
+        .bl-line{
+          position: relative;
+          top: 11px;
+          left: -1140px;
+          width: 400px;
+          height: 2px;
+          background: #fff;
+          z-index: 1000;
         }
       }
     }
