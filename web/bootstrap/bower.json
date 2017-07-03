@@ -41,6 +41,9 @@
     "bootstrap-switch": "^3.3.4",
     "jquery-validation": "jquery-validation/jquery-validation#^1.16.0"
   },
+  "resolutions": {
+    "jquery": "^3.1.1"
+  },
   "_dependencies_ignored": {
     "font-awesome": "4.2",
     "lodash": "^4.17.4",
