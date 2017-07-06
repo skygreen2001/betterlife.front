@@ -1,5 +1,6 @@
 
 @font-family-index: Helvetica, Tahoma, Arial;
+@color-fade-index : rgba(255,255,255,0.8);
 
 html#index{
   height: 100%;
@@ -55,7 +56,12 @@ html#index{
         #navbar .navbar-right {
           a{
             font-weight: 200;
-            color: #9d9d9d;
+            color: @color-fade-index;
+            .transition(all 0.5s ease);
+            &:hover, &:active{
+              color: #fff;
+              .transition(all 0.5s ease);
+            }
           }
           li{
             border-bottom: 1px solid rgba(255, 255, 255, 0.035);
@@ -223,14 +229,14 @@ html#index{
             opacity: .6;
           }
           .content-list-txt {
-            .translate(@x: 0%;@y: -50%);
+            .translate(@x: 0%;@y: -45%);
             opacity: 1;
           }
         }
         .content-num {
           position: absolute;
           z-index: 3;
-          top: 50%;
+          top: 45%;
           font-size: 14px;
           color: #fff;
           width: 100%;
@@ -262,7 +268,7 @@ html#index{
           position: absolute;
           z-index: 6;
           padding: 0 20px;
-          top: 50%;
+          top: 45%;
           opacity: 0;
           .translate(@x: 0%;@y: -20%);
           .transition(all .6s ease);
@@ -365,12 +371,18 @@ html#index{
           text-align: center;
           padding-top   : 90px;
           padding-bottom: 70px;
+          color: #fff;
+          &:hover, &:active{
+            i{
+              border-color: #fff;
+            }
+          }
           i {
             float: left;
             margin: 0 auto 30px;
             margin-right: 12px;
             background-color: transparent;
-            border: 2px solid #fff;
+            border: 2px solid #4caf50;
             width: 90px;
             height: 90px;
             font-size: 32px;
