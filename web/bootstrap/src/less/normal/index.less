@@ -4,7 +4,7 @@
 
 html#index{
   height: 100%;
-  body, .index #main-content-container, .index main{
+  body, .index #main-content-container, .index #page1{
     height: 100%;
   }
 }
@@ -78,7 +78,7 @@ html#index{
     }
   }
 
-  main{
+  #page1{
     position: relative;
     outline: none;
     padding: 30px 0;
@@ -338,7 +338,7 @@ html#index{
         text-align: center;
         .page-detail{
           text-align: left;
-          margin-bottom: 60px;
+          margin-bottom: 30px;
           h2 {
             margin: 0 auto;
             text-align: center;
@@ -346,44 +346,50 @@ html#index{
           }
           i {
             position: absolute;
-            font-size: 40px;
+            font-size: 32px;
             &.icon-quote-left {
               margin-top: 60px;
               left: 40px;
             }
             &.icon-quote-right {
-              margin-top: 170px;
+              margin-top: 270px;
               right: 40px;
             }
           }
           p {
             margin: 60px 60px 0;
             color: #fff;
-            font-size: 22px;
+            font-size: 18px;
             line-height: 48px;
+            min-height: 240px;
             display: none;
           }
         }
         .row{
-          border-top: 2px solid @color-input;
+
         }
         .col-md-4{
           float: left;
           font-size: 20px;
           width: 33.3%;
           text-align: center;
-          padding-top   : 90px;
-          padding-bottom: 70px;
-          color: #fff;
+          border-top: 2px solid @color-input;
+          div{
+            padding: 45px 0;
+          }
+          color: #d1ffcd;
+          cursor: pointer;
           &:hover, &:active{
+            color: #fff;
+            border-top: 2px solid #fff;
+            .transition(all 0.5s ease);
             i{
               border-color: #fff;
+              .transition(all 0.5s ease);
             }
           }
           i {
-            float: left;
-            margin: 0 auto 30px;
-            margin-right: 12px;
+            margin: 0 auto 0px;
             background-color: transparent;
             border: 2px solid #4caf50;
             width: 90px;
@@ -399,12 +405,11 @@ html#index{
             border-radius: 90px;
           }
           span{
-            margin-left: 15px;
-            margin-top : 8px;
+            margin-left: 0px;
             display    : block;
             line-height: 36px;
             font-size  : 16px;
-            text-align : left;
+            text-align : center;
           }
         }
         .bl-line{
@@ -421,7 +426,7 @@ html#index{
   }
 
   @media (min-width: @screen-sm-min) {
-    main{
+    #page1{
       padding: 80px 0;
       .lead {
         font-size: 24px;
@@ -430,15 +435,45 @@ html#index{
         }
       }
     }
+
     .section{
       .content-list {
         width:  48%;
+      }
+
+      &#page3 .content-head {
+        .page-detail {
+          p{
+            font-size: 22px;
+          }
+          i{
+            font-size: 40px;
+            &.icon-quote-right{
+              margin-top: 170px;
+            }
+          }
+        }
+        .col-md-4 {
+          div{
+            padding: 100px 0;
+            i{
+              float: left;
+              margin-right: 12px;
+            }
+            span{
+              margin-left: 15px;
+              margin-top : 8px;
+              text-align: left;
+            }
+          }
+
+        }
       }
     }
   }
 
   @media (min-width: @screen-md-min) {
-      main{
+      #page1{
         .lead {
           width: 80%;
           font-size: 30px;

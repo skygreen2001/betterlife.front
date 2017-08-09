@@ -238,6 +238,12 @@ return CountUp;
 }));
 
 $(function(){
+  // 顶部导航滚动显示底部挡板效果
+  $(document).scrollTop() <= 0 ? $(".navbar").removeClass("nav-scroll") : $(".navbar").addClass("nav-scroll")
+  $(document).on("scroll", function() {
+      $(document).scrollTop() <= 0 ? $(".navbar").removeClass("nav-scroll") : $(".navbar").addClass("nav-scroll")
+  });
+
   // 顶部导航条搜索展开
   $(".search-toggle").click(function(){
     $("#searchform-header").toggleClass("hidden");
@@ -250,26 +256,19 @@ $(function(){
   //首页内容顶部显示星云效果
   $('.starfield').starfield();
 
-  $(document).scrollTop() <= 0 ? $(".navbar").removeClass("nav-scroll") : $(".navbar").addClass("nav-scroll")
-  $(document).on("scroll", function() {
-      $(document).scrollTop() <= 0 ? $(".navbar").removeClass("nav-scroll") : $(".navbar").addClass("nav-scroll")
-  });
-
-  $('#page3 .content-head .bl-line').css("left",$('#page3 .content-head .col-md-4:first-child')[0].offsetLeft-10-$('#page3 .content-head')[0].offsetLeft);
-  $('#page3 .content-head .col-md-4 i:first-child').css("border-color", "#fff");
+  // 第三屏左右滚动效果
+  // $('#page3 .content-head .bl-line').css("left",$('#page3 .content-head .col-md-4:first-child')[0].offsetLeft-10-$('#page3 .content-head')[0].offsetLeft);
+  // $('#page3 .content-head .col-md-4 i:first-child').css("border-color", "#fff");
   $('#page3 .content-head .col-md-4').each(function(){
     $(this).hover(function(){
-      $('#page3 .content-head .bl-line').css("left",this.offsetLeft-10-$('#page3 .content-head')[0].offsetLeft);
+      // $('#page3 .content-head .bl-line').css("left",this.offsetLeft-10-$('#page3 .content-head')[0].offsetLeft);
       var dataId = $(this).attr("data-id");
-      $('#page3 .content-head .page-detail').find("p").removeAttr("style");
-      $('#page3 .content-head .col-md-4 i:first-child').removeAttr("style");
-      // $('#page3 .content-head .page-detail').find("p[data-id='"+dataId+"']").css("display","block");
-      $('#page3 .content-head .page-detail').find("p[data-id='"+dataId+"']").fadeIn();
-    });
+      $('#page3 .content-head .page-detail').find("p").not("[data-id='"+dataId+"']").hide();
+      $('#page3 .content-head .page-detail').find("p[data-id='"+dataId+"']").css("display","block");
+    })
   });
 
-
-  //滑屏逐个出现
+  //上下滑屏逐个出现
   if($(".section")){
     var t = $(".section");
     var tH = t.eq(0).height();

@@ -206,12 +206,12 @@ gulp.task('js', function() {
     .pipe($.rename({suffix: '.min'}))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
-
-    gulp.src(path.join(config.js.index))
-    // .pipe($.uglify())
-    .pipe($.concat('index.js'))
-    .pipe(gulp.dest(path.join(config.dest, "js", "betterlife")));
   }
+
+  gulp.src(path.join(config.js.index))
+  // .pipe($.uglify())
+  .pipe($.concat('index.js'))
+  .pipe(gulp.dest(path.join(config.dest, "js", "betterlife")));
 
   jsTask = streamqueue(
     { objectMode: true },
