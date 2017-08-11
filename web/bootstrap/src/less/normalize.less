@@ -51,7 +51,7 @@ a{
     .navbar-header{
       margin: 0px;
       height: @nav-height;
-      min-width: @width-min;
+      min-width: 295px;
       button{
         height: 34px;
       }
@@ -92,7 +92,6 @@ a{
           a{
             height: 36px;
             line-height: 36px;
-            border-bottom: 1px solid #eee;
             &:hover,&:active,&.active {
               color: #eee;
               border: 0px;
@@ -363,7 +362,6 @@ footer {
   padding-right: 0px;
 }
 
-
 @media(min-width:@screen-sm-min) {
   .navbar{
     &.navbar-fixed-top{
@@ -372,7 +370,9 @@ footer {
     .navbar-container{
       #navbar .navbar-nav{
         margin-right: 0px;
-
+        li.dropdown .dropdown-menu a{
+          border-bottom: 1px solid #eee;
+        }
         li.dropdown{
           .dropdown-menu{
             li{

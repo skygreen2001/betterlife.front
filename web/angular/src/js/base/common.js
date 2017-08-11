@@ -46,3 +46,12 @@ if (!window.console){
       }
   }
 }
+
+if (console && console.assert){
+  console.assert	= function(cond, text){
+    if( cond ) return;
+    if( console.assert.useDebugger ) debugger;
+    // throw new Error(text || "Assertion failed!");
+    // console.log("Assertion failed!");
+  };
+}
