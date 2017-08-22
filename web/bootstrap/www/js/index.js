@@ -13,7 +13,9 @@ $(function(){
       if ($(window).width() >= 768) $(".navbar").removeClass("nav-scroll");
   });
 
-
+  // 第一屏满屏显示
+  $("html").css("height", "100%");
+  
   // 顶部导航条搜索展开
   $(".search-toggle").click(function(){
     $("#searchform-header").toggleClass("hidden");

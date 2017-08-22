@@ -2,14 +2,11 @@
 @font-family-index: Helvetica, Tahoma, Arial;
 @color-fade-index : rgba(255,255,255,0.8);
 
-html#index{
+.index{
   height: 100%;
-  body, .index #main-content-container, .index #page1{
+  #main-content-container, #page1{
     height: 100%;
   }
-}
-
-.index{
   padding-top: 0px;
   #main-content-container{
     padding  : 0;
@@ -85,7 +82,7 @@ html#index{
     color: #fff;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0,0,0,.1);
-    height: 530px;
+    // height: 530px;
     .linear-gradient(@color-input, @color-main);
     background-repeat: repeat-x;
     .section-header-container{
@@ -472,27 +469,32 @@ html#index{
             span{
               margin-left: 15px;
               margin-top : 8px;
+              font-size: 13px;
               text-align: left;
             }
           }
-
         }
       }
     }
   }
 
   @media (min-width: @screen-md-min) {
-      #page1{
-        .lead {
-          width: 80%;
-          font-size: 30px;
-        }
+    #page1{
+      .lead {
+        width: 80%;
+        font-size: 30px;
       }
+    }
 
-      .section{
-        .content-list {
-          width:  23%;
+    .section{
+      .content-list {
+        width:  23%;
+      }
+      &#page3 .content-head {
+        .col-md-4 div span{
+            font-size: 16px;
         }
       }
+    }
   }
 }

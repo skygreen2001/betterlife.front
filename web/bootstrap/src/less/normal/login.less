@@ -143,7 +143,20 @@ body.login{
             }
             button[type="submit"]{
               height: 36px;
+              font-size: 14px;
+              color: #555;
               background-color: @color-input-hover;
+              &:hover,&:active{
+                color: #fff;
+                .transition(all 0.3s ease);
+              }
+              .icon-circle-right2:before {
+                content: "\f138";
+                position: absolute;
+                font-size: 18px;
+                margin-left: 6px;
+                margin-top: 1px;
+              }
             }
             .test-info{
               width: 81%;
