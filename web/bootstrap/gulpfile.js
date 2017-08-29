@@ -210,7 +210,7 @@ gulp.task('js', function() {
     if ( !config.isDev ) jsTask.pipe($.uglify());
     jsTask.pipe($.concat('index.bower.js'))
     .pipe($.rename({suffix: '.min'}))
-    .pipe(gulp.dest(path.join(config.dest, 'js', 'betterlife')));
+    .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
   }
 
   jsTask = gulp.src('./src/js/betterlife/index/index.js');
