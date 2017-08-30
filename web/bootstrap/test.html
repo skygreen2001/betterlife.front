@@ -19,8 +19,10 @@
       var a4=a1.diff(a2);
       console.log(a4);
       var uri = "http://betterlife.org/bb.html?technology=jquery&technology=css&blog=stackoverflow";
-      console.log(uri['technology']);
-      console.log(uri['blog']);
+      console.log($_.params('technology',uri));
+      console.log($_.params('blog',uri));
+      console.log($_.params('go'));//默认当前访问URL路径
+      console.log($_.params('author'));
     </script>
     <body>
       <div id="content">

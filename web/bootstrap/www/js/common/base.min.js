@@ -65,9 +65,10 @@
       return date.format('yyyy-MM-dd');
     },
     // 获取url指定param
-    params: function(k){
+    params: function(k,url){
+      url = url || location.search;
       var p={};
-      location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
+      url.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
       return k?p[k]:p;
     }
     /************************* 函数区:  end ************************/
