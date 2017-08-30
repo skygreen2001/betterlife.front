@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    @@include('../../layout/header.html', {
-        "title"     : "Betterlife Front UI",
-        "rel-prefix": "../.."
-    })
+@@include('../../layout/header.html', {
+    "title"     : "Betterlife Front UI",
+    "rel-prefix": "../.."
+})
 </head>
 <body>
     <!-- main nav begin -->
-    @@include('../../layout/navbar.html', {
-        "rel-prefix": "../.."
-    })
-    <!-- main nav end -->
+@@include('../../layout/navbar.html', {
+    "rel-prefix": "../.."
+})
+    <!-- /main nav end -->
 
     <!-- page container begin -->
     <div class="page-container">
-      <!-- container -->
-
         <!-- page content begin -->
         <div class="page-content">
             <!-- main sidebar begin -->
             @@include('../../layout/sidebar.html', {
                 "rel-prefix": "../.."
             })
-            <!-- main sidebar end -->
+            <!-- /main sidebar end -->
 
             <!-- main content begin -->
             <div class="content-wrapper">
@@ -37,7 +35,7 @@
                     </ul>
                   </div>
                 </div>
-                <!-- page header end -->
+                <!-- /page header end -->
 
                 <!-- content area begin -->
                 <div class="container-fluid list">
@@ -72,22 +70,22 @@
                         </table>
                     </div>
                 </div>
-                <!-- content area end -->
+                <!-- /content area end -->
               </div>
             </div>
-            <!-- main content end -->
+            <!-- /main content end -->
 
             <div class="clearfix"></div>
         </div>
-        <!-- page content end -->
+        <!-- /page content end -->
     </div>
-    <!-- page container end -->
+    <!-- /page container end -->
 
-    <!--footer begin-->
+    <!-- footer begin -->
     @@include('../../layout/footer.html',{
       "rel-prefix": "../.."
     })
-    <!--footer end-->
+    <!-- /footer end -->
 
     <!-- template begin -->
     <div id="image-model"></div>
@@ -114,7 +112,7 @@
     <a id="info-edit{{:id}}" href="edit.html" class="btn-edit">修改</a>
     <a id="info-dele{{:id}}" href="#" class="btn-dele" data-toggle="modal" data-target="#infoModal">删除</a>
     </script>
-    <!-- template end -->
+    <!-- /template end -->
 
     <script src="../../js/normal/list.js"></script>
     <script src="../../js/betterlife/blog.js"></script>
