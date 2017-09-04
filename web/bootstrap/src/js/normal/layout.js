@@ -40,8 +40,10 @@ $(function(){
     $(".sidebar").toggle();
   })
 
+  if(($(window).width()>755)&&($(window).width()<826))collapse_sidebar();
   $(window).resize(function(){
     if($(window).width()>752)$(".sidebar").removeAttr("style");
+
   });
 
   //左侧导航条顶部切换按钮提示
@@ -52,6 +54,35 @@ $(function(){
 
   //左侧导航条点选是否折叠
   $(".navigation-header").click(function(){
+    collapse_sidebar();
+  });
+
+
+  // 顶部导航条搜索展开
+  $(".search-toggle").click(function(){
+    $("#searchform-header").toggleClass("hidden");
+  });
+
+  $(".page-container").click(function(){
+    $("#searchform-header").addClass("hidden");
+  });
+
+  // 页面整体布局宽窄屏切换
+  $("#btn-layout-container").click(function(){
+    if ($(this).find("i").hasClass("glyphicon-resize-full")){
+      $(this).find("i").removeClass("glyphicon-resize-full").addClass("glyphicon-resize-small");
+      $(".navbar .navbar-container").removeClass("container");
+      $(".page-container").removeClass("container");
+    }else{
+      $(this).find("i").removeClass("glyphicon-resize-small").addClass("glyphicon-resize-full");
+      $(".navbar .navbar-container").addClass("container");
+      $(".page-container").addClass("container");
+      $(window).resize();
+    }
+  });
+
+  /** 切换折叠左侧导航条 */
+  function collapse_sidebar(){
     $(".page-sidebar .sidebar-nav ul").removeAttr("style");
     $(".page-sidebar").toggleClass("pin");
     $(".content-wrapper").toggleClass("pin");
@@ -87,29 +118,6 @@ $(function(){
       $(".page-sidebar .sidebar-nav ul").removeAttr("style");
       $('.page-sidebar .sidebar-nav > li > a span i').remove();
     }
-  });
-
-  // 顶部导航条搜索展开
-  $(".search-toggle").click(function(){
-    $("#searchform-header").toggleClass("hidden");
-  });
-
-  $(".page-container").click(function(){
-    $("#searchform-header").addClass("hidden");
-  });
-
-  // 页面整体布局宽窄屏切换
-  $("#btn-layout-container").click(function(){
-    if ($(this).find("i").hasClass("glyphicon-resize-full")){
-      $(this).find("i").removeClass("glyphicon-resize-full").addClass("glyphicon-resize-small");
-      $(".navbar .navbar-container").removeClass("container");
-      $(".page-container").removeClass("container");
-    }else{
-      $(this).find("i").removeClass("glyphicon-resize-small").addClass("glyphicon-resize-full");
-      $(".navbar .navbar-container").addClass("container");
-      $(".page-container").addClass("container");
-      $(window).resize();
-    }
-  });
+  }
 
 });
