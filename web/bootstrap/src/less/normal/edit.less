@@ -85,10 +85,14 @@
     margin-top: 20px;
     padding: 19px 20px 20px;
   }
+
+  .input-group.col-sm-9{
+    width: 100%;
+  }
 }
 
 .select2-container{
-  width: 75% !important;
+  width: 100% !important;
   .select2-selection--single{
     height: 36px;
     .select2-selection__rendered{
@@ -103,8 +107,11 @@
 
 @media (min-width: @screen-sm-min) {
   .edit{
+    .input-group.col-sm-9{
+      width: 98%;
+    }
     input,textarea,select{
-      width: 75%;
+      width: 98%;
     }
     .btn-file-browser{
       margin-top: 0px;
@@ -113,9 +120,13 @@
       & +.btn-group{
         width: 86.5%;
         & > .multiselect:first-child{
-          width: 86.5%;
+          width: 113%;
         }
       }
+    }
+
+    .select2-container{
+      width: 98% !important;
     }
   }
 }
