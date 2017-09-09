@@ -71,7 +71,7 @@ $(function(){
                         $('#imageModal').modal('show');
                     });
                     return result;
-                 }
+                  }
                 },
                 {"orderable": false, "targets": 6,
                  "render"   : function(data,type,row){
