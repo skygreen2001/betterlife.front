@@ -87,15 +87,6 @@ $(function(){
                 {"orderable": false, "targets": 7,
                  "render"   : function(data, type, row){
                     var result = $.templates("#actionTmpl").render({ "id"  : data });
-
-                    $("body").off('click', 'a#info-view'+data);
-                    $("body").on('click', 'a#info-view'+data, function(){//查看
-                        bootbox.confirm("确定要查看该博客:" + data + "?",function(result){
-                            if ( result == true ){
-                                console.log("查看博客:" + data);
-                            }
-                        });
-                    });
                     $("body").off('click', 'a#info-dele'+data);
                     $("body").on('click', 'a#info-dele'+data, function(){//删除
                         bootbox.confirm("确定要删除该博客:" + data + "?",function(result){
