@@ -267,10 +267,10 @@ div.dataTables_wrapper div.dataTables_info{
 
 #imageModal{
   padding   : 0 10px !important;
-  max-height: 98%;
+  max-height: 100%;
   .modal-dialog{
-    width : 90%;
-    height: 90%;
+    width : 100%;
+    height: 100%;
     margin: auto;
     .modal-header{
       padding: 6px;
@@ -279,12 +279,18 @@ div.dataTables_wrapper div.dataTables_info{
       }
     }
     .modal-content {
-      margin-top: 180px;
+      margin-top: 4%;
+      // margin-bottom: 10%;
+      height: 92%;
+      border-radius: 15px;
     }
     .modal-body{
       padding: 0px;
+      height: 95.5%;
       img{
-        max-height: 98%;
+        max-height: 100%;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
       }
     }
   }
@@ -354,7 +360,10 @@ div.dataTables_wrapper div.dataTables_info{
   #imageModal{
     .modal-dialog{
       .modal-content {
-        margin-top: 3.2%;
+        margin-top: 2%;
+      }
+      .modal-body{
+        height: 96%;
       }
     }
   }

@@ -33,6 +33,10 @@ a{
   display: none;
 }
 
+.modal{
+  z-index: 20050;
+}
+
 .navbar{
   &.navbar-fixed-top{
     border-bottom: 1px solid #222;
@@ -413,31 +417,31 @@ footer {
 }
 
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
-    .page-container.container {
-      .page-content {
+  .page-container.container {
+    .page-content {
+      display: block;
+      position: relative;
+      background-color: #000;
+      .page-sidebar {
+        float: left;
+      }
+      .content-wrapper {
         display: block;
-        position: relative;
-        background-color: #000;
-        .page-sidebar {
-          float: left;
+        margin-left:-@sidebar-width;
+        float:right;
+        border-right: 1px solid #ccc;
+        .main-content{
+          margin-left: @sidebar-width;
         }
-        .content-wrapper {
-          display: block;
-          margin-left:-@sidebar-width;
-          float:right;
-          border-right: 1px solid #ccc;
+        &.pin{
+          margin-left:-@sidebar-width-pin;
           .main-content{
-            margin-left: @sidebar-width;
-          }
-          &.pin{
-            margin-left:-@sidebar-width-pin;
-            .main-content{
-              margin-left: @sidebar-width-pin;
-            }
+            margin-left: @sidebar-width-pin;
           }
         }
       }
     }
+  }
 }
 
 /************************* Sidebar:  end ************************/
