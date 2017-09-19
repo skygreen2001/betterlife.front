@@ -66,9 +66,11 @@ $(function(){
 
                     $("body").off('click', 'a#imgUrl'+row.id);
                     $("body").on('click', 'a#imgUrl'+row.id, function(){
-                        $('#imagePreview').attr('src', $('a#imgUrl' + row.id + " img").attr('src'));
-                        $('#imagePreview-link').attr('href', $('a#imgUrl' + row.id + " img").attr('src'));
-                        $('#imageModal').modal('show');
+                        var imgLink = $('a#imgUrl' + row.id + " img").attr('src');
+                        $('#imagePreview').attr('src', imgLink);
+                        $('#imagePreview-link').attr('href', imgLink);
+                        var isShow = $.dataTable.showImages($(this).find("img"), "#imageModal .modal-dialog");
+                        if (isShow) $('#imageModal').modal('show'); else window.open(imgLink, '_blank');
                     });
                     return result;
                   }

@@ -101,6 +101,40 @@ var dataTable = {
         $('.redirect_page').parent().click(function(e){
             e.preventDefault();
         });
+    },
+    showImages: function(imgIdJqueryObj, showModelDialogName){
+        var screen_w = $(window).width();
+        var screen_h = $(window).height();
+        var img_w = imgIdJqueryObj[0].naturalWidth;
+        var img_h = imgIdJqueryObj[0].naturalHeight;
+        if ( img_w <=0 ) return false;
+        var offset_h = 100;
+        if (img_w < screen_w && img_h < screen_h){
+            $(showModelDialogName).css("width", img_w);
+            offset_h = (screen_h - img_h)/2;
+        } else {
+            if ( img_w >= screen_w ){
+                if (img_h > screen_h) {
+                    var w_ratio = img_w/screen_w;
+                    var h_ratio = img_h/screen_h;
+                    offset_h = (screen_h * 0.1)/2;
+                    if (w_ratio > h_ratio){
+                        $(showModelDialogName).css("width", screen_w*0.9);
+                        var h = screen_w*0.9 * img_h / img_w;
+                        if ( screen_h > h )offset_h = (screen_h - h) / 2 - 16;
+                    }else
+                        $(showModelDialogName).css("height", screen_h * 0.9);
+                } else {
+                    $(showModelDialogName).css("width", screen_w*0.9);
+                    offset_h = (screen_h - img_h)/2;
+                }
+            } else {
+                $(showModelDialogName).css("height", screen_h * 0.9);
+                offset_h = (screen_h * 0.1)/2;
+            }
+        }
+        $(showModelDialogName).css("margin-top", offset_h);
+        return true;
     }
 };
 
