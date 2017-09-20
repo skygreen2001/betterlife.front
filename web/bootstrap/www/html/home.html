@@ -1,3 +1,210 @@
-<section class="section container-fluid">
-  <h1 class="page-header">欢迎来到首页！</h1>
-</section>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Betterlife Front UI</title>
+
+    <link rel="stylesheet" href="../../css/common.min.css">
+    <script type="text/javascript" src="../../js/common/base.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <!-- main nav begin -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle  collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only"></span>
+            <i class="glyphicon glyphicon-briefcase"></i>
+          </button>
+          <button id="btn-toggle-sidebar" type="button" class="navbar-toggle collapsed">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            <i class="glyphicon glyphicon-grain"></i> Betterlife Front UI
+          </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../">首页</a></li>
+            <li><a class="active" href="../html/blog/list.html">读书</a></li>
+            <li><a href="#contact">电影</a></li>
+            <li><a href="#about">音乐</a></li>
+            <li><a href="#contact">研发</a></li>
+            <li class="dropdown">
+              <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                其它
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dLabel">
+                <li><a href="#contact">购物</a></li>
+                <li><a href="#contact">话题</a></li>
+                <li><a href="html/model/preview.html">幽默</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="icon-user"></span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dLabel">
+                <li><a href="#reset"><span class="glyphicon glyphicon-edit"></span>修改密码</a></li>
+                <li><a href="../index.html"><span class="glyphicon glyphicon-off"></span>退出</a></li>
+              </ul>
+            </li>
+            <li class="search-toggle"><a href="#"><span><span class="menu-search-text">搜索</span><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></a></li>
+
+            <li><a id="btn-layout-container" href="#"><i class="glyphicon glyphicon-resize-small"></i></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+        <div id="searchform-header" class="hidden">
+          <div id="searchform-header-inner">
+            <form method="get" action="" class="header-searchform">
+              <input type="search" class="form-control" name="s" autocomplete="off" autofocus="autofocus" placeholder="搜索">
+            </form>
+            <span id="searchform-header-close" class="glyphicon glyphicon-remove search-toggle"></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- /main nav end -->
+
+    <!-- page container begin -->
+    <div class="page-container">
+        <!-- page content begin -->
+        <div class="page-content">
+            <!-- main sidebar begin -->
+            
+            <div class="sidebar page-sidebar">
+              <div class="sidebar-content">
+                <ul class="navigation-header">
+                  <li ><a href="#"><i class="icon-th-list" title="功能导航"></i></a></li>
+                </ul>
+                <ul class="sidebar-nav">
+                  <!-- main -->
+                  <li><a href="../html/home.html"><i class="icon-dashboard"></i> <span>控制台</span></a></li>
+                  <li data-role="dropdown">
+                    <a class="has-ul" href="#collapse-it" aria-expanded="false" aria-controls="collapse-it"><i class="icon-book"></i> <span>科技类</span><i class="glyphicon glyphicon-menu-right menu-right"></i></a>
+                    <ul class="sub-menu" id="collapse-it">
+                      <li><a href="#">微信</a></li>
+                      <li><a href="#">百度</a></li>
+                      <li><a href="#">阿里巴巴</a></li>
+                      <li><a href="#">华为</a></li>
+                      <li><a href="#">vivo</a></li>
+                      <li><a href="#">小米</a></li>
+                      <li role="separator" class="nav-splitter"></li>
+                      <li><a href="#">宇航</a></li>
+                      <li><a href="#">移动</a></li>
+                      <li><a href="#">交通</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="has-ul" href="#collapse-philosophy" aria-expanded="false" aria-controls="collapse-philosophy"><i class="icon-user"></i> <span>哲学类</span><i class="glyphicon glyphicon-menu-right menu-right"></i></a>
+                    <ul class="sub-menu" id="collapse-philosophy">
+                      <li><a href="#">老子</a></li>
+                      <li><a href="#">基督</a></li>
+                      <li><a href="#">佛教</a></li>
+                      <li><a href="#">唯心主义</a></li>
+                      <li><a href="#">唯物主义</a></li>
+                    </ul>
+                  </li>
+                  <li data-role="dropdown">
+                    <a class="has-ul" href="#collapse-art" aria-expanded="false" aria-controls="collapse-art"><i class="icon-music"></i> <span>艺术类</span><i class="glyphicon glyphicon-menu-right menu-right"></i></a>
+                    <ul class="sub-menu" id="collapse-art">
+                      <li><a href="#">音乐</a></li>
+                      <li><a href="#">电影</a></li>
+                      <li><a href="#">文学</a></li>
+                      <li><a href="#">舞蹈</a></li>
+                      <li><a href="#">绘画</a></li>
+                      <li><a href="#">雕塑</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                      <a href="#"><i class="icon-life-ring"></i> <span>生活类</span></a>
+                  </li>
+                  <li>
+                      <a href="#"><i class="icon-arrow-circle-o-right"></i> <span>军事类</span></a>
+                  </li>
+                  <li>
+                      <a href="#"><i class="icon-film"></i> <span>综合类</span></a>
+                  </li>
+                  <li>
+                      <a href="#"><i class="icon-opera"></i> <span>其它</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- /main sidebar end -->
+
+            <!-- main content begin -->
+            <div class="content-wrapper">
+              <div class="main-content">
+                <!-- page header begin -->
+                <div class="row">
+                  <div class="breadcrumb-line">
+                    <ul class="breadcrumb">
+                      <li><a href="/"><i class="icon-home2 position-left"></i> 首页</a></li>
+                      <li class="active">控制台</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- /page header end -->
+
+                <!-- content area begin -->
+                <div class="container-fluid home">
+                  <div class="row col-xs-12">
+                    <section class="section container-fluid">
+                      <h1 class="page-header">Betterlife Front UI</h1>
+                      <h2>👌 后台管理，责无旁贷</h2>
+                      <h3><a href="https://github.com/skygreen2001/betterlife.front" target="_blank">进一步了解 > </a></h3>
+                    </section>
+                  </div>
+                </div>
+
+                <!-- /content area end -->
+              </div>
+            </div>
+            <!-- /main content end -->
+
+            <div class="clearfix"></div>
+        </div>
+        <!-- /page content end -->
+    </div>
+    <!-- /page container end -->
+
+    <!-- footer begin -->
+    
+    <footer class="text-muted">
+        <div id="footer-inner">
+            <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div><!-- #copyright -->
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="../js/common/bower/bower.min.js"></script>
+    <script type="text/javascript" src="../js/common/common.jquery.min.js"></script>
+    <script type="text/javascript" src="../js/normal/layout.js"></script>
+
+    <!-- /footer end -->
+    <script type="text/javascript">
+      $(function(){
+        var offset = $(window).height() - $(".navbar-container").height() - $(".breadcrumb-line").height() -$("footer").height();
+        $(".home .container-fluid").css("height", offset);
+      });
+    </script>
+</body>
+</html>
