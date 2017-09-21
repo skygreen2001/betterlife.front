@@ -1,21 +1,26 @@
 $(function(){
   //自动高亮当前页面链接地址对应的导航菜单
-  var urlstr = location.href;
-  var urlstatus=false;
-  $(".sidebar-nav li a").each(function () {
-    if (((urlstr + '/').indexOf($(this).attr('href')) > -1)&&($(this).attr('href')!='')&&($(this).attr('href')!='#')) {
-      $(this).addClass('active');
-      urlstatus = true;
-    } else {
-      $(this).removeClass('active');
+  function showLayoutMenuActive(linkName){
+    var urlstatus=false;
+    var urlstr = location.href;
+    $(linkName).each(function () {
+      var link = $(this).attr('href').replace(/\.\.\//g,"");
+      if (((urlstr + '/').indexOf(link) > -1)&&(link!='')&&(link!='#')) {
+        $(this).addClass('active');
+        urlstatus = true;
+      } else {
+        $(this).removeClass('active');
+      }
+      if($(linkName + ".active").length>1){
+        $(linkName).eq(0).removeClass('active');
+      }
+    });
+    if (!urlstatus) {
+      $(linkName).eq(0).addClass('active');
     }
-    if($(".sidebar-nav li a.active").length>1){
-      $(".sidebar-nav li a").eq(0).removeClass('active');
-    }
-  });
-  if (!urlstatus) {
-    $(".sidebar-nav li a").eq(0).addClass('active');
   }
+  showLayoutMenuActive(".sidebar-nav li a");
+  showLayoutMenuActive("#navbar .navbar-nav li a");
 
   //左侧导航条有子菜单点选
   $(".sidebar-nav >li > a.has-ul").click(function(e){
