@@ -1,6 +1,4 @@
 $(function(){
-    $("#image-model").html($.templates("#imgModalTmpl"));
-
     //Datatables中文网[帮助]: http://datatables.club/
     if ($.dataTable) {
         var infoTable = $('#infoTable').DataTable({
@@ -57,12 +55,7 @@ $(function(){
             "columnDefs": [
                 {"orderable": false, "targets": 5,
                  "render"   : function(data, type, row) {
-                    var data = {
-                        "img_id"  : "imgUrl"+row.id,
-                        "img_src" : data,
-                        "img_name": row.imgName
-                    };
-                    var result = $.templates("#imgTmpl").render(data);
+                    var result = '<a id="' + "imgUrl" + row.id + '" href="#"><img src="' + data + '" class="img-thumbnail" alt="' + row.title + '" /></a>';
 
                     $("body").off('click', 'a#imgUrl'+row.id);
                     $("body").on('click', 'a#imgUrl'+row.id, function(){
@@ -76,15 +69,18 @@ $(function(){
                   }
                 },
                 {"orderable": false, "targets": 6,
-                 "render"   : function(data,type,row){
-                    if ( data == 0 ){
-                        return '<span class="status-fail">审核失败</span>';
-                    } else if ( data == 1 ) {
-                        return '<span class="status-pass">审核通过</span>';
-                    } else {
-                        return '<span class="status-wait">待审核</span>';
+                 "render"   : function(data, type, row) {
+                    switch (data) {
+                        case '0':
+                            return '<span class="status-wait">待审核</span>';
+                            break;
+                        case '1':
+                            return '<span class="status-pass">审核通过</span>';
+                            break;
+                        default:
+                            return '<span class="status-fail">已结束</span>';
                     }
-                 }
+                  }
                 },
                 {"orderable": false, "targets": 7,
                  "render"   : function(data, type, row){

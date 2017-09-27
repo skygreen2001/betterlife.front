@@ -206,14 +206,14 @@ gulp.task('js', function() {
     .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
 
 
-    jsTask = gulp.src('./src/js/betterlife/index/bower/**/*.js');
+    jsTask = gulp.src('./src/js/core/index/bower/**/*.js');
     if ( !config.isDev ) jsTask.pipe($.uglify());
     jsTask.pipe($.concat('index.bower.js'))
     .pipe($.rename({suffix: '.min'}))
     .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
   }
 
-  jsTask = gulp.src('./src/js/betterlife/index/index.js');
+  jsTask = gulp.src('./src/js/core/index/index.js');
   jsTask.pipe($.concat('index.js'))
   .pipe(gulp.dest(path.join(config.dest, "js")));
 
@@ -240,8 +240,8 @@ gulp.task('js', function() {
   gulp.src('./src/js/normal/**/*.js')
   .pipe(gulp.dest(path.join(config.dest, 'js', 'normal')));
 
-  gulp.src(['./src/js/betterlife/*.js', './src/js/betterlife/!(index)*/**/*.js'])
-  .pipe(gulp.dest(path.join(config.dest, 'js', 'betterlife')));
+  gulp.src(['./src/js/core/*.js', './src/js/core/!(index)*/**/*.js'])
+  .pipe(gulp.dest(path.join(config.dest, 'js', 'core')));
 
   firstInit = false;
 });
