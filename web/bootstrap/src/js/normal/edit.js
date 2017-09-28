@@ -42,6 +42,7 @@ var edit = {
           dataType: 'json',
           delay: delay,
           cache: cache,
+          // debug: true,
           data: function (query) {
             return query;
           },
