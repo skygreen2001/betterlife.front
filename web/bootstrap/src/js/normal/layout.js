@@ -1,13 +1,18 @@
 $(function(){
   //自动高亮当前页面链接地址对应的导航菜单
   function showLayoutMenuActive(linkName){
-    var urlstatus=false;
-    var urlstr = location.href;
+    var urlstatus = false;
+    var urlstr    = location.href;
     $(linkName).each(function () {
-      var link = $(this).attr('href').replace(/\.\.\//g,"");
-      if (((urlstr + '/').indexOf(link) > -1)&&(link!='')&&(link!='#')) {
+      var link = $(this).attr('href').replace(/\.\.\//g, "");
+      if ( ( (urlstr + '/').indexOf(link) > -1) && ( link != '' ) && ( link != '#' ) ) {
         $(this).addClass('active');
         urlstatus = true;
+        var parent = $(this).parent().parent();
+        if (parent.hasClass("sub-menu")) {
+          parent.slideToggle(200);
+          parent.parent().find("i.menu-right").toggleClass("rotated");
+        }
       } else {
         $(this).removeClass('active');
       }
@@ -45,9 +50,9 @@ $(function(){
     $(".sidebar").toggle();
   })
 
-  if(($(window).width()>755)&&($(window).width()<826))collapse_sidebar();
+  if ( ($(window).width() > 755) && ($(window).width() < 826) ) collapse_sidebar();
   $(window).resize(function(){
-    if($(window).width()>752)$(".sidebar").removeAttr("style");
+    if ( $(window).width() > 752 ) $(".sidebar").removeAttr("style");
 
   });
 
