@@ -50,16 +50,26 @@
         }
       }
       .multiselect-container{
-        z-index: 10000;
+        z-index: 20000;
         & > li {
           width: 300px;
           & > a {
-            height: 26px;
+            height: 32px;
+            line-height: 26px;
             & > label {
               padding-top: 3px;
+              padding-left: 40px;
+              &.radio{
+                padding-left: 20px;
+              }
               & > input[type=checkbox], & > a > label > input[type=radio]{
                 height: auto;
                 margin-left: -30px;
+                margin-top: 7px;
+              }
+              & > input[type=radio]{
+                display: none;
+                margin-top: -5px;
               }
             }
           }
@@ -81,7 +91,6 @@
       margin-bottom: 0px;
     }
   }
-
   .form-actions {
     display: block;
     text-align: center;
