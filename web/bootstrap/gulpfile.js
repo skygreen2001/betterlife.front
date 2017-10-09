@@ -191,6 +191,13 @@ gulp.task('js', function() {
               'moment.js',
               'locale/zh-cn.js'
             ]
+          },
+          'select2':{
+            "main": [
+                "dist/js/select2.js",
+                "dist/js/i18n/zh-CN.js",
+                "src/scss/core.scss"
+            ]
           }
         }
       })
@@ -198,13 +205,13 @@ gulp.task('js', function() {
     .pipe($.sourcemaps.init())
     .pipe($.concat('bower.js'));
 
-    if ( !config.isDev ) jsTask.pipe($.uglify());
+    // if ( !config.isDev ) jsTask.pipe($.uglify());
+    jsTask.pipe($.uglify());
 
     jsTask
     .pipe($.rename({suffix: '.min'}))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
-
 
     jsTask = gulp.src('./src/js/core/index/bower/**/*.js');
     if ( !config.isDev ) jsTask.pipe($.uglify());
