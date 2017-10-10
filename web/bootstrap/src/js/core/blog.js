@@ -130,10 +130,12 @@ $(function(){
         $('input[name="isPublic"]').on('switchChange.bootstrapSwitch', function(event, state) {
             console.log(state);
         });
-
-        var default_keyword_id   = 6;
-        var default_keyword_text = "音乐";
-        $.edit.select2("select[name='keyword_id']", "../../data/keyword.json", default_keyword_id, default_keyword_text);
+        
+        var select_keyword = {};
+        select_keyword.id   = 6;
+        select_keyword.text = "音乐";
+        select_keyword =  new Array(select_keyword);
+        $.edit.select2("select[name='keyword_id']", "../../data/keyword.json", select_keyword);
 
         $('#editBlogForm').validate({
             errorElement: 'div',
