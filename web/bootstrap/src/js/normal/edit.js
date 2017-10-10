@@ -31,7 +31,8 @@ var edit = {
     if(!cache) cache = true;
     if(!delay) delay = 250;
     if (!defaultSelectValue) defaultSelectValue = [];
-    $(selectName).select2({
+    if (ajaxUrl) {
+      $(selectName).select2({
         placeholder: {
           id: '-1',
           text: '请选择'
@@ -54,7 +55,18 @@ var edit = {
             };
           }
         }
-    });
+      });
+    } else {
+      $(selectName).select2({
+          placeholder: {
+            id: '-1',
+            text: '请选择'
+          },
+          allowClear: true,
+          data: defaultSelectValue,
+          language: "zh-CN"
+      });
+    }
     if (defaultSelectValue && defaultSelectValue.length>0){
       var len = defaultSelectValue.length;
       if (len == 1){
