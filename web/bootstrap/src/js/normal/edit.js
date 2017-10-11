@@ -39,6 +39,7 @@ var edit = {
         },
         allowClear: true,
         data: defaultSelectValue,
+        // closeOnSelect:false,
         language: "zh-CN",
         ajax: {
           url: ajaxUrl,

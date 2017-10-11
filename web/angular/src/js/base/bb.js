@@ -2,12 +2,11 @@
  * Betterlife JavaScript Library
  * Copyright (c) 2016 skygreen2001@gmail.com
  * @see APICloud script/app.js
- * @see 可想造一个属于你自己的jQuery库?: https://github.com/MeCKodo/forchange
+ * @see 可想造一个属于你自己的jQuery库?: https://segmentfault.com/a/1190000003994531
  * @author skygreen2001 skygreen2001@gmail.com
  */
 (function(window, document){
   var ua = navigator.userAgent.toLowerCase();
-
   var Bb = function(selector) {
     return new Bb.prototype.init(selector);
   };
@@ -100,6 +99,7 @@
 
   Bb.prototype =  {
     constructor : Bb,
+    element     : '',
     //dom选择的一些判断
     init : function(selector) {
       if(!selector) { return this; }
@@ -118,12 +118,10 @@
         var selector = selector.trim(), result;
         if (selector.charAt(0) == '#' && !selector.match('\\s')) {
           selector = selector.substring(1);
-          result = document.getElementById(selector);
-          return result;
+          result   = document.getElementById(selector);
         } else {
           result = document.querySelectorAll(selector);
           // result.selector = selector;
-          return result;
           // for (var i = 0; i < result.length; i++) {
           //   this[i] = result[i];
           // }
@@ -131,6 +129,8 @@
           // this.length = result.length;
           // return this;
         }
+        this.element = result;
+        return this;
         // var result = Sizzle(selector);
         // if (result.length == 1) result = result[0];
         // return result;
@@ -142,7 +142,8 @@
       },false);
       document.removeEventListener('DOMContentLoaded',fn,true);
     },
-    attr : function(el, name, value){
+    attr : function(name, value, el) {
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('attr');
         return;
@@ -154,18 +155,20 @@
         return el;
       }
     },
-    dom : function(el, selector){
+    dom : function(selector, el){
+      if (!el) el = this.element;
       if(arguments.length === 1 && typeof arguments[0] == 'string'){
         if(document.querySelector){
           return document.querySelector(arguments[0]);
         }
-      }else if(arguments.length === 2){
+      }else if (arguments.length === 2){
         if(el.querySelector){
           return el.querySelector(selector);
         }
       }
     },
-    prepend : function(el, html){
+    prepend : function(html, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('prepend');
         return;
@@ -173,7 +176,8 @@
       el.insertAdjacentHTML('afterbegin', html);
       return el;
     },
-    append : function(el, html){
+    append : function(html, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('append');
         return;
@@ -181,7 +185,8 @@
       el.insertAdjacentHTML('beforeend', html);
       return el;
     },
-    before : function(el, html){
+    before : function(html, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('before');
         return;
@@ -189,7 +194,8 @@
       el.insertAdjacentHTML('beforebegin', html);
       return el;
     },
-    after : function(el, html){
+    after : function(html, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('after');
         return;
@@ -197,19 +203,21 @@
       el.insertAdjacentHTML('afterend', html);
       return el;
     },
-    html : function(el, html){
+    html : function(html, el) {
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('html');
         return;
       }
-      if(arguments.length === 1){
+      if(arguments.length === 0){
         return el.innerHTML;
-      }else if(arguments.length === 2){
+      }else if(arguments.length === 1){
         el.innerHTML = html;
         return el;
       }
     },
-    text : function(el, txt){
+    text : function(txt, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('text');
         return;
@@ -221,7 +229,8 @@
         return el;
       }
     },
-    val : function(el, val){
+    val : function(val, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('val');
         return;
@@ -257,7 +266,8 @@
         }
       }
     },
-    css : function(el, css){
+    css : function(css, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('css');
         return;
@@ -266,7 +276,8 @@
         el.style && (el.style.cssText += ';' + css);
       }
     },
-    cssVal : function(el, prop){
+    cssVal : function(prop, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('cssVal');
         return;
@@ -323,6 +334,7 @@
       );
     },
     remove : function(el){
+      if (!el) el = this.element;
       if(el && el.parentNode){
         el.parentNode.removeChild(el);
       }
@@ -336,7 +348,8 @@
         el.removeAttribute(name);
       }
     },
-    hasCls : function(el, cls){
+    hasCls : function(cls, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('hasCls');
         return;
@@ -347,7 +360,8 @@
         return false;
       }
     },
-    addCls : function(el, cls){
+    addCls : function(cls, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('addCls');
         return;
@@ -375,7 +389,8 @@
       }
       return el;
     },
-    toggleCls : function(el, cls){
+    toggleCls : function(cls, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('toggleCls');
         return;
@@ -394,7 +409,8 @@
     isElement : function(obj){
       return !!(obj && obj.nodeType == 1);
     },
-    addEvt : function(el, name, fn, useCapture){
+    addEvt : function(name, fn, useCapture, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('addEvt');
         return;
@@ -404,7 +420,8 @@
         el.addEventListener(name, fn, useCapture);
       }
     },
-    rmEvt : function(el, name, fn, useCapture){
+    rmEvt : function(name, fn, useCapture, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('rmEvt');
         return;
@@ -414,7 +431,8 @@
         el.removeEventListener(name, fn, useCapture);
       }
     },
-    one : function(el, name, fn, useCapture){
+    one : function(name, fn, useCapture, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('one');
         return;
@@ -427,7 +445,8 @@
       };
       that.addEvt(el, name, cb, useCapture);
     },
-    domAll : function(el, selector){
+    domAll : function(selector, el){
+      if (!el) el = this.element;
       if(arguments.length === 1 && typeof arguments[0] == 'string'){
         if(document.querySelectorAll){
           return document.querySelectorAll(arguments[0]);
@@ -438,7 +457,8 @@
         }
       }
     },
-    first : function(el, selector){
+    first : function(selector, el){
+      if (!el) el = this.element;
       if(arguments.length === 1){
         if(!this.isElement(el)){
           Bb.eleNoInfo('first');
@@ -450,7 +470,8 @@
         return this.dom(el, selector+':first-child');
       }
     },
-    last : function(el, selector){
+    last : function(selector, el){
+      if (!el) el = this.element;
       if(arguments.length === 1){
         if(!this.isElement(el)){
           Bb.eleNoInfo('last');
@@ -463,13 +484,16 @@
         return this.dom(el, selector+':last-child');
       }
     },
-    eq : function(el, index){
+    eq : function(index, el){
+      if (!el) el = this.element;
       return this.dom(el, ':nth-child('+ index +')');
     },
-    not : function(el, selector){
+    not : function(selector, el){
+      if (!el) el = this.element;
       return this.domAll(el, ':not('+ selector +')');
     },
     prev : function(el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('prev');
         return;
@@ -481,6 +505,7 @@
       }
     },
     next : function(el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('next');
         return;
@@ -491,7 +516,8 @@
         return node;
       }
     },
-    closest : function(el, selector){
+    closest : function(selector, el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('closest');
         return;
@@ -523,6 +549,7 @@
       return traversal(el, selector);
     },
     offset : function(el){
+      if (!el) el = this.element;
       if(!this.isElement(el)){
         Bb.eleNoInfo('offset');
         return;

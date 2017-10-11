@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>Betterlife Front UI</title>
 
-    <script src="www/js/bower/bower.min.js" charset="utf-8"></script>
-    <script src="www/js/app.min.js" charset="utf-8"></script>
+    <script src="src/js/base/bb.js" charset="utf-8"></script>
+    <script src="src/js/base/shim.js" charset="utf-8"></script>
     <script type="text/javascript">
       if($_.browser.android) console.log("android");
       else if($_.browser.ios) console.log("ios");
@@ -21,18 +21,9 @@
       var a4=a1.diff(a2);
       console.log(a4);
     </script>
-    <body>
-      <div id="content">
-        <ul>
-          <li>a</li>
-          <li>b</li>
-          <li>c</li>
-          <li>d</li>
-          <li>e</li>
-          <li>f</li>
-        </ul>
-      </div>
-
+  </head>
+  <body>
+    <div id="content">
       <ul>
         <li>a</li>
         <li>b</li>
@@ -41,12 +32,26 @@
         <li>e</li>
         <li>f</li>
       </ul>
-    </body>
-    <script type="text/javascript">
-      $$("#content").append("Hello skygreen2001!");
-      console.log($$("#content"));
-      console.log($$("#content li"));
-      $$.each($$("#content li"), function(index, item){
-        console.log("bb" + "[" + index +"]: "+ item.innerHTML);
-      });
-    </script>
+    </div>
+
+    <ul>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li>
+      <li>d</li>
+      <li>e</li>
+      <li>f</li>
+    </ul>
+  </body>
+  <script type="text/javascript">
+    $$("#content").append("Hello skygreen2001!");
+    console.log($$("#content"));
+    console.log($$("#content li"));
+
+    console.log($$("#content").html());
+
+    $$.each($$("#content li"), function(index, item){
+      console.log("bb" + "[" + index +"]: "+ item.innerHTML);
+    });
+  </script>
+</html>
