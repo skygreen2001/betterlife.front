@@ -10,6 +10,7 @@ $(function(){
         urlstatus = true;
         var parent = $(this).parent().parent();
         if (parent.hasClass("sub-menu")) {
+          parent.parent().find("a.has-ul").addClass('hover');
           parent.slideToggle(200);
           parent.parent().find("i.menu-right").toggleClass("rotated");
         }
@@ -67,7 +68,6 @@ $(function(){
     collapse_sidebar();
   });
 
-
   // 顶部导航条搜索展开
   $(".search-toggle").click(function(){
     $("#searchform-header").toggleClass("hidden");
@@ -79,11 +79,11 @@ $(function(){
 
   // 页面整体布局宽窄屏切换
   $("#btn-layout-container").click(function(){
-    if ($(this).find("i").hasClass("glyphicon-resize-full")){
+    if ($(this).find("i").hasClass("glyphicon-resize-full")) {
       $(this).find("i").removeClass("glyphicon-resize-full").addClass("glyphicon-resize-small");
       $(".navbar .navbar-container").removeClass("container");
       $(".page-container").removeClass("container");
-    }else{
+    } else {
       $(this).find("i").removeClass("glyphicon-resize-small").addClass("glyphicon-resize-full");
       $(".navbar .navbar-container").addClass("container");
       $(".page-container").addClass("container");
@@ -99,7 +99,7 @@ $(function(){
     $('.page-sidebar.pin .sidebar-nav > li > a span').removeAttr("style");
 
     // 左侧导航条折叠后
-    if($('.page-sidebar').hasClass('pin')){
+    if ($('.page-sidebar').hasClass('pin')) {
       //鼠标移动到图标上
       $(".page-content").off('mouseenter', '.page-sidebar.pin .sidebar-nav > li > a');
 
@@ -113,7 +113,7 @@ $(function(){
         $(this).find("span").css("display","block");
         $(this).find("span").css("pointer-events","auto");
 
-        if($(this).hasClass('has-ul')){
+        if ($(this).hasClass('has-ul')) {
           $(this).next("ul").css("top",$(this).position().top+40);
           $(this).next("ul").css("display","block");
         }
@@ -123,7 +123,7 @@ $(function(){
         $(".page-sidebar .sidebar-nav ul").css("display","none");
         if($('.page-sidebar').hasClass('pin'))$('.sidebar-nav > li > a').find("span").css("display","none");
       });
-    }else{
+    } else {
       $('.page-sidebar .sidebar-nav > li > a span').removeAttr("style");
       $(".page-sidebar .sidebar-nav ul").removeAttr("style");
       $('.page-sidebar .sidebar-nav > li > a span i').remove();
