@@ -27,21 +27,26 @@ var edit = {
         maxHeight: 200
     });
   },
-  select2: function(selectName, ajaxUrl, defaultId, defaultText, cache, delay){
+  select2: function(selectName, ajaxUrl, defaultSelectValue, cache, delay){
     if(!cache) cache = true;
     if(!delay) delay = 250;
-    $(selectName).select2({
+    if (!defaultSelectValue) defaultSelectValue = [];
+    if (ajaxUrl) {
+      $(selectName).select2({
         placeholder: {
           id: '-1',
           text: '请选择'
         },
         allowClear: true,
-        data:[{"id":defaultId,"text":defaultText}],
+        data: defaultSelectValue,
+        // closeOnSelect:false,
+        language: "zh-CN",
         ajax: {
           url: ajaxUrl,
           dataType: 'json',
           delay: delay,
           cache: cache,
+          // debug: true,
           data: function (query) {
             return query;
           },
@@ -51,9 +56,30 @@ var edit = {
             };
           }
         }
-    });
-
-    $(selectName).val(defaultId).trigger("change");
+      });
+    } else {
+      $(selectName).select2({
+          placeholder: {
+            id: '-1',
+            text: '请选择'
+          },
+          allowClear: true,
+          data: defaultSelectValue,
+          language: "zh-CN"
+      });
+    }
+    if (defaultSelectValue && defaultSelectValue.length>0){
+      var len = defaultSelectValue.length;
+      if (len == 1){
+        $(selectName).val(defaultSelectValue[0].id).trigger("change");
+      } else {
+        var selVal = new Array(len);
+        for (var i = 0; i < len; i++) {
+          selVal[i]= defaultSelectValue[i].id;
+        }
+        $(selectName).val(selVal).trigger("change");
+      }
+    }
   }
 };
 

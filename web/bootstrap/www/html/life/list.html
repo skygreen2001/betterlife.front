@@ -158,128 +158,22 @@
                   <div class="breadcrumb-line">
                     <ul class="breadcrumb">
                       <li><a href="/"><i class="icon-home2 position-left"></i> 首页</a></li>
-                      <li><a href="list.html">读书</a></li>
-                      <li class="active">编辑读书</li>
+                      <li class="active">生活</li>
                     </ul>
                   </div>
                 </div>
                 <!-- /page header end -->
 
                 <!-- content area begin -->
-                <div class="container-fluid edit">
+                <div class="container-fluid home">
                   <div class="row col-xs-12">
-                      <form id="editBlogForm" class="form-horizontal" action="#" method="post" enctype="multipart/form-data">
-                      <div class="form-group">
-                          <label for="iconImage" class="col-sm-2 control-label">封面</label>
-                          <div class="col-sm-9">
-                              <div class="input-group col-sm-9">
-                                  <input type="text" id="iconImageTxt" name="iconImageTxt" readonly="readonly" class="form-control" />
-                                  <span class="btn-file-browser btn-success input-group-addon" id="iconImageDiv">浏览 ...</span>
-                                  <input type="file" id="iconImage" name="iconImage" style="display:none;" accept="image/*" />
-                              </div>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="title" class="col-sm-2 control-label">标题</label>
-                          <div class="col-sm-9">
-                            <div class="clearfix">
-                              <input id="title" name="title" placeholder="标题" class="form-control" type="text" value=""/>
-                            </div>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="sequenceNo" class="col-sm-2 control-label">序号</label>
-                          <div class="col-sm-9">
-                            <div class="clearfix">
-                              <input id="sequenceNo" name="sequenceNo" placeholder="序号" class="form-control" type="number" value=""/>
-                            </div>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="categoryIds" class="col-sm-2 control-label">博客类型</label>
-                          <div class="col-sm-9">
-                              <select id="categoryIds" name="categoryId" class="form-control" multiple>
-                                  <option value="1">科技类</option>
-                                  <option value="2" selected>时尚类</option>
-                                  <option value="3">新闻类</option>
-                                  <option value="4">体育类</option>
-                                  <option value="5">军事类</option>
-                                  <option value="6">生活类</option>
-                              </select>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="content" class="col-sm-2 control-label">内容</label>
-                          <div class="col-sm-9">
-                            <div class="clearfix">
-                              <textarea class="form-control" id="content" name="content" placeholder="内容" rows="6" cols="60"></textarea>
-                            </div>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="isPublic" class="col-sm-2 control-label">公开</label>
-                          <div class="col-sm-9">
-                              <input class="form-control" id="isPublic" type="checkbox" name="isPublic" checked data-on-text="是" data-off-text="否" />
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="keyword_id" class="col-sm-2 control-label">关键词</label>
-                          <div class="col-sm-9">
-                              <select id="keyword_id" name="keyword_id" class="form-control"></select>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="authorName" class="col-sm-2 control-label">作者</label>
-                          <div class="col-sm-9">
-                              <div>
-                                  <input id="authorName" name="authorName" placeholder="作者" class="form-control" type="text" value=""/>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="authorUrl" class="col-sm-2 control-label"></label>
-                          <div class="col-sm-9">
-                              <div>
-                                  <input id="authorUrl" name="authorUrl" placeholder="作者百科链接地址" class="form-control" style="margin-top: -2px;" type="text" value=""/>
-                              </div>
-                              <div class="input-group col-sm-9" style="padding-top: 3px;">
-                                  <input type="text" id="authorImageTxt" name="authorImageTxt" readonly="readonly" class="form-control" />
-                                  <span class="btn-file-browser btn-success input-group-addon" id="authorImageDiv">浏览 ...</span>
-                                  <input type="file" id="authorImage" name="authorImage" style="display:none;" accept="image/*" />
-                              </div>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="creationTimeStr" class="col-sm-2 control-label">发起日期</label>
-                          <div class="col-sm-9">
-                              <div class="input-group col-sm-9 datetimeStyle" id="creationTime">
-                                  <input id="creationTimeStr" name="creationTime" class="form-control date-picker" type="text" value=""/>
-                                  <span class="input-group-addon"><i class="icon-calendar bigger-110"></i></span>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          <label for="deadTimeStr" class="col-sm-2 control-label">结束日期</label>
-                          <div class="col-sm-9">
-                              <div class="input-group col-sm-9 datetimeStyle" id="deadTime">
-                                  <input id="deadTimeStr" name="deadTime" class="form-control date-picker" type="text" value=""/>
-                                  <span class="input-group-addon"><i class="icon-calendar bigger-110"></i></span>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="space-4"></div>
-                      <input id="id" name="id" type="hidden" value=""/>
-                      <div class="form-actions col-md-12">
-                          <button type="submit" class="btn btn-success">确认</button>
-                          <div  class="btn-group" role="group">
-                            <button class="btn" type="reset"><i class="icon-undo bigger-110"></i>重置</button>
-                          </div>
-                      </div>
-                      </form>
-                    </div>
+                    <section class="section container-fluid">
+                      <h1 class="page-header">生活方式</h1>
+                      <h2>👌 生命没有终极意义。不要轻易去否定。</h2>
+                      <h3><a href="https://www.voachinese.com/" target="_blank">进一步了解 > </a></h3>
+                    </section>
+                  </div>
                 </div>
-
                 <!-- /content area end -->
               </div>
             </div>
@@ -304,7 +198,11 @@
     <script type="text/javascript" src="../../js/normal/layout.js"></script>
 
     <!-- /footer end -->
-    <script src="../../js/normal/edit.js"></script>
-    <script src="../../js/core/blog.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        var offset = $(window).height() - $(".navbar-container").height() - $(".breadcrumb-line").height() -$("footer").height();
+        $(".home .container-fluid").css("height", offset);
+      });
+    </script>
 </body>
 </html>
