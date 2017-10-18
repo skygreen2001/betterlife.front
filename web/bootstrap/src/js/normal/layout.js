@@ -129,5 +129,8 @@ $(function(){
       $('.page-sidebar .sidebar-nav > li > a span i').remove();
     }
   }
-
+  
+  //布局自适应高度，确保footer始终显示在页面底部
+  var offset = $(window).height() - $(".navbar-container").height() - $(".breadcrumb-line").height() -$("footer").height();
+  if (offset>450) $(".content-wrapper .container-fluid").css("height", offset);
 });
