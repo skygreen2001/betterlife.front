@@ -22,37 +22,65 @@
     }
   }
   form{
-    .edit-view{
-      padding: 8px 16px;
-      min-height: 22px;
-    }
-    /* textarea在线编辑器ueditor显示 */
-    .form-control.edui-default{
-      display: inline-table;
-      width: 98%;
-      border: 0px;
-      padding: 0px;
-      box-shadow: inset 0 0px 0px #fff;
-    }
-    .edui-default .edui-editor-bottomContainer td{
-      padding-right: 5px;
+
+    .form-group{
+      margin-bottom: 6px;
+
+      .edit-view{
+        padding: 8px 16px;
+        min-height: 22px;
+      }
+
+      &.has-error{
+        .help-block{
+          margin-bottom: 0px;
+        }
+      }
+      .error-msg{
+        color: #c30c0c;
+      }
+
+      .btn-file-browser{
+        background: @color-input none repeat scroll 0 0;
+        border: 1px solid @color-input;
+        color: #fff;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 2px;
+      }
+
+      .bootstrap-datetimepicker-widget.dropdown-menu{
+        z-index: 10000;
+      }
+
+      /* textarea在线编辑器ueditor显示 */
+      .form-control.edui-default{
+        display: inline-table;
+        width: 98%;
+        border: 0px;
+        padding: 0px;
+        box-shadow: inset 0 0px 0px #fff;
+      }
+      .edui-default .edui-editor-bottomContainer td{
+        padding-right: 5px;
+      }
+
+      .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary{
+        background-color: @color-input;
+      }
     }
 
+
+    .form-actions {
+      display: block;
+      text-align: center;
+      border-top: 1px solid #e5e5e5;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      padding: 19px 20px 20px;
+    }
   }
-  .form-group{
-    margin-bottom: 6px;
-  }
-  .btn-file-browser{
-    background: @color-input none repeat scroll 0 0;
-    border: 1px solid @color-input;
-    color: #fff;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 2px;
-  }
-  .bootstrap-datetimepicker-widget.dropdown-menu{
-    z-index: 10000;
-  }
+
   select{
     & +.btn-group{
       width: 100%;
@@ -101,28 +129,12 @@
       }
     }
   }
-  .error-msg{
-    color: #c30c0c;
-  }
-  .has-error{
-    .help-block{
-      margin-bottom: 0px;
-    }
-  }
-  .form-actions {
-    display: block;
-    text-align: center;
-    border-top: 1px solid #e5e5e5;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    padding: 19px 20px 20px;
-  }
-
-  .input-group.col-sm-9{
-    width: 100%;
-  }
+  // .input-group.col-sm-9{
+  //   width: 100%;
+  // }
 }
 
+/************************* select2:start ************************/
 .select2-container{
   width: 100% !important;
   z-index: 10000;
@@ -156,10 +168,11 @@
 .select2-container--default.select2-container--focus .select2-selection--multiple{
   border: 1px solid @color-input !important;
 }
-.select2-container--default .select2-results__option--highlighted[aria-selected],
-.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary{
+.select2-container--default .select2-results__option--highlighted[aria-selected]
+{
   background-color: @color-input;
 }
+/************************* select2:end ************************/
 
 @media (min-width: @screen-sm-min) {
   .edit{
