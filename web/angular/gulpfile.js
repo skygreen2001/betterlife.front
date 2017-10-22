@@ -56,7 +56,7 @@ var gulp           = require('gulp'),
     uglify         = require('gulp-uglify'),
     sourcemaps     = require('gulp-sourcemaps'),
     cssmin         = require('gulp-cssmin'),
-    image          = require('gulp-image'),
+    // image          = require('gulp-image'),
     order          = require('gulp-order'),
     concat         = require('gulp-concat'),
     ignore         = require('gulp-ignore'),
@@ -142,7 +142,7 @@ var firstInit = true;
 
 gulp.task('images', function () {
   return gulp.src('src/images/**/*')
-        .pipe(image())
+        // .pipe(image())
         .pipe(gulp.dest(path.join(config.dest, 'images')));
 });
 

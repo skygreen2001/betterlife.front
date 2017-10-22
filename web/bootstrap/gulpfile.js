@@ -94,7 +94,7 @@ var firstInit = true;
 
 gulp.task('images', function () {
   return gulp.src('src/images/**/*')
-        .pipe($.image())
+        // .pipe($.image())
         .pipe(gulp.dest(path.join(config.dest, 'images')));
 });
 

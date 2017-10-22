@@ -15,7 +15,6 @@
     "gulp-connect": "^2.0.5",
     "gulp-cssmin": "^0.1.6",
     "gulp-ignore": "^1.2.0",
-    "gulp-image": "^2.7.5",
     "gulp-less": "^3.0.3",
     "gulp-mobilizer": "^0.0.2",
     "gulp-order": "^1.1.1",
@@ -31,5 +30,8 @@
     "gulp-file-include": "^1.0.0",
     "gulp-load-plugins": "^1.5.0",
     "main-bower-files": "^2.13.1"
+  },
+  "_dependencies": {
+    "gulp-image": "^4.0.0"
   }
 }
