@@ -44,19 +44,11 @@
 
   Atom: https://atom.io/
 
-  - `Atom` 安装 Package
+  - `Atom` 推荐安装 Package
 
     ```
     >  apm install bottom-dock gulp-manager atom-beautify file-icons atom-terminal-panel
     ```
-
-  - 推荐安装Package
-    * bottom-dock
-    * gulp-manager
-    * atom-beautify
-    * git-plus
-    * atom-bootstrap3
-    * atom-terminal-panel
 
 * **使用JS框架**
 
@@ -69,37 +61,39 @@
 * src          : 框架核心支持文件目录
 * src/less     : 框架css源文件目录
 * src/js       : 框架js源文件目录
-* src/js/base  : Javascript基本函数库文件目录
+* src/js/base  : Js基本函数库文件目录
 * src/template : 框架模版文件目录
 * src/html     : 框架web网页文件目录
 * www          : 发布在线Web访问目录
+* src/js/components : Js组件层文件目录
+* src/js/controllers: Js控制器层文件目录
+* src/js/services   : Js服务层文件目录
 
 
 ## 学习资料
 
-    Material Design: https://material.io/
+- Material Design: https://material.io/
 
-    🅰️
+- Angular 1.*
 
-    Angular 1.*
+  * AngularJS 官方教程 :https://docs.angularjs.org/tutorial
+  * Angular Material  :https://material.angularjs.org
 
-        * AngularJS 官方教程:https://docs.angularjs.org/tutorial
-        * Angular Material :https://material.angularjs.org
+  * Think in AngularJS: http://www.angularjs.cn/A0bz
+  * AngularJS 初识     : https://docs.angularjs.org/guide/concepts
+  * AngularJS 教程     : http://www.runoob.com/angularjs/angularjs-tutorial.html
+  * 学习AngularJS 1.x  : https://hairui219.gitbooks.io/learning_angular/content/zh/index.html
 
-        * Think in AngularJS:http://www.angularjs.cn/A0bz
-        * AngularJS 初识    :https://docs.angularjs.org/guide/concepts
-        * AngularJS 教程    :http://www.runoob.com/angularjs/angularjs-tutorial.html
-        * 学习AngularJS 1.x :https://hairui219.gitbooks.io/learning_angular/content/zh/index.html
+  * Angular Table
+    - https://github.com/daniel-nagy/md-data-table
+    - https://github.com/esvit/ng-table
 
-        * Mobile Angular Js:http://mobileangularui.com/
-        * Ionic :http://ionicframework.com/
-        * Onsen UI:https://onsen.io/
+- 其它
 
-    Angular 2.*
+  - 给 Web 开发者的 25 款最有用的 AngularJS 工具: http://www.oschina.net/news/60200/bestl-angularjs-tools
 
-        * Angular 中文: https://angular.cn/
-        * 大道至简：Angular2只有一个核心概念: http://www.angularjs.cn/A2Ar
+  - 框架对比
 
-        * Native Javascript:https://www.nativescript.org/
-        * TypeScript:http://www.typescriptlang.org/
-        * Dart:http://www.dartlang.org/
+    - [More Benchmarks: Virtual DOM vs Angular 1 & 2 vs Others](https://auth0.com/blog/more-benchmarks-virtual-dom-vs-angular-12-vs-mithril-js-vs-the-rest/)
+
+    - [Angular Material vs Semantic-Ui vs Bootstrap vs Foundation vs materialize](https://medium.com/@thatisuday/angular-material-vs-semantic-ui-vs-bootstrap-vs-foundation-vs-materialize-8bd3646e6f0a#.1f9d86xwj)
