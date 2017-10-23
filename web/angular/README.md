@@ -92,8 +92,4 @@
 
   - 给 Web 开发者的 25 款最有用的 AngularJS 工具: http://www.oschina.net/news/60200/bestl-angularjs-tools
 
-  - 框架对比
-
-    - [More Benchmarks: Virtual DOM vs Angular 1 & 2 vs Others](https://auth0.com/blog/more-benchmarks-virtual-dom-vs-angular-12-vs-mithril-js-vs-the-rest/)
-
-    - [Angular Material vs Semantic-Ui vs Bootstrap vs Foundation vs materialize](https://medium.com/@thatisuday/angular-material-vs-semantic-ui-vs-bootstrap-vs-foundation-vs-materialize-8bd3646e6f0a#.1f9d86xwj)
+  - [More Benchmarks: Virtual DOM vs Angular 1 & 2 vs Others](https://auth0.com/blog/more-benchmarks-virtual-dom-vs-angular-12-vs-mithril-js-vs-the-rest/)
