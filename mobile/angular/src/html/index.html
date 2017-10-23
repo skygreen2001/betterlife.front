@@ -5,7 +5,7 @@
     <title ng-cloak>{{ appName }}</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -17,23 +17,22 @@
     <link rel="apple-touch-icon-precomposed" href="favicon.ico"/>
 
     <!-- inject:css:before -->
-    <link rel="stylesheet" href="css/bower.min.css">
     <link rel="stylesheet" href="css/app.min.css" />
     <!-- inject:css -->
 
     <!-- inject:js:before -->
-    <script src="js/bower/bower.min.js"></script>
+    <script src="js/bower.min.js"></script>
     <script src="js/app.min.js"></script>
     <!-- inject:js -->
   </head>
-  <body>
+  <body ui-prevent-touchmove-defaults>
 
     <!-- Sidebars -->
-    <div ng-include="'sidebar.html'"
+    <div ng-include="'html/layout/sidebar.html'"
             ui-track-as-search-param='true'
             class="sidebar sidebar-left"></div>
 
-    <div ng-include="'sidebar.html'"
+    <div ng-include="'html/layout/sidebar_right.html'"
             class="sidebar sidebar-right"></div>
 
     <div class="app"
@@ -78,5 +77,7 @@
       </div>
 
     </div><!-- ~ .app -->
+
+    <div ui-yield-to="modals"></div>
   </body>
 </html>

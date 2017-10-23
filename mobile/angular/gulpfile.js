@@ -16,16 +16,22 @@ var config = {
       './src/less/bootstrap.less'
     ],
     paths: [
-      './src/less'
+      './src/less', './bower_components'
     ]
   },
   vendor: {
     js: [
       './bower_components/angular/angular.js',
-      './bower_components/angular-route/angular-route.js'
+      './bower_components/angular-route/angular-route.js',
+      './bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.js'
     ],
 
-    css: []
+    css: [],
+
+    fonts: [
+      './bower_components/font-awesome/fonts/fontawesome-webfont.*',
+      './bower_components/mobile-angular-ui/dist/fonts/fontawesome-webfont.woff2'
+    ]
   },
 
   server: {
@@ -130,6 +136,13 @@ gulp.task('images', function () {
         .pipe(gulp.dest(path.join(config.dest, 'images')));
 });
 
+/*==================================
+=            Copy fonts            =
+==================================*/
+gulp.task('fonts', function() {
+  return gulp.src(config.vendor.fonts)
+        .pipe(gulp.dest(path.join(config.dest, 'fonts')));
+});
 
 /*=====================================
 =            Minify componet template            =
@@ -140,10 +153,10 @@ gulp.task('template', function () {
       './src/templates/!(cache)*/*.html',
       './src/templates/*.html'
     ])
-    .pipe(gulp.dest(path.join(config.dest, 'template')));
+    .pipe(gulp.dest(path.join(config.dest, 'html')));
 
   return gulp.src('src/js/components/**/*.html')
-        .pipe(gulp.dest(path.join(config.dest, 'template')));
+        .pipe(gulp.dest(path.join(config.dest, 'html')));
 });
 
 
@@ -179,6 +192,7 @@ gulp.task('html', function() {
 gulp.task('less', function () {
   if ( firstInit ) {
     gulp.src(config.vendor.css)
+    .pipe($.concat('bower.css'))
     .pipe($.cssmin({keepSpecialComments : 0}))
     .pipe($.rename({
       basename: "bower",
@@ -228,7 +242,7 @@ gulp.task('js', function() {
     jsTask
     .pipe($.rename({suffix: '.min'}))
     .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest(path.join(config.dest, 'js', 'bower')));
+    .pipe(gulp.dest(path.join(config.dest, 'js')));//, 'bower'
   }
 
   jsTask = streamqueue(
@@ -280,7 +294,7 @@ gulp.task('watch', function () {
 ======================================*/
 
 gulp.task('build', function(done) {
-  var tasks = ['template', 'less', 'js', 'data'];
+  var tasks = ['fonts', 'template', 'less', 'js', 'data'];
   if (config.isImage) tasks.push('images');
   seq('html', tasks, done);
 });

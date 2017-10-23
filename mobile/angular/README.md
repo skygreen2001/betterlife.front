@@ -53,7 +53,7 @@
 * **使用JS框架**
 
   - AngularJS
-  - Angular Material
+  - Mobile Angular UI
 
 
 ## 框架目录定义
@@ -72,24 +72,14 @@
 
 ## 学习资料
 
-- Material Design: https://material.io/
-
 - Angular 1.*
-
+  * AngularJS Github  : https://github.com/angular/angular.js
   * AngularJS 官方教程 : https://docs.angularjs.org/tutorial
-  * Angular Material  : https://material.angularjs.org
-
   * Think in AngularJS: http://www.angularjs.cn/A0bz
   * AngularJS 初识     : https://docs.angularjs.org/guide/concepts
   * AngularJS 教程     : http://www.runoob.com/angularjs/angularjs-tutorial.html
   * 学习AngularJS 1.x  : https://hairui219.gitbooks.io/learning_angular/content/zh/index.html
 
-  * Angular Table
-    - https://github.com/daniel-nagy/md-data-table
-    - https://github.com/esvit/ng-table
-
-- 其它
-
-  - 给 Web 开发者的 25 款最有用的 AngularJS 工具: http://www.oschina.net/news/60200/bestl-angularjs-tools
-
-  - [More Benchmarks: Virtual DOM vs Angular 1 & 2 vs Others](https://auth0.com/blog/more-benchmarks-virtual-dom-vs-angular-12-vs-mithril-js-vs-the-rest/)
+- Mobile Angular UI
+  * Mobile Angular UI : http://mobileangularui.com/
+  * [Your first Phonegap App with Mobile Angular Ui](http://mobileangularui.com/blog/using-the-generator/)
