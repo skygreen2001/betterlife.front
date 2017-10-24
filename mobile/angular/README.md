@@ -79,6 +79,8 @@
   * AngularJS 初识     : https://docs.angularjs.org/guide/concepts
   * AngularJS 教程     : http://www.runoob.com/angularjs/angularjs-tutorial.html
   * 学习AngularJS 1.x  : https://hairui219.gitbooks.io/learning_angular/content/zh/index.html
+  * AngularJS经验分享平台: http://docs.ngnice.com/
+  * 极客学院            : http://wiki.jikexueyuan.com/project/angularjs/
 
 - Mobile Angular UI
   * Mobile Angular UI : http://mobileangularui.com/

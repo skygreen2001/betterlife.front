@@ -51,9 +51,9 @@
     },
     //显示当前日期
     //显示年月日 yyyy-MM-dd
-    //显示年月日小时分钟 yyyy-MM-dd HH:mm
+    //显示年月日小时分钟秒 yyyy-MM-dd HH:mm:ss
     now   : function(format) {
-      format = format || 'yyyy-MM-dd hh:mm';
+      format = format || 'yyyy-MM-dd hh:mm:ss';
       var newDate = new Date();
       return newDate.format(format);
     },

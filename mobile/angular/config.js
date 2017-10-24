@@ -78,6 +78,7 @@ module.exports = function(config) {
   config.vendor.js.push('./bower_components/js-polyfills/polyfill.min.js');
   config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
 
+  config.vendor.js.push('./bower_components/angular-resource/angular-resource.min.js');
   config.vendor.js.push('./bower_components/ngstorage/ngStorage.min.js');
   config.vendor.js.push('./bower_components/angular-cookies/angular-cookies.min.js');
   config.vendor.js.push('./bower_components/angular-animate/angular-animate.min.js');

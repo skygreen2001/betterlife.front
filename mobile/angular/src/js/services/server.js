@@ -3,7 +3,7 @@ angular.
   service('ServerService', ['$resource', 'ShareObject', '$http', '$httpParamSerializerJQLike',
     function($resource, ShareObject, $http, $httpParamSerializerJQLike) {
 
-      //退出登录
+      // 退出登录
       this.exit = function() {
           return $http({
               method: 'GET',

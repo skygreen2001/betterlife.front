@@ -1,29 +1,29 @@
 'use strict';
 
-angular.module('bb.controllers', [
-  // 'ngAnimate',
-  'bb.component.common',
-  // 'bb.component.layout',
-  'bb.component.blog'
+angular.module('bb.service', [
+
 ]);
 
-angular.module('bb.service', []);
-
+angular.module('bb.controllers', [
+  'ngRoute',
+  'bb.service'
+]);
 
 // 定义应用 app
 var app = angular.module('bb', [
   'ngRoute',
+  'ngResource',
+  'ngStorage',
+  'ngCookies',
 
   'mobile-angular-ui',
-
   // touch/drag feature: this is from 'mobile-angular-ui.gestures.js'.
   // This is intended to provide a flexible, integrated and and
   // easy to use alternative to other 3rd party libs like hammer.js, with the
   // final pourpose to integrate gestures into default ui interactions like
   // opening sidebars, turning switches on/off ..
   'mobile-angular-ui.gestures',
-  'ngStorage',
-  'ngCookies',
+
   'bb.service',
   'bb.controllers'
 ]);
@@ -52,7 +52,7 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
 
     $routeProvider.
       when('/', {
-        templateUrl: 'home.html',  reloadOnSearch: false
+        templateUrl: 'html/home.html',  reloadOnSearch: false
       }).
       when('/music', {
         templateUrl: 'music.html', reloadOnSearch: false
@@ -61,7 +61,7 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
         templateUrl: 'news.html', reloadOnSearch: false
       }).
       when('/blog', {
-        templateUrl: 'blog.html', reloadOnSearch: false
+        templateUrl: 'html/blog/index.html', reloadOnSearch: false
       }).
       otherwise('/');
   }

@@ -21,7 +21,7 @@ angular.
             $localStorage.userName = userName;
         },
         getUserName: function(){
-            if(empty($localStorage.userName)) $localStorage.userName = Constants.USERNAME;
+            if($_.empty($localStorage.userName)) $localStorage.userName = Constants.USERNAME;
             return $localStorage.userName;
         },
         reset: function(){
