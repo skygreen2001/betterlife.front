@@ -16,10 +16,11 @@ angular.
 
 angular.
   module('bb.controllers').
-  controller('BlogController', ['ShareObject', 'Constants', 'ServerService',
+  controller('BlogController',
     function(ShareObject, Constants, ServerService, $scope, $location, $element, $attrs) {
       var ctrl = this;
       this.lastModified = $_.now();
+
       this.nickName     = ShareObject.getUserName();
 
       this.showSharePay = function(){
@@ -28,7 +29,7 @@ angular.
 
       this.$onInit = function() {
       };
-    }]
+    }
   ).
   component('blogView', {
     templateUrl: 'html/blog/view.html',

@@ -1,30 +1,30 @@
-<div class="mobile-content-container"  ng-controller="BlogController as blogCtrl">
-  <div ui-content-for="navbarAction">
-    <i class="fa fa-thumbs-up">编辑</i>
-  </div>
 
-  <div class="scrollable">
-    <div class="scrollable-content view">
-      <div class="list-group">
-        <div id="main-header" class="view">
-          <h3>博客列表</h3>
-          <div class="view-header">
-            <ul class="publish-header">
-              <li>{{$ctrl.lastModified | date:'yyyy-MM-dd HH:mm'}}</li>
-              <li>{{$ctrl.nickName}}</li>
-            </ul>
-          </div>
-          <div id="cs-share-icon"></div>
-        </div>
+<div ui-content-for="navbarAction">
+  <i class="fa fa-thumbs-up">编辑</i>
+</div>
 
-        <div id="main-content" class="view">
-          hello!
-        </div>
+<div class="scrollable" ng-controller="BlogController as blogCtrl">
+  <div class="scrollable-content view">
+
+  <div class="list-group text-center">
+    <div class="list-group-item list-group-item-home">
+      <h1>博客列表</h1>
+      <div class="">{{ blogCtrl.nickName }}</div>
+      <div class="">{{ blogCtrl.lastModified|date:'yyyy-MM-dd HH:mm' }}</div>
+    </div>
+
+    <div class="list-group-item list-group-item-home">
+      <div>
+        <i class="fa fa-gamepad feature-icon text-primary"></i>
+      </div>
+      <div>
+          <h3 class="home-heading">Play around a little</h3>
+          Open the sidebar and start testing features
       </div>
     </div>
-    <div class="clear"></div>
-    <div class="break-line"></div>
   </div>
-
-  <footer ng-click="$ctrl.showSharePay()" class="view">设置有偿分享</footer>
+  <div class="clear"></div>
+  <div class="break-line"></div>
 </div>
+
+<footer ng-click="$ctrl.showSharePay()" class="view">设置有偿分享</footer>

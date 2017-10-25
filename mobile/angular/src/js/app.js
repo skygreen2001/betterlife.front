@@ -43,6 +43,9 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
     //   todo: 采用angular的方式实现$.param jqlite没有作用？
     // };
 
+    //angular1.6默认给hash路由上添加了!(感叹号),导致出错;(添加该配置,去掉默认前缀感叹号)
+    $locationProvider.hashPrefix("");
+
     // $locationProvider.hashPrefix("!");
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
     // $httpProvider.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';

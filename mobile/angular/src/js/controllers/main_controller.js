@@ -15,7 +15,6 @@ angular.
       // User agent displayed in home page
       $scope.userAgent = navigator.userAgent;
 
-          
       //
       // Right Sidebar
       //
