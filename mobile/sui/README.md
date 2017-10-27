@@ -82,7 +82,6 @@
   * AngularJS经验分享平台: http://docs.ngnice.com/
   * 极客学院            : http://wiki.jikexueyuan.com/project/angularjs/
 
-- Mobile Angular UI
-  * Mobile Angular UI : http://mobileangularui.com/
-  * [Your first Phonegap App with Mobile Angular Ui](http://mobileangularui.com/blog/using-the-generator/)
-  * [Mobile Angular UI 中文网 在线文档](http://www.angularui.cn/docs/index.html)
+- SUI
+  * SUI     : http://m.sui.taobao.org/
+  * IconFont: http://www.iconfont.cn/

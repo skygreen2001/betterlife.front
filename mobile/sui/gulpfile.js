@@ -16,27 +16,24 @@ var config = {
       './src/less/bootstrap.less'
     ],
     paths: [
-      './src/less', './bower_components'
+      './src/less'
     ]
   },
   vendor: {
     js: [
-      './bower_components/angular/angular.js',
-      './bower_components/angular-route/angular-route.js',
-      './bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.js'
+
     ],
 
     css: [],
 
     fonts: [
-      './bower_components/font-awesome/fonts/fontawesome-webfont.*',
-      './bower_components/mobile-angular-ui/dist/fonts/fontawesome-webfont.woff2'
+
     ]
   },
 
   server: {
     host: '0.0.0.0',
-    port: '9000'
+    port: '9001'
   }
 };
 
@@ -56,9 +53,7 @@ var gulp = require('gulp'),
     $    = require('gulp-load-plugins')(),
     path = require('path'),
     seq  = require('run-sequence'),
-    strip= require('gulp-strip-comments'),
-    streamqueue = require('streamqueue'),
-    bowerFiles  = require('main-bower-files');
+    strip= require('gulp-strip-comments');
 
 /*================================================
 =            Report Errors to Console            =
@@ -66,15 +61,6 @@ var gulp = require('gulp'),
 
 gulp.on('error', function(e) {
   throw(e);
-});
-
-
-/*=========================================
-=          Setup Bower Library            =
-=========================================*/
-
-gulp.task('bower', function (cb) {
-  return $.bower({});
 });
 
 /*=========================================
@@ -173,17 +159,6 @@ gulp.task('html', function() {
 ======================================================================*/
 
 gulp.task('less', function () {
-  if ( firstInit ) {
-    gulp.src(config.vendor.css)
-    .pipe($.concat('bower.css'))
-    .pipe($.cssmin({keepSpecialComments : 0}))
-    .pipe($.rename({
-      basename: "bower",
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest(path.join(config.dest, 'css')));
-  }
-
   var cssTask;
   cssTask = gulp.src(config.less.src).pipe($.less({
     paths: config.less.paths.map(function(p){
@@ -213,28 +188,10 @@ gulp.task('less', function () {
 
 gulp.task('js', function() {
   var jsTask;
-  if ( firstInit ) {
-    jsTask = gulp.src(config.vendor.js)
-    .pipe($.sourcemaps.init())
-    .pipe($.concat('bower.js'))
-    .pipe($.ngAnnotate());
 
-    if ( !config.isDev ) jsTask.pipe($.uglify());
-
-    jsTask
-    .pipe($.rename({suffix: '.min'}))
-    .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest(path.join(config.dest, 'js')));//, 'bower'
-  }
-
-  jsTask = streamqueue(
-    { objectMode: true },
-    // gulp.src(config.vendor.js),
-    gulp.src('./src/js/**/*.js').pipe($.angularFilesort())
-  )
+  jsTask = gulp.src('./src/js/**/*.js')
   .pipe($.sourcemaps.init())
-  .pipe($.concat('app.js'))
-  .pipe($.ngAnnotate());
+  .pipe($.concat('app.js'));
 
   if (!config.isDev) jsTask.pipe($.uglify());
 
@@ -279,15 +236,6 @@ gulp.task('build', function(done) {
   seq('html', tasks, done);
 });
 
-/*======================================
-=            Install Sequence          =
-======================================*/
-
-gulp.task('install', function(done) {
-  var tasks = ['bower'];
-  seq(tasks, done);
-});
-
 /*====================================
 =            Default Task            =
 ====================================*/
@@ -295,13 +243,11 @@ gulp.task('install', function(done) {
 gulp.task('default', ['clean'], function(done){
   var tasks = [];
 
-  tasks.push('build');
-
   if (typeof config.server === 'object') {
     tasks.push('connect');
   }
 
   tasks.push('watch');
 
-  seq('install', tasks, done);
+  seq('build', tasks, done);
 });

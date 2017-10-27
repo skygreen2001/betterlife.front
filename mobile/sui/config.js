@@ -51,7 +51,7 @@ module.exports = function(config) {
    * @property config.server.port
    * @type {String}
    */
-  config.server.port = '9000';
+  config.server.port = '9001';
 
 
   //
