@@ -79,6 +79,8 @@
   * Meteor  : https://www.meteor.com/
   * Ionic   : http://ionicframework.com/
   * Onsen UI: https://onsen.io/
+  * JqWeUI  : http://jqweui.com/
+  * Light7  : http://www.light7.cn/
   * SUI     : http://m.sui.taobao.org/
   * YDUI    : http://www.ydui.org/
   * MAUI    : http://mobileangularui.com/
