@@ -79,11 +79,11 @@
   * Meteor  : https://www.meteor.com/
   * Ionic   : http://ionicframework.com/
   * Onsen UI: https://onsen.io/
+  * MAUI    : http://mobileangularui.com/
   * JqWeUI  : http://jqweui.com/
   * Light7  : http://www.light7.cn/
   * SUI     : http://m.sui.taobao.org/
   * YDUI    : http://www.ydui.org/
-  * MAUI    : http://mobileangularui.com/
 
   - Web 前端优先
   * Semantic: http://www.semantic-ui.cn

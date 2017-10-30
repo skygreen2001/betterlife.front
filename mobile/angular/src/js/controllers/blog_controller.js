@@ -19,7 +19,8 @@ angular.
   controller('BlogController',
     function(ShareObject, Constants, ServerService, $scope, $location, $element, $attrs) {
       var ctrl = this;
-      this.lastModified = $_.now();
+      // this.lastModified = $_.now();
+      this.lastModified = $_.wxnow();
 
       this.nickName     = ShareObject.getUserName();
 

@@ -58,13 +58,19 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
         templateUrl: 'html/home.html',  reloadOnSearch: false
       }).
       when('/music', {
-        templateUrl: 'music.html', reloadOnSearch: false
+        templateUrl: 'html/core/music/index.html', reloadOnSearch: false
+      }).
+      when('/photo', {
+        templateUrl: 'html/core/photo/index.html', reloadOnSearch: false
       }).
       when('/news', {
-        templateUrl: 'news.html', reloadOnSearch: false
+        templateUrl: 'html/core/news/index.html', reloadOnSearch: false
       }).
       when('/blog', {
-        templateUrl: 'html/blog/index.html', reloadOnSearch: false
+        templateUrl: 'html/core/blog/index.html', reloadOnSearch: false
+      }).
+      when('/my', {
+        templateUrl: 'html/core/my/index.html', reloadOnSearch: false
       }).
       otherwise('/');
   }

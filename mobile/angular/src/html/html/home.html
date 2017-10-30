@@ -1,3 +1,5 @@
+<div ui-content-for="title">{{ appName }}</div>
+
 <div class="scrollable">
   <div class="scrollable-content">
 
@@ -48,13 +50,15 @@
             <h3 class="home-heading">Submit an issue</h3>
             <p>Please submit any issue you'll find, <a href="https://github.com/mcasimir/mobile-angular-ui/issues" target="blank" id="#home-report">reporting</a> your user agent string:<br>
             </p>
-<pre>{{userAgent}}</pre>
             <p>
               It would help a lot!
             </p>
         </div>
       </div>
 
+      <div class="list-group-item list-group-item-home">
+        <div ng-include="'html/layout/footer.html'"></div>
+      </div>
     </div>
 
   </div>

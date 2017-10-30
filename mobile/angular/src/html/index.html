@@ -2,7 +2,7 @@
 <html ng-app="bb" ng-controller="MainController as mainCtrl">
   <head>
     <meta charset="utf-8" />
-    <title ng-cloak>{{ appName }}</title>
+    <title ng-cloak ng-bind="appName"></title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
@@ -25,7 +25,7 @@
     <script src="js/app.min.js"></script>
     <!-- inject:js -->
   </head>
-  <body ui-prevent-touchmove-defaults>
+  <body ui-prevent-touchmove-defaults ontouchstart>
 
     <!-- Sidebars -->
     <div ng-include="'html/layout/sidebar.html'"
@@ -43,7 +43,7 @@
 
       <div class="navbar navbar-app navbar-absolute-top">
         <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
-          {{ appName }}
+        
         </div>
         <div class="btn-group pull-left">
           <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
@@ -57,22 +57,55 @@
         </div>
       </div>
 
-      <div class="navbar navbar-app navbar-absolute-bottom">
+      <!-- Mobile Angular UI的默认导航方式 -->
+      <!-- <div class="navbar navbar-app navbar-absolute-bottom">
         <div class="btn-group justified">
           <a href="#/" class="btn btn-navbar"><i class="fa fa-home fa-navbar"></i> 首页</a>
           <a href="#/music" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> 博客</a>
           <a href="#/news" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar"></i> 发现</a>
           <a href="#/blog" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> 我的</a>
         </div>
-      </div>
+      </div> -->
 
-      <!-- App Body -->
-      <div class="app-body" ng-class="{loading: loading}">
-        <div ng-show="loading" class="app-content-loading">
-          <i class="fa fa-spinner fa-spin loading-spinner"></i>
+      <div class="weui-tab">
+        <div class="weui-tab__bd">
+          <!-- App Body -->
+          <div class="app-body" ng-class="{loading: loading}">
+            <div ng-show="loading" class="app-content-loading">
+              <i class="fa fa-spinner fa-spin loading-spinner"></i>
+            </div>
+            <div class="app-content">
+              <ng-view></ng-view>
+            </div>
+          </div>
         </div>
-        <div class="app-content">
-          <ng-view></ng-view>
+
+        <div class="weui-tabbar">
+          <a href="/#/" class="weui-tabbar__item weui-bar__item--on">
+            <div class="weui-tabbar__icon">
+              <img src="./images/weui/icon_nav_button.png" alt="">
+            </div>
+            <span class="weui-badge">8</span>
+            <p class="weui-tabbar__label">首页</p>
+          </a>
+          <a href="/#/blog" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+              <img src="./images/weui/icon_nav_msg.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">博客</p>
+          </a>
+          <a href="#tab3" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+              <img src="./images/weui/icon_nav_article.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">发现</p>
+          </a>
+          <a href="/#/my" class="weui-tabbar__item">
+            <div class="weui-tabbar__icon">
+              <img src="./images/weui/icon_nav_cell.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">我</p>
+          </a>
         </div>
       </div>
 

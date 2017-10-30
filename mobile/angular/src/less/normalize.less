@@ -8,3 +8,45 @@ body {
   background-color: @background-color;
   color: @color-font-content;
 }
+
+h1 {
+  padding: 0;
+  margin: 10px 0;
+}
+
+a, .navbar-app, .navbar-app .btn, .navbar-app .btn-navbar {
+    color: @color-main;
+}
+
+.navbar-app .btn-navbar:hover, .navbar-app .btn:hover {
+    color: @color-main;
+}
+
+.list-group-item.active, .list-group-item.active:focus {
+  background-color: @color-main;
+  border-color: @color-main;
+}
+
+.weui-tab {
+  // padding-top: 50px;
+  .app-body {
+    padding-bottom: 30px;
+  }
+  .weui-tabbar {
+    p {
+      margin: 0;
+    }
+    .weui-badge {
+      position: absolute;
+      margin-left:-6px;
+      margin-top: -3px;
+    }
+    a:hover,a:active,a:visited {
+      text-decoration: none;
+    }
+  }
+}
+
+.weui-footer a {
+  color: @color-main;
+}

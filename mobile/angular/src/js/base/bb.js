@@ -23,6 +23,7 @@
 
     /************************* 函数区:start ************************/
     //判断字符串是否为空
+    //   - @param data: 输入的字符串
     empty : function(data) {
       if (typeof(data) == "undefined") return true;
       if (!data) return true;
@@ -30,8 +31,10 @@
       return false;
     },
     //  计算时间差
+    //   - @param inputDate: 开始时间
+    //   - @param beCompareDate: 结束时间
     dateTimeDiff : function(inputDate, beCompareDate) {
-        var inputDate=inputDate;  //开始时间
+        var inputDate=inputDate || new Date().getTime();  //开始时间
         var nowDate=beCompareDate || new Date().getTime(); //结束时间
         var date3=nowDate-inputDate;          //时间差的毫秒数
         //计算出相差天数
@@ -52,12 +55,38 @@
     //显示当前日期
     //显示年月日 yyyy-MM-dd
     //显示年月日小时分钟秒 yyyy-MM-dd HH:mm:ss
+    //   - @param format: 指定显示时间格式
     now   : function(format) {
       format = format || 'yyyy-MM-dd hh:mm:ss';
       var newDate = new Date();
       return newDate.format(format);
     },
+    //微信显示当前时间的方式
+    //   -. 日期为今天显示时间
+    //   -. 日期为昨天显示昨天
+    //   -. 日期为昨天之前显示: 月份-日期
+    //   - @param dateStr: 需要显示的日期时间
+    wxnow : function(dateStr) {
+      dateStr = dateStr || (new Date()).format('yyyy-MM-dd hh:mm:ss');
+      var now = new Date();
+      dateStr = dateStr.replace(/-/g,"/");
+      var d = new Date(Date.parse(dateStr));
+      if (d.setHours(0,0,0,0) == now.setHours(0,0,0,0)){
+        dateStr = new Date(Date.parse(dateStr));
+        return dateStr.format("hh:mm");
+      }
+
+      var now   = now.getTime();  //开始时间
+      var date  = new Date(Date.parse(dateStr)).getTime(); //结束时间
+      var date3 = now - date;     //时间差的毫秒数
+      //计算出相差天数
+      var days = Math.floor(date3/(24*3600*1000));
+      if (days == 1) return "昨天";
+      var showDate = (new Date(Date.parse(dateStr))).format('MM-dd');
+      return showDate;
+    },
     // 上几个月
+    // months: 倒数几个月
     nowBack: function(months){
       var date = new Date();
       date.setMonth(date.getMonth() - months);
@@ -72,8 +101,8 @@
     }
     /************************* 函数区:  end ************************/
   };
-  /************************* 定义静态方法:  end ************************/
 
+  /************************* 定义静态方法:  end ************************/
   Bb.each   = function(obj, callback) {
       var len = obj.length,
           i = 0;

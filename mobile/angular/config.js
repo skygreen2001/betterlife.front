@@ -67,6 +67,9 @@ module.exports = function(config) {
   // config.vendor.css.push('./bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-hover.css');
   // config.vendor.css.push('./bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.css');
   // config.vendor.css.push('./bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.css');
+  // config.vendor.css.push('./bower_components/jquery-weui/dist/lib/weui.min.css');
+  // config.vendor.css.push('./bower_components/jquery-weui/dist/css/jquery-weui.min.css');
+
 
   /**
    * Vendor Javascripts
@@ -85,5 +88,14 @@ module.exports = function(config) {
 
   // config.vendor.js.push('./bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js');
   config.vendor.js.push('./bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.js');
+
+  // jQuery WeUI 相关组件
+  config.vendor.js.push('./bower_components/jquery-weui/dist/lib/jquery-2.1.4.js');
+  config.vendor.js.push('./bower_components/jquery-weui/dist/js/jquery-weui.min.js');
+
+  <!-- 如果使用了某些拓展插件还需要额外的JS -->
+  config.vendor.js.push('./bower_components/jquery-weui/dist/js/swiper.min.js');
+  config.vendor.js.push('./bower_components/jquery-weui/dist/js/city-picker.min.js');
+
 
 };

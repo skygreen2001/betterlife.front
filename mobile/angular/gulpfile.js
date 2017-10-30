@@ -28,6 +28,10 @@ var config = {
 
     css: [],
 
+    images: [
+      './bower_components/jquery-weui/dist/demos/images/**'
+    ],
+
     fonts: [
       './bower_components/font-awesome/fonts/fontawesome-webfont.*',
       './bower_components/mobile-angular-ui/dist/fonts/fontawesome-webfont.woff2'
@@ -130,9 +134,15 @@ var firstInit = true;
 =====================================*/
 
 gulp.task('images', function () {
-  return gulp.src('src/images/**/*')
-        // .pipe(image())
-        .pipe(gulp.dest(path.join(config.dest, 'images')));
+  gulp.src('./src/images/favicon.ico')
+  .pipe(gulp.dest(config.dest));
+
+  gulp.src('src/images/**/*')
+  // .pipe(image())
+  .pipe(gulp.dest(path.join(config.dest, 'images')));
+
+  return gulp.src(config.vendor.images)
+         .pipe(gulp.dest(path.join(config.dest, 'images', "weui")));
 });
 
 /*==================================
@@ -152,9 +162,6 @@ gulp.task('html', function() {
 
   // injectCssBefore.push('<link rel="stylesheet" href="css/bower.min.css">');
   // injectBefore.push('<script src="js/bower/bower.min.js"></script>');
-
-  gulp.src('./src/images/favicon.ico')
-  .pipe(gulp.dest(config.dest));
 
   var htmlTask = gulp.src(['./src/html/**/*.html'])
       .pipe($.replace('<!-- inject:css:before -->', injectCssBefore.join('\n    ')))
