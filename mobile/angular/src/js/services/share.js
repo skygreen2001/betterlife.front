@@ -4,6 +4,7 @@ angular.
   module('bb.service').
   factory('ShareObject', ['Constants', '$localStorage',
     function(Constants, $localStorage){
+      var shareId;
       return {
         setUserId: function(userId) {
           $localStorage.userId = userId;
@@ -15,6 +16,7 @@ angular.
           shareId = shareIdInt;
         },
         getBlogId: function() {
+          if ($_.empty(shareId)) shareId=1;
           return shareId;
         },
         setUserName: function(userName){

@@ -90,7 +90,8 @@ module.exports = function(config) {
   config.vendor.js.push('./bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.js');
 
   // jQuery WeUI 相关组件
-  config.vendor.js.push('./bower_components/jquery-weui/dist/lib/jquery-2.1.4.js');
+  // config.vendor.js.push('./bower_components/jquery-weui/dist/lib/jquery-2.1.4.js');
+  config.vendor.js.push('./bower_components/jquery/dist/jquery.js');
   config.vendor.js.push('./bower_components/jquery-weui/dist/js/jquery-weui.min.js');
 
   <!-- 如果使用了某些拓展插件还需要额外的JS -->

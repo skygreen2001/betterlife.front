@@ -16,6 +16,12 @@ h1 {
 
 a, .navbar-app, .navbar-app .btn, .navbar-app .btn-navbar {
     color: @color-main;
+    text-decoration: none;
+}
+
+a:hover,a:focus,a:active {
+  color: @color-main;
+  text-decoration: none;
 }
 
 .navbar-app .btn-navbar:hover, .navbar-app .btn:hover {
@@ -27,8 +33,16 @@ a, .navbar-app, .navbar-app .btn, .navbar-app .btn-navbar {
   border-color: @color-main;
 }
 
+a.list-group-item:focus, button.list-group-item:focus {
+    color: @color-main;
+    background-color: @background-color;
+}
+
+.app-content{
+  background-color: @background-color;
+}
+
 .weui-tab {
-  // padding-top: 50px;
   .app-body {
     padding-bottom: 30px;
   }
@@ -41,6 +55,9 @@ a, .navbar-app, .navbar-app .btn, .navbar-app .btn-navbar {
       margin-left:-6px;
       margin-top: -3px;
     }
+    .weui-bar__item--on .weui-tabbar__icon>i, .weui-bar__item--on i.weui-tabbar__icon {
+      color: @color-main;
+    }
     a:hover,a:active,a:visited {
       text-decoration: none;
     }
@@ -48,5 +65,10 @@ a, .navbar-app, .navbar-app .btn, .navbar-app .btn-navbar {
 }
 
 .weui-footer a {
-  color: @color-main;
+  color: #2f2f2f;
+  text-decoration: none;
+  &:hover,&:active {
+    color: @color-main;
+    text-decoration: none;
+  }
 }

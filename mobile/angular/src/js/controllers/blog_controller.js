@@ -5,11 +5,11 @@ angular.
   config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
        $routeProvider.
-         when('/editBlog', {
-           template: '<blog-edit></blog-edit>'
+         when('/blog/edit', {
+           template: '<blog-edit></blog-edit>', reloadOnSearch: false
          }).
-         when('/viewBlog', {
-           template: '<blog-view></blog-view>'
+         when('/blog/view', {
+           template: '<blog-view></blog-view>', reloadOnSearch: false
          });
     }
   ]);
@@ -24,6 +24,8 @@ angular.
 
       this.nickName     = ShareObject.getUserName();
 
+      $scope.navbar=2;
+
       this.showSharePay = function(){
         console.log("It's good to share!");
       };
@@ -33,7 +35,7 @@ angular.
     }
   ).
   component('blogView', {
-    templateUrl: 'html/blog/view.html',
+    templateUrl: 'html/core/blog/view.html',
     controller: ['ShareObject', 'Constants', 'ServerService',
     function(ShareObject, Constants, ServerService, $scope, $element, $attrs) {
       this.blogId = ShareObject.getBlogId();
@@ -42,7 +44,7 @@ angular.
     }]
   }).
   component('blogList', {
-    templateUrl: 'html/blog/edit.html',
+    templateUrl: 'html/core/blog/edit.html',
     controller: ['ShareObject', 'Constants', 'ServerService',
     function(ShareObject, Constants, ServerService, $scope, $element, $attrs) {
       this.blogId = ShareObject.getBlogId();

@@ -33,8 +33,7 @@ var config = {
     ],
 
     fonts: [
-      './bower_components/font-awesome/fonts/fontawesome-webfont.*',
-      './bower_components/mobile-angular-ui/dist/fonts/fontawesome-webfont.woff2'
+      './bower_components/font-awesome/fonts/fontawesome-webfont.*'
     ]
   },
 
@@ -95,7 +94,8 @@ gulp.task('clean', function (cb) {
         path.join(config.dest, 'favicon.ico'),
         path.join(config.dest, 'data'),
         path.join(config.dest, 'css'),
-        path.join(config.dest, 'js')
+        path.join(config.dest, 'js'),
+        path.join(config.dest, 'html')
       ], { read: false })
      .pipe($.clean({force: true}));
 });

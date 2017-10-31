@@ -69,6 +69,9 @@ app.config(['$locationProvider', '$routeProvider', '$httpProvider',
       when('/blog', {
         templateUrl: 'html/core/blog/index.html', reloadOnSearch: false
       }).
+      when('/lab', {
+        templateUrl: 'html/core/lab/index.html', reloadOnSearch: false
+      }).
       when('/my', {
         templateUrl: 'html/core/my/index.html', reloadOnSearch: false
       }).

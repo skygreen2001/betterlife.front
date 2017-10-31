@@ -1,20 +1,49 @@
-<div ui-content-for="title">
-  编辑
-</div>
+<div ui-content-for="title">编辑博客</div>
+
 <div ui-content-for="navbarAction">
-  <i class="fa fa-thumbs-up"></i> 保存
+  <a href="/#/viewBlog" class="btn"><i class="fa fa-thumbs-up">完成</i></a>
 </div>
 
-<div class="scrollable">
-  <div class="scrollable-content">
-    <div class="list-group text-center">
-      <div id="main-header"></div>
-      <div id="main-content">
-        <textarea class="content" ng-model="$ctrl.content"></textarea>
+<div class="scrollable" ng-controller="BlogController as blogCtrl">
+  <div class="scrollable-content edit">
+
+    <div class="list-group">
+      <!-- <div class="list-group-item list-group-item-home text-center">
+        <h1>博客列表</h1>
+        <div class="">{{ blogCtrl.nickName }}</div>
+        <div class="">{{ blogCtrl.lastModified|date:'yyyy-MM-dd HH:mm' }}</div>
+      </div> -->
+
+      <div class="list-group-item list-group-item-home weui-list-group">
+        <div class="weui-panel__bd">
+            <div class="weui-cells">
+
+              <a class="weui-cell weui-cell_access" href="/#/viewBlog">
+                <div class="weui-cell__hd">
+                  <img class="weui-media-box_appmsg_thumb" src="https://lorempixel.com/900/500?r=1" alt="美图">
+                </div>
+                <div class="weui-cell__bd weui-cell_primary">
+                    <h4 class="weui-media-box__title">禅意</h4>
+                    <p class="weui-media-box__desc">迷途知返，回头是岸</p>
+                </div>
+                <span class="weui-date__ft">{{ blogCtrl.lastModified }}</span>
+              </a>
+
+              <a class="weui-cell weui-cell_access" href="/#/viewBlog">
+                <div class="weui-cell__hd">
+                  <img class="weui-media-box_appmsg_thumb" src="https://lorempixel.com/900/500?r=2" alt="美图">
+                </div>
+                <div class="weui-cell__bd weui-cell_primary">
+                    <h4 class="weui-media-box__title">影图</h4>
+                    <p class="weui-media-box__desc">美不胜收，爱美之心</p>
+                </div>
+                <span class="weui-date__ft">{{ blogCtrl.lastModified }}</span>
+              </a>
+            </div>
+        </div>
       </div>
     </div>
-    <footer class="publish-btn-block save">
-        <div class="publish-btn save" ng-click="$ctrl.saveContent()">保存</div>
-    </footer>
+
+    <footer ng-click="$ctrl.showSharePay()" class="view">设置有偿分享</footer>
   </div>
 </div>
