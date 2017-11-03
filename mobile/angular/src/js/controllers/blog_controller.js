@@ -43,7 +43,7 @@ angular.
 
     }]
   }).
-  component('blogList', {
+  component('blogEdit', {
     templateUrl: 'html/core/blog/edit.html',
     controller: ['ShareObject', 'Constants', 'ServerService',
     function(ShareObject, Constants, ServerService, $scope, $element, $attrs) {
