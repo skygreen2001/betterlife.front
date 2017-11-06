@@ -5,8 +5,8 @@
     text-align: center;
     margin-right: 8px;
     img {
-      width: 48px;
-      height: 48px;
+      width: 80px;
+      height: 80px;
     }
   }
   .weui-cells{
@@ -14,16 +14,48 @@
     .weui-media-box__title{
       font-size: 16px;
       margin-bottom: 16px;
+      margin-right: 5px;
+      line-height: 25px;
+      min-height: 50px;
+      white-space: normal;
     }
     .weui-media-box__desc{
       margin-bottom: 0px;
+      max-width: 296px;
     }
     .weui-date__ft {
       font-size: 13px;
-      margin-top: -36px;
+      margin-top: -60px;
       position: relative;
       text-align: right;
       color: #999;
     }
+    .cell-img-right {
+      margin-right: -5px;
+    }
+  }
+}
+
+.list-group-item {
+  .row {
+    padding: 0 15px;
+    .col-sm-4{
+      padding: 0px;
+      margin-bottom: 10px;
+      &:last-child{
+        margin-bottom: 0px;
+      }
+    }
+    .col-xs-4{
+      padding: 0 3px;
+    }
+  }
+}
+.list-item-tail{
+  margin-top: 10px;
+  p {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 0px;
   }
 }

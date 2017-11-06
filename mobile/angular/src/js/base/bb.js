@@ -63,6 +63,10 @@
     },
     //微信显示当前时间的方式
     //   -. 日期为今天显示时间
+    //      -. 大于一小时显示: +小时
+    //      -. 小于一小时显示:
+    //        -. 小于一分钟显示: 刚刚
+    //        -. 大于一分钟显示: +分钟
     //   -. 日期为昨天显示昨天
     //   -. 日期为昨天之前显示: 月份-日期
     //   - @param dateStr: 需要显示的日期时间
@@ -70,17 +74,35 @@
       dateStr = dateStr || (new Date()).format('yyyy-MM-dd hh:mm:ss');
       var now = new Date();
       dateStr = dateStr.replace(/-/g,"/");
-      var d = new Date(Date.parse(dateStr));
-      if (d.setHours(0,0,0,0) == now.setHours(0,0,0,0)){
-        dateStr = new Date(Date.parse(dateStr));
+      var d   = new Date(Date.parse(dateStr));
+      var n   = new Date();
+      var date,timediff;
+      if (d.setHours(0,0,0,0) == n.setHours(0,0,0,0)){
+        dateStr  = new Date(Date.parse(dateStr));
+        now      = now.getTime();  //开始时间
+        date     = dateStr.getTime(); //结束时间
+        timediff = now - date;     //时间差的毫秒数
+        //计算出相差小时
+        var hours = Math.floor(timediff/(3600*1000));
+        if (hours == 0) {
+          //计算出相差小时
+          var minutes = Math.floor(timediff/(60*1000));
+          if (minutes == 0) {
+            return "刚刚";
+          } else {
+            return minutes + "分钟前";
+          }
+        } else {
+          return hours + "小时前";
+        }
         return dateStr.format("hh:mm");
       }
 
-      var now   = now.getTime();  //开始时间
-      var date  = new Date(Date.parse(dateStr)).getTime(); //结束时间
-      var date3 = now - date;     //时间差的毫秒数
+      now      = now.getTime();  //开始时间
+      date     = new Date(Date.parse(dateStr)).getTime(); //结束时间
+      timediff = now - date;     //时间差的毫秒数
       //计算出相差天数
-      var days = Math.floor(date3/(24*3600*1000));
+      var days = Math.floor(timediff/(24*3600*1000));
       if (days == 1) return "昨天";
       var showDate = (new Date(Date.parse(dateStr))).format('MM-dd');
       return showDate;

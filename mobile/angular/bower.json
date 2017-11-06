@@ -35,7 +35,10 @@
     "mobile-angular-ui": "^1.3.4",
     "angular-resource": "^1.6.6",
     "topcoat": "^0.8.0",
-    "jquery-weui": "build"
+    "jquery-weui": "build",
+    "lodash": "^4.17.4",
+    "underscore": "^1.8.3",
+    "moment": "^2.19.1"
   },
   "resolutions": {
     "angular": "~1.6.x"

@@ -51,7 +51,6 @@
 ## 学习资料
 
 - 0⃣️
-
   * Code Guide     : http://alloyteam.github.io/CodeGuide/
   * Material Design: https://material.io/
   * jQuery         : https://learn.jquery.com/
@@ -60,13 +59,21 @@
   * WEEX           : http://weex.incubator.apache.org/
 
 - 🅰️
+  - Angular 1.*
+    * AngularJS Github  : https://github.com/angular/angular.js
+    * AngularJS 官方教程 : https://docs.angularjs.org/tutorial
+    * Think in AngularJS: http://www.angularjs.cn/A0bz
+    * AngularJS 初识     : https://docs.angularjs.org/guide/concepts
+    * AngularJS 教程     : http://www.runoob.com/angularjs/angularjs-tutorial.html
+    * 学习AngularJS 1.x  : https://hairui219.gitbooks.io/learning_angular/content/zh/index.html
+    * AngularJS经验分享平台: http://docs.ngnice.com/
+    * 极客学院            : http://wiki.jikexueyuan.com/project/angularjs/
 
   - Angular 2.*
     * Angular 中文: https://angular.cn/
     * 大道至简:Angular2只有一个核心概念: http://www.angularjs.cn/A2Ar
 
 - ⚛️
-
   - React
     * React 官方网站  : https://facebook.github.io/react/
     * Material-UI设计: http://www.material-ui.com/
@@ -74,7 +81,6 @@
     * Reactive Native: http://facebook.github.io/react-native/
 
 - 🏆
-
   - Mobile前端优先
   * Meteor  : https://www.meteor.com/
   * Ionic   : http://ionicframework.com/
@@ -82,6 +88,8 @@
   * MAUI    : http://mobileangularui.com/
   * JqWeUI  : http://jqweui.com/
   * YDUI    : http://www.ydui.org/
+  * VueJS   : https://cn.vuejs.org/
+  * VUM     : http://getvum.com/
 
   - Web 前端优先
   * Semantic: http://www.semantic-ui.cn
@@ -93,15 +101,8 @@
 ## 其他
 
 - Native Javascript: https://www.nativescript.org/
-
 - TypeScript       : http://www.typescriptlang.org/
-
 - Customize IDE
-
   - Electron: http://electron.atom.io/
-
-    Build cross platform desktop apps with JavaScript, HTML, and CSS
-
   - Orion   : https://orionhub.org/
-
   - APICloud: http://www.apicloud.com/
