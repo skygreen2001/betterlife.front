@@ -54,6 +54,7 @@
 
   - AngularJS
   - Mobile Angular UI
+  - jQuery WeUI
 
 
 ## 框架目录定义
@@ -88,5 +89,8 @@
   * [Mobile Angular UI 中文网 在线文档](http://www.angularui.cn/docs/index.html)
 
 - jQuery WeUI
-  * jqweui: http://jqweui.com/
+  SUI -> Light7 -> jQuery WeUI
+  * jQWeUI: http://jqweui.com/
   * Github: https://github.com/lihongxun945/jquery-weui
+  * Light7: http://www.light7.cn/
+  * SUI   : http://m.sui.taobao.org/
