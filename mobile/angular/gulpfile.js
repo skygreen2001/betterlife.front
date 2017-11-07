@@ -231,7 +231,7 @@ gulp.task('js', function() {
     jsTask
     .pipe($.rename({suffix: '.min'}))
     .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest(path.join(config.dest, 'js')));//, 'bower'
+    .pipe(gulp.dest(path.join(config.dest, 'js', 'bower')));//, 'bower'
   }
 
   jsTask = streamqueue(

@@ -24,8 +24,6 @@ angular.
 
       this.nickName     = ShareObject.getUserName();
 
-      $scope.navbar=2;
-
       this.showSharePay = function(){
         console.log("It's good to share!");
       };

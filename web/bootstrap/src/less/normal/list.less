@@ -332,6 +332,17 @@ div.dataTables_wrapper div.dataTables_info{
 }
 
 @media screen and (max-width: @screen-xs-max) {
+  .table-responsive .dataTables_wrapper .bottom {
+    .dataTables_info {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 3px;
+    }
+    .dataTables_paginate {
+      display: block;
+      float: right;
+    }
+  }
   li.paginate_button {
     display: none;
     &.page_select_li{
