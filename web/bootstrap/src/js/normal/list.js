@@ -52,6 +52,13 @@ var dataTable = {
                 $(this).siblings(".icon-remove").show();
             }
         });
+        this.resize();
+    },
+    resize        : function(){
+        var offset = $(".content-wrapper .container-fluid.list .table-responsive").height();
+        if ( offset > 600 ) {
+          $(".content-wrapper .container-fluid.list").removeAttr("style");
+        }
     },
     pageNumDisplay: function(dataTableThis){
         var self       = dataTableThis;
