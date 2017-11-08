@@ -1,0 +1,113 @@
+<div ui-content-for="title">关于我们</div>
+
+<div ui-content-for="navbarAction">
+  &nbsp;
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content view">
+    <div class="main-content">
+      <div class="section">
+        <ui-shared-state id="activeTab" default="1"></ui-shared-state>
+        <ul class="nav nav-tabs">
+          <li ui-class="{'active': activeTab == 1}">
+            <a ui-set="{'activeTab': 1}">关于我们</a>
+          </li>
+          <li ui-class="{'active': activeTab == 2}">
+            <a ui-set="{'activeTab': 2}">发展历程</a>
+          </li>
+          <li ui-class="{'active': activeTab == 3}">
+            <a ui-set="{'activeTab': 3}">联系我们</a>
+          </li>
+        </ul>
+      </div>
+
+      <div ui-if="activeTab == 1">
+        <div class="section we-header">
+          <i class="fa fa-long-arrow-right fa-2x" aria-hidden="true"></i>
+          <h4><div>关于我们</div></h4>
+          <i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i>
+        </div>
+        <div class="we-info">
+          <p>我们的名字叫雪橇科技，不过不是卖雪橇的，也和滑雪没太大关系。我们玩的是定向运动，正在打造国内最大的定向活动平台，这种运动起源于瑞典，就是拿着地图和指北针找点位，看谁找得最快。</p>
+          <p>不过，我们做的比这高级得多喽。我们自主开发的基于IOS和Android的户外定向活动App软件“Go”，在轻松和趣味中，为学校、企业、机关及各类组织，提供独特的定向活动解决方案。</p>
+          <p>首先，我们把位置点标和主题任务绑定，你不仅要跑到这里，而且要完成各种解密、寻宝任务。</p>
+          <p>其次，任务是以黑科技形式表现出来，比如AR技术，你需要找到并扫描现场的图案线索才能获得宝箱。</p>
+          <p>听起来有点玄乎吧，不过已经有数万人参加过我们的活动。雪橇科技已获得海内外著名风投的强力入资，LBS+AR技术的结合，让我们的产品在不断增长的户外运动APP产品中更加独树一帜，我们利用科技的力量改变传统拓展行业格局，提升拓展活动效率、用户体验，为客户提供一站式数字拓展、户外定向、城市寻宝等产品和服务，包括软件、方案和技术支持。</p>
+          <p>我们的服务深受欢迎，客户包括中国平安集团、太平洋保险、中科院、英孚教育、安利、中船重工、新航道等大中型集团公司、国企和科研机构。</p>
+          <p>目前全国排名前50的拓展服务企业中与我们签订合作协议的已近40家，如人众人、众基、北极星、路标等。与我们结成战略合作关系的还有全国最大的最后一公里快递领军人物中国邮政速递易、新浪中国、探宝之旅，井冈山红色大本营、国家奥体中心及多地团委等。</p>
+        </div>
+      </div>
+
+      <div ui-if="activeTab == 2">
+        <div class="section we-header">
+          <i class="fa fa-long-arrow-right fa-2x" aria-hidden="true"></i>
+          <h4><div>发展历程</div></h4>
+          <i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i>
+        </div>
+        <div class="we-info">
+          <p class="hs-time"><i class="fa fa-calendar" aria-hidden="true"></i> 2015年4月</p>
+          <p class="hs-info">雪橇科技在天山路工作室成立</p>
+          <p class="hs-time"><i class="fa fa-calendar" aria-hidden="true"></i> 2015年X月</p>
+          <p class="hs-info">大吉大利，恭喜发财</p>
+          <p class="hs-time"><i class="fa fa-calendar" aria-hidden="true"></i> XXXX年X月</p>
+          <p class="hs-info">大吉大利，恭喜发财</p>
+          <p class="hs-time"><i class="fa fa-calendar" aria-hidden="true"></i> XXXX年X月</p>
+          <p class="hs-info">大吉大利，恭喜发财</p>
+          <p class="hs-time"><i class="fa fa-calendar" aria-hidden="true"></i> XXXX年X月</p>
+          <p class="hs-info">大吉大利，恭喜发财</p>
+          <p class="hs-time"><i class="fa fa-calendar" aria-hidden="true"></i> XXXX年X月</p>
+          <p class="hs-info">大吉大利，恭喜发财</p>
+          <p class="hs-time"><i class="fa fa-calendar" aria-hidden="true"></i> XXXX年X月</p>
+          <p class="hs-info">大吉大利，恭喜发财</p>
+          <p class="hs-time"><i class="fa fa-calendar" aria-hidden="true"></i> XXXX年X月</p>
+          <p class="hs-info">大吉大利，恭喜发财</p>
+          <p class="hs-time"><i class="fa fa-calendar" aria-hidden="true"></i> XXXX年X月</p>
+          <p class="hs-info">大吉大利，恭喜发财</p>
+          <p class="hs-time"><i class="fa fa-calendar" aria-hidden="true"></i> XXXX年X月</p>
+          <p class="hs-info">大吉大利，恭喜发财</p>
+          <p class="hs-time"></p>
+          <p class="hs-info"></p>
+        </div>
+      </div>
+
+      <div ui-if="activeTab == 3">
+        <div class="section we-header">
+          <i class="fa fa-long-arrow-right fa-2x" aria-hidden="true"></i>
+          <h4><div>联系我们</div></h4>
+          <i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i>
+        </div>
+        <div class="section contact-info">
+          <p class="contact-ico">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-volume-control-phone fa-stack-1x" aria-hidden="true"></i>
+            </span>
+          </p>
+          <p class="contact-title">服务热线</p>
+          <p class="contact-intro">400-064-6963</p>
+        </div>
+        <div class="section contact-info">
+          <p class="contact-ico">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-weixin fa-stack-1x" aria-hidden="true"></i>
+            </span>
+          </p>
+          <p class="contact-title">微信号</p>
+          <p class="contact-intro">itasktour01</p>
+        </div>
+        <div class="section contact-info">
+          <p class="contact-ico">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-envelope-o fa-stack-1x" aria-hidden="true"></i>
+            </span>
+          </p>
+          <p class="contact-title">商务邮箱</p>
+          <p class="contact-intro">hi@itasktour.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

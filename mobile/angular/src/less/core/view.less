@@ -1,12 +1,58 @@
 
 .view.scrollable-content {
   .main-content {
+    section {
+      text-indent: 2em;
+
+      h1,h2,h3,h4,h5 {
+        text-indent: 0em;
+        margin-bottom: 0px;
+      }
+    }
     .section {
       font-size: 15px;
       color: #444;
       padding: 10px 3px;
       img {
         width: 100%;
+      }
+    }
+    .we-header {
+      text-align: center;
+      i {
+        color: @color-main;
+        vertical-align: middle;
+      }
+      h1,h2,h3,h4,h5 {
+        display: inline-block;
+        color: @color-main;
+        margin: 0 10px;
+        vertical-align: middle;
+      }
+    }
+    .we-info {
+      margin-bottom: 20px;
+      p {
+        text-indent:2em;
+        color: #7f7f7f;
+      }
+    }
+    .contact-info {
+      text-align: center;
+      p {
+        margin: 2px 0px;
+      }
+      .contact-ico span i:first-child{
+        color: @color-main;
+      }
+      .contact-ico span i:last-child{
+        color: #fff;
+      }
+      .contact-title {
+        font-size: 18px;
+      }
+      .contact-intro {
+        font-size: 15px;
       }
     }
     .weui-cells {
@@ -55,6 +101,7 @@
   .view.scrollable-content {
     .main-content {
       .section {
+        font-size: 15px;
         padding: 10px 15px;
       }
     }
