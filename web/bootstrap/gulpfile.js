@@ -22,7 +22,7 @@ var config = {
   js: {},
   fonts: [
     './bower_components/bootstrap/fonts/glyphicons-halflings-regular.*',
-    // './bower_components/font-awesome/fonts/fontawesome-webfont.*',
+    './bower_components/font-awesome/fonts/fontawesome-webfont.*',
     './bower_components/icomoon-bower/fonts/icomoon.*'
   ],
   server: {

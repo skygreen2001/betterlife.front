@@ -24,8 +24,8 @@ angular.
 
       this.nickName     = ShareObject.getUserName();
 
-      this.showSharePay = function(){
-        console.log("It's good to share!");
+      this.showBlog = function(){
+        location.href = "#blog/view";
       };
 
       this.$onInit = function() {

@@ -55,8 +55,8 @@ var dataTable = {
         this.resize();
     },
     resize        : function(){
-        var offset = $(".content-wrapper .container-fluid.list .table-responsive").height();
-        if ( offset > 600 ) {
+        var offset = $(".content-wrapper .container-fluid.list .table-responsive").height() + $(".navbar-container").height() + $(".breadcrumb-line").height() + $("footer").height() + 10;
+        if ( offset > $(window).height() ) {
           $(".content-wrapper .container-fluid.list").removeAttr("style");
         }
     },
