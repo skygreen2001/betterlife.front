@@ -6,23 +6,20 @@
 
 框架目标定义分为三部分:
 * Html5开发生成Native原生应用[iOS,Andriod]
-  - `Mobile Angular UI` [Angular1 + Mobile Angular UI + Javascript]
-  - `NativeScript`      [Angular2 + Typescript + Javascript]
-  - `React Native`      [React + Javascript]
+  - `AngularJS`    [AngularJS + Mobile Angular UI + jQuery WeUI]
+  - `Angular`      [Angular + Typescript + Ionic]
+  - `React Native` [React + React Material + Javascript]
 
 * 专用于移动APP开发的html5 UI界面，可发布成原生应用[iOS,Andriod],也可用于html5 web页面；可嵌入微信；手机端优先。
 
   实现框架底层采用:
-    - Angular1 + Angular Material
-    - React    + React Material
-    - Angular2 + [Angular Material | Ionic] [ 尚待验证 ]
+    - `jQuery` [jQuery + (Bootstrap3 Css Only | PureCss)]
+    - `AngularJS` [AngularJS + jQuery WeUI]
 
 * 专用于Web开发的html5自适应界面，可用于pc电脑端，也可用于嵌入原生应用的[iOS,Andriod]的html5页面；可嵌入微信；Pc Web端优先。
-  - Jquery + Bootstrap3                         [ IE9  + ]
-  - Angular1 + [Angular Material | Bootstrap3]  [ IE9  + ]
-  - Angular2 + Bootstrap4        [ IE9  + ]
-  - Jquery + Semantic-Ui         [ IE11 + ]
-  - Angular2 + [Angular Material | Bootstrap4] + Jquery [ 尚待验证 ]
+  - jQuery + Bootstrap3                         [ IE9  + ]
+  - AngularJS + Semantic-UI + Angular Material  [ IE11 + ]
+  - jQuery + Layui                              [ IE9  + ]
 
 ## 准备工作
 
@@ -79,29 +76,51 @@
     * Material-UI设计: http://www.material-ui.com/
     * React 入门教程  : https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
     * Reactive Native: http://facebook.github.io/react-native/
+    * Preact         : https://preactjs.com/
 
 - 🏆
-  - Mobile前端优先
-  * Meteor  : https://www.meteor.com/
-  * Ionic   : http://ionicframework.com/
-  * Onsen UI: https://onsen.io/
-  * MAUI    : http://mobileangularui.com/
-  * JqWeUI  : http://jqweui.com/
-  * YDUI    : http://www.ydui.org/
-  * VueJS   : https://cn.vuejs.org/
-  * VUM     : http://getvum.com/
+  - Mobile 前端优先
+    * Ant Design: https://ant.design
+    * Ionic     : http://ionicframework.com/
+    * Onsen UI  : https://onsen.io/
+    * Meteor    : https://www.meteor.com/
+    * MAUI      : http://mobileangularui.com/
+    * JqWeUI    : http://jqweui.com/
+    * YDUI      : http://www.ydui.org/
+    * VUM       : http://getvum.com/
+    * MUI       : http://dev.dcloud.net.cn/mui/
+    * AUI       : http://www.auicss.com/
 
   - Web 前端优先
-  * Semantic: http://www.semantic-ui.cn
-  * Layui   : http://www.layui.com
-  * amaze UI: http://amazeui.org/
-  * uikit   : http://www.getuikit.net
-  * Alice   : http://aliceui.github.io/
+    * Bootstrap: http://getbootstrap.com/
+    * Semantic : http://www.semantic-ui.cn
+    * Layui    : http://www.layui.com
+    * Amaze UI : http://amazeui.org/
+    * uikit    : http://www.getuikit.net
+    * ZUI      : http://zui.sexy/
+    * H-ui     : http://www.h-ui.net/
+
+- 🔧
+  - underscore: http://underscorejs.org
+  - lodash    : https://lodash.com/
+  - Moment.js : http://momentjs.com/
+  - PureCss     : https://purecss.io/start/
+  - ART-TEMPLATE: http://aui.github.io/art-template/zh-cn/
+  - Immutable   : http://facebook.github.io/immutable-js/
 
 ## 其他
-
+- HTML5 Boilerplate: https://html5boilerplate.com/
+- web-starter-kit  : https://github.com/google/web-starter-kit
+- VueJS            : https://cn.vuejs.org/
+  - Vuex: https://vuex.vuejs.org/
+- Backbone.js      : http://backbonejs.org/
+- Ember.Js         : https://emberjs.com/
+- Foundation       : https://foundation.zurb.com/sites/docs
 - Native Javascript: https://www.nativescript.org/
 - TypeScript       : http://www.typescriptlang.org/
+- Polymer          : https://www.polymer-project.org
+- Riot             : http://riotjs.com/
+- elm              : http://elm-lang.org/
 - Customize IDE
   - Electron: http://electron.atom.io/
   - Orion   : https://orionhub.org/

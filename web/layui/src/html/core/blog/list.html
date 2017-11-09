@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+@@include('../../layout/header.html', {
+    "title"     : "Betterlife Front UI",
+    "rel-prefix": "../.."
+})
+</head>
+<body>
+    <!-- main nav begin -->
+@@include('../../layout/navbar.html', {
+    "rel-prefix": "../.."
+})
+    <!-- /main nav end -->
+
+    <!-- page container begin -->
+    <div class="page-container">
+        <!-- page content begin -->
+        <div class="page-content">
+            <!-- main sidebar begin -->
+            @@include('../../layout/sidebar.html', {
+                "rel-prefix": "../.."
+            })
+            <!-- /main sidebar end -->
+
+            <!-- main content begin -->
+            <div class="content-wrapper">
+              <div class="main-content">
+                <!-- page header begin -->
+                <div class="row">
+                  <div class="breadcrumb-line">
+                    <ul class="breadcrumb">
+                      <li><a href="/"><i class="icon-home2 position-left"></i> 首页</a></li>
+                      <li class="active">读书</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- /page header end -->
+
+                <!-- content area begin -->
+                <div class="container-fluid list">
+                    
+                </div>
+                <!-- /content area end -->
+              </div>
+            </div>
+            <!-- /main content end -->
+
+            <div class="clearfix"></div>
+        </div>
+        <!-- /page content end -->
+    </div>
+    <!-- /page container end -->
+
+    <!-- footer begin -->
+    @@include('../../layout/footer.html',{
+      "rel-prefix": "../.."
+    })
+    <!-- /footer end -->
+
+    <script src="../../js/normal/list.js"></script>
+    <script src="../../js/core/blog.js"></script>
+</body>
+</html>
