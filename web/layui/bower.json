@@ -33,9 +33,6 @@
     "layui": "https://github.com/sentsin/layui.git#^2.1.7",
     "art-template": "https://github.com/aui/art-template.git#^4.12.1"
   },
-  "resolutions": {
-    "jquery": "^3.1.1"
-  },
   "_dependencies_ignored": {
     "moment": "^2.19.1"
   }

@@ -51,39 +51,7 @@ module.exports = function(config) {
    * @property config.server.port
    * @type {String}
    */
-  config.server.port = '8000';
-
-
-  //
-  // 3rd party components
-  //
-
-  /**
-   * Vendor Css (appended on compile time)
-   *
-   * @property config.vendor.css.append
-   * @type {Array}
-   */
-
-  // config.vendor.css.push('.bower_components/mylib/mylib.css');
-  config.vendor.css.push('./bower_components/angular-material/angular-material.min.css');
-
-  /**
-   * Vendor Javascripts
-   *
-   * @property config.vendor.js
-   * @type {Array}
-   */
-  //浏览器兼容性Javascript原生对象函数支持
-  config.vendor.js.push('./bower_components/js-polyfills/polyfill.min.js');
-  config.vendor.js.push('./bower_components/js-polyfills/web.min.js');
-
-  config.vendor.js.push('./bower_components/ngstorage/ngStorage.min.js');
-  config.vendor.js.push('./bower_components/angular-cookies/angular-cookies.min.js');
-  config.vendor.js.push('./bower_components/angular-animate/angular-animate.min.js');
-
-  config.vendor.js.push('./bower_components/angular-aria/angular-aria.min.js');
-  config.vendor.js.push('./bower_components/angular-material/angular-material.min.js');
+  config.server.port = '8010';
 
 
 };
