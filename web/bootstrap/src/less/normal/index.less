@@ -112,7 +112,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      margin-top: 200px;
+      margin-top: 108px;
       // padding-top: 80px;
     }
     .starfield {
@@ -160,7 +160,7 @@
   }
 
   .section{
-    padding: 70px 0;
+    padding: 0px;
     background: #f2f2f2;
     overflow: hidden;
     .title{
@@ -168,9 +168,9 @@
       -webkit-font-smoothing: antialiased;
       line-height: 1.4;
       text-align: center;
-      margin-bottom: 70px;
+      margin-bottom: 20px;
       opacity: 0;
-      font-size : 40px;
+      font-size : 27px;
       color     : #333;
       font-weight: normal;
       .transition(all .6s ease);
@@ -188,7 +188,7 @@
       }
       small {
         display: block;
-        font-size: 16px;
+        font-size: 15px;
         color: #999;
         margin-top: 5px;
         line-height: 1.7;
@@ -345,11 +345,12 @@
           word-spacing: 3px;
           margin-top: 90px;
           line-height: 16px;
-          color: #888;
+          color: #333;
           div{
             font-size: 5px;
-            font-weight: 600;
             font-family: arial;
+            margin-top: 36px;
+            color: #ccc;
           }
         }
       }
@@ -370,9 +371,12 @@
             &.icon-quote-left {
               margin-top: 40px;
               left: 20px;
+              float: left;
             }
             &.icon-quote-right {
-              margin-top: 270px;
+              // margin-top: 270px;
+
+              float: right;
               right: 20px;
             }
           }
@@ -396,7 +400,7 @@
           }
           color: #d1ffcd;
           cursor: pointer;
-          &:hover, &:active{
+          &.active, &:hover, &:active{
             color: #fff;
             border-top: 2px solid #fff;
             .transition(all 0.5s ease);
@@ -442,6 +446,11 @@
     }
   }
 
+  @media (min-width: 360px) {
+    #page1 .section-header-container{
+      margin-top: 200px;
+    }
+  }
   @media (min-width: @screen-sm-min) {
     #page1{
       padding: 80px 0;
@@ -463,11 +472,17 @@
     }
 
     .section{
+      padding: 70px 0;
+      .title {
+        margin-bottom: 70px;
+        font-size: 40px;
+      }
       .content-list {
         width:  48%;
       }
 
       small {
+        font-size: 16px;
         &.flag{
           font-size: 40px;
         }
@@ -475,6 +490,7 @@
 
       &#page3 .content-head {
         .page-detail {
+          margin-bottom: 60px;
           p{
             font-size: 22px;
             margin: 60px 60px 0;
@@ -482,7 +498,7 @@
           i{
             font-size: 40px;
             &.icon-quote-right{
-              margin-top: 170px;
+              // margin-top: 170px;
             }
           }
         }
