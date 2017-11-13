@@ -186,7 +186,7 @@
           word-spacing: 12px;
         }
       }
-      small {
+      font {
         display: block;
         font-size: 15px;
         color: #999;
@@ -197,8 +197,8 @@
         &.flag{
           color: @color-main;
           font-family: @font-family-index;
-          font-weight: 100;
-          font-size: 30px;
+          font-weight: 500;
+          font-size: 20px;
           word-spacing: 20px;
         }
       }
@@ -207,6 +207,9 @@
       .section-container{
         width: 100%;
         margin: 0 !important;
+        .title {
+          font-size: 23px;
+        }
         .content-box{
           padding-left: 1%;
           padding-right: 1%;
@@ -363,7 +366,7 @@
           h2 {
             margin: 0 auto;
             text-align: center;
-            font-size: 34px;
+            font-size: 27px;
           }
           i {
             position: absolute;
@@ -374,19 +377,21 @@
               float: left;
             }
             &.icon-quote-right {
-              // margin-top: 270px;
-
               float: right;
               right: 20px;
             }
           }
           p {
-            margin: 60px 30px 0;
+            margin: 60px 0px 0 20px;
             color: #fff;
-            font-size: 15px;
-            line-height: 48px;
-            min-height: 240px;
+            font-size: 13px;
+            line-height: 30px;
+            min-height: 200px;
             display: none;
+            span {
+              display: block;
+              text-indent: 25px;
+            }
           }
         }
         .col-md-4{
@@ -429,7 +434,7 @@
             margin-left: 0px;
             display    : block;
             line-height: 36px;
-            font-size  : 16px;
+            font-size  : 13px;
             text-align : center;
           }
         }
@@ -449,6 +454,11 @@
   @media (min-width: 360px) {
     #page1 .section-header-container{
       margin-top: 200px;
+    }
+    .section#page4{
+      .section-container .title {
+        font-size: 27px;
+      }
     }
   }
   @media (min-width: @screen-sm-min) {
@@ -476,7 +486,13 @@
       .title {
         margin-bottom: 70px;
         font-size: 40px;
+        font {
+          &.flag{
+            font-size: 30px;
+          }
+        }
       }
+
       .content-list {
         width:  48%;
       }
@@ -491,14 +507,22 @@
       &#page3 .content-head {
         .page-detail {
           margin-bottom: 60px;
+          h2{
+            font-size: 34px;
+          }
           p{
             font-size: 22px;
-            margin: 60px 60px 0;
+            margin: 60px 120px 0;
+            line-height: 48px;
+            min-height: 240px;
           }
           i{
             font-size: 40px;
+            &.icon-quote-left {
+              left: 80px;
+            }
             &.icon-quote-right{
-              // margin-top: 170px;
+              right: 80px;
             }
           }
         }
@@ -529,7 +553,15 @@
       }
     }
 
+    .section#page4{
+      .section-container .title {
+        font-size: 32px;
+      }
+    }
     .section{
+      .title font {
+        font-size: 18px;
+      }
       .content-list {
         width:  23%;
       }

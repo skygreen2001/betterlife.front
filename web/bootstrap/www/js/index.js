@@ -15,7 +15,7 @@ $(function(){
 
   // 第一屏满屏显示
   $("html").css("height", "100%");
-  
+
   // 顶部导航条搜索展开
   $(".search-toggle").click(function(){
     $("#searchform-header").toggleClass("hidden");
@@ -33,11 +33,14 @@ $(function(){
   // $('#page3 .content-head .col-md-4 i:first-child').css("border-color", "#fff");
   $('#page3 .content-head .col-md-4').each(function(){
     $(this).hover(function(){
+      $('#page3 .content-head .col-md-4').removeClass("active");
+      $(this).addClass("active");
       // $('#page3 .content-head .bl-line').css("left",this.offsetLeft-10-$('#page3 .content-head')[0].offsetLeft);
       var dataId = $(this).attr("data-id");
       $('#page3 .content-head .page-detail').find("p").not("[data-id='"+dataId+"']").hide();
       $('#page3 .content-head .page-detail').find("p[data-id='"+dataId+"']").css("display","block");
-    })
+    });
+
   });
 
   //上下滑屏逐个出现
