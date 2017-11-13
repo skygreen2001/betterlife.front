@@ -17,6 +17,17 @@ var edit = {
       useCurrent: true
     });
   },
+  //解决Ueditor在线编辑器与顶部导航条遮挡的问题
+  //全屏前，顶部导航条在最顶上，全凭后，在线编辑器在最顶部
+  ueditorFullscreen: function(textareaIdName){
+    UE.getEditor(textareaIdName).addListener('beforefullscreenchange',function(event,isFullScreen){
+       if (isFullScreen) {
+         $("#" + textareaIdName + " > .edui-editor.edui-default").addClass("bb-edui-fullscreen");
+       } else {
+         $("#" + textareaIdName + " > .edui-editor.edui-default").removeClass("bb-edui-fullscreen");
+       }
+    });
+  },
   multiselect: function(selectNames, promptText){
     if(!promptText) promptText = '请选择';
     $(selectNames).multiselect({
