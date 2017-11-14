@@ -1,71 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-CN" id="index">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Betterlife Front UI</title>
-
-    <!-- inject:css -->
-
-    <!-- inject:js:before -->
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+@@include('layout/header.html', {
+    "title"     : "Betterlife Front UI",
+    "rel-prefix": ".."
+})
 </head>
 <body class="index">
     <!-- nav begin -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">
-            <i class="glyphicon glyphicon-grain"></i> Betterlife Front UI
-          </a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">首页</a></li>
-            <li><a href="html/blog/list.html">读书</a></li>
-            <li><a href="#movie">电影</a></li>
-            <li><a href="#music">音乐</a></li>
-            <li><a href="#dev">研发</a></li>
-            <li class="dropdown">
-              <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                其它
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="dLabel">
-                <li><a href="#ebuy">购物</a></li>
-                <li><a href="#topic">话题</a></li>
-                <li><a href="html/model/preview.html">幽默</a></li>
-              </ul>
-            </li>
-            <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>登录</a></li>
-            <li class="search-toggle"><a href="#"><span><span class="menu-search-text">搜索</span><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span></a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-        <div id="searchform-header" class="hidden">
-          <div id="searchform-header-inner">
-            <form method="get" action="" class="header-searchform">
-              <input type="search" class="form-control" name="s" autocomplete="off" autofocus="autofocus" placeholder="搜索">
-            </form>
-            <span id="searchform-header-close" class="glyphicon glyphicon-remove search-toggle"></span>
-          </div>
-        </div>
-      </div>
-    </nav>
+@@include('layout/navbar.html', {
+    "rel-prefix": ".."
+})
     <!-- /nav end-->
 
     <!--content begin-->
@@ -79,7 +24,6 @@
         </div>
         <div class="starfield"></div>
       </div>
-
 
       <div class="section page" id="page2">
           <div class="container section-container">
@@ -212,17 +156,13 @@
       </div>
 
       <!-- footer begin -->
-      <footer>
-        <div id="footer-inner" class="container clr">
-          <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div><!-- #copyright -->
-        </div>
-      </footer>
+      @@include('layout/footer.html',{
+        "rel-prefix": ".."
+      })
       <!-- /footer end -->
     </div>
     <!-- /content end -->
-
-
-    <!-- inject:js -->
+    
     <script src="js/common/bower/index.bower.min.js"></script>
     <script src="js/index.js"></script>
 </body>

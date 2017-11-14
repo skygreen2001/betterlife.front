@@ -102,7 +102,6 @@ gulp.task('images', function () {
 ==================================*/
 
 gulp.task('fonts', function() {
-
   return gulp.src(config.fonts)
         .pipe(gulp.dest(path.join(config.dest, 'css', 'fonts')));
 });
@@ -112,21 +111,14 @@ gulp.task('fonts', function() {
 =================================================*/
 
 gulp.task('html', function() {
-  var inject = [], injectBefore = [], injectCss = [];
-
-  injectCss.push('<link rel="stylesheet" href="css/common.min.css">');
-
-  injectBefore.push('<script src="js/common/base.min.js"></script>');
-  inject.push('<script src="js/common/bower/bower.min.js"></script>');
-  inject.push('<script src="js/common/common.jquery.min.js"></script>');
-
   gulp.src('./src/images/favicon.ico')
   .pipe(gulp.dest(config.dest));
 
   var htmlTask = gulp.src('./src/html/*.html')
-  .pipe($.replace('<!-- inject:css -->', injectCss.join('\n    ')))
-  .pipe($.replace('<!-- inject:js:before -->', injectBefore.join('\n    ')))
-  .pipe($.replace('<!-- inject:js -->', inject.join('\n    ')));
+    .pipe($.fileInclude({
+        prefix: '@@',
+        basepath: '@file'
+      }));
 
   if (!config.isDev) htmlTask.pipe(strip());
 
@@ -182,23 +174,8 @@ gulp.task('js', function() {
   if ( firstInit ) {
     jsTask = gulp.src(
       bowerFiles({
-        filter:'**/*.js',
         // debugging: true,
-        overrides:{
-          'moment':{
-            'main':[
-              'moment.js',
-              'locale/zh-cn.js'
-            ]
-          },
-          'select2':{
-            "main": [
-                "dist/js/select2.js",
-                "dist/js/i18n/zh-CN.js",
-                "src/scss/core.scss"
-            ]
-          }
-        }
+        filter:'**/*.js'
       })
     )
     .pipe($.sourcemaps.init())
@@ -242,9 +219,6 @@ gulp.task('js', function() {
   jsTask
   .pipe($.rename({suffix: '.min'}))
   .pipe(gulp.dest(path.join(config.dest, 'js', 'common')));
-
-  gulp.src('./src/js/normal/**/*.js')
-  .pipe(gulp.dest(path.join(config.dest, 'js', 'normal')));
 
   gulp.src(['./src/js/core/*.js', './src/js/core/!(index)*/**/*.js'])
   .pipe(gulp.dest(path.join(config.dest, 'js', 'core')));

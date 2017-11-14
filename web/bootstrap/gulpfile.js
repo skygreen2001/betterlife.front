@@ -113,21 +113,14 @@ gulp.task('fonts', function() {
 =================================================*/
 
 gulp.task('html', function() {
-  var inject = [], injectBefore = [], injectCss = [];
-
-  injectCss.push('<link rel="stylesheet" href="css/common.min.css">');
-
-  injectBefore.push('<script src="js/common/base.min.js"></script>');
-  inject.push('<script src="js/common/bower/bower.min.js"></script>');
-  inject.push('<script src="js/common/common.jquery.min.js"></script>');
-
   gulp.src('./src/images/favicon.ico')
   .pipe(gulp.dest(config.dest));
 
   var htmlTask = gulp.src('./src/html/*.html')
-  .pipe($.replace('<!-- inject:css -->', injectCss.join('\n    ')))
-  .pipe($.replace('<!-- inject:js:before -->', injectBefore.join('\n    ')))
-  .pipe($.replace('<!-- inject:js -->', inject.join('\n    ')));
+    .pipe($.fileInclude({
+        prefix: '@@',
+        basepath: '@file'
+      }));
 
   if (!config.isDev) htmlTask.pipe(strip());
 
