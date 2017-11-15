@@ -17,7 +17,7 @@
   "moduleType": "globals",
   "main": [
     "src/less/bootstrap.less",
-    "src/js/app.js"
+    "src/js/index.js"
   ],
   "ignore": [
     "/.*",

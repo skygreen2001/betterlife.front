@@ -17,9 +17,9 @@
     - `AngularJS` [AngularJS + jQuery WeUI]
 
 * 专用于Web开发的html5自适应界面，可用于pc电脑端，也可用于嵌入原生应用的[iOS,Andriod]的html5页面；可嵌入微信；Pc Web端优先。
-  - jQuery + Bootstrap3                         [ IE9  + ]
-  - AngularJS + Semantic-UI + Angular Material  [ IE11 + ]
-  - jQuery + Layui                              [ IE9  + ]
+  - jQuery + Bootstrap3                           [ IE9  + ]
+  - AngularJS + (Semantic-UI | Angular Material)  [ IE11 + ]
+  - jQuery + Layui                                [ IE9  + ]
 
 ## 准备工作
 
@@ -66,7 +66,7 @@
     * AngularJS经验分享平台: http://docs.ngnice.com/
     * 极客学院            : http://wiki.jikexueyuan.com/project/angularjs/
 
-  - Angular 2.*
+  - Angular
     * Angular 中文: https://angular.cn/
     * 大道至简:Angular2只有一个核心概念: http://www.angularjs.cn/A2Ar
 

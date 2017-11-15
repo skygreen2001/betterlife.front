@@ -1,0 +1,3 @@
+$(function(){
+  $joy.init();
+});

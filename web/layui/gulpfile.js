@@ -174,39 +174,32 @@ gulp.task('js', function() {
   if ( firstInit ) {
     jsTask = gulp.src(
       bowerFiles({
-        // debugging: true,
-        filter:'**/*.js'
+        filter:'**/*.js',
+        debugging: true,
+        checkExistence: true,
+        overrides:{
+          'art-template':{
+            'main':[
+              'lib/template-web.js'
+            ]
+          }
+        }
       })
     )
     .pipe($.sourcemaps.init())
-    .pipe($.concat('bower.js'));
-
-    // if ( !config.isDev ) jsTask.pipe($.uglify());
-    jsTask.pipe($.uglify());
-
-    jsTask
+    .pipe($.concat('bower.js'))
+    .pipe($.uglify())
     .pipe($.rename({suffix: '.min'}))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
-
-    jsTask = gulp.src('./src/js/core/index/bower/**/*.js');
-    if ( !config.isDev ) jsTask.pipe($.uglify());
-    jsTask.pipe($.concat('index.bower.js'))
-    .pipe($.rename({suffix: '.min'}))
-    .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
   }
-
-  jsTask = gulp.src('./src/js/core/index/index.js');
-  jsTask.pipe($.concat('index.js'))
-  .pipe(gulp.dest(path.join(config.dest, "js")));
 
   jsTask = streamqueue(
     { objectMode: true },
-    gulp.src(['./src/js/base/**/*.js', './src/js/common.js'])
+    gulp.src('./src/js/base/**/*.js')
   )
   .pipe($.sourcemaps.init())
   .pipe($.concat('base.js'));
-
   if (!config.isDev) jsTask.pipe($.uglify());
 
   jsTask
@@ -214,14 +207,15 @@ gulp.task('js', function() {
   .pipe($.sourcemaps.write('.'))
   .pipe(gulp.dest(path.join(config.dest, 'js', 'common')));
 
-  jsTask = gulp.src('./src/js/common.jquery.js');
-  if (!config.isDev) jsTask.pipe($.uglify());
-  jsTask
-  .pipe($.rename({suffix: '.min'}))
-  .pipe(gulp.dest(path.join(config.dest, 'js', 'common')));
+  jsTask = gulp.src(['./src/js/index.js', './src/js/joy.js', './src/js/core/**/*.js'])
+  .pipe($.sourcemaps.init())
+  .pipe($.concat('index.js'));
 
-  gulp.src(['./src/js/core/*.js', './src/js/core/!(index)*/**/*.js'])
-  .pipe(gulp.dest(path.join(config.dest, 'js', 'core')));
+  if (!config.isDev) jsTask.pipe($.uglify());
+
+  jsTask.pipe($.rename({suffix: '.min'}))
+  .pipe($.sourcemaps.write('.'))
+  .pipe(gulp.dest(path.join(config.dest, 'js')));
 
   firstInit = false;
 });
