@@ -154,9 +154,10 @@ gulp.task('less', function () {
     'bootstrap.css': {
       screens: 'any'
     }
-  }));
-
-  if (!config.isDev) cssTask = cssTask.pipe($.cssmin({keepSpecialComments : 0}));
+  }))
+  .pipe($.concat('common.css'))
+  .pipe(gulp.dest(path.join(config.dest, 'css')))
+  .pipe($.cssmin({keepSpecialComments : 0}));
 
   return cssTask
     .pipe($.rename({
@@ -172,9 +173,9 @@ gulp.task('less', function () {
 ====================================================================*/
 
 gulp.task('js', function() {
-  var jsTask;
+
   if ( firstInit ) {
-    jsTask = gulp.src(
+    gulp.src(
       bowerFiles({
         filter:'**/*.js',
         // debugging: true,
@@ -196,46 +197,36 @@ gulp.task('js', function() {
       })
     )
     .pipe($.sourcemaps.init())
-    .pipe($.concat('bower.js'));
-
-    // if ( !config.isDev ) jsTask.pipe($.uglify());
-    jsTask.pipe($.uglify());
-
-    jsTask
+    .pipe($.concat('bower.js'))
+    // .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')))
+    .pipe($.uglify())
     .pipe($.rename({suffix: '.min'}))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
 
-    jsTask = gulp.src('./src/js/core/index/bower/**/*.js');
-    if ( !config.isDev ) jsTask.pipe($.uglify());
-    jsTask.pipe($.concat('index.bower.js'))
+    gulp.src('./src/js/core/index/bower/**/*.js')
+    .pipe($.concat('index.bower.js'))
+    // .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')))
+    .pipe($.uglify())
     .pipe($.rename({suffix: '.min'}))
     .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
   }
 
-  jsTask = gulp.src('./src/js/core/index/index.js');
-  jsTask.pipe($.concat('index.js'))
-  .pipe(gulp.dest(path.join(config.dest, "js")));
-
-  jsTask = streamqueue(
+  streamqueue(
     { objectMode: true },
     gulp.src(['./src/js/base/**/*.js', './src/js/common.js'])
   )
   .pipe($.sourcemaps.init())
-  .pipe($.concat('base.js'));
-
-  if (!config.isDev) jsTask.pipe($.uglify());
-
-  jsTask
+  .pipe($.concat('base.js'))
+  .pipe(gulp.dest(path.join(config.dest, 'js', 'common')))
+  .pipe($.uglify())
   .pipe($.rename({suffix: '.min'}))
   .pipe($.sourcemaps.write('.'))
   .pipe(gulp.dest(path.join(config.dest, 'js', 'common')));
 
-  jsTask = gulp.src('./src/js/common.jquery.js');
-  if (!config.isDev) jsTask.pipe($.uglify());
-  jsTask
-  .pipe($.rename({suffix: '.min'}))
-  .pipe(gulp.dest(path.join(config.dest, 'js', 'common')));
+  gulp.src('./src/js/core/index/index.js')
+  .pipe($.concat('index.js'))
+  .pipe(gulp.dest(path.join(config.dest, "js")));
 
   gulp.src('./src/js/normal/**/*.js')
   .pipe(gulp.dest(path.join(config.dest, 'js', 'normal')));

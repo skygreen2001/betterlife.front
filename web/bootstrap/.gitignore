@@ -8,7 +8,9 @@
 /www/fonts/glyphicons-halflings-regular.woff2
 /www/images/favicon.ico
 /www/favicon.ico
-/www/css/common.min.css
-/www/js/base.min.js
-/www/js/base.min.js.map
-/www/js/common.min.js
+/www/css/common.css
+# /www/css/common.min.css
+# /www/js/common/bower
+/www/js/common/base.js
+# /www/js/common/base.min.js
+# /www/js/common/base.min.js.map
