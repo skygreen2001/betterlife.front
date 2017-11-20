@@ -4,6 +4,8 @@
 
 ## 简介说明
 
+专注于前端开发，并提供可供快速开发使用的通用前端模版
+
 框架目标定义分为三部分:
 * Html5开发生成Native原生应用[iOS,Andriod]
   - `AngularJS`    [AngularJS + Mobile Angular UI + jQuery WeUI]

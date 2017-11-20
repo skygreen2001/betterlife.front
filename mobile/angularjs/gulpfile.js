@@ -137,12 +137,12 @@ gulp.task('images', function () {
   gulp.src('./src/images/favicon.ico')
   .pipe(gulp.dest(config.dest));
 
-  gulp.src('src/images/**/*')
+  gulp.src(['src/img/!(phonegap)*/**/*', 'src/img/*.*'])
   // .pipe(image())
-  .pipe(gulp.dest(path.join(config.dest, 'images')));
+  .pipe(gulp.dest(path.join(config.dest, 'img')));
 
   return gulp.src(config.vendor.images)
-         .pipe(gulp.dest(path.join(config.dest, 'images', "weui")));
+         .pipe(gulp.dest(path.join(config.dest, 'img', "weui")));
 });
 
 /*==================================

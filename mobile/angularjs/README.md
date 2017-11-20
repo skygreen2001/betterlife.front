@@ -70,6 +70,22 @@
 * src/js/controllers: Js控制器层文件目录
 * src/js/services   : Js服务层文件目录
 
+## 发布部署
+
+- 安装PhoneGap
+  ```
+  > sudo npm install -g phonegap
+  ```
+
+- 部署到苹果手机iOS平台
+  ```
+  > phonegap run ios
+  ```
+
+- 部署到安卓手机Andriod平台
+  ```
+  > phonegap run android
+  ```
 
 ## 学习资料
 
@@ -94,3 +110,5 @@
   * Github: https://github.com/lihongxun945/jquery-weui
   * Light7: http://www.light7.cn/
   * SUI   : http://m.sui.taobao.org/
+
+- PhoneGap: https://phonegap.com/
