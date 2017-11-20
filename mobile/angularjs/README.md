@@ -79,12 +79,17 @@
 
 - 部署到苹果手机iOS平台
   ```
-  > phonegap run ios
+  > sudo phonegap run ios
   ```
 
 - 部署到安卓手机Andriod平台
   ```
-  > phonegap run android
+  > sudo phonegap run android
+  ```
+
+- 查看支持的设备平台
+  ```
+  > sudo phonegap platform ls
   ```
 
 ## 学习资料
@@ -111,4 +116,5 @@
   * Light7: http://www.light7.cn/
   * SUI   : http://m.sui.taobao.org/
 
-- PhoneGap: https://phonegap.com/
+- PhoneGap     : https://phonegap.com/
+- PhoneGap Docs: http://docs.phonegap.com/getting-started/
