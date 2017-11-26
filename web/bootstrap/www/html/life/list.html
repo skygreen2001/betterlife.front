@@ -5,14 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Betterlife Front UI</title>
 
     <link rel="stylesheet" href="../../css/common.min.css">
     <script type="text/javascript" src="../../js/common/base.min.js"></script>
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 <body>
+    <!-- main nav begin -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-container">
         <div class="navbar-header">
@@ -62,7 +70,7 @@
 
             <li><a id="btn-layout-container" href="#"><i class="glyphicon glyphicon-resize-small"></i></a></li>
           </ul>
-        </div>
+        </div><!--/.nav-collapse -->
         <div id="searchform-header" class="hidden">
           <div id="searchform-header-inner">
             <form method="get" action="" class="header-searchform">
@@ -74,16 +82,21 @@
       </div>
     </nav>
 
+    <!-- /main nav end -->
 
+    <!-- page container begin -->
     <div class="page-container">
+        <!-- page content begin -->
         <div class="page-content">
-
-                        <div class="sidebar page-sidebar">
+            <!-- main sidebar begin -->
+            
+            <div class="sidebar page-sidebar">
               <div class="sidebar-content">
                 <ul class="navigation-header">
                   <li ><a href="#"><i class="icon-th-list" title="功能导航"></i></a></li>
                 </ul>
                 <ul class="sidebar-nav">
+                  <!-- main -->
                   <li><a href="../../html/home.html"><i class="icon-dashboard"></i> <span>控制台</span></a></li>
                   <li><a href="../../html/blog/list.html"><i class="icon-dashboard"></i> <span>读书</span></a></li>
                   <li data-role="dropdown">
@@ -136,9 +149,12 @@
               </div>
             </div>
 
+            <!-- /main sidebar end -->
 
+            <!-- main content begin -->
             <div class="content-wrapper">
               <div class="main-content">
+                <!-- page header begin -->
                 <div class="row">
                   <div class="breadcrumb-line">
                     <ul class="breadcrumb">
@@ -147,7 +163,9 @@
                     </ul>
                   </div>
                 </div>
+                <!-- /page header end -->
 
+                <!-- content area begin -->
                 <div class="container-fluid home">
                   <div class="row col-xs-12">
                     <section class="section container-fluid">
@@ -157,17 +175,22 @@
                     </section>
                   </div>
                 </div>
+                <!-- /content area end -->
               </div>
             </div>
+            <!-- /main content end -->
 
             <div class="clearfix"></div>
         </div>
+        <!-- /page content end -->
     </div>
+    <!-- /page container end -->
 
-
-        <footer class="text-muted">
+    <!-- footer begin -->
+    
+    <footer class="text-muted">
         <div id="footer-inner" class="container clr">
-            <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div>
+            <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div><!-- #copyright -->
         </div>
     </footer>
 
@@ -175,6 +198,7 @@
     <script type="text/javascript" src="../../js/normal/common.js"></script>
     <script type="text/javascript" src="../../js/normal/layout.js"></script>
 
+    <!-- /footer end -->
     <script type="text/javascript">
       $(function(){
         var offset = $(window).height() - $(".navbar-container").height() - $(".breadcrumb-line").height() -$("footer").height();

@@ -5,14 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Betterlife Front UI</title>
 
     <link rel="stylesheet" href="../css/common.min.css">
     <script type="text/javascript" src="../js/common/base.min.js"></script>
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 <body class="index">
+    <!-- nav begin -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-container">
         <div class="navbar-header">
@@ -62,7 +70,7 @@
 
             <li><a id="btn-layout-container" href="#"><i class="glyphicon glyphicon-resize-small"></i></a></li>
           </ul>
-        </div>
+        </div><!--/.nav-collapse -->
         <div id="searchform-header" class="hidden">
           <div id="searchform-header-inner">
             <form method="get" action="" class="header-searchform">
@@ -74,7 +82,9 @@
       </div>
     </nav>
 
+    <!-- /nav end-->
 
+    <!--content begin-->
     <div id="main-content-container" class="container-fluid">
       <div class="page" id="page1">
         <div class="container section-header-container">
@@ -130,6 +140,7 @@
             </p>
             <i class="icon-quote-right"></i>
           </div>
+          <!-- <p class="bl-line"></p> -->
           <div class="row">
             <div class="col-md-4 active" data-id="1">
               <div>
@@ -215,10 +226,11 @@
           </div>
       </div>
 
-
-          <footer class="text-muted">
+      <!-- footer begin -->
+      
+    <footer class="text-muted">
         <div id="footer-inner" class="container clr">
-            <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div>
+            <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div><!-- #copyright -->
         </div>
     </footer>
 
@@ -226,9 +238,11 @@
     <script type="text/javascript" src="../js/normal/common.js"></script>
     <script type="text/javascript" src="../js/normal/layout.js"></script>
 
+      <!-- /footer end -->
     </div>
-
-        <script src="js/common/bower/index.bower.min.js"></script>
+    <!-- /content end -->
+    
+    <script src="js/common/bower/index.bower.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

@@ -40,6 +40,7 @@
 * **安装开发工具 IDE**
 
   Atom: https://atom.io/
+  IDE : https://ide.atom.io/
 
   - `Atom` 推荐安装 Package
 

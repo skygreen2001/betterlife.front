@@ -32,9 +32,13 @@
     min-width: @width-min;
   }
   .navbar{
-    background-color: transparent;
-    .hover_animate;
+    border-radius: 0px;
+    margin-bottom: 0px;
     &.navbar-fixed-top{
+      background-color: transparent;
+    }
+    .hover_animate;
+    &.navbar-inverse{
       border-bottom-color: transparent;
     }
     .navbar-container {
@@ -59,10 +63,12 @@
       }
     }
     &.nav-scroll{
-      background-color: rgba(0,0,0,0.6)!important;
+      &.navbar-fixed-top{
+        background-color: rgba(0,0,0,0.6)!important;
+      }
       .hover_animate;
       z-index: 11111;
-      &.navbar-fixed-top{
+      &.navbar-inverse{
         border-bottom-color: #222;
       }
       .navbar-container {
@@ -128,10 +134,10 @@
       margin: 0 auto 30px;
       background-color: transparent;
       border: 2px solid #fff;
-      width: 144px;
-      height: 144px;
+      width: @logo-size;
+      height: @logo-size;
+      line-height: @logo-size;
       font-size: 108px;
-      line-height: 140px;
       display: block;
       font-weight: 500;
       color: #fff;
@@ -353,7 +359,7 @@
           div{
             font-size: 5px;
             font-family: arial;
-            margin-top: 48px;
+            margin-top: 44px;
             color: #999;
           }
         }
