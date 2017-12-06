@@ -24,15 +24,15 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle  collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle  collapsed" id="btn-toggle-navbar" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <button type="button" class="navbar-toggle collapsed" id="btn-toggle-sidebar" data-toggle="collapse" data-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
             <span class="sr-only"></span>
             <i class="glyphicon glyphicon-briefcase"></i>
-          </button>
-          <button id="btn-toggle-sidebar" type="button" class="navbar-toggle collapsed">
-              <span class="sr-only"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">
             <i class="glyphicon glyphicon-grain"></i> Betterlife Front UI
@@ -88,10 +88,12 @@
     <div id="main-content-container" class="container-fluid">
       <div class="page" id="page1">
         <div class="container section-header-container">
-          <span class="bb-icon">B</span>
-          <p class="lead">Betterlife Front UI is the most popular front-end framework for developing responsive, web first projects on the web browser.</p>
-          <p class="lead"><a href="https://github.com/skygreen2001/betterlife.front/archive/master.zip" target="_blank" class="btn btn-outline-inverse btn-lg">下载 Betterlife Front UI</a></p>
-          <p class="version">版本 v1.0.0</p>
+          <div class="bb-lead-core">
+            <span class="bb-icon">B</span>
+            <p class="lead">Betterlife Front UI is the most popular front-end framework for developing responsive, web first projects on the web browser.</p>
+            <p class="lead"><a href="https://github.com/skygreen2001/betterlife.front/archive/master.zip" target="_blank" class="btn btn-outline-inverse btn-lg">下载 Betterlife Front UI</a></p>
+            <p class="version">版本 v1.0.0</p>
+          </div>
         </div>
         <div class="starfield"></div>
       </div>
@@ -230,7 +232,7 @@
       
     <footer class="text-muted">
         <div id="footer-inner" class="container clr">
-            <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div><!-- #copyright -->
+            <div id="copyright" class="clr" role="contentinfo">© 2017-2020 Betterlife - All Rights Reserved.&nbsp;<a title="License" href="https://github.com/skygreen2001/betterlife.front/blob/master/LICENSE" target="_blank">License</a>&nbsp;| <a title="Help" href="https://github.com/skygreen2001/betterlife.front" target="_blank">Help</a></div>
         </div>
     </footer>
 
@@ -241,7 +243,7 @@
       <!-- /footer end -->
     </div>
     <!-- /content end -->
-    
+
     <script src="js/common/bower/index.bower.min.js"></script>
     <script src="js/index.js"></script>
 </body>

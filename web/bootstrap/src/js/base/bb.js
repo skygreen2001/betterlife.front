@@ -16,7 +16,8 @@
     ua      : navigator.userAgent.toLowerCase(),
     browser : {
       trident : /trident/.test(ua),//IE内核
-      mobile  : !!ua.match(/applewebkit.*mobile.*/) || !!ua.match(/applewebkit/),
+      iPad    : ua.match(/(ipad).*os\s([\d_]+)/),
+      mobile  : (!!ua.match(/\(i[^;]+;( u;)? cpu.+mac os x/) || /android/.test(ua) || /linux/.test(ua)) && (!(ua.match(/(ipad).*os\s([\d_]+)/))),
       android : /android/.test(ua) || /linux/.test(ua),
       ios     : !!ua.match(/\(i[^;]+;( u;)? cpu.+mac os x/)
     },

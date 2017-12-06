@@ -45,3 +45,8 @@
   * PureCss          : https://purecss.io/start/  
   * HTML5 Boilerplate: https://html5boilerplate.com/
   * generator-h5bp   : https://github.com/h5bp/generator-h5bp
+
+- 🏆
+  * Apple  : https://www.apple.com
+  * Spring : http://spring.io/
+  * Behance: https://www.behance.net/
