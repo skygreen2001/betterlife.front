@@ -36,7 +36,6 @@
     "jsrender": "^0.9.83",
     "bootbox.js": "bootbox#^4.4.0",
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
-    "icomoon-bower": "^0.1.2",
     "bootstrap-multiselect": "^0.9.13",
     "select2": "^4.0.3",
     "bootstrap-switch": "^3.3.4",
@@ -46,6 +45,7 @@
     "jquery": "^3.1.1"
   },
   "_dependencies_ignored": {
+    "icomoon-bower": "^0.1.2",
     "lodash": "^4.17.4",
     "underscore": "^1.8.3",
     "jsviews": "^0.9.83",
