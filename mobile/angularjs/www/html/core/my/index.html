@@ -6,22 +6,27 @@
 
 <div class="scrollable">
   <div class="scrollable-content view">
+    <div class="section section-tabs">
+      <ui-shared-state id="activeTab" default="1"></ui-shared-state>
+      <ul class="nav nav-tabs">
+        <li ui-class="{'active': activeTab == 1}">
+          <a ui-set="{'activeTab': 1}">关于我们</a>
+        </li>
+        <li ui-class="{'active': activeTab == 2}">
+          <a ui-set="{'activeTab': 2}">联系我们</a>
+        </li>
+        <li ui-class="{'active': activeTab == 3}">
+          <a ui-set="{'activeTab': 3}">发展历程</a>
+        </li>
+        <li ui-class="{'active': activeTab == 4}">
+          <a ui-set="{'activeTab': 4}">新闻动态</a>
+        </li>
+        <li ui-class="{'active': activeTab == 5}">
+          <a ui-set="{'activeTab': 5}">成功案例</a>
+        </li>
+      </ul>
+    </div>
     <div class="main-content">
-      <div class="section">
-        <ui-shared-state id="activeTab" default="1"></ui-shared-state>
-        <ul class="nav nav-tabs">
-          <li ui-class="{'active': activeTab == 1}">
-            <a ui-set="{'activeTab': 1}">关于我们</a>
-          </li>
-          <li ui-class="{'active': activeTab == 2}">
-            <a ui-set="{'activeTab': 2}">发展历程</a>
-          </li>
-          <li ui-class="{'active': activeTab == 3}">
-            <a ui-set="{'activeTab': 3}">联系我们</a>
-          </li>
-        </ul>
-      </div>
-
       <div ui-if="activeTab == 1">
         <div class="section we-header">
           <i class="fa fa-long-arrow-right fa-2x" aria-hidden="true"></i>
@@ -39,7 +44,7 @@
         </div>
       </div>
 
-      <div ui-if="activeTab == 2">
+      <div ui-if="activeTab == 3">
         <div class="section we-header">
           <i class="fa fa-long-arrow-right fa-2x" aria-hidden="true"></i>
           <h4><div>发展历程</div></h4>
@@ -71,7 +76,7 @@
         </div>
       </div>
 
-      <div ui-if="activeTab == 3">
+      <div ui-if="activeTab == 2">
         <div class="section we-header">
           <i class="fa fa-long-arrow-right fa-2x" aria-hidden="true"></i>
           <h4><div>联系我们</div></h4>
@@ -85,7 +90,7 @@
             </span>
           </p>
           <p class="contact-title">服务热线</p>
-          <p class="contact-intro">400-064-6963</p>
+          <p class="contact-intro">400-888-8888</p>
         </div>
         <div class="section contact-info">
           <p class="contact-ico">
@@ -95,7 +100,7 @@
             </span>
           </p>
           <p class="contact-title">微信号</p>
-          <p class="contact-intro">itasktour01</p>
+          <p class="contact-intro">skygreen2001</p>
         </div>
         <div class="section contact-info">
           <p class="contact-ico">
@@ -105,7 +110,7 @@
             </span>
           </p>
           <p class="contact-title">商务邮箱</p>
-          <p class="contact-intro">hi@itasktour.com</p>
+          <p class="contact-intro">skygreen2001@163.com</p>
         </div>
       </div>
     </div>

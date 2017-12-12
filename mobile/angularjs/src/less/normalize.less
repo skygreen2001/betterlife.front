@@ -204,14 +204,33 @@ a:hover,a:focus,a:active {
     padding: 10px 15px;
   }
 }
+.section-tabs{
+  padding: 10px 0;
+}
 
 .nav-tabs {
+  display: -webkit-box;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  overflow-y: visible;
+  white-space: nowrap;
   a {
     color: #333;
   }
-  &>li.active>a, &>li.active>a:focus, &>li.active>a:hover {
-    color: #fff;
-    background-color: @color-main;
+  &>li{
+    float: none;
+    padding: 4px 15px;
+    a {
+      padding: 0px;
+    }
+    &.active>a, &.active>a:focus, &.active>a:hover {
+      color: @color-main;
+      background-color: #fff;
+      padding: 0px !important;
+      padding-bottom: 8px !important;
+      border: 0px;
+      border-bottom: 5px solid @color-main;
+    }
   }
 }
 
