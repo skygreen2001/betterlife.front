@@ -18,7 +18,7 @@
             <li><a href="http://www.iqiyi.com/" target="_blank">电影</a></li>
             <li><a href="https://y.qq.com/" target="_blank">音乐</a></li>
             <li><a href="http://36kr.com/" target="_blank">研发</a></li>
-            <li ng-class="{true:'dropdown open', false:'dropdown'}[isOtherDrop]" ng-click="isOtherDrop = !isOtherDrop">
+            <li ng-class="{true:'dropdown open', false:'dropdown'}[isOtherDrop]" ng-click="isOtherDrop = !isOtherDrop; isUserDrop = false;">
               <a href="#" aria-haspopup="true" aria-expanded="false">
                 其它
                 <span class="caret"></span>
@@ -29,7 +29,7 @@
                 <li><a href="https://www.pengfu.com/" target="_blank">幽默</a></li>
               </ul>
             </li>
-            <li ng-class="{true:'dropdown open', false:'dropdown'}[isUserDrop]" ng-click="isUserDrop = !isUserDrop">
+            <li ng-class="{true:'dropdown open', false:'dropdown'}[isUserDrop]" ng-click="isUserDrop = !isUserDrop; isOtherDrop = false;">
               <a href="#" aria-haspopup="true" aria-expanded="false">
                 <span class="fa fa-user"></span>
                 <span class="username">skygreen</span>
