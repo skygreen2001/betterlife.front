@@ -1,9 +1,9 @@
 /bower_components
 /node_modules
 
-/www/fonts
-# www/img/favicon.ico
-# www/favicon.ico
+# /www/fonts
+# /www/img/favicon.ico
+# /www/favicon.ico
 
 /platforms
 /plugins

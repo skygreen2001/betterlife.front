@@ -2,9 +2,9 @@
 /node_modules
 
 
-/www/css/fonts
-/www/images/favicon.ico
-/www/favicon.ico
+# /www/css/fonts
+# /www/images/favicon.ico
+# /www/favicon.ico
 
 
 # /www/css/common.css
