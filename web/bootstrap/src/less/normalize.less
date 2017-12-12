@@ -102,6 +102,7 @@ a{
           a{
             height: 36px;
             line-height: 36px;
+            padding: 0 40px;
             &:hover,&:active,&.active {
               color: #eee;
               border: 0px;
@@ -111,7 +112,9 @@ a{
               margin-right: 5px;
             }
           }
-          li:last-child{a{border-bottom: 0px;}}
+          li:last-child{
+            border-bottom: 0px !important;
+          }
         }
       }
       #btn-layout-container{

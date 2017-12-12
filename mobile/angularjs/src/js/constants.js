@@ -10,5 +10,9 @@ angular.
     'CURRENT_PAGE': 1,
     'SERVER_RUN'  : '',
     'SERVER_TEST' : '',
-    'USERNAME'    : 'skygreen2001'
+    'USERNAME'    : 'skygreen2001',
+    // LAYOUT:布局显示
+    //   1:顶部点击右侧菜单下拉，标题居左，左侧显示logo
+    //   2:顶部点击右侧菜单左拉，标题居中，左侧有导航
+    'LAYOUT'      : 1
   });

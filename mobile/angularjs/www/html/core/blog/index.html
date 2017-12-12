@@ -1,0 +1,110 @@
+<div ui-content-for="title">博客列表</div>
+
+<div ui-content-for="navbarAction">
+  <a href="#index" class="btn"><i class="fa fa-thumbs-up">编辑</i></a>
+</div>
+
+<div class="scrollable" ng-controller="BlogController as blogCtrl">
+  <div class="scrollable-content list">
+
+    <div class="list-group">
+      <div class="list-group-item list-group-item-home weui-list-group">
+        <div class="weui-panel__bd">
+          <div class="weui-cells">
+
+            <a class="weui-cell weui-cell_access" href="#/blog/view">
+              <div class="weui-cell__hd">
+                <img class="weui-media-box_appmsg_thumb" src="https://lorempixel.com/900/500?r=1" alt="美图">
+              </div>
+              <div class="weui-cell__bd weui-cell_primary">
+                  <h4 class="weui-media-box__title">禅意</h4>
+                  <p class="weui-media-box__desc">迷途知返，回头是岸</p>
+              </div>
+              <span class="weui-date__ft">{{ tripCtrl.lastModified }}</span>
+            </a>
+
+            <a class="weui-cell weui-cell_access" href="#/blog/view">
+              <div class="weui-cell__hd">
+                <img class="weui-media-box_appmsg_thumb" src="https://lorempixel.com/900/500?r=2" alt="美图">
+              </div>
+              <div class="weui-cell__bd weui-cell_primary">
+                  <h4 class="weui-media-box__title">影图</h4>
+                  <p class="weui-media-box__desc">美不胜收，爱美之心</p>
+              </div>
+              <span class="weui-date__ft">{{ tripCtrl.lastModified }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-group-item" ng-click="blogCtrl.showBlog()">
+        <div>
+          <p>一文搞懂物联网、云计算、大数据、人工智能、共享单车、在线支付之间的关系</p>
+        </div>
+        <div>
+          <img src="https://lorempixel.com/900/500?r=2" alt="美图">
+        </div>
+        <div class="list-item-tail">
+          <p class="lf"><i class="fa fa-map-marker"></i> 上海科技中心</p>
+          <p class="rf">BB开心网 6评论 30分钟前</p>
+        </div>
+      </div>
+
+      <div class="list-group-item"  ng-click="blogCtrl.showBlog(trip)">
+        <div>
+          <p>天使、A、B、C轮、IPO投资是什么意思</p>
+        </div>
+        <div class="row">
+          <div class="col-xs-4"><img src="https://lorempixel.com/900/500?r=3" alt="美图"></div>
+          <div class="col-xs-4"><img src="https://lorempixel.com/900/500?r=3" alt="美图"></div>
+          <div class="col-xs-4"><img src="https://lorempixel.com/900/500?r=3" alt="美图"></div>
+        </div>
+        <div class="list-item-tail">
+          <p>BB问答 66回答 刚刚</p>
+        </div>
+      </div>
+
+      <div class="list-group-item"  ng-click="blogCtrl.showBlog()">
+        <div>
+          <p>中国古代科技成就: 每一个都影响了全世界！至今依然领先！</p>
+        </div>
+        <div class="row">
+          <div class="col-sm-4"><img src="https://lorempixel.com/900/500?r=3" alt="美图"></div>
+          <div class="col-sm-4"><img src="https://lorempixel.com/900/500?r=3" alt="美图"></div>
+          <div class="col-sm-4"><img src="https://lorempixel.com/900/500?r=3" alt="美图"></div>
+        </div>
+        <div class="list-item-tail">
+          <p>BB科技 88评论 3小时前</p>
+        </div>
+      </div>
+
+      <div class="list-group-item list-group-item-home weui-list-group">
+        <div class="weui-panel__bd">
+          <div class="weui-cells">
+            <a class="weui-cell weui-cell_access" href="#/blog/view">
+              <div class="weui-cell__bd weui-cell_primary">
+                  <h4 class="weui-media-box__title">大胆猜想家: 一亿年后世界怎么样？十万年后人类将永生？</h4>
+                  <p class="weui-media-box__desc">BB之星 5评论</p>
+              </div>
+              <div class="weui-cell__hd cell-img-right">
+                <img class="weui-media-box_appmsg_thumb" src="https://lorempixel.com/900/500?r=1" alt="美图">
+              </div>
+            </a>
+
+            <a class="weui-cell weui-cell_access" href="#/blog/view">
+              <div class="weui-cell__bd weui-cell_primary">
+                  <h4 class="weui-media-box__title">影图</h4>
+                  <p class="weui-media-box__desc">美不胜收，爱美之心</p>
+              </div>
+              <div class="weui-cell__hd cell-img-right">
+                <img class="weui-media-box_appmsg_thumb" src="https://lorempixel.com/900/500?r=2" alt="美图">
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

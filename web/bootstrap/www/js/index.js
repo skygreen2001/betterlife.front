@@ -16,6 +16,7 @@ $(function(){
     if ($(document).scrollTop() <= 0) {
       $(".navbar").removeClass("nav-scroll");
       if ($_.browser.mobile) $("a.navbar-brand,#btn-toggle-navbar").css("display","none");
+      $("#navbar").removeClass("in");
     } else {
       $(".navbar").addClass("nav-scroll");
       if ($_.browser.mobile) $("a.navbar-brand,#btn-toggle-navbar").css("display","block");

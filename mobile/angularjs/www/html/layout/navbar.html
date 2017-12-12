@@ -1,0 +1,52 @@
+
+        <div class="navbar-header">
+          <button type="button" ng-class="{true:'navbar-toggle', false:'navbar-toggle collapsed'}[isNavbar]" id="btn-toggle-navbar" ng-click="isNavbar = !isNavbar; isSearh=false;" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <button type="button" ng-class="{true:'navbar-toggle', false:'collapsed navbar-toggle'}[isSearh]" id="btn-toggle-searhbar"  ng-click="isSearh = !isSearh; isNavbar=false;" aria-expanded="false" aria-controls="searhbar">
+            <span class="sr-only"></span>
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+        <div id="nav-container" ng-class="{true:'', false:'collapse'}[isNavbar]">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">首页</a></li>
+            <li><a href="/html/blog/list.html">读书</a></li>
+            <li><a href="http://www.iqiyi.com/" target="_blank">电影</a></li>
+            <li><a href="https://y.qq.com/" target="_blank">音乐</a></li>
+            <li><a href="http://36kr.com/" target="_blank">研发</a></li>
+            <li ng-class="{true:'dropdown open', false:'dropdown'}[isOtherDrop]" ng-click="isOtherDrop = !isOtherDrop">
+              <a href="#" aria-haspopup="true" aria-expanded="false">
+                其它
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dLabel" ng-init="isOtherDrop=false">
+                <li><a href="https://www.jd.com/" target="_blank">购物</a></li>
+                <li><a href="/html/model/preview.html">话题</a></li>
+                <li><a href="https://www.pengfu.com/" target="_blank">幽默</a></li>
+              </ul>
+            </li>
+            <li ng-class="{true:'dropdown open', false:'dropdown'}[isUserDrop]" ng-click="isUserDrop = !isUserDrop">
+              <a href="#" aria-haspopup="true" aria-expanded="false">
+                <span class="fa fa-user"></span>
+                <span class="username">skygreen</span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dLabel" ng-init="isUserDrop=false">
+                <li><a href="#reset"><i class="fa fa-edit"></i>修改密码</a></li>
+                <li><a href="/index.html"><i class="fa fa-sign-out"></i>退出</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div id="searchform-header" ng-class="{true:'', false:'hidden'}[isSearh]">
+          <div id="searchform-header-inner">
+            <form method="get" action="" class="header-searchform">
+              <input type="search" class="form-control" name="search" autocomplete="off" autofocus="autofocus" placeholder="搜你所想">
+            </form>
+            <i id="searchform-header-close" class="fa fa-remove search-toggle"></i>
+          </div>
+        </div>

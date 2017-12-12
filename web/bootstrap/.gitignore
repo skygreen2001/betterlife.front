@@ -1,13 +1,12 @@
 /bower_components
 /node_modules
 
-/www/fonts/glyphicons-halflings-regular.eot
-/www/fonts/glyphicons-halflings-regular.svg
-/www/fonts/glyphicons-halflings-regular.ttf
-/www/fonts/glyphicons-halflings-regular.woff
-/www/fonts/glyphicons-halflings-regular.woff2
+
+/www/css/fonts
 /www/images/favicon.ico
 /www/favicon.ico
+
+
 # /www/css/common.css
 # /www/css/common.min.css
 # /www/js/common/bower

@@ -134,7 +134,7 @@ var firstInit = true;
 =====================================*/
 
 gulp.task('images', function () {
-  gulp.src('./src/images/favicon.ico')
+  gulp.src('./src/img/favicon.ico')
   .pipe(gulp.dest(config.dest));
 
   gulp.src(['src/img/!(phonegap)*/**/*', 'src/img/*.*'])
