@@ -14573,8 +14573,14 @@ body.login .login-container main .content-wrapper .content .login-form .content-
 body.login .login-container main .content-wrapper .content .login-form button[type="submit"] {
   height: 36px;
   font-size: 14px;
-  color: #555;
+  color: #18631b;
   background-color: #77cc6d;
+}
+
+body.login .login-container main .content-wrapper .content .login-form button[type="submit"] i {
+  -webkit-transition: transform 0.2s ease-out;
+  -o-transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
 }
 
 body.login .login-container main .content-wrapper .content .login-form button[type="submit"]:hover,
@@ -14585,12 +14591,9 @@ body.login .login-container main .content-wrapper .content .login-form button[ty
   transition: all 0.3s ease;
 }
 
-body.login .login-container main .content-wrapper .content .login-form button[type="submit"] .icon-circle-right2:before {
-  content: "\f138";
-  position: absolute;
-  font-size: 18px;
-  margin-left: 6px;
-  margin-top: 1px;
+body.login .login-container main .content-wrapper .content .login-form button[type="submit"]:hover i,
+body.login .login-container main .content-wrapper .content .login-form button[type="submit"]:active i {
+  transform: translateX(15px);
 }
 
 body.login .login-container main .content-wrapper .content .login-form .test-info {
