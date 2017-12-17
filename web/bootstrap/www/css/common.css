@@ -13363,6 +13363,13 @@ footer #footer-inner a:hover {
 @media (max-width: 319px) {
   .navbar .navbar-container .navbar-header a.navbar-brand {
     width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-rainbow {
+    display: none;
   }
 }
 
