@@ -4,9 +4,12 @@
   &nbsp;
 </div>
 
-<div class="scrollable">
+<div id="about-container" class="scrollable" ng-controller="AboutController as aboutCtrl">
   <div class="scrollable-content view">
-    <div class="section section-tabs">
+    <div class="section">
+      <img src="https://lorempixel.com/900/500?r=1" height="200" alt="美图">
+    </div>
+    <div id="nav-tabs-about" class="section section-tabs">
       <ui-shared-state id="activeTab" default="1"></ui-shared-state>
       <ul class="nav nav-tabs">
         <li ui-class="{'active': activeTab == 1}">

@@ -23,6 +23,7 @@ var app = angular.module('bb', [
   // final pourpose to integrate gestures into default ui interactions like
   // opening sidebars, turning switches on/off ..
   'mobile-angular-ui.gestures',
+  // 'duScroll',
 
   'bb.service',
   'bb.controllers'
