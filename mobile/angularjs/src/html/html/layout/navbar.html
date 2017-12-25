@@ -1,12 +1,12 @@
 
         <div class="navbar-header">
-          <button type="button" ng-class="{true:'navbar-toggle', false:'navbar-toggle collapsed'}[isNavbar]" id="btn-toggle-navbar" ng-click="isNavbar = !isNavbar; isSearh=false;" aria-expanded="false" aria-controls="navbar">
+          <button type="button" ng-class="{true:'navbar-toggle', false:'navbar-toggle collapsed'}[isNavbar]" id="btn-toggle-navbar" ng-click="isNavbar = !isNavbar; isSearch=false;" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <button type="button" ng-class="{true:'navbar-toggle', false:'collapsed navbar-toggle'}[isSearh]" id="btn-toggle-searhbar"  ng-click="isSearh = !isSearh; isNavbar=false;" aria-expanded="false" aria-controls="searhbar">
+          <button type="button" ng-class="{true:'navbar-toggle', false:'collapsed navbar-toggle'}[isSearch]" id="btn-toggle-searchbar"  ng-click="isSearch = !isSearch; isNavbar=false;" aria-expanded="false" aria-controls="searchbar">
             <span class="sr-only"></span>
             <!-- <i class="fa fa-briefcase"></i> -->
             <i class="fa fa-search"></i>
@@ -43,11 +43,11 @@
             </li>
           </ul>
         </div><!--/.nav-collapse -->
-        <div id="searchform-header" ng-class="{true:'', false:'hidden'}[isSearh]">
-          <div id="searchform-header-inner">
-            <form method="get" action="" class="header-searchform">
+        <div id="searchbar" ng-class="{true:'', false:'hidden'}[isSearch]">
+          <div id="searchbar-inner">
+            <form method="get" action="" class="searchbar-form">
               <input type="search" class="form-control" name="search" autocomplete="off" autofocus="autofocus" placeholder="搜你所想">
             </form>
-            <i id="searchform-header-close" class="fa fa-remove search-toggle"></i>
+            <i id="searchbar-close" class="fa fa-remove search-toggle"></i>
           </div>
         </div>

@@ -8,36 +8,31 @@ $(function(){
     $(".index #page1 .section-header-container").css("margin-top", lead_core_height/2);
   }
   $("#btn-toggle-sidebar").css("display","none");
-  if ($_.browser.mobile) $("a.navbar-brand,#btn-toggle-navbar").css("display","none");
+  // if ($_.browser.mobile) $("a.navbar-brand,#btn-toggle-navbar").css("display","none");
+  $(".navbar-fixed-top").css("opacity","0");
 
   // 顶部导航滚动显示底部挡板效果
   $(document).scrollTop() <= 0 ? $(".navbar").removeClass("nav-scroll") : $(".navbar").addClass("nav-scroll");
   $(document).on("scroll", function() {
     if ($(document).scrollTop() <= 0) {
       $(".navbar").removeClass("nav-scroll");
-      if ($_.browser.mobile) $("a.navbar-brand,#btn-toggle-navbar").css("display","none");
+      // if ($_.browser.mobile) $("a.navbar-brand,#btn-toggle-navbar").css("display","none");;
+      $(".navbar-fixed-top").css("opacity","0");
       $("#navbar").removeClass("in");
     } else {
       $(".navbar").addClass("nav-scroll");
-      if ($_.browser.mobile) $("a.navbar-brand,#btn-toggle-navbar").css("display","block");
+      // if ($_.browser.mobile) $("a.navbar-brand,#btn-toggle-navbar").css("display","block");
+      $(".navbar-fixed-top").css("opacity","1");
     }
   });
 
   $("nav").hover(function() {
     $(".navbar").addClass("nav-scroll");
-    if ($_.browser.mobile) $("a.navbar-brand,#btn-toggle-navbar").css("display","block");
+    // if ($_.browser.mobile) $("a.navbar-brand,#btn-toggle-navbar").css("display","block");
   },function(){
     $(".navbar").removeClass("nav-scroll");
-    if ($_.browser.mobile) $("a.navbar-brand,#btn-toggle-navbar").css("display","none");
-  });
-
-  // 顶部导航条搜索展开
-  $(".search-toggle").click(function(){
-    $("#searchform-header").toggleClass("hidden");
-  });
-
-  $(".page-container").click(function(){
-    $("#searchform-header").addClass("hidden");
+    // if ($_.browser.mobile) $("a.navbar-brand,#btn-toggle-navbar").css("display","none");
+    $(".navbar-fixed-top").css("opacity","0");
   });
 
   //首页内容顶部显示星云效果

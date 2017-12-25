@@ -17,6 +17,6 @@ angular.
 
       $scope.layout   = Constants.LAYOUT;
       $scope.isNavbar = false;
-      $scope.isSearh  = false;
+      $scope.isSearch  = false;
     }
   );

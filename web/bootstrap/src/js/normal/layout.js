@@ -4,6 +4,7 @@ $(function(){
     var urlstatus = false;
     var urlstr    = location.href;
     $(linkName).each(function () {
+      if (!$(this).attr('href')) return;
       var link = $(this).attr('href').replace(/\.\.\//g, "");
       link     = link.substring(0, link.lastIndexOf(".")+1);
       if ( link && ( (urlstr + '/').indexOf(link) > -1) && ( link != '' ) && ( link != '#' ) ) {
@@ -67,15 +68,6 @@ $(function(){
   //左侧导航条点选是否折叠
   $(".navigation-header").click(function(){
     collapse_sidebar();
-  });
-
-  // 顶部导航条搜索展开
-  $(".search-toggle").click(function(){
-    $("#searchform-header").toggleClass("hidden");
-  });
-
-  $(".page-container").click(function(){
-    $("#searchform-header").addClass("hidden");
   });
 
   // 页面整体布局宽窄屏切换
