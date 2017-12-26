@@ -25,3 +25,10 @@
   -ms-transition: all @time ease-in-out;
   -o-transition: all @time ease-in-out;
 }
+
+.text-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-text-shadow: @shadow; // iOS <4.3 & Android <4.1
+     -moz-text-shadow: @shadow;
+      -ms-text-shadow: @shadow;
+          text-shadow: @shadow;
+}

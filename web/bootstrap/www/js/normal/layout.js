@@ -56,7 +56,6 @@ $(function(){
   if ( ($(window).width() > 755) && ($(window).width() < 826) ) collapse_sidebar();
   $(window).resize(function(){
     if ( $(window).width() > 752 ) $(".sidebar").removeAttr("style");
-
   });
 
   //左侧导航条顶部切换按钮提示
@@ -71,7 +70,7 @@ $(function(){
   });
 
   // 页面整体布局宽窄屏切换
-  $("#btn-layout-container").click(function(){
+  $("#btn-layout-small").click(function(){
     if ($(this).find("i").hasClass("glyphicon-resize-full")) {
       $(this).find("i").removeClass("glyphicon-resize-full").addClass("glyphicon-resize-small");
       $(".navbar .navbar-container").removeClass("container");
@@ -122,6 +121,20 @@ $(function(){
       $('.page-sidebar .sidebar-nav > li > a span i').remove();
     }
   }
+
+  //网页过长显示返回到顶部按钮
+  $(document).on("scroll", function() {
+    if ($(document).scrollTop() > $(window).height()-188) {
+      $(".return-top").css("display","block");
+    }else{
+      $(".return-top").css("display","none");
+    }
+  });
+
+  //点击返回顶部
+  $(".return-top").click(function(){
+    $('body,html').animate({scrollTop:0});
+  });
 
   //布局自适应高度，确保footer始终显示在页面底部
   var offset = $(window).height() - $(".navbar-container").height() - $(".breadcrumb-line").height() -$("footer").height();
