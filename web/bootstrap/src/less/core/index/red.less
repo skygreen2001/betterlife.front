@@ -1,0 +1,91 @@
+
+.index_red {
+  .section{
+    &.section-header{
+      .parallax {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        display: block;
+        &.pattern-image{
+          background-size: 100%;
+        }
+        & > img {
+          width: 100%;
+          min-width: 0;
+          min-height: 0;
+        }
+      }
+      h1 {
+        letter-spacing: 0.1em;
+        font-weight: 100;
+        font-size: 6em;
+        font-family: "Slim-Joe";
+        text-transform: uppercase;
+        line-height: 1.213483146em;
+        text-shadow: -2px 2px 0px rgba(0, 0, 0, 0.3), -2px 4px 2px rgba(0, 0, 0, 0.1);
+      }
+      h5 {
+        text-shadow: 0px 0px 11px rgba(0, 0, 0, 0.3);
+        font-size: 1.3em;
+        margin: 0 auto .5em;
+        line-height: 1.5;
+        letter-spacing: 0.125;
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+        font-family: 'Droid Serif',"Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      .section-header .separator {
+        width: 20em;
+
+      }
+      .separator-container {
+        text-align: center;
+        position: relative;
+        z-index: 3;
+      }
+      a.scroll-arrow {
+        font-size: 35px;
+        color: white;
+        width: 50px;
+        line-height: 52px;
+        border-radius: 50%;
+        height: 50px;
+        border: 1px solid white;
+        display: block;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        z-index: 1029;
+        .transform(translateX(-50%));
+        opacity: .9;
+        i {
+          width: 100%;
+          text-align: center;
+        }
+      }
+      .container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        top: 0;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        .content {
+          top: 42%;
+          color: white;
+          text-align: center;
+          text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+          vertical-align: center;
+          line-height: 1.7;
+          position: relative;
+          top: 50%;
+          .transform(translateY(-50%));
+        }
+      }
+    }
+  }
+}

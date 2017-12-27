@@ -26,6 +26,13 @@
   -o-transition: all @time ease-in-out;
 }
 
+.transform(@trans){
+  -webkit-transform: @trans;
+  -moz-transform: @trans;
+  -ms-transform: @trans;
+  transform: @trans;
+}
+
 .text-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
   -webkit-text-shadow: @shadow; // iOS <4.3 & Android <4.1
      -moz-text-shadow: @shadow;

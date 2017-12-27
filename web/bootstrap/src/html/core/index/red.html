@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN" id="index">
+<head>
+@@include('../../layout/header.html', {
+    "title"     : "Betterlife Front UI",
+    "rel-prefix": "../.."
+})
+</head>
+<body class="index_red">
+    <!-- nav begin -->
+@@include('../../layout/navbar.html', {
+    "rel-prefix": "../.."
+})
+    <!-- /nav end-->
+
+    <!--content begin-->
+    <div class="content-wrapper">
+      <div id="main-content-container" class="container-fluid">
+          <div class="section section-header">
+              <div class="parallax pattern-image">
+                  <img src="https://ununsplash.imgix.net/photo-1427434846691-47fc561d1179?fit=crop&amp;fm=jpg&amp;h=700&amp;q=75&amp;w=1050">
+                  <div class="container">
+                      <div class="content">
+                          <h1>Creative Tim</h1>
+                          <div class="separator-container">
+                              <div class="separator line-separator">∎</div>
+                          </div>
+                          <h5>Awesome Bootstrap freebies and templates to build better websites</h5>
+                      </div>
+                  </div>
+              </div>
+              <a href="" data-scroll="true" data-id="#whoWeAre" class="scroll-arrow hidden-xs hidden-sm">
+              <i class="fa fa-angle-down"></i>
+              </a>
+          </div>
+      </div>
+    </div>
+
+    <!-- footer begin -->
+    @@include('../../layout/footer.html',{
+      "rel-prefix": "../.."
+    })
+    <!-- /footer end -->
+    <!-- /content end -->
+
+    <script src="../../js/common/bower/index.bower.min.js"></script>
+    <script src="../../js/index/red.js"></script>
+</body>
+</html>

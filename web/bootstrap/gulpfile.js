@@ -228,6 +228,9 @@ gulp.task('js', function() {
   .pipe($.concat('index.js'))
   .pipe(gulp.dest(path.join(config.dest, "js")));
 
+  gulp.src('./src/js/core/index/index/*.js')
+  .pipe(gulp.dest(path.join(config.dest, "js", "index")));
+
   gulp.src('./src/js/normal/**/*.js')
   .pipe(gulp.dest(path.join(config.dest, 'js', 'normal')));
 
