@@ -12059,15 +12059,15 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dataTables_empty:before {
   display: none !important;
 }
 
-table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child,
-table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child {
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child,
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child {
   position: relative;
   padding-left: 30px;
   cursor: pointer;
 }
 
-table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
-table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
   top: 9px;
   left: 4px;
   height: 14px;
@@ -12080,6 +12080,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
   box-shadow: 0 0 3px #444;
   box-sizing: content-box;
   text-align: center;
+  text-indent: 0 !important;
   font-family: 'Courier New', Courier, monospace;
   line-height: 14px;
   content: '+';
@@ -12090,10 +12091,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
 table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before {
   content: '-';
   background-color: #d33333;
-}
-
-table.dataTable.dtr-inline.collapsed > tbody > tr.child td:before {
-  display: none;
 }
 
 table.dataTable.dtr-inline.collapsed.compact > tbody > tr > td:first-child,
@@ -12134,6 +12131,7 @@ table.dataTable.dtr-column > tbody > tr > th.control:before {
   box-shadow: 0 0 3px #444;
   box-sizing: content-box;
   text-align: center;
+  text-indent: 0 !important;
   font-family: 'Courier New', Courier, monospace;
   line-height: 14px;
   content: '+';
@@ -12161,16 +12159,16 @@ table.dataTable > tbody > tr.child ul.dtr-details {
   padding: 0;
 }
 
-table.dataTable > tbody > tr.child ul.dtr-details li {
+table.dataTable > tbody > tr.child ul.dtr-details > li {
   border-bottom: 1px solid #efefef;
   padding: 0.5em 0;
 }
 
-table.dataTable > tbody > tr.child ul.dtr-details li:first-child {
+table.dataTable > tbody > tr.child ul.dtr-details > li:first-child {
   padding-top: 0;
 }
 
-table.dataTable > tbody > tr.child ul.dtr-details li:last-child {
+table.dataTable > tbody > tr.child ul.dtr-details > li:last-child {
   border-bottom: none;
 }
 
@@ -15361,6 +15359,21 @@ body.login .login-container footer #footer-inner a:hover {
   }
 }
 
+.index_red .container-fluid {
+  -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+  -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+  transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+  left: 0;
+  background-color: white;
+}
+
+.index_red .section.section-header {
+  position: relative;
+  background-color: #fff;
+  padding: 0px;
+  font-size: 110%;
+}
+
 .index_red .section.section-header .parallax {
   width: 100%;
   height: 100vh;
@@ -15398,14 +15411,33 @@ body.login .login-container footer #footer-inner a:hover {
   font-family: 'Droid Serif', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.index_red .section.section-header .section-header .separator {
-  width: 20em;
-}
-
 .index_red .section.section-header .separator-container {
   text-align: center;
   position: relative;
   z-index: 3;
+}
+
+.index_red .section.section-header .separator-container .separator {
+  width: 20em;
+  margin: 0em auto 2em;
+  color: #fff;
+}
+
+.index_red .section.section-header .separator-container .separator.line-separator::before,
+.index_red .section.section-header .separator-container .separator.line-separator::after {
+  display: block;
+  width: 40%;
+  content: " ";
+  margin-top: 14px;
+  border: 1px solid white;
+}
+
+.index_red .section.section-header .separator-container .separator.line-separator::before {
+  float: left;
+}
+
+.index_red .section.section-header .separator-container .separator.line-separator::after {
+  float: right;
 }
 
 .index_red .section.section-header a.scroll-arrow {
