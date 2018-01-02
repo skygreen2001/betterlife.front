@@ -1,0 +1,107 @@
+
+.home{
+  .container-fluid{
+    text-align: center;
+    padding-top: 35%;
+    line-height: 120px;
+    min-height: 400px;
+    .load-more {
+      height: 100px;
+      text-align: center;
+      // background: @color-main;
+      margin-top: 30px;
+      .transition(background .2s ease-in);
+      h3{
+        margin: 0px;
+        &.see-more {
+          width: 100%;
+          display: inline-block;
+          cursor: pointer;
+          color: black;
+          font-weight: 300;
+          // font-size: 34px;
+          // padding-top: 85px;
+          // padding-bottom: 85px;
+          .transition(transform .2s ease-in-out);
+          .text{
+            color: @color-main;
+            // .transition(all .2s ease-in-out);
+            &:hover,&:active,&:focus{
+              color: #31c520;
+            }
+          }
+          &:hover,&:focus,&:active{
+            span.plus {
+              border-width: 24px;
+              &>.plus {
+                &::before, &::after {
+                  background: @color-main;
+                }
+              }
+            }
+            .text{
+              color: #31c520;
+              text-shadow: 0.1em 0.1em #eee;
+            }
+          }
+          span.plus {
+            width: 48px;
+            height: 48px;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            top: -3px;
+            margin-right: 20px;
+            border: 1px solid #000000;
+            border-radius: 50%;
+            .transition(all 0.3s cubic-bezier(0.55, 0, 0.1, 1));
+            &>.plus {
+              position: absolute;
+              top: 50%;
+              right: auto;
+              bottom: auto;
+              left: 50%;
+              width: 21px;
+              height: 21px;
+              margin-top: -10px;
+              margin-left: -10px;
+              .transition(all .5s ease-in-out);
+              &::before {
+                top: 10px;
+                left: 0;
+                width: 21px;
+                height: 1px;
+              }
+              &::after {
+                top: 0;
+                left: 10px;
+                width: 1px;
+                height: 21px;
+              }
+              &::before, &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                background: black;
+                .transition(all 0.3s cubic-bezier(0.55, 0, 0.1, 1));
+              }
+            }
+          }
+        }
+        a{
+          line-height: 100px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: @screen-sm-min) {
+  .home .container-fluid{
+    padding-top: 20%;
+  }
+}
+@media (min-width: @screen-lg-min){
+  .home .container-fluid{
+    padding-top: 15%;
+  }
+}

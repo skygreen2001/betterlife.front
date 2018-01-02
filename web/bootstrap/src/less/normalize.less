@@ -14,12 +14,26 @@ body {
 /************************* Layout:start ************************/
 a{
   color: @color-input;
-  &:hover{
+  &:hover,&:focus{
     color: #5BCD60;
     text-decoration: none;
   }
 }
-
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #ffffff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #ffffff;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #ffffff;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #ffffff;
+}
+input::-webkit-input-placeholder{
+  color: #ffffff;
+}
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
@@ -32,6 +46,7 @@ a{
   z-index: 20050;
 }
 .page-container {
+  min-width: 100%;
   padding-left: 0;
   overflow-x: hidden;
   // width: 100%;
@@ -69,10 +84,27 @@ a{
     border-bottom: 1px solid #222;
     z-index: 20000;
   }
-  .navbar-toggle{
-    border: 0px;
-  }
   .navbar-container{
+    .navbar-toggle{
+      border: 0px;
+      &.on{
+        span{
+          .transition(all .2s ease-in-out);
+          &:nth-child(2){
+            transform: rotate(45deg);
+            margin-top: 2px;
+          }
+          &:nth-child(3){
+            // position: absolute;
+            transform: rotate(-45deg);
+            margin-top: -2px;
+          }
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+    }
     #navbar {
       li{
         border-bottom: 1px solid rgba( 255, 255, 255, 0.035 );
@@ -309,14 +341,20 @@ footer {
       display: none;
       padding-left: 0px;
       &.sub-menu{
-        li.nav-splitter{
-          margin: 10px 0;
-          height: 1px;
-          background-color: rgba(255,255,255,0.2);
-        }
-        li a{
-          padding-left: 30px;
-          .transition(padding-left 0.5s);
+        li{
+          background-color: #333;
+          margin-left: 20px;
+          border-bottom: 1px solid #444;
+          &.nav-splitter{
+            margin: 1px 0;
+            height: 1px;
+            border: 0px;
+            background-color: rgba(255,255,255,0.2);
+          }
+          a{
+            padding-left: 10px;
+            .transition(padding-left 0.5s);
+          }
         }
       }
     }
