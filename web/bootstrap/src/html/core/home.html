@@ -73,6 +73,8 @@
     <!-- /footer end -->
     <script type="text/javascript">
       $(function(){
+        if ($(window).width()<768) $("#btn-toggle-sidebar").css("display","block");
+        $(window).resize(function(){if ($(window).width()<768) $("#btn-toggle-sidebar").css("display","block"); else $("#btn-toggle-sidebar").css("display","none");});
         var offset = $(window).height() - $(".navbar-container").height() - $(".breadcrumb-line").height() -$("footer").height();
         $(".home .container-fluid").css("height", offset);
       });

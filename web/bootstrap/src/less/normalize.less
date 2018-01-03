@@ -40,8 +40,9 @@ input::-webkit-input-placeholder{
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-    outline: none;
+  outline: none;
 }
+
 .modal{
   z-index: 20050;
 }
@@ -120,6 +121,9 @@ input::-webkit-input-placeholder{
       min-width: 220px;
       button{
         height: 34px;
+        &#btn-toggle-sidebar{
+          display: none;
+        }
       }
       a.navbar-brand{
         margin-left: 0px;
@@ -463,7 +467,7 @@ footer {
       #navbar .navbar-nav{
         margin-right: 0px;
         li.dropdown .dropdown-menu a{
-          border-bottom: 1px solid #eee;
+          border-bottom: 1px solid rgba(238,238,238,0.4);
         }
         li.dropdown{
           .dropdown-menu{

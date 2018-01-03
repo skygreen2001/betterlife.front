@@ -30,6 +30,7 @@ $(function(){
   showLayoutMenuActive(".sidebar-nav li a");
   showLayoutMenuActive("#navbar .navbar-nav li a");
 
+  //手机顶部菜单导航开关切换
   $(".navbar-container .navbar-header .navbar-toggle").click(function(){
     $(this).toggleClass("on");
   });
@@ -125,6 +126,24 @@ $(function(){
       $('.page-sidebar .sidebar-nav > li > a span i').remove();
     }
   }
+
+  //下拉菜单显示效果
+  //Adding a slide effect to bootstrap dropdown
+  //Add slideDown animation to Bootstrap dropdown when expanding.
+  $('.dropdown').on('show.bs.dropdown', function() {
+    $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+  });
+
+  //Add slideUp animation to Bootstrap dropdown when collapsing.
+  $('.dropdown').on('hide.bs.dropdown', function() {
+    $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+  });
+
+  $('.navbar .dropdown').hover(function() {
+    $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+  }, function() {
+    $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+  });
 
   //网页过长显示返回到顶部按钮
   $(document).on("scroll", function() {

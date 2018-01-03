@@ -1,4 +1,7 @@
 $(function(){
+    if ($(window).width()<768) $("#btn-toggle-sidebar").css("display","block");
+    $(window).resize(function(){if ($(window).width()<768) $("#btn-toggle-sidebar").css("display","block"); else $("#btn-toggle-sidebar").css("display","none");});
+    
     //Datatables中文网[帮助]: http://datatables.club/
     if ($.dataTable) {
         var infoTable = $('#infoTable').DataTable({
