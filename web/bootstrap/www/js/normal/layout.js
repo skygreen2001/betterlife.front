@@ -30,6 +30,11 @@ $(function(){
   showLayoutMenuActive(".sidebar-nav li a");
   showLayoutMenuActive("#navbar .navbar-nav li a");
 
+  //手机顶部菜单导航开关切换
+  $(".navbar-container .navbar-header .navbar-toggle").click(function(){
+    $(this).toggleClass("on");
+  });
+
   //左侧导航条有子菜单点选
   $(".sidebar-nav >li > a.has-ul").click(function(e){
     e.preventDefault();
@@ -54,9 +59,6 @@ $(function(){
   })
 
   if ( ($(window).width() > 755) && ($(window).width() < 826) ) collapse_sidebar();
-  $(window).resize(function(){
-    if ( $(window).width() > 752 ) $(".sidebar").removeAttr("style");
-  });
 
   //左侧导航条顶部切换按钮提示
   $('.navigation-header i').tooltip({
@@ -122,6 +124,9 @@ $(function(){
     }
   }
 
+  //下拉菜单显示效果
+  $.common.dropdown();
+  
   //网页过长显示返回到顶部按钮
   $(document).on("scroll", function() {
     if ($(document).scrollTop() > $(window).height()-188) {
@@ -135,9 +140,10 @@ $(function(){
   $(".return-top").click(function(){
     $('body,html').animate({scrollTop:0});
   });
-  var bc_line_height = 0;
-  if ($(".breadcrumb-line").height()) bc_line_height = $(".breadcrumb-line").height();
+
   //布局自适应高度，确保footer始终显示在页面底部
-  var offset = $(window).height() - $(".navbar-container").height() - bc_line_height - $("footer").height();
-  if (offset>440) $(".content-wrapper .container-fluid").css("height", offset);
+  $.common.autoresize();
+  $(window).resize(function(){
+    $.common.autoresize();
+  });
 });

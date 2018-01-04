@@ -9,6 +9,32 @@ var commonLibrary = {
     init        : function(){
         this.bootboxInit();
     },
+    autoresize  : function(){
+        var bc_line_height = 0;
+        if ($(".breadcrumb-line").height()) bc_line_height = $(".breadcrumb-line").height();
+        var offset = $(window).height() - $(".navbar-container").height() - bc_line_height - $("footer").height();
+        if (offset>440 || $(window).height()<525) $(".content-wrapper .container-fluid").css("height", offset);
+
+        if ( $(window).width() > 752 ) $(".sidebar").removeAttr("style");
+    },
+    dropdown    : function(){
+        //Adding a slide effect to bootstrap dropdown
+        //Add slideDown animation to Bootstrap dropdown when expanding.
+        $('.dropdown').on('show.bs.dropdown', function() {
+          $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+        });
+
+        //Add slideUp animation to Bootstrap dropdown when collapsing.
+        $('.dropdown').on('hide.bs.dropdown', function() {
+          $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+        });
+
+        $('.navbar .dropdown').hover(function() {
+          $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+        }, function() {
+          $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+        });
+    },
     bootboxInit : function(){
         if(typeof(bootbox)!="undefined"){
             bootbox.addLocale('zh_CN_OK', { OK : '确定', CANCEL  : "取消", CONFIRM : "确认" });

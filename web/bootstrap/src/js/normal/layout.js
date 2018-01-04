@@ -59,9 +59,6 @@ $(function(){
   })
 
   if ( ($(window).width() > 755) && ($(window).width() < 826) ) collapse_sidebar();
-  $(window).resize(function(){
-    if ( $(window).width() > 752 ) $(".sidebar").removeAttr("style");
-  });
 
   //左侧导航条顶部切换按钮提示
   $('.navigation-header i').tooltip({
@@ -128,23 +125,8 @@ $(function(){
   }
 
   //下拉菜单显示效果
-  //Adding a slide effect to bootstrap dropdown
-  //Add slideDown animation to Bootstrap dropdown when expanding.
-  $('.dropdown').on('show.bs.dropdown', function() {
-    $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-  });
-
-  //Add slideUp animation to Bootstrap dropdown when collapsing.
-  $('.dropdown').on('hide.bs.dropdown', function() {
-    $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
-  });
-
-  $('.navbar .dropdown').hover(function() {
-    $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
-  }, function() {
-    $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
-  });
-
+  $.common.dropdown();
+  
   //网页过长显示返回到顶部按钮
   $(document).on("scroll", function() {
     if ($(document).scrollTop() > $(window).height()-188) {
@@ -160,8 +142,8 @@ $(function(){
   });
 
   //布局自适应高度，确保footer始终显示在页面底部
-  var bc_line_height = 0;
-  if ($(".breadcrumb-line").height()) bc_line_height = $(".breadcrumb-line").height();
-  var offset = $(window).height() - $(".navbar-container").height() - bc_line_height - $("footer").height();
-  if (offset>440 || $(window).height()<525) $(".content-wrapper .container-fluid").css("height", offset);
+  $.common.autoresize();
+  $(window).resize(function(){
+    $.common.autoresize();
+  });
 });

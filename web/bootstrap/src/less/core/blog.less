@@ -4,7 +4,7 @@
     .head-img{
       margin: 0;
       max-width: 100%;
-      height: 415px;
+      max-height: 415px;
       vertical-align: middle;
       color: #ffffff;
       overflow: hidden;
@@ -18,27 +18,27 @@
       width: 100%;
       height: 100px;
       position: relative;
-      li ul a {
-        color:#555;
-        &:link{
-          color:#1E4176;
-        }
-        &:visited{
-          color:#555;
-        }
-      }
       li ul {
         width: 8%;
         border-radius: 5px;
         overflow: hidden;
         background-color: #ffffff;
         min-width: 138px;
-        margin-top: 20%;
+        margin-top: 24%;
         display: none;
         position: absolute;
         z-index: 2;
         padding: 0px;
         box-shadow: 0 5px 25px #C8C8C8;
+        a {
+          color:#555;
+          &:link{
+            color:#1E4176;
+          }
+          &:visited{
+            color:#555;
+          }
+        }
         li {
           list-style: none;
           height: 32px;
@@ -72,33 +72,44 @@
           border-right: solid 1px #e7e7e7;
           margin: 24px 0 0 0;
           cursor: pointer;
-          &>a>span,&>span {
-            text-align: left;
-            margin-top: -8px;
-            position: absolute;
-            color:#969696;
-            &.triangle {
-              width: 0;
-              height: 0;
+          &>a{
+            display: block;
+            width: 100%;
+            &>span {
+              text-align: left;
+              margin-top: -8px;
+              position: absolute;
+              color:#969696;
+              width: 100%;
+              text-indent: 0px;
+              text-align: center;
+              left: 0px;
+            }
+
+          }
+          .option {
+            height: 22px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            margin: -6px 0 0 0px;
+            color: #505050;
+            overflow: hidden;
+            &:hover {
+              color: #ff224f;
+              background-color: transparent;
+              &:after {
+                border-top-color: #ff224f;
+              }
+            }
+            &:after {
+              content: '';
               border-left: 4px solid transparent;
               border-right: 4px solid transparent;
               border-top: 6px solid #505050;
               position: relative;
-              float: right;
-              right: 15%;
-              top: 30px;
-            }
-          }
-          option {
-            height: 22px;
-            font-size: 16px;
-            font-weight: 600;
-            text-align: left;
-            margin: -6px 0 0 11px;
-            color: #505050;
-            &:hover {
-              color: #ff224f;
-              background-color: transparent;
+              left: 3px;
+              top: 10px;
             }
           }
         }
@@ -108,17 +119,16 @@
         input {
           width: 15.5%;
           height: 78px;
+          padding-right: 50px;
+          padding-left: 8px;
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
           background-color: #97a0a4;
-          font-size: 18px;
+          font-size: 14px;
           font-weight: 500;
-          text-align: left;
+          text-align: center;
           color: #ffffff;
-          text-indent: 40px;
-          float: right;
           position: absolute;
-          /* margin-top: -6.9%; */
           outline: none;
           border: none;
           outline: medium;
@@ -128,12 +138,13 @@
           width: 72px;
           line-height: 145px;
           float: right;
+          top: -2px;
           position: absolute;
           padding: 0px;
           right: 22%;
           cursor: pointer;
           border: none;
-          background-color: #97a0a4;
+          background-color: transparent;
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
           &>i{
@@ -150,6 +161,20 @@
           }
         }
       }
+    }
+  }
+}
+@media (min-width: @screen-md-min){
+  .blog{
+    .main-header{
+       .filter-bar>ul {
+         input {
+           font-size: 18px;
+         }
+         &>li .option {
+           font-size: 16px;
+         }
+       }
     }
   }
 }

@@ -44,8 +44,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../">首页</a></li>
-            <li><a href="../html/blog/index.html">读书</a></li>
+            <li><a href="../../">首页</a></li>
+            <li><a href="../../html/blog/index.html">读书</a></li>
             <li><a href="http://www.iqiyi.com/" target="_blank">电影</a></li>
             <li><a href="https://y.qq.com/" target="_blank">音乐</a></li>
             <li><a href="http://36kr.com/" target="_blank">研发</a></li>
@@ -56,7 +56,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="dLabel">
                 <li><a href="https://www.jd.com/" target="_blank">购物</a></li>
-                <li><a href="../html/model/preview.html">话题</a></li>
+                <li><a href="../../html/model/preview.html">话题</a></li>
                 <li><a href="https://www.pengfu.com/" target="_blank">幽默</a></li>
               </ul>
             </li>
@@ -67,9 +67,9 @@
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" aria-labelledby="dLabel">
-                <li><a href="../html/home.html"><span class="glyphicon glyphicon-edit"></span>后台管理</a></li>
+                <li><a href="../../html/home.html"><span class="glyphicon glyphicon-edit"></span>后台管理</a></li>
                 <li><a href="#reset"><span class="glyphicon glyphicon-edit"></span>修改密码</a></li>
-                <li><a href="../login.html"><span class="glyphicon glyphicon-off"></span>退出</a></li>
+                <li><a href="../../login.html"><span class="glyphicon glyphicon-off"></span>退出</a></li>
               </ul>
             </li>
             <li id="searchbar-li" class="search-toggle collapsed" data-toggle="collapse" data-target="#searchbar" aria-expanded="false" aria-controls="searchbar">
@@ -106,8 +106,8 @@
                 </ul>
                 <ul class="sidebar-nav">
                   <!-- main -->
-                  <li><a href="../html/home.html"><i class="fa fa-dashboard"></i> <span>控制台</span></a></li>
-                  <li><a href="../html/admin/list.html"><i class="fa fa-book"></i> <span>博客</span></a></li>
+                  <li><a href="../../html/home.html"><i class="fa fa-dashboard"></i> <span>控制台</span></a></li>
+                  <li><a href="../../html/admin/list.html"><i class="fa fa-book"></i> <span>博客</span></a></li>
                   <li data-role="dropdown">
                     <a class="has-ul" href="#collapse-it" aria-expanded="false" aria-controls="collapse-it"><i class="fa fa-eercast"></i> <span>科技类</span><i class="glyphicon glyphicon-menu-right menu-right"></i></a>
                     <ul class="sub-menu" id="collapse-it">
@@ -136,7 +136,7 @@
                   <li data-role="dropdown">
                     <a class="has-ul" href="#collapse-art" aria-expanded="false" aria-controls="collapse-art"><i class="fa fa-music"></i> <span>艺术类</span><i class="glyphicon glyphicon-menu-right menu-right"></i></a>
                     <ul class="sub-menu" id="collapse-art">
-                      <li><a href="../html/life/list.html"><span>生活</span></a></li>
+                      <li><a href="../../html/life/list.html"><span>生活</span></a></li>
                       <li><a href="https://y.qq.com/" target="_blank">音乐</a></li>
                       <li><a href="http://www.iqiyi.com/" target="_blank">电影</a></li>
                       <li><a href="https://www.douban.com/" target="_blank">文学</a></li>
@@ -168,30 +168,45 @@
                   <div class="breadcrumb-line">
                     <ul class="breadcrumb">
                       <li><a href="/"><i class="icon-home2 position-left"></i> 首页</a></li>
-                      <li class="active">控制台</li>
+                      <li class="active">读书</li>
                     </ul>
                   </div>
                 </div>
                 <!-- /page header end -->
 
                 <!-- content area begin -->
-                <div class="container-fluid home">
-                  <div class="row col-xs-12">
-                    <section class="section container-fluid">
-                      <h1 class="page-header">Betterlife Front UI</h1>
-                      <h2>👌 后台管理，责无旁贷</h2>
-                      <a href="https://github.com/skygreen2001/betterlife.front" target="_blank">
-                        <div class="load-more col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                          <h3 class="see-more">
-                            <span class="plus"><div class="plus"></div></span>
-                            <span class="text">进一步了解 ></span>
-                          </h3>
+                <div class="container-fluid list">
+                    <div class="row up-container">
+                        <!-- 上半部分 -->
+                        <div class="filter-up">
+                            <div class="filter-up-right col-sm-12">
+                                <div>
+                                    <i aria-label="search-menu" class="glyphicon glyphicon-search" aria-hidden="true"></i>
+                                    <input id="input-search" type="search" placeholder="搜索名称" aria-controls="infoTable" />
+                                    <!-- <button id="btn-query" type="button" class="btn btn-query">搜索</button> -->
+                                </div>
+                            </div>
                         </div>
-                      </a>
-                    </section>
-                  </div>
-                </div>
+                    </div>
 
+                    <div class="row table-responsive col-xs-12">
+                        <table id="infoTable" class="display nowrap dataTable table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>名称</th>
+                                    <th>编码</th>
+                                    <th>联系人</th>
+                                    <th>手机号</th>
+                                    <th>封面</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
                 <!-- /content area end -->
               </div>
             </div>
@@ -219,18 +234,37 @@
         </span>
     </div>
     
-    <script type="text/javascript" src="../js/common/bower/bower.min.js"></script>
-    <script type="text/javascript" src="../js/normal/common.js"></script>
-    <script type="text/javascript" src="../js/normal/layout.js"></script>
+    <script type="text/javascript" src="../../js/common/bower/bower.min.js"></script>
+    <script type="text/javascript" src="../../js/normal/common.js"></script>
+    <script type="text/javascript" src="../../js/normal/layout.js"></script>
 
     <!-- /footer end -->
-    <script type="text/javascript">
-      $(function(){
-        if ($(window).width()<768) $("#btn-toggle-sidebar").css("display","block");
-        $(window).resize(function(){if ($(window).width()<768) $("#btn-toggle-sidebar").css("display","block"); else $("#btn-toggle-sidebar").css("display","none");});
-        var offset = $(window).height() - $(".navbar-container").height() - $(".breadcrumb-line").height() -$("footer").height();
-        $(".home .container-fluid").css("height", offset);
-      });
+
+    <!-- template begin -->
+    <div id="image-model">
+      <!-- Creates the bootstrap modal where the image will appear -->
+      <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">X</span></button>
+            </div>
+            <div class="modal-body">
+              <a id="imagePreview-link" href="#" target="_blank"><img src="" id="imagePreview" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script id="actionTmpl" type="text/x-jsrender">
+    <a id="info-view{{:id}}" href="view.html" class="btn-view">查看</a>
+    <a id="info-edit{{:id}}" href="edit.html" class="btn-edit">修改</a>
+    <a id="info-dele{{:id}}" href="#" class="btn-dele" data-toggle="modal" data-target="#infoModal">删除</a>
     </script>
+    <!-- /template end -->
+
+    <script src="../../js/normal/list.js"></script>
+    <script src="../../js/core/admin.js"></script>
 </body>
 </html>
