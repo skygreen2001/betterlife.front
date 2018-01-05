@@ -13204,10 +13204,13 @@ button,
   transition: all 0.5s ease;
 }
 
-.page-container .content-wrapper {
-  width: 100%;
+.page-container.container .content-wrapper {
   border-left: 1px solid #f5f5f5;
   border-right: 1px solid #f5f5f5;
+}
+
+.page-container .content-wrapper {
+  width: 100%;
 }
 
 .page-container .content-wrapper .row {
