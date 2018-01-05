@@ -13185,7 +13185,6 @@ button,
 }
 
 .page-container {
-  min-width: 100%;
   padding-left: 0;
   overflow-x: hidden;
   -webkit-transition: all 0.5s ease;
@@ -13207,11 +13206,16 @@ button,
 
 .page-container .content-wrapper {
   width: 100%;
+  border-left: 1px solid #f5f5f5;
   border-right: 1px solid #f5f5f5;
 }
 
 .page-container .content-wrapper .row {
   margin: 0;
+}
+
+.page-container .content-wrapper > .main-content > .container-fluid {
+  padding: 0px;
 }
 
 .navbar i.fa {
@@ -15695,7 +15699,7 @@ body.login .login-container footer #footer-inner a:hover {
   overflow: hidden;
   background-color: #ffffff;
   min-width: 138px;
-  margin-top: 24%;
+  margin-top: 10%;
   display: none;
   position: absolute;
   z-index: 2;
@@ -15731,26 +15735,30 @@ body.login .login-container footer #footer-inner a:hover {
   margin: 0 auto;
   margin-top: -2%;
   padding-left: 0px;
-  width: 55%;
-  height: 78px;
+  width: 100%;
+  height: 56px;
   letter-spacing: 1px;
   background-color: #ffffff;
-  border-radius: 5px;
   box-shadow: 0 5px 15px #c2ccd1;
 }
 
 .blog .main-header .filter-bar > ul > li {
   list-style: none;
   float: left;
-  width: 18%;
+  width: 25%;
   height: 30px;
   font-size: 10px;
   text-align: left;
   text-indent: 12px;
   color: #969696;
   border-right: solid 1px #e7e7e7;
-  margin: 24px 0 0 0;
+  line-height: 13px;
+  margin: 15px 0 0 0;
   cursor: pointer;
+}
+
+.blog .main-header .filter-bar > ul > li.last {
+  border-right: 0px;
 }
 
 .blog .main-header .filter-bar > ul > li > a {
@@ -15760,6 +15768,7 @@ body.login .login-container footer #footer-inner a:hover {
 
 .blog .main-header .filter-bar > ul > li > a > span {
   text-align: left;
+  display: none;
   margin-top: -8px;
   position: absolute;
   color: #969696;
@@ -15771,12 +15780,13 @@ body.login .login-container footer #footer-inner a:hover {
 
 .blog .main-header .filter-bar > ul > li .option {
   height: 22px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   text-align: center;
   margin: -6px 0 0 0px;
   color: #505050;
   overflow: hidden;
+  display: block;
 }
 
 .blog .main-header .filter-bar > ul > li .option:hover {
@@ -15794,12 +15804,13 @@ body.login .login-container footer #footer-inner a:hover {
   border-right: 4px solid transparent;
   border-top: 6px solid #505050;
   position: relative;
-  left: 3px;
+  left: 6px;
   top: 10px;
 }
 
 .blog .main-header .filter-bar > ul form {
   margin: 0px;
+  display: none;
 }
 
 .blog .main-header .filter-bar > ul input {
@@ -15848,6 +15859,50 @@ body.login .login-container footer #footer-inner a:hover {
   display: inherit;
   width: 72px;
   height: 72px;
+}
+
+@media (max-width: 400px) {
+  .blog .main-header .filter-bar > ul > li .option {
+    font-size: 14px;
+  }
+
+  .blog .main-header .filter-bar > ul > li .option::after {
+    left: 1px;
+  }
+}
+
+@media (min-width: 768px) {
+  .blog .main-header .filter-bar li ul {
+    margin-top: 24%;
+  }
+
+  .blog .main-header .filter-bar > ul {
+    width: 55%;
+    height: 78px;
+    border-radius: 5px;
+  }
+
+  .blog .main-header .filter-bar > ul > li {
+    width: 18%;
+    margin: 28px 0 0 0;
+    line-height: 18px;
+  }
+
+  .blog .main-header .filter-bar > ul > li .option {
+    font-size: 14px;
+  }
+
+  .blog .main-header .filter-bar > ul > li .option:after {
+    left: 5px;
+  }
+
+  .blog .main-header .filter-bar > ul > li > a > span {
+    display: block;
+  }
+
+  .blog .main-header .filter-bar > ul form {
+    display: block;
+  }
 }
 
 @media (min-width: 992px) {

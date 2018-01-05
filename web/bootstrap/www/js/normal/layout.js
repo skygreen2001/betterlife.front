@@ -126,7 +126,7 @@ $(function(){
 
   //下拉菜单显示效果
   $.common.dropdown();
-  
+
   //网页过长显示返回到顶部按钮
   $(document).on("scroll", function() {
     if ($(document).scrollTop() > $(window).height()-188) {
