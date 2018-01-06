@@ -3,7 +3,7 @@ $(function(){
   $("html").css("height", "100%");
 
   $(".content-wrapper .container-fluid").removeAttr("style");
-  $(".content-wrapper .container-fluid").css("padding", "0");
+  // $(".content-wrapper .container-fluid").css("padding", "0");
 
   $("#btn-toggle-sidebar").css("display","none");
   // 隐藏toggle精简布局设置按钮
@@ -14,9 +14,9 @@ $(function(){
   $.extend({"index":index});
   var window_width = $(window).width();
   $(window).on('scroll',function(){
-     if(window_width > 980){
-        $.index.checkScrollForBgSlow();
-     }
+    //  if(window_width > 980){
+      $.index.checkScrollForBgSlow();
+    //  }
   });
 });
 
