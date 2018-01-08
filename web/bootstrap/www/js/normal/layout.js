@@ -61,13 +61,13 @@ $(function(){
   if ( ($(window).width() > 755) && ($(window).width() < 826) ) collapse_sidebar();
 
   //左侧导航条顶部切换按钮提示
-  $('.navigation-header i').tooltip({
+  $('.sidebar .navigation-header i').tooltip({
       placement: 'right',
       container: 'body'
   });
 
   //左侧导航条点选是否折叠
-  $(".navigation-header").click(function(){
+  $(".sidebar .navigation-header").click(function(){
     collapse_sidebar();
   });
 

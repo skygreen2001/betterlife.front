@@ -143,6 +143,26 @@
                   </ul>
                 </div>
               </div>
+              <div class="unit-list row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                  <div class="unit-box">
+                    <div class="img-box">
+                      <img src="https://lorempixel.com/900/500?r=1" alt="美图">
+                    </div>
+                    <div class="title-box">
+                      <h2>Vue.js的11个组件库</h2>
+                      <p>前端技术</p>
+                    </div>
+                    <div class="suffix-box">
+                      <ul>
+                        <li>skygreen</li>
+                        <li>2018-01-07</li>
+                        <li><i class="fa fa-eye"></i>30</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <!-- /content area end -->
           </div>
@@ -159,6 +179,28 @@
       "rel-prefix": "../.."
     })
     <!-- /footer end -->
+    <!-- template begin -->
+    <script id="unitTmpl" type="text/x-jsrender">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="unit-box">
+          <div class="img-box">
+            <img src="{{:img_src}}" alt="{{:title}}">
+          </div>
+          <div class="title-box">
+            <h2>{{:title}}</h2>
+            <p>{{:category}}</p>
+          </div>
+          <div class="suffix-box">
+            <ul>
+              <li>{{:author}}</li>
+              <li>{{:publishTime}}</li>
+              <li><i class="fa fa-eye"></i>{{:countSee}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </script>
+    <!-- /template end -->
     <script src="../../js/core/blog.js"></script>
 </body>
 </html>
