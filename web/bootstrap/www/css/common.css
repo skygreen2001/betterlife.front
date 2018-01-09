@@ -16020,6 +16020,61 @@ body.login .login-container footer #footer-inner a:hover {
   padding-right: 20px;
 }
 
+.blog .btn-load-more {
+  margin: 30px 60px !important;
+  text-align: center;
+  position: relative;
+}
+
+.blog .btn-load-more:before,
+.blog .btn-load-more:after {
+  top: 18px;
+  display: none;
+  position: absolute;
+  content: "";
+  border-top: 1px solid #ededed;
+}
+
+.blog .btn-load-more:before {
+  left: 30px;
+}
+
+.blog .btn-load-more:after {
+  right: 30px;
+}
+
+.blog .btn-load-more button {
+  width: 300px;
+  height: 40px;
+  font-size: 16px;
+  color: #fff;
+  border: 0px;
+  background: -webkit-linear-gradient(left, #35e8c0, #0c9fcb);
+  background: -moz-linear-gradient(left, #35e8c0, #0c9fcb);
+  background: -ms-linear-gradient(left, #35e8c0, #0c9fcb);
+  background: linear-gradient(left, #35e8c0, #0c9fcb);
+  box-shadow: 0 4px 8px 0 rgba(80, 197, 212, 0.26);
+  -webkit-appearance: none;
+  opacity: 0.7;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.blog .btn-load-more button:hover,
+.blog .btn-load-more button:focus,
+.blog .btn-load-more button:active {
+  background: -webkit-linear-gradient(top, #35e8c0, #0c9fcb);
+  background: -moz-linear-gradient(top, #35e8c0, #0c9fcb);
+  background: -ms-linear-gradient(top, #35e8c0, #0c9fcb);
+  background: linear-gradient(top, #35e8c0, #0c9fcb);
+  opacity: 1;
+}
+
+.blog.container .unit-list {
+  margin: 0px !important;
+}
+
 @media (max-width: 400px) {
   .blog .main-header .filter-bar > ul > li .option {
     font-size: 14px;
@@ -16062,6 +16117,12 @@ body.login .login-container footer #footer-inner a:hover {
   .blog .main-header .filter-bar > ul form {
     display: block;
   }
+
+  .blog .btn-load-more:before,
+  .blog .btn-load-more:after {
+    width: 22%;
+    display: block;
+  }
 }
 
 @media (min-width: 992px) {
@@ -16071,5 +16132,11 @@ body.login .login-container footer #footer-inner a:hover {
 
   .blog .main-header .filter-bar > ul > li .option {
     font-size: 16px;
+  }
+
+  .blog .btn-load-more:before,
+  .blog .btn-load-more:after {
+    width: 28%;
+    display: block;
   }
 }

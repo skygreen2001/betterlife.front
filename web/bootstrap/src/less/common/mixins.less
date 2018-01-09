@@ -32,7 +32,12 @@
   -ms-transform: @trans;
   transform: @trans;
 }
-
+.linear-gradient(@direction,@from,@to){
+  background: -webkit-linear-gradient(@direction,@from,@to);
+  background: -moz-linear-gradient(@direction,@from,@to);
+  background: -ms-linear-gradient(@direction,@from,@to);
+  background: linear-gradient(@direction,@from,@to);
+}
 .text-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
   -webkit-text-shadow: @shadow; // iOS <4.3 & Android <4.1
      -moz-text-shadow: @shadow;
