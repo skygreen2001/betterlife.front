@@ -53,7 +53,6 @@
 * **使用JS框架**
 
   - jQuery
-  - AngularJS
   - Layui
 
 ## 框架目录定义

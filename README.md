@@ -8,17 +8,16 @@
 
 框架目标定义分为三部分:
 * Html5开发生成Native原生应用[iOS,Andriod]
-  - `AngularJS`    [AngularJS + Mobile Angular UI + jQuery WeUI]
-  - `Angular`      [Angular + Typescript + Ionic]
-  - `React Native` [React + React Material + Javascript]
+  - `AngularJS`     [AngularJS + Mobile Angular UI + jQuery WeUI]
+  - `Angular`       [Angular + Typescript + Ionic]
+  - `React Native`  [React + React Material]
+  - `Vue.js`        [Vue.js + Framework7]
+  - `Native Script` [Native Script+ NativeScript UI]
 
-* 专用于移动APP开发的html5 UI界面，可发布成原生应用[iOS,Andriod],也可用于html5 web页面；可嵌入微信；手机端优先。
+* 专用于移动APP内嵌的html5 UI界面, 也可用于html5 web页面；可嵌入微信；手机端优先。
+  - `Vue.js` [Vue.js + vux + (Bootstrap3 Css Only | PureCss) + HTML5 Boilerplate]
 
-  实现框架底层采用:
-    - `jQuery` [jQuery + (Bootstrap3 Css Only | PureCss)]
-    - `AngularJS` [AngularJS + jQuery WeUI]
-
-* 专用于Web开发的html5自适应界面，可用于pc电脑端，也可用于嵌入原生应用的[iOS,Andriod]的html5页面；可嵌入微信；Pc Web端优先。
+* 专用于Web开发的html5自适应界面，用于Pc电脑端，也可用于嵌入原生应用的[iOS,Andriod]的Html5页面；可嵌入微信；Pc Web端优先。
   - jQuery + Bootstrap3                           [ IE9  + ]
   - AngularJS + (Semantic-UI | Angular Material)  [ IE11 + ]
   - jQuery + Layui                                [ IE9  + ]
@@ -93,29 +92,38 @@
     * VUM       : http://getvum.com/
     * MUI       : http://dev.dcloud.net.cn/mui/
     * AUI       : http://www.auicss.com/
+    * Fronzen UI: http://frozenui.github.io/
 
   - Web 前端优先
     * Bootstrap: http://getbootstrap.com/
     * Semantic : http://www.semantic-ui.cn
     * Layui    : http://www.layui.com
+    * Element  : http://element-cn.eleme.io/
     * Amaze UI : http://amazeui.org/
     * uikit    : http://www.getuikit.net
     * ZUI      : http://zui.sexy/
     * H-ui     : http://www.h-ui.net/
+    * AT UI    : https://at-ui.github.io/at-ui
+
+  - 微信内置Html5优先
+    - HTML5 Boilerplate: https://html5boilerplate.com/
+    - PureCss     : https://purecss.io/start/
 
 - 🔧
   - underscore: http://underscorejs.org
   - lodash    : https://lodash.com/
   - Moment.js : http://momentjs.com/
-  - PureCss     : https://purecss.io/start/
   - ART-TEMPLATE: http://aui.github.io/art-template/zh-cn/
   - Immutable   : http://facebook.github.io/immutable-js/
 
+- 资源
+  - 掘金     : https://juejin.im/  
+  - bit.blog: https://blog.bitsrc.io/
+  - Share code components: https://bitsrc.io/
+
 ## 其他
-- HTML5 Boilerplate: https://html5boilerplate.com/
 - web-starter-kit  : https://github.com/google/web-starter-kit
 - VueJS            : https://cn.vuejs.org/
-  - Vuex: https://vuex.vuejs.org/
 - Backbone.js      : http://backbonejs.org/
 - Ember.Js         : https://emberjs.com/
 - Foundation       : https://foundation.zurb.com/sites/docs

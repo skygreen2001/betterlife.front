@@ -49,7 +49,7 @@
     ```
     >  apm install bottom-dock gulp-manager atom-beautify file-icons atom-terminal-panel
     ```
-
+    
 * **使用JS框架**
 
   - AngularJS

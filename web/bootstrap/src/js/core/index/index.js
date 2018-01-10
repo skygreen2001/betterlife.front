@@ -26,6 +26,7 @@ $(function(){
 
   $("nav").hover(function() {
     $(".navbar").addClass("nav-scroll");
+    $(".navbar-fixed-top").css("opacity","1");
   },function(){
     $(".navbar").removeClass("nav-scroll");
     $(".navbar-fixed-top").css("opacity","0");

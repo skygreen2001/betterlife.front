@@ -15909,7 +15909,7 @@ body.login .login-container footer #footer-inner a:hover {
   width: 15.5%;
   height: 78px;
   padding-right: 50px;
-  padding-left: 8px;
+  padding-left: 12px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   background-color: #97a0a4;
@@ -15970,7 +15970,9 @@ body.login .login-container footer #footer-inner a:hover {
   cursor: pointer;
 }
 
-.blog .unit-list > div .unit-box:hover {
+.blog .unit-list > div .unit-box:hover,
+.blog .unit-list > div .unit-box:active,
+.blog .unit-list > div .unit-box:focus {
   transform: scale(1.06);
   box-shadow: 0 0 50px #d5d5d5;
 }

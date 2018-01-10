@@ -52,8 +52,8 @@
 
 * **使用JS框架**
 
-  - AngularJS
-  - Mobile Angular UI
+  - React
+  - Reactive Native
 
 
 ## 框架目录定义
@@ -65,22 +65,13 @@
 * src/template : 框架模版文件目录
 * src/html     : 框架web网页文件目录
 * www          : 发布在线Web访问目录
-* src/js/components : Js组件层文件目录
-* src/js/controllers: Js控制器层文件目录
-* src/js/services   : Js服务层文件目录
 
 
 ## 学习资料
 
-- Angular 1.*
-  * AngularJS Github  : https://github.com/angular/angular.js
-  * AngularJS 官方教程 : https://docs.angularjs.org/tutorial
-  * Think in AngularJS: http://www.angularjs.cn/A0bz
-  * AngularJS 初识     : https://docs.angularjs.org/guide/concepts
-  * AngularJS 教程     : http://www.runoob.com/angularjs/angularjs-tutorial.html
-  * 学习AngularJS 1.x  : https://hairui219.gitbooks.io/learning_angular/content/zh/index.html
-  * AngularJS经验分享平台: http://docs.ngnice.com/
-  * 极客学院            : http://wiki.jikexueyuan.com/project/angularjs/
-
-- FronzenUI
-  * FronzenUI: http://frozenui.github.io/
+- React
+  * React 官方网站  : https://facebook.github.io/react/
+  * Material-UI设计: http://www.material-ui.com/
+  * React 入门教程  : https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
+  * Reactive Native: http://facebook.github.io/react-native/
+  * Preact         : https://preactjs.com/
