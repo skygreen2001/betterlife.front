@@ -15966,6 +15966,13 @@ body.login .login-container footer #footer-inner a:hover {
 
 .blog .unit-list > div .unit-box {
   display: inline-block;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.blog .unit-list > div .unit-box:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 50px #d5d5d5;
 }
 
 .blog .unit-list > div .unit-box .img-box img {
@@ -16082,6 +16089,12 @@ body.login .login-container footer #footer-inner a:hover {
 
   .blog .main-header .filter-bar > ul > li .option::after {
     left: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog .unit-list {
+    margin: 0 !important;
   }
 }
 

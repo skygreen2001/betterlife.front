@@ -180,6 +180,12 @@
       margin-bottom: 30px;
       .unit-box{
         display: inline-block;
+        transition: all 0.3s;
+        cursor: pointer;
+        &:hover{
+          transform: scale(1.06);
+    box-shadow: 0 0 50px #d5d5d5;
+        }
         .img-box{
           img{
             min-width: 280px;
@@ -276,6 +282,12 @@
     &::after{
       left: 1px;
     }
+  }
+
+}
+@media (max-width: @screen-xs-min){
+  .blog .unit-list{
+    margin: 0 !important;
   }
 }
 @media (min-width: @screen-sm-min){
