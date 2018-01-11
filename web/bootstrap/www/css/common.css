@@ -15954,7 +15954,7 @@ body.login .login-container footer #footer-inner a:hover {
 }
 
 .blog .unit-list {
-  margin: 0 60px !important;
+  padding: 0 60px;
   margin-top: 30px !important;
 }
 
@@ -16079,10 +16079,6 @@ body.login .login-container footer #footer-inner a:hover {
   opacity: 1;
 }
 
-.blog.container .unit-list {
-  margin: 0px !important;
-}
-
 @media (max-width: 768px) {
   .blog .main-header .filter-bar > ul > li.last ul {
     left: auto;
@@ -16092,7 +16088,7 @@ body.login .login-container footer #footer-inner a:hover {
 
 @media (max-width: 480px) {
   .blog .unit-list {
-    margin: 0 !important;
+    padding: 0px;
   }
 }
 
