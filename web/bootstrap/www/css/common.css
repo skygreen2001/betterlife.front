@@ -15978,7 +15978,6 @@ body.login .login-container footer #footer-inner a:hover {
 }
 
 .blog .unit-list > div .unit-box .img-box img {
-  min-width: 280px;
   width: 100%;
 }
 
@@ -16084,19 +16083,87 @@ body.login .login-container footer #footer-inner a:hover {
   margin: 0px !important;
 }
 
-@media (max-width: 400px) {
-  .blog .main-header .filter-bar > ul > li .option {
-    font-size: 14px;
-  }
-
-  .blog .main-header .filter-bar > ul > li .option::after {
-    left: 1px;
+@media (max-width: 768px) {
+  .blog .main-header .filter-bar > ul > li.last ul {
+    left: auto;
+    right: 0px;
   }
 }
 
 @media (max-width: 480px) {
   .blog .unit-list {
     margin: 0 !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 350px) {
+  .blog .main-header .filter-bar > ul > li .option:after {
+    left: 0px;
+  }
+}
+
+@media (max-width: 320px) {
+  .blog .main-header .filter-bar li {
+    left: 5px;
+  }
+
+  .blog .main-header .filter-bar li:nth-child(3) ul {
+    left: auto;
+    right: 5px;
+  }
+
+  .blog .main-header .filter-bar > ul > li {
+    width: 50%;
+    border: 0px;
+  }
+
+  .blog .main-header .filter-bar > ul > li:first-child,
+  .blog .main-header .filter-bar > ul > li.last {
+    display: none;
+  }
+
+  .blog .unit-list > div .unit-box .title-box h2 {
+    font-size: 16px;
+    padding: 24px 3px 0px 3px;
+  }
+
+  .blog .unit-list > div .unit-box .suffix-box {
+    display: inherit;
+    height: auto;
+    width: 100%;
+  }
+
+  .blog .unit-list > div .unit-box .suffix-box ul li {
+    float: none;
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  .blog .unit-list > div .unit-box .suffix-box ul li:first-child,
+  .blog .unit-list > div .unit-box .suffix-box ul li:last-child {
+    text-align: center;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 280px) {
+  .blog .main-header .filter-bar li ul {
+    margin-top: 20%;
+  }
+
+  .blog .main-header .filter-bar > ul > li.last ul {
+    left: auto;
+    right: 0px;
+  }
+
+  .blog .main-header .filter-bar > ul > li .option {
+    font-size: 14px;
+  }
+
+  .blog .main-header .filter-bar > ul > li .option:after {
+    left: 1px;
   }
 }
 
