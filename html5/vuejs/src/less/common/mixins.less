@@ -1,0 +1,46 @@
+
+.linear-gradient(@from-color, @to-color){
+  background-color: @to-color;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(@from-color),to(@to-color));
+  background-image: -webkit-linear-gradient(top,@from-color 0,@to-color 100%);
+  background-image: -o-linear-gradient(top,@from-color 0,@to-color 100%);
+  background-image: linear-gradient(to bottom,@from-color 0,@to-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@from-color, endColorstr=@to-color, GradientType=0);
+
+}
+
+// @see: https://css-tricks.com/using-flexbox/
+// @see: http://zh.learnlayout.com/flexbox.html
+.flex {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.hover_animate(@time: 0.15s){
+  -webkit-transition: all @time ease-in-out;
+  -moz-transition: all @time ease-in-out;
+  -ms-transition: all @time ease-in-out;
+  -o-transition: all @time ease-in-out;
+}
+
+.transform(@trans){
+  -webkit-transform: @trans;
+  -moz-transform: @trans;
+  -ms-transform: @trans;
+  transform: @trans;
+}
+.linear-gradient(@direction,@from,@to){
+  background: -webkit-linear-gradient(@direction,@from,@to);
+  background: -moz-linear-gradient(@direction,@from,@to);
+  background: -ms-linear-gradient(@direction,@from,@to);
+  background: linear-gradient(@direction,@from,@to);
+}
+.text-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-text-shadow: @shadow; // iOS <4.3 & Android <4.1
+     -moz-text-shadow: @shadow;
+      -ms-text-shadow: @shadow;
+          text-shadow: @shadow;
+}
