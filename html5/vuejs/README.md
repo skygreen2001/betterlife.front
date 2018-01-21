@@ -46,6 +46,7 @@
 - 0⃣️
   * Code Guide       : http://alloyteam.github.io/CodeGuide/
   * Bootstrap        : http://getbootstrap.com/
+  * Vue.js           : https://vuejs.org/
   * awesome-vue      : https://github.com/vuejs/awesome-vue
   * HTML5 Boilerplate: https://html5boilerplate.com/
   * generator-h5bp   : https://github.com/h5bp/generator-h5bp
@@ -73,6 +74,10 @@
     * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
     * FISH-UI   : https://myliang.github.io/fish-ui/
     * Quasar    : http://quasar-framework.org/
+
+  - Vue 案例
+    * Element   : http://element.eleme.io/ (饿了吗)
+    * 掘金网     : https://juejin.im/
 
 - 🏆
   * Apple  : https://www.apple.com

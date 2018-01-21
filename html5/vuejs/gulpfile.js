@@ -20,6 +20,14 @@ var config = {
     ]
   },
   js: {},
+  vendor: {
+    js: [
+      './bower_components/Modernizr/modernizr.js',
+      './bower_components/vue/dist/vue.min.js'
+    ],
+
+    css: []
+  },
   fonts: [
     './bower_components/font-awesome/fonts/fontawesome-webfont.*'//,
       // './bower_components/bootstrap/fonts/glyphicons-halflings-regular.*',
@@ -48,8 +56,7 @@ var gulp = require('gulp'),
     path = require('path'),
     seq  = require('run-sequence'),
     strip= require('gulp-strip-comments'),
-    streamqueue = require('streamqueue'),
-    bowerFiles  = require('main-bower-files');
+    streamqueue = require('streamqueue');
 
 /*================================================
 =            Report Errors to Console            =
@@ -175,11 +182,7 @@ gulp.task('less', function () {
 gulp.task('js', function() {
 
   if ( firstInit ) {
-    gulp.src(
-      bowerFiles({
-        filter:'**/*.js'
-      })
-    )
+    gulp.src(config.vendor.js)
     .pipe($.sourcemaps.init())
     .pipe($.concat('bower.js'))
     .pipe($.uglify())

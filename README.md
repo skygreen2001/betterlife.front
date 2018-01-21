@@ -69,8 +69,33 @@
     * 极客学院            : http://wiki.jikexueyuan.com/project/angularjs/
 
   - Angular
+    * Angular    : https://angular.io/
     * Angular 中文: https://angular.cn/
     * 大道至简:Angular2只有一个核心概念: http://www.angularjs.cn/A2Ar
+
+- 🔰
+  - Vue.js
+    * VueJS       : https://cn.vuejs.org/
+    * vux         : https://vux.li/
+    * Vuex        : https://vuex.vuejs.org/
+    * Vue Material: https://vuematerial.io/
+    * VueStrap    : http://yuche.github.io/vue-strap/
+    * BV          : https://bootstrap-vue.js.org/
+    * uiv         : https://uiv.wxsm.space/
+    * Vuetify     : https://vuetifyjs.com/
+
+  - Vue UI
+    * Muse UI   : http://www.muse-ui.org/
+    * VUM       : http://getvum.com/
+    * Vue-MDL   : https://posva.net/vue-mdl-docs/
+    * WDUI      : https://wdfe.github.io/wdui/
+    * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
+    * Buefy     : https://buefy.github.io
+    * AT UI     : https://at-ui.github.io/at-ui
+    * Mint UI   : http://mint-ui.github.io/
+    * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
+    * FISH-UI   : https://myliang.github.io/fish-ui/
+    * Quasar    : http://quasar-framework.org/
 
 - ⚛️
   - React
@@ -98,7 +123,7 @@
     * Bootstrap: http://getbootstrap.com/
     * Semantic : http://www.semantic-ui.cn
     * Layui    : http://www.layui.com
-    * Element  : http://element-cn.eleme.io/
+    * Element   : http://element.eleme.io/ (饿了吗 - Vue.js 2.0)
     * Amaze UI : http://amazeui.org/
     * uikit    : http://www.getuikit.net
     * ZUI      : http://zui.sexy/

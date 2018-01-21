@@ -52,4 +52,13 @@ module.exports = function(config) {
    * @type {String}
    */
   config.server.port = '8000';
+
+  /**
+   * Vendor Javascripts
+   *
+   * @property config.vendor.js
+   * @type {Array}
+   */
+  //浏览器兼容性Javascript原生对象函数支持
+  // config.vendor.js.push('./bower_components/');
 };

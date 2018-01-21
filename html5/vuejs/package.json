@@ -28,8 +28,7 @@
   },
   "dependencies": {
     "gulp-file-include": "^1.0.0",
-    "gulp-load-plugins": "^1.5.0",
-    "main-bower-files": "^2.13.1"
+    "gulp-load-plugins": "^1.5.0"
   },
   "_dependencies": {
     "gulp-image": "^4.0.0"

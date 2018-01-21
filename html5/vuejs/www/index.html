@@ -21,6 +21,33 @@
 
         <!-- Add your site or application content here -->
         <p>Hello world! This is HTML5 Boilerplate.</p>
+        <div id="app">
+          <input v-model="message" />
+          <p>{{ message.split('').reverse().join('') }}</p>
+          <button v-on:click="reverseMessage">Reverse Message</button>
+
+          <ul>
+            <li v-for="(todo,index) in todos">
+              {{ index }} - {{ todo.text }}
+            </li>
+          </ul>
+
+          <div id="app-attr">
+            <span v-bind:title="message">
+              Hover your mouse over me for a few seconds
+              to see my dynamically bound title!
+            </span>
+          </div>
+
+          <ol>
+            <!-- Create an instance of the todo-item component -->
+            <todo-item
+            v-for="item in groceryList"
+            v-bind:todo="item"
+            v-bind:key="item.id">
+            </todo-item>
+          </ol>
+        </div>
 
         <script src="js/common/bower.min.js"></script>
         <!-- <script src="js/common/app.min.js"></script> -->

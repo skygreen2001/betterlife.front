@@ -25,10 +25,11 @@
     "docs"
   ],
   "dependencies": {
-    "js-polyfills": "^0.1.34",
-    "font-awesome": "4.7"
+    "font-awesome": "4.7",
+    "vue": "^2.5.13"
   },
   "_dependencies_ignored": {
+    "js-polyfills": "^0.1.34",
     "Modernizr": "https://github.com/Modernizr/Modernizr.git#2.8.3"
   }
 }
