@@ -27,17 +27,14 @@
 * **安装目录下运行**
 
   ```
-  > npm install
+  > sudo npm install
   ```
-  [说明]
-  > 安装目录是根目录下的src目录, 即本说明文件目录下
-
 
 * **安装目录下运行**
 
   ```
-  > npm install -g gulp
-  > gulp
+  > sudo npm install -g gulp
+  > sudo gulp
   ```
 
 * **安装开发工具 IDE**
@@ -49,7 +46,7 @@
     ```
     >  apm install bottom-dock gulp-manager atom-beautify file-icons atom-terminal-panel
     ```
-    
+
 * **使用JS框架**
 
   - AngularJS

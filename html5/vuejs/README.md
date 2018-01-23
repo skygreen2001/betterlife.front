@@ -25,6 +25,30 @@
   > git clone git@github.com:skygreen2001/betterlife.front.git
   ```
 
+* **安装NodeJs**
+
+  下载地址: https://nodejs.org/en/download/
+
+* **安装目录下运行**
+
+  ```
+  > sudo npm install
+  ```
+
+* **安装目录下运行**
+
+  ```
+  > sudo npm install -g gulp
+  > sudo npm install -g vue-cli
+  > sudo gulp
+  ```
+
+* **生产发布**
+
+  ```
+  >
+  ```
+
 * **安装开发工具 IDE**
 
   Atom: https://atom.io/
@@ -54,13 +78,14 @@
 
 - Vue.js
   * VueJS       : https://cn.vuejs.org/
-  * vux         : https://vux.li/
-  * Vuex        : https://vuex.vuejs.org/
-  * Vue Material: https://vuematerial.io/
   * VueStrap    : http://yuche.github.io/vue-strap/
   * BV          : https://bootstrap-vue.js.org/
+  * iView       : https://www.iviewui.com/
+  * Vue Material: https://vuematerial.io/
   * uiv         : https://uiv.wxsm.space/
   * Vuetify     : https://vuetifyjs.com/
+  * vux         : https://vux.li/ [微信页面]
+  * Vuex        : https://vuex.vuejs.org/
 
   - Vue UI
     * Muse UI   : http://www.muse-ui.org/
@@ -85,6 +110,9 @@
   * Behance: https://www.behance.net/
 
 - 其它
+  * HTML5 Boilerplate generator: https://github.com/h5bp/generator-h5bp
+    - npm install --global generator-h5bp
+    - yo h5bp
   * Vuejs的一些总结    : https://segmentfault.com/a/1190000005832164
   * Vue.js 的11个组件库: https://juejin.im/entry/5a3879705188257d6929b4b1
   * [11 Vue.js Component Libraries] (https://blog.bitsrc.io/11-vue-js-component-libraries-you-should-know-in-2018-3d35ad0ae37f)

@@ -1,0 +1,196 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Vue Official Hello</title>
+        <meta name="description" content="Hello">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon">
+
+        <!-- <link rel="stylesheet" href="css/common.min.css"> -->
+        <link rel="stylesheet" href="css/common.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <div id="app-hello">
+          <input v-model="message" />
+          <p>{{ message }}</p>
+          <p>{{ reversedMessage }}</p>
+          <button @click="reverseMessage">Reverse Message</button>
+
+          <ul>
+            <li v-for="(todo,index) of todos">
+              {{ index }} - {{ todo.text }}
+            </li>
+          </ul>
+
+          <span :title="app_message">
+            Hover your mouse over me for a few seconds
+            to see my dynamically bound title!
+          </span>
+
+          <ol>
+            <!-- Create an instance of the todo-item component -->
+            <grocery-item
+            v-for="grocery in groceryList"
+            v-bind:grocery="grocery"
+            v-bind:key="grocery.id">
+            </grocery-item>
+          </ol>
+
+          <input
+              v-model="newTodoText"
+              v-on:keyup.enter="addNewTodo"
+              placeholder="Add a todo"
+          >
+          <ul>
+            <li
+              is="todo-item"
+              v-for="(todo, index) in todos"
+              v-bind:key="todo.id"
+              v-bind:title="todo.title"
+              v-on:remove="todos.splice(index, 1)"
+            ></li>
+          </ul>
+
+          <p>
+            Ask a yes/no question:
+            <input v-model="question">
+          </p>
+          <p>{{ answer }}</p>
+
+          <div v-for="(value, key, index) in object">
+            {{ index }}. {{ key }}: {{ value }}
+          </div>
+
+          <br>
+          <p>The button above has been clicked {{ counter }} times.</p>
+          <button v-on:click="counter += 1">Add 1</button>
+
+        </div>
+
+        <script src="js/common/bower.min.js"></script>
+        <script type="text/javascript">  
+          Vue.config.debug = true;
+          Vue.config.devtools = true;
+
+          // Define a new component called todo-item
+          Vue.component('grocery-item', {
+            props: ['grocery'],
+            template: '<li>{{ grocery.text }}</li>'
+          });
+
+          Vue.component('todo-item', {
+            props: ['title'],
+            template: '\
+              <li>\
+                {{ title }}\
+                <button v-on:click="$emit(\'remove\')">X</button>\
+              </li>\
+            '
+          });
+
+          var hello = new Vue({
+            el: '#app-hello',
+            data: {
+              counter: 0,
+              message: 'Hello BB!',
+              app_message: 'You loaded this page on ' + new Date().toLocaleString(),
+              newTodoText: '',
+              todos: [
+                {
+                  id: 1,
+                  title: 'Do the dishes',
+                  text: 'Learn JavaScript'
+                },
+                {
+                  id: 2,
+                  title: 'Take out the trash',
+                  text: 'Learn Vue.js'
+                },
+                {
+                  id: 3,
+                  title: 'Mow the lawn',
+                  text: 'Build Something Awesome'
+                }
+              ],
+              nextTodoId: 4,
+              groceryList: [
+                { id: 0, text: 'Vegetables' },
+                { id: 1, text: 'Cheese' },
+                { id: 2, text: 'Whatever else humans are supposed to eat' }
+              ],
+              object: {
+                firstName: 'John',
+                lastName: 'Doe',
+                age: 30
+              },
+              question: '',
+              answer: 'I cannot give you an answer until you ask a question!'
+            },
+            created: function () {
+              // `this` points to the vm instance
+              console.log('message is: ' + this.message);
+            },
+            computed: {
+              // a computed getter
+              reversedMessage: function () {
+                // `this` points to the vm instance
+                return this.message.split('').reverse().join('')
+              }
+            },
+            watch: {
+              // whenever question changes, this function will run
+              question: function (newQuestion, oldQuestion) {
+                this.answer = 'Waiting for you to stop typing...'
+                this.getAnswer()
+              }
+            },
+            methods: {
+              reverseMessage: function () {
+                this.message = this.reversedMessage;
+              },
+              addNewTodo: function () {
+                this.todos.push({
+                  id: this.nextTodoId++,
+                  title: this.newTodoText,
+                  text: this.newTodoText
+                })
+                this.newTodoText = ''
+              },
+              getAnswer: _.debounce(
+                function () {
+                  if (this.question.indexOf('?') === -1) {
+                    this.answer = 'Questions usually contain a question mark. ;-)'
+                    return
+                  }
+                  this.answer = 'Thinking...'
+                  var vm = this
+                  axios.get('https://yesno.wtf/api')
+                    .then(function (response) {
+                      vm.answer = _.capitalize(response.data.answer)
+                    })
+                    .catch(function (error) {
+                      vm.answer = 'Error! Could not reach the API. ' + error
+                    })
+                },
+                // This is the number of milliseconds we wait for the
+                // user to stop typing.
+                500
+              )
+            }
+          });
+
+        </script>
+
+    </body>
+</html>

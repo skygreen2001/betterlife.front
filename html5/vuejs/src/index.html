@@ -23,30 +23,59 @@
         <p>Hello world! This is HTML5 Boilerplate.</p>
         <div id="app">
           <input v-model="message" />
-          <p>{{ message.split('').reverse().join('') }}</p>
-          <button v-on:click="reverseMessage">Reverse Message</button>
+          <p>{{ message }}</p>
+          <p>{{ reversedMessage }}</p>
+          <button @click="reverseMessage">Reverse Message</button>
 
           <ul>
-            <li v-for="(todo,index) in todos">
+            <li v-for="(todo,index) of todos">
               {{ index }} - {{ todo.text }}
             </li>
           </ul>
 
-          <div id="app-attr">
-            <span v-bind:title="message">
-              Hover your mouse over me for a few seconds
-              to see my dynamically bound title!
-            </span>
-          </div>
+          <span :title="app_message">
+            Hover your mouse over me for a few seconds
+            to see my dynamically bound title!
+          </span>
 
           <ol>
             <!-- Create an instance of the todo-item component -->
-            <todo-item
-            v-for="item in groceryList"
-            v-bind:todo="item"
-            v-bind:key="item.id">
-            </todo-item>
+            <grocery-item
+            v-for="grocery in groceryList"
+            v-bind:grocery="grocery"
+            v-bind:key="grocery.id">
+            </grocery-item>
           </ol>
+
+          <input
+              v-model="newTodoText"
+              v-on:keyup.enter="addNewTodo"
+              placeholder="Add a todo"
+          >
+          <ul>
+            <li
+              is="todo-item"
+              v-for="(todo, index) in todos"
+              v-bind:key="todo.id"
+              v-bind:title="todo.title"
+              v-on:remove="todos.splice(index, 1)"
+            ></li>
+          </ul>
+
+          <p>
+            Ask a yes/no question:
+            <input v-model="question">
+          </p>
+          <p>{{ answer }}</p>
+
+          <div v-for="(value, key, index) in object">
+            {{ index }}. {{ key }}: {{ value }}
+          </div>
+
+          <br>
+          <p>The button above has been clicked {{ counter }} times.</p>
+          <button v-on:click="counter += 1">Add 1</button>
+
         </div>
 
         <script src="js/common/bower.min.js"></script>

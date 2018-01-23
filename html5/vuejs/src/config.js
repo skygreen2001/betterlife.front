@@ -53,6 +53,14 @@ module.exports = function(config) {
    */
   config.server.port = '8000';
 
+
+  /**
+   * Vendor Css (appended on compile time)
+   *
+   * @property config.vendor.css.append
+   * @type {Array}
+   */
+  // config.vendor.css.push('./bower_components/');
   /**
    * Vendor Javascripts
    *
@@ -60,5 +68,14 @@ module.exports = function(config) {
    * @type {Array}
    */
   //浏览器兼容性Javascript原生对象函数支持
-  // config.vendor.js.push('./bower_components/');
+  config.vendor.js.push('./bower_components/lodash/dist/lodash.min.js');
+  if (config.isDev){
+    config.vendor.js.push('./bower_components/vue/dist/vue.js');
+  } else {
+    config.vendor.js.push('./bower_components/vue/dist/vue.min.js');
+  }
+  config.vendor.js.push('./bower_components/axios/dist/axios.min.js');
+  config.vendor.js.push('./bower_components/velocity/velocity.js');
+  // config.vendor.js.push('./bower_components/velocity/velocity.ui.js');
+
 };

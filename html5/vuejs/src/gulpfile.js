@@ -22,8 +22,7 @@ var config = {
   js: {},
   vendor: {
     js: [
-      './bower_components/Modernizr/modernizr.js',
-      './bower_components/vue/dist/vue.min.js'
+      './bower_components/Modernizr/modernizr.js'
     ],
 
     css: []
@@ -151,6 +150,7 @@ gulp.task('html', function() {
 
 gulp.task('less', function () {
 
+
   var cssTask;
   cssTask = gulp.src(config.less.src).pipe($.less({
     paths: config.less.paths.map(function(p){
@@ -166,12 +166,13 @@ gulp.task('less', function () {
   .pipe(gulp.dest(path.join(config.dest, 'css')))
   .pipe($.cssmin({keepSpecialComments : 0}));
 
-  return cssTask
+  cssTask
     .pipe($.rename({
       basename: "common",
       suffix: '.min'
     }))
     .pipe(gulp.dest(path.join(config.dest, 'css')));
+
 });
 
 
