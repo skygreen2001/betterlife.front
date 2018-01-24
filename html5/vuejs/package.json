@@ -8,10 +8,14 @@
     "url": "git@github.com:skygreen2001/betterlife.front.git"
   },
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config src/build/webpack.dev.conf.js",
     "start": "npm run dev",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node src/build/build.js"
+    "build": "node build/build.js"
+  },
+  "dependencies": {
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -29,7 +33,6 @@
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "chalk": "^2.0.1",
-    "chromedriver": "^2.27.2",
     "copy-webpack-plugin": "^4.0.1",
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.0",
@@ -57,6 +60,7 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
+    "copy-dir": "^0.3.0",
     "selenium-server": "^3.0.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
@@ -69,28 +73,8 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0"
-  },
-  "dependencies": {
-    "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
-  },
-  "engines": {
-    "node": ">= 6.0.0",
-    "npm": ">= 3.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
-  "_dependencies": {
-
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "stylus": "^0.54.5",
-
-    "gulp": "^3.8.1",
+    "webpack-merge": "^4.1.0",
+    "gulp": "^3.9.1",
     "gulp-bower": "^0.0.13",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.3.4",
@@ -107,10 +91,24 @@
     "gulp-uglify": "^2.0.0",
     "run-sequence": "^0.3.6",
     "streamqueue": "^0.1.1",
-
     "gulp-file-include": "^1.0.0",
     "gulp-load-plugins": "^1.5.0",
-
+    "main-bower-files": "^2.13.1"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "_dependencies": {
+    "chromedriver": "^2.27.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "stylus": "^0.54.5",
     "gulp-stylus": "^2.7.0",
     "gulp-image": "^4.0.0"
   }

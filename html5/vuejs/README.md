@@ -35,18 +35,23 @@
   > sudo npm install
   ```
 
-* **安装目录下运行**
+* **开始学习**
 
   ```
   > sudo npm install -g gulp
-  > sudo npm install -g vue-cli
   > sudo gulp
+  ```
+
+* **开发测试**
+
+  ```
+  > sudo npm start
   ```
 
 * **生产发布**
 
   ```
-  >
+  > sudo npm run build
   ```
 
 * **安装开发工具 IDE**
@@ -113,6 +118,11 @@
   * HTML5 Boilerplate generator: https://github.com/h5bp/generator-h5bp
     - npm install --global generator-h5bp
     - yo h5bp
+  * Vue-cli
+    - sudo npm install -g vue-cli
+    - vue init webpack my-project
+  * Vue DevTools: https://github.com/vuejs/vue-devtools
+
   * Vuejs的一些总结    : https://segmentfault.com/a/1190000005832164
   * Vue.js 的11个组件库: https://juejin.im/entry/5a3879705188257d6929b4b1
   * [11 Vue.js Component Libraries] (https://blog.bitsrc.io/11-vue-js-component-libraries-you-should-know-in-2018-3d35ad0ae37f)
