@@ -1,6 +1,7 @@
 .DS_Store
-bower.json
-gulpfile.js
 /bower_components
 /node_modules
 /dist
+
+# bower.json
+gulpfile.js

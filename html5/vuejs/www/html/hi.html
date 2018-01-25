@@ -13,6 +13,23 @@
 
         <link rel="stylesheet" href="../css/common.min.css">
         <link rel="stylesheet" href="../css/normalize.css">
+        <style media="screen">
+          body{
+            margin:0px auto;
+            padding: 10px 100px;
+            width: 990px;
+            line-height: 30px;
+          }
+          input{
+            height: 30px;
+            padding-left: 5px;
+          }
+          button{
+            min-width: 30px;
+            padding: 5px 8px;
+            margin: 10px;
+          }
+        </style>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -22,13 +39,15 @@
         <!-- Add your site or application content here -->
         <p>Hello world! This is Vue HelloWorld!</p>
         <div id="app-hello">
+          <i-button @click="show">Click me!</i-button><br><br>
+          <Modal v-model="visible" title="Welcome">Welcome to iView</Modal>
           <input v-model="message" />
           <p>{{ message }}</p>
           <p>{{ reversedMessage }}</p>
           <button @click="reverseMessage">Reverse Message</button>
 
           <ul>
-            <li v-for="(todo,index) of todos">
+            <li v-for="(todo,index) of todos" :key="todo.id">
               {{ index }} - {{ todo.text }}
             </li>
           </ul>
@@ -68,13 +87,13 @@
           </p>
           <p>{{ answer }}</p>
 
-          <div v-for="(value, key, index) in object">
+          <div v-for="(value, key, index) in object" :key="key">
             {{ index }}. {{ key }}: {{ value }}
           </div>
 
           <br>
           <p>The button above has been clicked {{ counter }} times.</p>
-          <button v-on:click="counter += 1">Add 1</button>
+          <button @click="counter += 1">Add 1</button>
 
         </div>
 
@@ -103,6 +122,7 @@
             el: '#app-hello',
             data: {
               counter: 0,
+              visible: false,
               message: 'Hello BB!',
               app_message: 'You loaded this page on ' + new Date().toLocaleString(),
               newTodoText: '',
@@ -159,6 +179,9 @@
               reverseMessage: function () {
                 this.message = this.reversedMessage;
               },
+              show: function () {
+                this.visible = true;
+              },
               addNewTodo: function () {
                 this.todos.push({
                   id: this.nextTodoId++,
@@ -191,6 +214,5 @@
           });
 
         </script>
-
     </body>
 </html>

@@ -49,6 +49,7 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
+    isPublish: false,
     wwwRoot: path.resolve(__dirname, '../www'),
     assetsSubDirectory: '',// static
     assetsPublicPath: '',// /

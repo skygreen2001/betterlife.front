@@ -13,16 +13,41 @@
 
         <!-- <link rel="stylesheet" href="css/common.min.css"> -->
         <link rel="stylesheet" href="css/common.css">
+        <style media="screen">
+          #app{
+            margin: 300px auto;
+            font-size: 16px;
+            max-width: 1200px;
+            width: 800px;
+            text-align: center;
+          }
+        </style>
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! Welcome to Wechat Vue.js World.</p>
         <div id="app">
-          <a href="html/hi.html" target="_blank">Get Started In Vuejs.org Official Website </a>
+          <!-- Add your site or application content here -->
+          <p>Hello world! Welcome to Wechat Vue.js World.</p>
+          <a href="html/hi.html" target="_blank">Get Started In Vuejs.org Official Website </a><br/>
+          <i-button @click="show">Click me!</i-button>
+          <Modal v-model="visible" title="Welcome">Welcome to iView</Modal>
         </div>
+        <script src="js/common/bower.min.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    visible: false
+                },
+                methods: {
+                    show: function () {
+                        this.visible = true;
+                    }
+                }
+            })
+          </script>
     </body>
 </html>
