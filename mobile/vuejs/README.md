@@ -9,7 +9,7 @@
 * 专用于移动APP开发的html5 UI界面，可发布成原生应用[iOS,Andriod],也可用于html5 web页面；可嵌入微信；手机端优先。
 
   实现框架底层采用:
-    - `Vue.js` [Vue.js + iView + HTML5 Boilerplate]
+    - `Vue.js` [Vue.js + ]
 
 ## 准备工作
 
@@ -67,8 +67,6 @@
 
 * **使用JS框架**
   - Vue.js
-  - HTML5 Boilerplate
-  - PureCss
 
 ## 学习资料
 
@@ -77,55 +75,47 @@
   * Bootstrap        : http://getbootstrap.com/
   * Vue.js           : https://vuejs.org/
   * awesome-vue      : https://github.com/vuejs/awesome-vue
-  * HTML5 Boilerplate: https://html5boilerplate.com/
-  * generator-h5bp   : https://github.com/h5bp/generator-h5bp
   * PureCss          : https://purecss.io/start/
 
 - Vue.js
-  * VueJS : https://cn.vuejs.org/
-  * Vuex  : https://vuex.vuejs.org/
-  * iView : https://www.iviewui.com/
+  * VueJS    : https://cn.vuejs.org/
+  * Vuex     : https://vuex.vuejs.org/
+  * Vue 全家桶: https://github.com/hzzly/xyy-vue
 
   - Vue UI
+    - Mobile 优先
+      * VUM      : http://getvum.com/
+      * WDUI      : https://wdfe.github.io/wdui/
+      * Mint UI   : http://mint-ui.github.io/
+      * Quasar    : http://quasar-framework.org/
+      * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
+      * Vue-MDL   : https://posva.net/vue-mdl-docs/
+      * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
+
     - Web 优先
+      * iView       : https://www.iviewui.com/
       * VueStrap    : http://yuche.github.io/vue-strap/
       * BV          : https://bootstrap-vue.js.org/
-      * AT UI       : https://at-ui.github.io/at-ui
+      * AT UI     : https://at-ui.github.io/at-ui
       * Vue Material: https://vuematerial.io/
       * uiv         : https://uiv.wxsm.space/
       * Vuetify     : https://vuetifyjs.com/
       * vux         : https://vux.li/ [微信页面]
-      * Muse UI     : http://www.muse-ui.org/
-      * Buefy       : https://buefy.github.io
-      * FISH-UI     : https://myliang.github.io/fish-ui/
-
-    - Mobile 优先
-      * VUM       : http://getvum.com/
-      * Vue-MDL   : https://posva.net/vue-mdl-docs/
-      * WDUI      : https://wdfe.github.io/wdui/
-      * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
-      * Mint UI   : http://mint-ui.github.io/
-      * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
-      * Quasar    : http://quasar-framework.org/
-      * Vue 全家桶 : https://github.com/hzzly/xyy-vue
+      * Muse UI   : http://www.muse-ui.org/
+      * Buefy     : https://buefy.github.io
+      * FISH-UI   : https://myliang.github.io/fish-ui/
 
   - Vue 案例
     * Element   : http://element.eleme.io/ (饿了吗)
     * 掘金网     : https://juejin.im/
 
-- 🏆
-  * Apple  : https://www.apple.com
-  * Spring : http://spring.io/
-  * Behance: https://www.behance.net/
-
 - 其它
-  * HTML5 Boilerplate generator: https://github.com/h5bp/generator-h5bp
-    - npm install --global generator-h5bp
-    - yo h5bp
   * Vue-cli
     - sudo npm install -g vue-cli
     - vue init webpack my-project
   * Vue DevTools: https://github.com/vuejs/vue-devtools
+  * 进阶vue全家桶: https://segmentfault.com/a/1190000008610059
+  * vue全面介绍--全家桶、项目实例: http://blog.csdn.net/zhenghao35791/article/details/67639415
 
   * Vuejs的一些总结    : https://segmentfault.com/a/1190000005832164
   * Vue.js 的11个组件库: https://juejin.im/entry/5a3879705188257d6929b4b1

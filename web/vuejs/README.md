@@ -9,7 +9,7 @@
 * 专用于移动APP开发的html5 UI界面，可发布成原生应用[iOS,Andriod],也可用于html5 web页面；可嵌入微信；手机端优先。
 
   实现框架底层采用:
-    - `Vue.js` [Vue.js + iView + HTML5 Boilerplate]
+    - `Vue.js` [Vue.js + iView Admin]
 
 ## 准备工作
 
@@ -67,8 +67,7 @@
 
 * **使用JS框架**
   - Vue.js
-  - HTML5 Boilerplate
-  - PureCss
+  - iView Admin
 
 ## 学习资料
 
@@ -82,32 +81,30 @@
   * PureCss          : https://purecss.io/start/
 
 - Vue.js
-  * VueJS : https://cn.vuejs.org/
-  * Vuex  : https://vuex.vuejs.org/
-  * iView : https://www.iviewui.com/
+  * VueJS       : https://cn.vuejs.org/
+  * Vuex        : https://vuex.vuejs.org/
+  * iView       : https://www.iviewui.com/
+  * iview-admin : https://github.com/iview/iview-admin
 
   - Vue UI
-    - Web 优先
-      * VueStrap    : http://yuche.github.io/vue-strap/
-      * BV          : https://bootstrap-vue.js.org/
-      * AT UI       : https://at-ui.github.io/at-ui
-      * Vue Material: https://vuematerial.io/
-      * uiv         : https://uiv.wxsm.space/
-      * Vuetify     : https://vuetifyjs.com/
-      * vux         : https://vux.li/ [微信页面]
-      * Muse UI     : http://www.muse-ui.org/
-      * Buefy       : https://buefy.github.io
-      * FISH-UI     : https://myliang.github.io/fish-ui/
+    * VueStrap    : http://yuche.github.io/vue-strap/
+    * BV          : https://bootstrap-vue.js.org/
+    * Vue Material: https://vuematerial.io/
+    * uiv         : https://uiv.wxsm.space/
+    * Vuetify     : https://vuetifyjs.com/
+    * vux         : https://vux.li/ [微信页面]
 
-    - Mobile 优先
-      * VUM       : http://getvum.com/
-      * Vue-MDL   : https://posva.net/vue-mdl-docs/
-      * WDUI      : https://wdfe.github.io/wdui/
-      * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
-      * Mint UI   : http://mint-ui.github.io/
-      * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
-      * Quasar    : http://quasar-framework.org/
-      * Vue 全家桶 : https://github.com/hzzly/xyy-vue
+    * Muse UI   : http://www.muse-ui.org/
+    * VUM       : http://getvum.com/
+    * Vue-MDL   : https://posva.net/vue-mdl-docs/
+    * WDUI      : https://wdfe.github.io/wdui/
+    * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
+    * Buefy     : https://buefy.github.io
+    * AT UI     : https://at-ui.github.io/at-ui
+    * Mint UI   : http://mint-ui.github.io/
+    * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
+    * FISH-UI   : https://myliang.github.io/fish-ui/
+    * Quasar    : http://quasar-framework.org/
 
   - Vue 案例
     * Element   : http://element.eleme.io/ (饿了吗)

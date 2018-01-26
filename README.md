@@ -9,16 +9,17 @@
 框架目标定义分为三部分:
 * Html5开发生成Native原生应用[iOS,Andriod]
   - `AngularJS`     [AngularJS + Mobile Angular UI + jQuery WeUI]
+  - `Vue.js`        [Vue.js + ( iView | Framework7)]
   - `Angular`       [Angular + Typescript + Ionic]
   - `React Native`  [React + React Material]
-  - `Vue.js`        [Vue.js + Framework7]
   - `Native Script` [Native Script+ NativeScript UI]
 
 * 专用于移动APP内嵌的html5 UI界面, 也可用于html5 web页面；可嵌入微信；手机端优先。
-  - `Vue.js` [Vue.js + vux + (Bootstrap3 Css Only | PureCss) + HTML5 Boilerplate]
+  - `Vue.js` [Vue.js + （iView | BV) + HTML5 Boilerplate]
 
 * 专用于Web开发的html5自适应界面，用于Pc电脑端，也可用于嵌入原生应用的[iOS,Andriod]的Html5页面；可嵌入微信；Pc Web端优先。
   - jQuery + Bootstrap3                           [ IE9  + ]
+  - Vue.js + iView Admin                          [ IE9  + ]
   - AngularJS + (Semantic-UI | Angular Material)  [ IE11 + ]
   - jQuery + Layui                                [ IE9  + ]
 
@@ -76,26 +77,31 @@
 - 🔰
   - Vue.js
     * VueJS       : https://cn.vuejs.org/
-    * vux         : https://vux.li/
     * Vuex        : https://vuex.vuejs.org/
-    * Vue Material: https://vuematerial.io/
-    * VueStrap    : http://yuche.github.io/vue-strap/
-    * BV          : https://bootstrap-vue.js.org/
-    * uiv         : https://uiv.wxsm.space/
-    * Vuetify     : https://vuetifyjs.com/
+    * iView       : https://www.iviewui.com/
 
   - Vue UI
-    * Muse UI   : http://www.muse-ui.org/
-    * VUM       : http://getvum.com/
-    * Vue-MDL   : https://posva.net/vue-mdl-docs/
-    * WDUI      : https://wdfe.github.io/wdui/
-    * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
-    * Buefy     : https://buefy.github.io
-    * AT UI     : https://at-ui.github.io/at-ui
-    * Mint UI   : http://mint-ui.github.io/
-    * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
-    * FISH-UI   : https://myliang.github.io/fish-ui/
-    * Quasar    : http://quasar-framework.org/
+    - Web 优先
+      * VueStrap    : http://yuche.github.io/vue-strap/
+      * BV          : https://bootstrap-vue.js.org/
+      * AT UI       : https://at-ui.github.io/at-ui
+      * Vue Material: https://vuematerial.io/
+      * uiv         : https://uiv.wxsm.space/
+      * Vuetify     : https://vuetifyjs.com/
+      * vux         : https://vux.li/ [微信页面]
+      * Muse UI     : http://www.muse-ui.org/
+      * Buefy       : https://buefy.github.io
+      * FISH-UI     : https://myliang.github.io/fish-ui/
+
+    - Mobile 优先
+      * VUM       : http://getvum.com/
+      * Vue-MDL   : https://posva.net/vue-mdl-docs/
+      * WDUI      : https://wdfe.github.io/wdui/
+      * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
+      * Mint UI   : http://mint-ui.github.io/
+      * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
+      * Quasar    : http://quasar-framework.org/
+      * Vue 全家桶 : https://github.com/hzzly/xyy-vue
 
 - ⚛️
   - React
@@ -104,13 +110,16 @@
     * React 入门教程  : https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
     * Reactive Native: http://facebook.github.io/react-native/
     * Preact         : https://preactjs.com/
+    * React全家桶教程  : https://github.com/brickspert/react-family
+    * React全家桶实战  : https://github.com/Juliiii/React-Cnode
 
 - 🏆
-  - Mobile 前端优先
-    * Ant Design: https://ant.design
+  - Mobile 优先
     * Ionic     : http://ionicframework.com/
     * Onsen UI  : https://onsen.io/
     * Meteor    : https://www.meteor.com/
+    * Framework7: http://framework7.io/
+    * Ant Design: https://ant.design
     * MAUI      : http://mobileangularui.com/
     * JqWeUI    : http://jqweui.com/
     * YDUI      : http://www.ydui.org/
@@ -119,20 +128,22 @@
     * AUI       : http://www.auicss.com/
     * Fronzen UI: http://frozenui.github.io/
 
-  - Web 前端优先
-    * Bootstrap: http://getbootstrap.com/
-    * Semantic : http://www.semantic-ui.cn
-    * Layui    : http://www.layui.com
-    * Element   : http://element.eleme.io/ (饿了吗 - Vue.js 2.0)
-    * Amaze UI : http://amazeui.org/
-    * uikit    : http://www.getuikit.net
-    * ZUI      : http://zui.sexy/
-    * H-ui     : http://www.h-ui.net/
-    * AT UI    : https://at-ui.github.io/at-ui
+  - Web 优先
+    * Bootstrap  : http://getbootstrap.com/
+    * Semantic   : http://www.semantic-ui.cn
+    * Layui      : http://www.layui.com
+    * iView admin: https://github.com/iview/iview-admin
+    * Element    : http://element.eleme.io/ (饿了吗 - Vue.js 2.0)
+    * Amaze UI   : http://amazeui.org/
+    * uikit      : http://www.getuikit.net
+    * ZUI        : http://zui.sexy/
+    * H-ui       : http://www.h-ui.net/
+    * AT UI      : https://at-ui.github.io/at-ui
 
   - 微信内置Html5优先
+    - iView            : https://www.iviewui.com/
     - HTML5 Boilerplate: https://html5boilerplate.com/
-    - PureCss     : https://purecss.io/start/
+    - PureCss          : https://purecss.io/start/
 
 - 🔧
   - underscore: http://underscorejs.org
