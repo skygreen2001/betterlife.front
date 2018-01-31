@@ -14314,6 +14314,18 @@ div.dataTables_wrapper div.dataTables_info {
   padding: 19px 20px 20px;
 }
 
+.edit form .form-actions .btn-reset {
+  color: #fff;
+  background-color: #999;
+  border-color: #999;
+}
+
+.edit form .form-actions .btn-reset:hover,
+.edit form .form-actions .btn-reset:active {
+  background-color: #666;
+  border-color: #666;
+}
+
 .edit select + .btn-group {
   width: 100%;
 }
@@ -14503,6 +14515,11 @@ div.dataTables_wrapper div.dataTables_info {
 .view .btn-info:active {
   background-color: #77cc6d;
   border-color: #77cc6d;
+}
+
+.view .btn-edit {
+  background-color: #44a739;
+  border-color: #44a739;
 }
 
 .index {
