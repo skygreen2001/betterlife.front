@@ -35,7 +35,7 @@
         <h2>
           <p>Welcome to BB app!</p>
           <Button type="ghost" @click="handleStart">Start BB</Button><br>
-          <a href="hi" target="_blank">Hi</a>
+          <a href="hi?q=8888" target="_blank">Hi</a>
         </h2>
       </i-col>
     </Row>

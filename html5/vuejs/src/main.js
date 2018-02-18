@@ -4,6 +4,8 @@ import Vue from 'vue'
 import router from './router'
 import App from './App'
 
+Vue.config.debug = true
+Vue.config.devtools = true
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

@@ -42,6 +42,16 @@
 <script>
 export default {
   name: 'Hi',
+  props: ['query'],
+  data () {
+    return {
+    }
+  },
+  computed: {
+  },
+  created () {
+    console.log(this.query)
+  },
   methods: {
     handleStart () {
       this.$Modal.info({

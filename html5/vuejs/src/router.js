@@ -20,8 +20,8 @@ const routers = [
   {
     path: '/hi',
     name: 'Hi',
-    component: Hi
-
+    component: Hi,
+    props: (route) => ({ query: route.query.q })
   }
 ]
 
