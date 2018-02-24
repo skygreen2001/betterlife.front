@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
-import Util from './util/UtilCommon'
+import Util from '@/init/util'
 
 import HelloWorld from '@/components/HelloWorld'
 import Hi from '@/components/Hi'

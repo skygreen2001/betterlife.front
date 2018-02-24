@@ -17,6 +17,8 @@
   "dependencies": {
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
+    "jquery": "^3.3.1",
+    "axios": "^0.18.0",
     "iview": "^2.9.0"
   },
   "devDependencies": {

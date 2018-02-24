@@ -3,7 +3,7 @@ let Util = {
 }
 
 Util.title = function (title) {
-  title = title ? title + ' - Home' : 'BB project'
+  title = title ? title + '' : 'BB Project - Home'
   window.document.title = title
 }
 

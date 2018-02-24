@@ -43,6 +43,10 @@
 </template>
 <script>
 export default {
+  mounted: function () {
+    $('.ivu-btn-ghost').css('background-color', '#2d8cf0')
+    $('.ivu-btn-ghost').css('color', '#fff')
+  },
   methods: {
     name: 'HelloWorld',
     handleStart () {
