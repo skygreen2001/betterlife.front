@@ -204,7 +204,7 @@ gulp.task('js', function() {
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));
 
-    gulp.src('./src/js/core/index/bower/**/*.js')
+    gulp.src('./src/js/index/bower/**/*.js')
     .pipe($.concat('index.bower.js'))
     // .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')))
     .pipe($.uglify())
@@ -224,17 +224,17 @@ gulp.task('js', function() {
   .pipe($.sourcemaps.write('.'))
   .pipe(gulp.dest(path.join(config.dest, 'js', 'common')));
 
-  gulp.src('./src/js/core/index/index.js')
+  gulp.src('./src/js/index/index.js')
   .pipe($.concat('index.js'))
   .pipe(gulp.dest(path.join(config.dest, "js")));
 
-  gulp.src('./src/js/core/index/index/*.js')
+  gulp.src('./src/js/index/index/*.js')
   .pipe(gulp.dest(path.join(config.dest, "js", "index")));
 
   gulp.src('./src/js/normal/**/*.js')
   .pipe(gulp.dest(path.join(config.dest, 'js', 'normal')));
 
-  gulp.src(['./src/js/core/*.js', './src/js/core/!(index)*/**/*.js'])
+  gulp.src(['./src/js/core/*.js', './src/js/core/**/*.js'])
   .pipe(gulp.dest(path.join(config.dest, 'js', 'core')));
 
   firstInit = false;

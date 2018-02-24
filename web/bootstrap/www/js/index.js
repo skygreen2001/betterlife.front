@@ -10,6 +10,9 @@ $(function(){
   $(".navbar-fixed-top").css("opacity","0");
   // 隐藏toggle精简布局设置按钮
   $("#btn-layout-small").css("display","none");
+  $(window).resize(function(){
+    $("#btn-layout-small").css("display","none");
+  });
 
   // 顶部导航滚动显示底部挡板效果
   $(document).scrollTop() <= 0 ? $(".navbar").removeClass("nav-scroll") : $(".navbar").addClass("nav-scroll");
@@ -24,12 +27,15 @@ $(function(){
     }
   });
 
-  $("nav").hover(function() {
-    $(".navbar").addClass("nav-scroll");
-    $(".navbar-fixed-top").css("opacity","1");
-  },function(){
-    $(".navbar").removeClass("nav-scroll");
-    $(".navbar-fixed-top").css("opacity","0");
+  // $("nav").hover(function() {
+  //   $(".navbar").addClass("nav-scroll");
+  //   $(".navbar-fixed-top").css("opacity","1");
+  // },function(){
+  //   $(".navbar").removeClass("nav-scroll");
+  //   $(".navbar-fixed-top").css("opacity","0");
+  // });
+  $(".container-fluid").click(function(){
+    $("#searchbar").collapse('hide');
   });
 
   //首页内容顶部显示星云效果

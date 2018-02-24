@@ -13406,8 +13406,9 @@ button,
 
 .navbar .navbar-container #searchbar #searchbar-inner #searchbar-close {
   position: absolute;
+  display: none;
   right: 8%;
-  margin-top: -50px;
+  margin-top: 10px;
   height: 40px;
   line-height: 40px;
   font-size: 16px;

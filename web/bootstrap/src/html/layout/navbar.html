@@ -51,7 +51,7 @@
             </li>
             <li id="searchbar-li" class="search-toggle collapsed" data-toggle="collapse" data-target="#searchbar" aria-expanded="false" aria-controls="searchbar">
               <a>
-                <span><span class="menu-search-text">搜索</span><i class="fa fa-search" aria-hidden="true"></i></span>
+                <span><span class="menu-search-text">搜索</span><span class="fa fa-search" aria-hidden="true"></span></span>
               </a>
             </li>
             <li><a id="btn-layout-small"><i class="glyphicon glyphicon-resize-small"></i></a></li>
@@ -60,9 +60,10 @@
         <div id="searchbar" class="collapse">
           <div id="searchbar-inner">
             <form method="get" action="" class="searchbar-form">
-              <input type="search" class="form-control" name="search" autocomplete="off" autofocus="autofocus" placeholder="搜你所想">
+              <input id="t-search" type="search" class="form-control" name="search" autocomplete="off" autofocus="autofocus" placeholder="搜你所想">
+              <i id="searchbar-close" class="fa fa-remove search-toggle"></i>
             </form>
-            <i id="searchbar-close" class="fa fa-remove search-toggle"></i>
+            
           </div>
         </div>
       </div>
