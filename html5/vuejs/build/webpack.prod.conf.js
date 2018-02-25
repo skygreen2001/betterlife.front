@@ -17,7 +17,8 @@ const webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
       sourceMap: config.build.productionSourceMap,
-      extract: true,
+      // 打包到生产环境时,woff 字体引用问题: https://github.com/iview/iview/issues/515
+      extract: false,
       usePostCSS: true
     })
   },

@@ -34,8 +34,8 @@
         </h1>
         <h2>
           <p>Welcome to BB app!</p>
-          <Button type="ghost" @click="handleStart">Start BB</Button><br>
-          <a href="hi?q=8888" target="_blank">Hi</a>
+          <Button type="primary" @click="handleStart">Start BB</Button>
+          <router-link to="/hi?q=8888"><Button type="primary">Go Hi</Button></router-link>
         </h2>
       </i-col>
     </Row>

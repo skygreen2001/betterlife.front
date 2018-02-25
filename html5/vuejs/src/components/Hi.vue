@@ -33,7 +33,8 @@
                 </h1>
                 <h2>
                     <p>Welcome to your iView app!</p>
-                    <Button type="ghost" @click="handleStart">Start iView</Button>
+                    <Button type="primary" @click="handleStart">Start iView</Button><br><br>
+                    <Button type="ghost" @click="goBack">返回</Button><br>
                 </h2>
             </i-col>
         </Row>
@@ -53,6 +54,9 @@ export default {
     console.log(this.query)
   },
   methods: {
+    goBack () {
+      this.$router.go(-1)
+    },
     handleStart () {
       this.$Modal.info({
         title: 'Bravo',
