@@ -28,7 +28,7 @@ const routers = [
 // 路由配置
 const RouterConfig = {
   mode: 'history',
-  base: window.location.pathname,
+  base: window.location.pathname,// 参考: https://github.com/vuejs/vue-router/issues/1497
   routes: routers
 }
 
