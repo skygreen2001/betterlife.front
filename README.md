@@ -49,19 +49,21 @@
     ```
 
 * **运行工具**
+
+  - 需安装有Python环境:
+
+    ```
+    > python -m SimpleHTTPServer 8000
+    ```
+    说明: 一般Mac或linux系统已经安装有python
+
   - 需安装有Node.js环境
 
     ```
     > sudo npm install http-server -g
     > http-server -p 8000
     ```
-
-  - 需安装有Python环境:
-
-  ```
-  > python -m SimpleHTTPServer 8000
-  ```
-  说明: 一般Mac或linux系统已经安装有python
+    说明: 开发需用到Node.js环境
 
 ## 学习资料
 
