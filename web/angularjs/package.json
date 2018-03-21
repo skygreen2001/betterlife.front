@@ -10,7 +10,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-angular-filesort": "^1.0.1",
-    "gulp-angular-templatecache": "^1.2.1",
+    "gulp-angular-templatecache": "2.0.0",
     "gulp-bower": "^0.0.13",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.3.4",
@@ -30,7 +30,8 @@
     "streamqueue": "^0.1.1"
   },
   "_dependencies": {
-    "gulp-image": "^4.0.0"
+    "gulp-image": "^4.0.0",
+    "gulp-angular-templatecache": "^1.2.1"
   },
   "dependencies": {
     "bower": "^1.8.2",

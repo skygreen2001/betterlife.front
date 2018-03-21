@@ -82,9 +82,10 @@
   * PureCss          : https://purecss.io/start/
 
 - Vue.js
-  * VueJS : https://cn.vuejs.org/
-  * Vuex  : https://vuex.vuejs.org/
-  * iView : https://www.iviewui.com/
+  * VueJS  : https://cn.vuejs.org/
+  * Vuex   : https://vuex.vuejs.org/
+  * iView  : https://www.iviewui.com/
+  * Mint UI: http://mint-ui.github.io/
 
   - Vue UI
     - Web 优先
@@ -104,7 +105,6 @@
       * Vue-MDL   : https://posva.net/vue-mdl-docs/
       * WDUI      : https://wdfe.github.io/wdui/
       * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
-      * Mint UI   : http://mint-ui.github.io/
       * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
       * Quasar    : http://quasar-framework.org/
       * Vue 全家桶 : https://github.com/hzzly/xyy-vue
