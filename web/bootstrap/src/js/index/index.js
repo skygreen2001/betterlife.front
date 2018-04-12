@@ -125,3 +125,23 @@ $(function(){
     }
   }
 });
+
+
+var login = "一张网页，要经历怎样的过程，才能抵达用户面前？\n一位新人，要经历怎样的成长，才能站在技术之巅？\n探寻这里的秘密，体验这里的挑战，成为这里的主人！\n欢迎来到Betterlife世界，你，可以影响世界。\n"
+console.log(login);
+var theUA = window.navigator.userAgent.toLowerCase();
+if ((theUA.match(/msie\s\d+/) && theUA.match(/msie\s\d+/)[0]) || (theUA.match(/trident\s?\d+/) && theUA.match(/trident\s?\d+/)[0])) {
+    var ieVersion = theUA.match(/msie\s\d+/)[0].match(/\d+/)[0] || theUA.match(/trident\s?\d+/)[0];
+    if (ieVersion < 9) {
+        var str = "本网站仅支持 IE9 以上版本的浏览器，您的浏览器版本过低 :(";
+        var str2 = "<br>推荐升级或下载其他浏览器:"
+            + "<a href='https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads' target='_blank' style='color:#464646;'>点我升级</a>,"
+            + "<a href='https://www.google.cn/chrome/' target='_blank' style='color:#464646;'>谷歌</a>,"
+            + "<a href='https://www.mozilla.org' target='_blank' style='color:#464646;'>火狐</a>";
+        document.writeln("<pre style='text-align:center;color:#fff;background-color:#77cc6d; height:100%;border:0;position:fixed;top:0;left:0;width:100%;z-index:1234'>" +
+            "<h2 style='padding-top:200px;margin:0'><strong>" + str + "<br/></strong></h2><h2>" +
+            str2 + "</h2><h2 style='margin:0'><strong><br>如果你使用的是双核浏览器,请切换到极速模式访问<br/></strong></h2></pre>");
+        document.execCommand("Stop");
+        document.getElementsByTagName('nav')[0].style.display = "none";
+    }
+}
