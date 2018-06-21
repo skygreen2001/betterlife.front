@@ -39,7 +39,9 @@
     "bootstrap-multiselect": "^0.9.13",
     "select2": "^4.0.3",
     "bootstrap-switch": "^3.3.4",
-    "jquery-validation": "jquery-validation/jquery-validation#^1.16.0"
+    "jquery-validation": "jquery-validation/jquery-validation#^1.16.0",
+    "flexslider": "^2.7.1",
+    "animate.css": "^3.5.2"
   },
   "resolutions": {
     "jquery": "^3.1.1"

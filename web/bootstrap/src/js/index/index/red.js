@@ -18,6 +18,12 @@ $(function(){
       $.index.checkScrollForBgSlow();
     //  }
   });
+
+  //==================== Intro Text Slider ========================//
+  $.index.introSlider();
+
+  //==================== Portfolio ========================//
+  $.index.portfolio();
 });
 
 var index = {
@@ -60,23 +66,89 @@ var index = {
       func.apply(context, args);
     }, wait);
     if (!timeout) func.apply(context, args);
+  },
+  introSlider: function(){
+      $('#intro-slider').flexslider({
+          animation: "fade",
+          controlNav: false,
+          DirectionNav: false,
+          slideshowSpeed: 4000,
+          animationSpeed: 600
+      });
+  },
+  portfolio: function(){
+      mixitup($('#portfoliolist'),
+        {
+            animation: {
+                enable: false,
+                effects: 'fade',
+                easing: 'snap'
+            },
+            selectors: {
+                target: '.portfolio'
+            },
+            classNames: {
+                elementFilter: 'filter'
+            }
+        }
+      );
   }
-  // checkScrollForParallax : debounce(function(){this.bgSlowSroll();},6)
-}
+};
 
-// // Returns a function, that, as long as it continues to be invoked, will not
-// // be triggered. The function will be called after it stops being called for
-// // N milliseconds. If `immediate` is passed, trigger the function on the
-// // leading edge, instead of the trailing.
-// function debounce(func, wait, immediate) {
-//   var timeout;
-//   return function() {
-//     var context = this, args = arguments;
-//     clearTimeout(timeout);
-//     timeout = setTimeout(function() {
-//       timeout = null;
-//       if (!immediate) func.apply(context, args);
-//     }, wait);
-//     if (immediate && !timeout) func.apply(context, args);
-//   };
-// }
+$(window).scroll(function() {
+  $('.text-slide').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+500) {
+      $(this).addClass("fadeIn");
+    }
+  });
+
+
+  $('.welcome-text').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+500) {
+      $(this).addClass("bounceIn");
+    }
+  });
+
+  $('.fact-info').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+500) {
+      $(this).addClass("fadeInRight");
+    }
+  });
+
+  $('.staff-content').each(function(){
+  var imagePos = $(this).offset().top;
+
+  var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+500) {
+      $(this).addClass("rollIn");
+    }
+  });
+
+  $('.fade-text').each(function(){
+  var imagePos = $(this).offset().top;
+
+  var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+500) {
+      $(this).addClass("fadeIn");
+    }
+  });
+
+
+  $('.contact-info').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+500) {
+      $(this).addClass("flipInX");
+    }
+  });
+});

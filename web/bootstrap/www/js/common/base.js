@@ -848,6 +848,21 @@ String.prototype.trimAll = function(str){
     return str.replace(/\s*/g, '');
 };
 
+//Same to the C/PHP printf() or for C#/Java, String.Format() (IFormatProvider for .NET).
+//参考: https://stackoverflow.com/questions/610406/javascript-equivalent-to-printf-string-format
+//示例: "{0} is dead, but {1} is alive! {0} {2}".format("ASP", "ASP.NET")
+if (!String.prototype.format) {
+  String.prototype.format = function() {
+    var args = arguments;
+    return this.replace(/{(\d+)}/g, function(match, number) {
+      return typeof args[number] != 'undefined'
+        ? args[number]
+        : match
+      ;
+    });
+  };
+}
+
 //计算中文字符串长度[包括英文数字长度]
 String.prototype.chineseLength = function() {
   var len = 0;
