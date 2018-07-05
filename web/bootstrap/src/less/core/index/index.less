@@ -163,7 +163,7 @@
       color     : #333;
       font-weight: normal;
       .transition(all .6s ease);
-      .translate(@x: 0%;@y: 40px);
+      .translate(@x: 0%;@y: 0px);
       &.slogan{
         font-family: @font-family;
         margin: 60px 0 160px;
@@ -294,14 +294,12 @@
         }
       }
     }
-    &.animation{
-      .title{
+    .title.animated{
+      .translate(@x: 0%;@y: 0%);
+      opacity: 1;
+      small {
         .translate(@x: 0%;@y: 0%);
         opacity: 1;
-        small {
-          .translate(@x: 0%;@y: 0%);
-          opacity: 1;
-        }
       }
     }
     &.darker {

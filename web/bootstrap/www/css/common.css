@@ -18305,10 +18305,10 @@ div.dataTables_wrapper div.dataTables_info {
   -ms-transition: all all 0.6s ease ease;
   -o-transition: all all 0.6s ease ease;
   transition: all all 0.6s ease ease;
-  -webkit-transform: translate(0%, 40px);
-  -ms-transform: translate(0%, 40px);
-  -o-transform: translate(0%, 40px);
-  transform: translate(0%, 40px);
+  -webkit-transform: translate(0%, 0px);
+  -ms-transform: translate(0%, 0px);
+  -o-transform: translate(0%, 0px);
+  transform: translate(0%, 0px);
 }
 
 .index .section .title.slogan {
@@ -18510,7 +18510,7 @@ div.dataTables_wrapper div.dataTables_info {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.index .section.animation .title {
+.index .section .title.animated {
   -webkit-transform: translate(0%, 0%);
   -ms-transform: translate(0%, 0%);
   -o-transform: translate(0%, 0%);
@@ -18518,7 +18518,7 @@ div.dataTables_wrapper div.dataTables_info {
   opacity: 1;
 }
 
-.index .section.animation .title small {
+.index .section .title.animated small {
   -webkit-transform: translate(0%, 0%);
   -ms-transform: translate(0%, 0%);
   -o-transform: translate(0%, 0%);

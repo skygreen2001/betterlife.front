@@ -53,38 +53,23 @@ $(function(){
   });
   $(".content-list-bg").click(function(){});
 
-  //上下滑屏逐个出现
   if($(".section")){
-    var t = $(".section");
-    var tH = t.eq(0).height();
-    var winH = $(window).height();
-    var sTop = $(window).scrollTop();
-
-    $(window).scroll(function(){
-      sTop = $(window).scrollTop();
-      if(navigator.userAgent.match(/mobile/i)) {
-        pageAni(sTop);
-      }else{
-        pageAniWin(sTop)
-      }
+    $(window).scroll(function() {
+      $('.section').each(function(){
+        var imagePos = $(this).offset().top;
+        var winH = $(window).height();
+        var topOfWindow = $(window).scrollTop();
+        if(navigator.userAgent.match(/mobile/i)) {
+          if (imagePos < topOfWindow+winH/1.3) {
+            $(this).find(".title").addClass("animated bounceInUp");
+          }
+        }else{
+          if (imagePos < topOfWindow+winH/1.3) {
+            $(this).find(".title").addClass("animated bounceInUp");
+          }
+        }
+      });
     });
-    function pageAni(sTop){
-      $.each(t,function(i){
-        if( sTop>t.eq(i).offset().top-winH*1.1){
-          t.eq(i).addClass("animation");
-        }
-      });
-    }
-    function pageAniWin(sTop){
-      $.each(t,function(i){
-        if( sTop>t.eq(i).offset().top-winH/1.3){
-          t.eq(i).addClass("animation");
-        }
-      });
-    }
-    pageAni(sTop);
-    pageAniWin(sTop);
-    $(".section").removeClass("animation");
   }
 
   //coutUp
