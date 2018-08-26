@@ -1,7 +1,7 @@
 $(function(){
     if ($(window).width()<768) $("#btn-toggle-sidebar").css("display","block");
     $(window).resize(function(){if ($(window).width()<768) $("#btn-toggle-sidebar").css("display","block"); else $("#btn-toggle-sidebar").css("display","none");});
-    
+
     //Datatables中文网[帮助]: http://datatables.club/
     if ($.dataTable) {
         var infoTable = $('#infoTable').DataTable({
@@ -58,6 +58,7 @@ $(function(){
             "columnDefs": [
                 {"orderable": false, "targets": 5,
                  "render"   : function(data, type, row) {
+                    if ($_.params("d")=="1") data = "../../images/beauty.jpg";
                     var result = '<a id="' + "imgUrl" + row.id + '" href="#"><img src="' + data + '" class="img-thumbnail" alt="' + row.title + '" /></a>';
 
                     $("body").off('click', 'a#imgUrl'+row.id);

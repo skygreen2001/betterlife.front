@@ -17359,6 +17359,10 @@ footer #footer-inner a:hover {
   min-height: 673px;
 }
 
+.list .btns-container {
+  float: right;
+}
+
 .list .up-container {
   margin: 0px;
 }
@@ -17501,8 +17505,8 @@ footer #footer-inner a:hover {
   display: none;
 }
 
-.list .table-responsive table.dataTable th a,
-.list .table-responsive table.dataTable td a {
+.list .table-responsive table.dataTable th:last-child a,
+.list .table-responsive table.dataTable td:last-child a {
   width: 45px;
   height: 28px;
   line-height: 28px;
@@ -17511,51 +17515,51 @@ footer #footer-inner a:hover {
   display: inline-block;
 }
 
-.list .table-responsive table.dataTable th a:hover,
-.list .table-responsive table.dataTable td a:hover,
-.list .table-responsive table.dataTable th a:focus,
-.list .table-responsive table.dataTable td a:focus {
+.list .table-responsive table.dataTable th:last-child a:hover,
+.list .table-responsive table.dataTable td:last-child a:hover,
+.list .table-responsive table.dataTable th:last-child a:focus,
+.list .table-responsive table.dataTable td:last-child a:focus {
   text-decoration: none;
 }
 
-.list .table-responsive table.dataTable th a.btn-view,
-.list .table-responsive table.dataTable td a.btn-view {
+.list .table-responsive table.dataTable th:last-child a.btn-view,
+.list .table-responsive table.dataTable td:last-child a.btn-view {
   background-color: #999;
   border: 1px solid #999;
 }
 
-.list .table-responsive table.dataTable th a.btn-view:hover,
-.list .table-responsive table.dataTable td a.btn-view:hover,
-.list .table-responsive table.dataTable th a.btn-view:focus,
-.list .table-responsive table.dataTable td a.btn-view:focus {
+.list .table-responsive table.dataTable th:last-child a.btn-view:hover,
+.list .table-responsive table.dataTable td:last-child a.btn-view:hover,
+.list .table-responsive table.dataTable th:last-child a.btn-view:focus,
+.list .table-responsive table.dataTable td:last-child a.btn-view:focus {
   color: #999;
   background-color: #fff;
 }
 
-.list .table-responsive table.dataTable th a.btn-edit,
-.list .table-responsive table.dataTable td a.btn-edit {
+.list .table-responsive table.dataTable th:last-child a.btn-edit,
+.list .table-responsive table.dataTable td:last-child a.btn-edit {
   background-color: #4caf50;
   border: 1px solid #4caf50;
 }
 
-.list .table-responsive table.dataTable th a.btn-edit:hover,
-.list .table-responsive table.dataTable td a.btn-edit:hover,
-.list .table-responsive table.dataTable th a.btn-edit:focus,
-.list .table-responsive table.dataTable td a.btn-edit:focus {
+.list .table-responsive table.dataTable th:last-child a.btn-edit:hover,
+.list .table-responsive table.dataTable td:last-child a.btn-edit:hover,
+.list .table-responsive table.dataTable th:last-child a.btn-edit:focus,
+.list .table-responsive table.dataTable td:last-child a.btn-edit:focus {
   color: #4caf50;
   background-color: #fff;
 }
 
-.list .table-responsive table.dataTable th a.btn-dele,
-.list .table-responsive table.dataTable td a.btn-dele {
+.list .table-responsive table.dataTable th:last-child a.btn-dele,
+.list .table-responsive table.dataTable td:last-child a.btn-dele {
   background-color: #ed1f2d;
   border: 1px solid #ed1f2d;
 }
 
-.list .table-responsive table.dataTable th a.btn-dele:hover,
-.list .table-responsive table.dataTable td a.btn-dele:hover,
-.list .table-responsive table.dataTable th a.btn-dele:focus,
-.list .table-responsive table.dataTable td a.btn-dele:focus {
+.list .table-responsive table.dataTable th:last-child a.btn-dele:hover,
+.list .table-responsive table.dataTable td:last-child a.btn-dele:hover,
+.list .table-responsive table.dataTable th:last-child a.btn-dele:focus,
+.list .table-responsive table.dataTable td:last-child a.btn-dele:focus {
   color: #ed1f2d;
   background-color: #fff;
 }

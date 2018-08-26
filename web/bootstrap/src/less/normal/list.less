@@ -5,6 +5,9 @@
   min-width       : 320px;
   // min-height      : 568px;
   min-height      : 673px;
+  .btns-container{
+    float: right;
+  }
   .up-container{
     margin    : 0px;
     .filter-up{
@@ -111,39 +114,41 @@
         #imgSlides-container{
           display: none;
         }
-        a {
-          width        : 45px;
-          height       : 28px;
-          line-height  : 28px;
-          color        : #fff;
-          border-radius: 5px;
-          display      : inline-block;
-          &:hover, &:focus{
-            text-decoration:none;
-          }
-          &.btn-view{
-            background-color: #999;
-            border          : 1px solid #999;
+        &:last-child{
+          a {
+            width        : 45px;
+            height       : 28px;
+            line-height  : 28px;
+            color        : #fff;
+            border-radius: 5px;
+            display      : inline-block;
             &:hover, &:focus{
-              color           : #999;
-              background-color: #fff;
+              text-decoration:none;
             }
-          }
-          &.btn-edit{
-            background-color: @color-input;
-            border          : 1px solid @color-input;
-            &:hover, &:focus{
-              color           : @color-input;
-              background-color: #fff;
+            &.btn-view{
+              background-color: #999;
+              border          : 1px solid #999;
+              &:hover, &:focus{
+                color           : #999;
+                background-color: #fff;
+              }
             }
-          }
-          &.btn-dele{
-            background-color: #ed1f2d;
-            border          : 1px solid #ed1f2d;
-            &:hover, &:focus{
-              color           : #ed1f2d;
-              background-color: #fff;
+            &.btn-edit{
+              background-color: @color-input;
+              border          : 1px solid @color-input;
+              &:hover, &:focus{
+                color           : @color-input;
+                background-color: #fff;
+              }
+            }
+            &.btn-dele{
+              background-color: #ed1f2d;
+              border          : 1px solid #ed1f2d;
+              &:hover, &:focus{
+                color           : #ed1f2d;
+                background-color: #fff;
 
+              }
             }
           }
         }
