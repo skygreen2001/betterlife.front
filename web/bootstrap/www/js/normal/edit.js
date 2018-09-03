@@ -45,7 +45,7 @@ var edit = {
     if (ajaxUrl) {
       $(selectName).select2({
         placeholder: {
-          id: '-1',
+          id: '-10000',
           text: '请选择'
         },
         allowClear: true,
@@ -71,7 +71,7 @@ var edit = {
     } else {
       $(selectName).select2({
           placeholder: {
-            id: '-1',
+            id: '-10000',
             text: '请选择'
           },
           allowClear: true,
