@@ -16956,6 +16956,10 @@ footer #footer-inner {
   position: relative;
 }
 
+footer #footer-inner #link {
+  display: inline-block;
+}
+
 footer #footer-inner a {
   color: #aaa;
   transition: all 0.15s linear;
@@ -17023,6 +17027,16 @@ footer #footer-inner a:hover {
 }
 
 @media (max-width: 480px) {
+  footer #footer-inner {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    position: relative;
+  }
+
+  footer #footer-inner #link {
+    display: block;
+  }
+
   .footer-rainbow {
     display: none;
   }
@@ -20715,13 +20729,25 @@ body.login .login-container footer #footer-inner a:hover {
 }
 
 @media (max-width: 992px) {
-  .index_red .section.section-header .container .content {
+  .us .section.section-header .container .content {
     top: 30%;
+  }
+
+  .us #contact .row .contact-info {
+    margin-bottom: 30px;
   }
 }
 
 @media (max-width: 768px) {
-  .index_red #main-content-container {
+  .us .space90 {
+    margin-bottom: 40px;
+  }
+
+  .us .space80 {
+    margin-bottom: 60px;
+  }
+
+  .us #main-content-container {
     text-align: center !important;
     -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -20735,19 +20761,19 @@ body.login .login-container footer #footer-inner a:hover {
     background-color: white;
   }
 
-  .index_red .section.section-header {
+  .us .section.section-header {
     padding: 0;
   }
 
-  .index_red .section.section-header .parallax {
+  .us .section.section-header .parallax {
     height: 500px;
   }
 
-  .index_red .section.section-header .parallax:after {
+  .us .section.section-header .parallax:after {
     height: 500px;
   }
 
-  .index_red .section.section-header .parallax.pattern-image > img {
+  .us .section.section-header .parallax.pattern-image > img {
     position: relative;
     background-color: #77cc6d;
     padding: 0;
@@ -20758,21 +20784,121 @@ body.login .login-container footer #footer-inner a:hover {
     min-height: 500px;
   }
 
-  .index_red .section.section-header .separator-container .separator {
+  .us .section.section-header .separator-container .separator {
     width: 12em;
   }
 
-  .index_red .section.section-header h5 {
+  .us .section.section-header h5 {
     font-size: 1.125em;
     margin-top: 50px;
     margin: 0;
   }
 
-  .index_red .section.section-header h1 {
+  .us .section.section-header h1 {
     font-size: 3.5em;
     letter-spacing: 0.07em;
     line-height: 1.7;
     margin: 0;
     margin-top: 60px;
+  }
+
+  .us .flexslider {
+    margin-bottom: 45px;
+  }
+
+  .us .intro {
+    padding: 20px 0;
+  }
+
+  .us .intro .intro-page {
+    padding: 0px !important;
+  }
+
+  .us .intro .intro-body .brand-heading {
+    font-size: 24px;
+    padding-top: 30px;
+  }
+
+  .us .intro .intro-body .intro-text {
+    font-size: 15px;
+  }
+
+  .us .product-intro {
+    padding-left: 0px;
+  }
+
+  .us .fact-info {
+    padding-top: 50px;
+  }
+
+  .us .facts-content .product-intro ul {
+    width: 100%;
+    padding-left: 0px;
+  }
+
+  .us .about-content,
+  .us .facts-content,
+  .us .portfolio-wrap,
+  .us .business-wrap,
+  .us .contact-wrap {
+    padding: 50px 0;
+  }
+
+  .us .portfolio-wrap .portfolio-main #filters {
+    margin-bottom: -40px;
+    margin-top: -20px;
+  }
+
+  .us .portfolio-wrap .portfolio-main #filters ul {
+    padding-left: 3px;
+  }
+
+  .us .portfolio-wrap .portfolio-main #filters li {
+    margin: 0 1px;
+  }
+
+  .us .portfolio-wrap .portfolio-main #filters li span {
+    border: 1px solid #fff;
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .us .activity-content {
+    padding: 50px 0;
+  }
+
+  .us .activity-content .staff-content h4 {
+    margin: 25px 0;
+  }
+
+  .us .portfolio-wrap .row {
+    margin: 0px;
+  }
+
+  .us .portfolio-wrap .row .portfolio-main {
+    padding: 6px 0;
+  }
+
+  .us .portfolio-wrap #portfoliolist {
+    padding-top: 50px;
+  }
+
+  .us .portfolio-wrap #portfoliolist .portfolio {
+    padding-top: 0px;
+  }
+
+  .us .portfolio-wrap #portfoliolist .portfolio .project_intruduction .p1 {
+    font-size: 13px;
+    text-align: center;
+    height: 40px;
+  }
+
+  .us .portfolio-wrap #portfoliolist .portfolio .project_intruduction .p2 {
+    display: none;
+  }
+
+  .us .portfolio-wrap #portfoliolist .portfolio .portfolio-wrapper .overlay1 .overlay-text {
+    width: 100%;
+    height: 100%;
   }
 }

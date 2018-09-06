@@ -585,7 +585,7 @@
 }
 
 @media (max-width: @screen-md-min){
-  .index_red {
+  .us {
     .section{
       &.section-header {
         .container .content{
@@ -593,11 +593,25 @@
         }
       }
     }
+
+    #contact {
+      .row {
+        .contact-info {
+          margin-bottom: 30px;
+        }
+      }
+    }
   }
 }
 
 @media (max-width: @screen-sm-min){
-  .index_red {
+  .us {
+    .space90 {
+      margin-bottom: 40px;
+    }
+    .space80{
+      margin-bottom: 60px;
+    }
     #main-content-container{
       text-align: center !important;
       // overflow: hidden;
@@ -641,6 +655,86 @@
           line-height: 1.7;
           margin: 0;
           margin-top: 60px;
+        }
+      }
+    }
+    .flexslider{
+      margin-bottom: 45px;
+    }
+    .intro {
+      padding: 20px 0;
+      .intro-page {
+        padding: 0px !important;
+      }
+      .intro-body {
+        .brand-heading {
+          font-size: 24px;
+          padding-top: 30px;
+        }
+        .intro-text {
+          font-size: 15px;
+        }
+      }
+    }
+    .product-intro{
+      padding-left: 0px;
+    }
+    .fact-info {
+      padding-top: 50px;
+    }
+    .facts-content .product-intro ul{
+      width: 100%;
+      padding-left: 0px;
+    }
+    .about-content, .facts-content, .portfolio-wrap, .business-wrap, .contact-wrap{
+      padding: 50px 0;
+    }
+    .portfolio-wrap .portfolio-main #filters{
+      margin-bottom: -40px;
+      margin-top: -20px;
+      ul {
+        padding-left: 3px;
+      }
+      li {
+        margin: 0 1px;
+        span{
+          border: 1px solid #fff;
+          font-size: 11px;
+          padding: 5px;
+        }
+      }
+    }
+    .activity-content {
+      padding: 50px 0;
+      .staff-content h4{
+        margin: 25px 0;
+      }
+    }
+    .portfolio-wrap {
+      .row{
+        margin: 0px;
+        .portfolio-main{
+          padding: 6px 0;
+        }
+      }
+      #portfoliolist {
+        padding-top: 50px;
+        .portfolio {
+          padding-top: 0px;
+          .project_intruduction {
+            .p1{
+              font-size: 13px;
+              text-align: center;
+              height: 40px;
+            }
+            .p2{
+              display: none;
+            }
+          }
+          .portfolio-wrapper .overlay1 .overlay-text{
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }

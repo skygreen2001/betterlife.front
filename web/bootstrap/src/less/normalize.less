@@ -244,6 +244,9 @@ footer {
     padding-top: 8px;
     padding-bottom: 8px;
     position: relative;
+    #link {
+      display: inline-block;
+    }
     a {
       color: #aaa;
       transition: all 0.15s linear;
@@ -305,9 +308,20 @@ footer {
 }
 
 @media (max-width: 480px){//@screen-xs-min
+  footer{
+    #footer-inner {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      position: relative;
+      #link {
+        display: block;
+      }
+    }
+  }
   .footer-rainbow{
     display: none;
   }
+
 }
 /************************* Layout:  end ************************/
 /************************* Sidebar:start ************************/
