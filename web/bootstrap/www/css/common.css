@@ -18266,9 +18266,9 @@ div.dataTables_wrapper div.dataTables_info {
   margin: 0 auto 30px;
   background-color: transparent;
   border: 2px solid #fff;
-  width: 144px;
-  height: 144px;
-  line-height: 144px;
+  width: 180px;
+  height: 180px;
+  line-height: 180px;
   font-size: 108px;
   display: block;
   font-weight: 500;
@@ -19234,6 +19234,7 @@ body.login .login-container main .content-wrapper .content .login-form {
 }
 
 body.login .login-container main .content-wrapper .content .login-form .bb-icon {
+  cursor: pointer;
   background-color: #77cc6d;
   width: 80px;
   height: 80px;

@@ -15,10 +15,7 @@ $(function(){
       mimicData(++currentScreen);
     });
 
-    if ($_.params("d")=="1") {
-      $(".head-img img").attr("src","../../images/beauty.jpg");
-      $(".head-img img").css("margin-top","-300px");
-    }
+    $(".head-img img").css("margin-top","-300px");
 
     function mimicData(screen){
       $.get("../../data/blog.json", function(response){
@@ -29,7 +26,6 @@ $(function(){
           if (screen <= data.length){
             for (var i = 0; i < data.length*3; i++) {
               unit = data[currentScreen-1];
-              if ($_.params("d")=="1") unit.img_src = "../../images/beauty.jpg";
               result += $.templates("#unitTmpl").render(unit);
             }
             $(".unit-list").append(result).fadeIn();
