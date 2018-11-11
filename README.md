@@ -189,3 +189,7 @@
   - Electron: http://electron.atom.io/
   - Orion   : https://orionhub.org/
   - APICloud: http://www.apicloud.com/
+
+## Faq
+- Node 10 运行异常: Assertion 'args[1]->IsString()' failed
+  - npm i natives (参考: https://github.com/karma-runner/karma/issues/3051)

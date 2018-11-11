@@ -21,12 +21,15 @@ $(function(){
       $.get("../../data/blog.json", function(response){
         var data = response.data;
         if (data && data.length>0){
-          var unit;
+          var unit, unitdata;
           var result = "";
           if (screen <= data.length){
             for (var i = 0; i < data.length*3; i++) {
               unit = data[currentScreen-1];
-              result += $.templates("#unitTmpl").render(unit);
+              unitdata = Object.assign({}, unit);
+              count = currentScreen * i + 2;
+              unitdata.img_src = unitdata.img_src.replace(/\?r=1/,"?r="+count);
+              result += $.templates("#unitTmpl").render(unitdata);
             }
             $(".unit-list").append(result).fadeIn();
             $(window).scrollTop($(window).scrollTop()-1);
