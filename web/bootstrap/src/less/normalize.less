@@ -51,6 +51,14 @@ button,
   padding-left: 0;
   overflow-x: hidden;
   // width: 100%;
+  &.container {
+    display      : block;
+    padding-right: 0px;
+    .content-wrapper {
+      border-left: 1px solid #f5f5f5;
+      border-right: 1px solid #f5f5f5;
+    }
+  }
   .transition(all 0.5s ease);
   .page-sidebar {
     position: absolute;
@@ -62,10 +70,6 @@ button,
     background: #000;
     .transition(all 0.5s ease);
   }
-  &.container .content-wrapper {
-    border-left: 1px solid #f5f5f5;
-    border-right: 1px solid #f5f5f5;
-  }
   .content-wrapper {
     width: 100%;
     .row{margin: 0;}
@@ -74,16 +78,9 @@ button,
     }
   }
 }
+
+/************************* Navbar:start ************************/
 .navbar{
-  i.fa{
-    font-size: 20px;
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    &.fa-search,&.fa-briefcase{
-      margin-right: -5px;
-    }
-  }
   &.navbar-fixed-top{
     min-width: 320px;
     .transition(all 0.5s ease);
@@ -168,6 +165,8 @@ button,
           padding: 0px;
           border: 0px;
           margin-top: 1px;
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          -webkit-box-shadow: '' 0 6px 12px rgba(0, 0, 0, 0.175) 1px 2px rgba(0, 0, 0, 0.2);
           a{
             height: 36px;
             line-height: 36px;
@@ -202,128 +201,51 @@ button,
         display: none;
       }
     }
-    #searchbar{
+  }
+  #searchbar{
+    height: 60px;
+    border-top: 1px solid #041b04;
+    #searchbar-inner{
       height: 60px;
-      border-top: 0px;
-      #searchbar-inner{
+      .searchbar-form{
         height: 60px;
-        .searchbar-form{
-          height: 60px;
-          display: flex;
-          input{
-            height: 40px;
-            width: 88%;
-            margin: 10px auto;
-            border: 1px solid @color-main;
-            border-radius: 80px;
-            text-align: center;
-          }
-        }
-        #searchbar-close {
-          position: absolute;
-          display: none;
-          right: 8%;
-          margin-top: 10px;
+        display: flex;
+        input{
           height: 40px;
-          line-height: 40px;
-          font-size: 16px;
-          color: #bbb;
-          cursor: pointer;
+          width: 88%;
+          margin: 10px auto;
+          border: 1px solid @color-main;
+          border-radius: 80px;
+          text-align: center;
         }
       }
-    }
-  }
-}
-
-footer {
-  background: #222;
-  color: #999 !important;
-  font-size: 0.923em;
-  text-align: center;
-  #footer-inner {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    position: relative;
-    #link {
-      display: inline-block;
-    }
-    a {
-      color: #aaa;
-      transition: all 0.15s linear;
-      text-decoration: none;
-      &:hover{
-        color: #fff;
+      #searchbar-close {
+        position: absolute;
+        display: none;
+        right: 8%;
+        margin-top: 10px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        color: #bbb;
+        cursor: pointer;
       }
     }
   }
-}
 
-// 返回顶部按钮
-.return-top{
-  position: fixed;
-  cursor: pointer;
-  display: none;
-  right: 0;
-  bottom: 0;
-  z-index: 100000;
-  .icon-stack {
-    position: relative;
-    display: inline-block;
-    width: 2em;
-    height: 2em;
-    line-height: 2em;
-    vertical-align: middle;
-
-    i:first-child::before{
-      color: @color-main;
-      border-radius: 100%;
-      .text-shadow(0px 0px 15px @color-main);
-    }
-    .fa-stack-1x {
-      line-height: inherit;
-      font-size: 24px;
-      -webkit-text-stroke: 2px @color-main;
-      &.up{
-        margin-top: -18px;
-      }
-      &.down{
-        margin-top: -5px;
-      }
-    }
-    .fa-stack-2x {
-      font-size: 1.5em;
+  i.fa{
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    &.fa-search,&.fa-briefcase{
+      margin-right: -5px;
     }
   }
 }
 
-.bootbox .modal-dialog{
-  padding-top: 260px;
-}
+/*************************  Navbar:end  ************************/
 
-@media (max-width: 319px){
-  .navbar .navbar-container .navbar-header a.navbar-brand{
-      width: 100%;
-      max-width: 200px;
-  }
-}
-
-@media (max-width: 480px){//@screen-xs-min
-  footer{
-    #footer-inner {
-      padding-top: 8px;
-      padding-bottom: 8px;
-      position: relative;
-      #link {
-        display: block;
-      }
-    }
-  }
-  .footer-rainbow{
-    display: none;
-  }
-
-}
-/************************* Layout:  end ************************/
 /************************* Sidebar:start ************************/
 /* Sidebar Styles */
 .sidebar{
@@ -476,11 +398,6 @@ footer {
   }
 }
 
-.page-container.container{
-  display      : block;
-  padding-right: 0px;
-}
-
 @media(min-width:@screen-sm-min) {
   .navbar{
     &.navbar-inverse{
@@ -559,3 +476,95 @@ footer {
 }
 
 /************************* Sidebar:  end ************************/
+
+/************************* Footer:start ************************/
+footer {
+  background: #222;
+  color: #999 !important;
+  font-size: 0.923em;
+  text-align: center;
+  #footer-inner {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    position: relative;
+    #link {
+      display: inline-block;
+    }
+    a {
+      color: #aaa;
+      transition: all 0.15s linear;
+      text-decoration: none;
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
+}
+
+// 返回顶部按钮
+.return-top{
+  position: fixed;
+  cursor: pointer;
+  display: none;
+  right: 0;
+  bottom: 0;
+  z-index: 100000;
+  .icon-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+
+    i:first-child::before{
+      color: @color-main;
+      border-radius: 100%;
+      .text-shadow(0px 0px 15px @color-main);
+    }
+    .fa-stack-1x {
+      line-height: inherit;
+      font-size: 24px;
+      -webkit-text-stroke: 2px @color-main;
+      &.up{
+        margin-top: -18px;
+      }
+      &.down{
+        margin-top: -5px;
+      }
+    }
+    .fa-stack-2x {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.bootbox .modal-dialog{
+  padding-top: 260px;
+}
+
+@media (max-width: 319px){
+  .navbar .navbar-container .navbar-header a.navbar-brand{
+      width: 100%;
+      max-width: 200px;
+  }
+}
+
+@media (max-width: 480px){//@screen-xs-min
+  footer{
+    #footer-inner {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      position: relative;
+      #link {
+        display: block;
+      }
+    }
+  }
+  .footer-rainbow{
+    display: none;
+  }
+
+}
+/*************************  Footer:end  ************************/
+/************************* Layout:  end ************************/
