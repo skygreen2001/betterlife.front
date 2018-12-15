@@ -16908,6 +16908,7 @@ button,
 .navbar #searchbar {
   height: 60px;
   border-top: 1px solid #041b04;
+  border-bottom: 1px solid #041b04;
 }
 
 .navbar #searchbar #searchbar-inner {
