@@ -19610,13 +19610,44 @@ body.login .login-container footer #footer-inner a:hover {
   background-color: #f6f6f6;
 }
 
+.blog .main-header {
+  background: url(../../images/beauty.jpg) no-repeat #000;
+  background-position: 0px -300px;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 90vh;
+  max-height: 415px;
+  overflow: hidden;
+}
+
+.blog .main-header .head-container {
+  position: absolute;
+  color: #fff;
+  top: 0px;
+  text-align: center;
+  height: 368px;
+  width: 100%;
+}
+
+.blog .main-header .head-container .header-title {
+  position: fixed;
+  width: 100%;
+  font-size: 70px;
+  font-weight: 900;
+  line-height: 100%;
+  padding-top: 120px;
+  height: 100%;
+  margin: 0px;
+}
+
 .blog #top-panel {
-  padding-top: 60px;
+  width: 100%;
+  z-index: 100;
 }
 
 .blog #top-panel .top-menus {
   position: relative;
-  top: 210px;
 }
 
 .blog #top-panel .top-menus .menu-navs {
@@ -19626,13 +19657,9 @@ body.login .login-container footer #footer-inner a:hover {
 }
 
 .blog #top-panel .top-menus .menu-navs ul {
-  width: 80%;
+  width: 60%;
   text-align: center;
   margin: 0 auto;
-}
-
-.blog #top-panel .top-menus .menu-navs a {
-  position: relative;
 }
 
 .blog #top-panel .top-menus .menu-navs ul,
@@ -19646,56 +19673,41 @@ body.login .login-container footer #footer-inner a:hover {
   cursor: pointer;
   display: inline-block;
   width: 20%;
+  padding: 0px;
   height: 60px;
   line-height: 60px;
 }
 
-.blog #top-panel .top-menus .menu-navs ul .menu-nav .menu-nav-link .active,
-.blog #top-panel .top-menus .menu-navs li .menu-nav .menu-nav-link .active {
-  color: #0057ff;
+.blog #top-panel .top-menus .menu-navs ul .menu-nav .menu-nav-link,
+.blog #top-panel .top-menus .menu-navs li .menu-nav .menu-nav-link {
+  position: relative;
+  color: #666;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-.blog .main-header .head-img {
-  margin: 0;
-  max-width: 100%;
-  max-height: 415px;
-  vertical-align: middle;
-  color: #ffffff;
-  overflow: hidden;
-  position: fixed;
+.blog #top-panel .top-menus .menu-navs ul .menu-nav .menu-nav-link:active,
+.blog #top-panel .top-menus .menu-navs li .menu-nav .menu-nav-link:active,
+.blog #top-panel .top-menus .menu-navs ul .menu-nav .menu-nav-link:hover,
+.blog #top-panel .top-menus .menu-navs li .menu-nav .menu-nav-link:hover,
+.blog #top-panel .top-menus .menu-navs ul .menu-nav .menu-nav-link:focus,
+.blog #top-panel .top-menus .menu-navs li .menu-nav .menu-nav-link:focus {
+  color: #77cc6d;
 }
 
-.blog .main-header .head-img img {
-  width: 100%;
-  vertical-align: middle;
-}
-
-.blog .main-header .head-img .head-container {
-  position: fixed;
-  top: 60px;
-  z-index: 10000;
-  color: #fff;
-  text-align: center;
-  height: 410px;
-  width: 100%;
-}
-
-.blog .main-header .head-img .head-container .header-title {
-  font-size: 70px;
-  font-weight: 900;
-  letter-spacing: -0.11rem;
-  line-height: .95;
-  margin: -13px auto 0;
+.blog #top-panel .top-menus .menu-navs ul .menu-nav.active .menu-nav-link,
+.blog #top-panel .top-menus .menu-navs li .menu-nav.active .menu-nav-link {
+  color: #77cc6d;
 }
 
 .blog .unit-list {
   padding: 0 60px;
-  margin-top: 450px !important;
+  margin-top: 30px !important;
 }
 
 .blog .unit-list > div {
   text-align: center;
-  color: #77cc6d;
+  color: #363636;
   margin-bottom: 30px;
 }
 
@@ -19820,6 +19832,32 @@ body.login .login-container footer #footer-inner a:hover {
 }
 
 @media (max-width: 480px) {
+  .blog .main-header {
+    background-position: 0px -100px;
+  }
+
+  .blog .main-header .head-container .header-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 200%;
+    padding-top: 180px;
+  }
+
+  .blog #top-panel .top-menus .menu-navs ul {
+    width: 100%;
+  }
+
+  .blog #top-panel .top-menus .menu-navs ul .menu-nav,
+  .blog #top-panel .top-menus .menu-navs li .menu-nav {
+    width: auto;
+    padding: 0px 10px;
+  }
+
+  .blog #top-panel .top-menus .menu-navs ul .menu-nav .menu-nav-link,
+  .blog #top-panel .top-menus .menu-navs li .menu-nav .menu-nav-link {
+    font-size: 15px;
+  }
+
   .blog .unit-list {
     padding: 0px;
   }
@@ -20077,7 +20115,7 @@ body.login .login-container footer #footer-inner a:hover {
 
 .featured .unit-list > div {
   text-align: center;
-  color: #77cc6d;
+  color: #363636;
   margin-bottom: 30px;
 }
 

@@ -4,10 +4,11 @@ $(function(){
 
     //滚动翻页: https://stackoverflow.com/questions/14035180/jquery-load-more-data-on-scroll
     $(window).scroll(function() {
-      if (currentScreen<=3){
-        if($(window).scrollTop() == $(document).height() - $(window).height()) {
+      if ( currentScreen <= 3 ) {
+        if ( $(window).scrollTop() == $(document).height() - $(window).height() ) {
           mimicData(++currentScreen);
         }
+        adsShow();
       }
     });
 
@@ -15,7 +16,16 @@ $(function(){
       mimicData(++currentScreen);
     });
 
-    $(".head-img img").css("margin-top","-300px");
+    function adsShow() {
+      if ( $(window).scrollTop() <= 415) {
+        var opacity = 1 - $(window).scrollTop() / 200;
+        $(".header-title").css("opacity", opacity);
+        // $(".blog .main-header").css("opacity", opacity);
+        $("#top-panel").removeAttr( 'style' );
+      } else {
+        $("#top-panel").css({"position":"fixed", "margin-top":"0px", "top":"50px"});
+      }
+    }
 
     function mimicData(screen){
       $.get("../../data/blog.json", function(response){
