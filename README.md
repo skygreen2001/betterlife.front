@@ -69,9 +69,11 @@
 
 - 0⃣️
   * Code Guide     : http://alloyteam.github.io/CodeGuide/
+  * Ant Design     : https://ant.design
   * Material Design: https://material.io/
   * jQuery         : https://learn.jquery.com/
   * Bootstrap      : http://getbootstrap.com/
+  * Blocs For Mac  : https://blocsapp.com/
   * FIS            : https://github.com/fis-dev/fis
   * WEEX           : http://weex.incubator.apache.org/
 
@@ -136,7 +138,6 @@
     * Onsen UI  : https://onsen.io/
     * Meteor    : https://www.meteor.com/
     * Framework7: http://framework7.io/
-    * Ant Design: https://ant.design
     * MAUI      : http://mobileangularui.com/
     * JqWeUI    : http://jqweui.com/
     * YDUI      : http://www.ydui.org/
