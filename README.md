@@ -176,6 +176,9 @@
   - Share code components: https://bitsrc.io/
 
 ## 其他
+- PhoneGap         : https://phonegap.com/
+- Flutter          : https://flutter.io/
+- PM2 Runtime      : https://pm2.io/
 - web-starter-kit  : https://github.com/google/web-starter-kit
 - VueJS            : https://cn.vuejs.org/
 - Backbone.js      : http://backbonejs.org/
