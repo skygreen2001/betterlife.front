@@ -54,24 +54,47 @@
 
   - React
   - Reactive Native
+  - Create React App
+  - Expo
 
 
 ## 框架目录定义
 
-* src          : 框架核心支持文件目录
-* src/less     : 框架css源文件目录
-* src/js       : 框架js源文件目录
-* src/js/base  : Js基本函数库文件目录
-* src/template : 框架模版文件目录
-* src/html     : 框架web网页文件目录
-* www          : 发布在线Web访问目录
+* src           : 框架核心支持文件目录
+* src/style     : 框架less源文件目录
+* src/js        : 框架js源文件目录
+* src/components: Js基本函数库文件目录
+
+
+## Available Scripts
+
+
+### `npm start`
+
+运行 app 开发模式.<br>
+打开浏览器显示: [http://localhost:3000](http://localhost:3000).
+
+
+### `npm test`
+
+运行 test 在 interactive watch 模式.<br>
+[更多](https://facebook.github.io/create-react-app/docs/running-tests).
+
+### `npm run build`
+
+发布 app 到目录: `build` .<br>
+[更多](https://facebook.github.io/create-react-app/docs/deployment).
 
 
 ## 学习资料
 
 - React
-  * React 官方网站  : https://facebook.github.io/react/
-  * Material-UI设计: http://www.material-ui.com/
-  * React 入门教程  : https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
-  * Reactive Native: http://facebook.github.io/react-native/
-  * Preact         : https://preactjs.com/
+  * React 官方网站   : https://reactjs.org/
+  * Material-UI设计 : http://www.material-ui.com/
+  * React 入门教程   : https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
+  * Reactive Native : http://facebook.github.io/react-native/
+  * Preact          : https://preactjs.com/
+  * Create React App: https://facebook.github.io/create-react-app/
+  * Expo            : https://expo.io/
+    - The fastest way to build an app:
+      - Expo is a free and open source toolchain built around React Native to help you build native iOS and Android projects using JavaScript and React.

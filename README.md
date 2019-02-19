@@ -39,23 +39,17 @@
 
 * **安装开发工具 IDE**
 
-  Atom: https://atom.io/
-  IDE : https://ide.atom.io/
+  - [Visual Studio Code](https://code.visualstudio.com/)
+  - [Atom](https://atom.io/)
+  - [Atom IDE](https://ide.atom.io/)
+    - `Atom` 推荐安装 Package
 
-  - `Atom` 推荐安装 Package
+      ```
+      > apm install atom-beautify file-icons markdown-themeable-pdf
+      ```
+  - [Sublime](http://www.sublimetext.com)
 
-    ```
-    > apm install atom-beautify file-icons markdown-themeable-pdf
-    ```
-
-* **运行工具**
-
-  - 需安装有Python环境:
-
-    ```
-    > python -m SimpleHTTPServer 8000
-    ```
-    说明: 一般Mac或linux系统已经安装有python
+* **运行环境**
 
   - 需安装有Node.js环境
 
@@ -64,6 +58,25 @@
     > http-server -p 8000
     ```
     说明: 开发需用到Node.js环境
+
+  - Npx
+    - 开启静态服务器
+
+      ```
+      > npx http-server
+      ```
+    - 指定node版本来运行npm scripts
+
+      ```
+      > npx -p node@8 npm run build
+      ```
+
+  - 需安装有Python环境:
+
+    ```
+    > python -m SimpleHTTPServer 8000
+    ```
+    说明: 一般Mac或linux系统已经安装有python
 
 ## 学习资料
 
@@ -197,3 +210,5 @@
 ## Faq
 - Node 10 运行异常: Assertion 'args[1]->IsString()' failed
   - npm i natives (参考: https://github.com/karma-runner/karma/issues/3051)
+
+- How to run things locally: https://threejs.org/docs/index.html#manual/en/introduction/How-to-run-things-locally
