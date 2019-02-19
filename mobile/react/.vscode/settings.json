@@ -1,0 +1,8 @@
+{
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    },
+    "jest.pathToJest": "node_modules/jest/bin/jest.js",
+    "jest.debugMode": true
+}

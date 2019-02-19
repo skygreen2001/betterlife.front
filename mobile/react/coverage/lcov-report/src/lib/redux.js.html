@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/lib/redux.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/lib</a> redux.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>7/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">58.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>7/12</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// A simple redux store/actions/reducer implementation.
+// A true app would be more complex and separated into different files.
+import { createStore } from 'redux';
+&nbsp;
+// The actions are the "names" of the changes that can happen to the store
+export const actions = {
+    ARCHIVE_TASK: 'ARCHIVE_TASK',
+    PIN_TASK: 'PIN_TASK',
+};
+&nbsp;
+// The action creators are how you bundle actions with the data required to execute them
+export const archiveTask = <span class="fstat-no" title="function not covered" >id</span> =&gt; (<span class="cstat-no" title="statement not covered" >{ type: actions.ARCHIVE_TASK, id })</span>;
+export const pinTask = <span class="fstat-no" title="function not covered" >id</span> =&gt; (<span class="cstat-no" title="statement not covered" >{ type: actions.PIN_TASK, id })</span>;
+&nbsp;
+// All our reducers simply change the state of a single task.
+function <span class="fstat-no" title="function not covered" >taskStateReducer(</span>taskState) {
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >(s</span>tate, action) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            ...state,
+            tasks: state.tasks.map(
+<span class="fstat-no" title="function not covered" >                ta</span>sk =&gt; (<span class="cstat-no" title="statement not covered" >task.id === action.id ? { ...task, state: taskState } : task)</span>
+            ),
+        };
+    };
+}
+&nbsp;
+// The reducer describes how the contents of the store change for each action
+export const reducer = (state, action) =&gt; {
+    switch (action.type) {
+<span class="branch-0 cbranch-no" title="branch not covered" >        case actions.ARCHIVE_TASK:</span>
+<span class="cstat-no" title="statement not covered" >            return taskStateReducer('TASK_ARCHIVED')(state, action);</span>
+<span class="branch-1 cbranch-no" title="branch not covered" >        case actions.PIN_TASK:</span>
+<span class="cstat-no" title="statement not covered" >            return taskStateReducer('TASK_PINNED')(state, action);</span>
+        default:
+            return state;
+    }
+};
+&nbsp;
+// The initial state of our store when the app loads.
+// Usually you would fetch this from a server
+const defaultTasks = [
+    { id: '1', title: 'Something', state: 'TASK_INBOX' },
+    { id: '2', title: 'Something more', state: 'TASK_INBOX' },
+    { id: '3', title: 'Something else', state: 'TASK_INBOX' },
+    { id: '4', title: 'Something again', state: 'TASK_INBOX' },
+];
+&nbsp;
+// We export the constructed redux store
+export default createStore(reducer, { tasks: defaultTasks });</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Feb 14 2019 13:30:41 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
