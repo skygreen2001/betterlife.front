@@ -89,12 +89,15 @@
 ## 学习资料
 
 - React
-  * React 官方网站   : https://reactjs.org/
-  * Material-UI设计 : http://www.material-ui.com/
-  * React 入门教程   : https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
-  * Reactive Native : http://facebook.github.io/react-native/
-  * Preact          : https://preactjs.com/
-  * Create React App: https://facebook.github.io/create-react-app/
-  * Expo            : https://expo.io/
+  * React 官方网站    : https://reactjs.org/
+  * Material-UI设计  : http://www.material-ui.com/
+  * React 入门教程    : https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
+  * Reactive Native  : http://facebook.github.io/react-native/
+  * Preact           : https://preactjs.com/
+  * Create React App : https://facebook.github.io/create-react-app/  
+  * React Starter Kit: https://reactstarter.com/
+  * Expo             : https://expo.io/
     - The fastest way to build an app:
       - Expo is a free and open source toolchain built around React Native to help you build native iOS and Android projects using JavaScript and React.
+  * Gatsby           : https://www.gatsbyjs.org/
+    - Build blazing fast、modern、beautiful、secure apps and websites with React
