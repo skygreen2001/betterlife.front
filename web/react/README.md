@@ -54,6 +54,7 @@
 
   - React
   - Ant Design Pro
+  - 飞冰
 
 ## 框架目录定义
 
@@ -77,6 +78,7 @@
   * Material-UI设计  : http://www.material-ui.com/
   * React 入门教程    : https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
   * Ant Design Pro   : https://pro.ant.design/
+  * 飞冰              : https://alibaba.github.io/ice
   * React Starter Kit: https://reactstarter.com/
   * Gatsby           : https://www.gatsbyjs.org/
     - Build blazing fast、modern、beautiful、secure apps and websites with React
