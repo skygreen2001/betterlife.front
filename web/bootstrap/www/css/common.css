@@ -17377,6 +17377,10 @@ footer #footer-inner a:hover {
 
 /************************* Layout:  end ************************/
 
+.list-wrapper {
+  background-color: #e0e3ec;
+}
+
 .list {
   background-color: #e0e3ec;
   padding: 20px !important;
