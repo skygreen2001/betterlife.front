@@ -123,9 +123,9 @@
     // 获取url指定param
     params: function(k,url){
       url = url || location.search;
-      var p={};
-      url.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
-      return k?p[k]:p;
+      var p = {};
+      url.replace(/[?&]+([^=&]+) = ([^&]*)/gi,function(s,k,v){p[k]=v})
+      return k ? p[k] : p;
     }
     /************************* 函数区:  end ************************/
   };

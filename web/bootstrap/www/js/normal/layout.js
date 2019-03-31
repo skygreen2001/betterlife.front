@@ -7,13 +7,16 @@ $(function(){
       if ( !$(this).attr('href') ) return;
       var link = $(this).attr('href').replace(/\.\.\//g, "");
       var isActive = false;
-      if ( $(this).attr('href').indexOf("?go") > 7 ) {
-        link     = $_.params("go", link);
-        url_p    = $_.params("go", urlstr);
-        isActive = link && ( url_p == link) && ( link != '' ) && ( link != '#' );
-      } else {
-        link     = link.substring(0, link.lastIndexOf(".")+1);
-        isActive = link && ( (urlstr + '/').indexOf(link) > -1) && ( link != '' ) && ( link != '#' );
+      // if ( $(this).attr('href').indexOf("?go") > 7 ) {
+      //   link     = $_.params("go", link);
+      //   url_p    = $_.params("go", urlstr);
+      //   isActive = link && ( url_p == link) && ( link != '' ) && ( link != '#' );
+      // } else {
+      //   link     = link.substring(0, link.lastIndexOf(".")+1);
+      //   isActive = link && ( (urlstr + '/').indexOf(link) > -1) && ( link != '' ) && ( link != '#' );
+      // }
+      if ( urlstr.includes(link) ) {
+        isActive = true;
       }
 
       if ( isActive ) {
