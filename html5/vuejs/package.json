@@ -15,12 +15,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "vue": "^2.5.2",
-    "vue-router": "^3.0.1",
-    "jquery": "^3.3.1",
     "axios": "^0.18.0",
+    "iview": "^3.3.3",
+    "jquery": "^3.3.1",
     "mint-ui": "^2.2.13",
-    "iview": "^2.9.0"
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -113,13 +113,15 @@
     "not ie <= 8"
   ],
   "_dependencies": {
+    "vue": "^2.5.2",
+    "iview": "^2.9.0-rc.1",
+    "vue-router": "^3.0.1",
     "chromedriver": "^2.27.2",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "stylus": "^0.54.5",
     "gulp-stylus": "^2.7.0",
     "gulp-image": "^4.0.0",
-    "iview_": "^2.0.0-rc.8",
-    "iview": "^2.9.0-rc.1"
+    "iview_": "^2.0.0-rc.8"
   }
 }
