@@ -7,6 +7,7 @@ var edit = {
         $(inputName).val($(this).val());
     });
   },
+  // [jQuery Bootstrap 3 Datepicker](http://eonasdan.github.io/bootstrap-datetimepicker/)
   datetimePicker: function(inputNames, formatStr){
     if(!formatStr) formatStr = 'YYYY-MM-DD';
     $(inputNames).datetimepicker({
@@ -14,7 +15,9 @@ var edit = {
       locale: 'zh-cn',
       allowInputToggle: true,
       // debug: true,
-      useCurrent: true
+      useCurrent: false
+      // useCurrent: true
+      // defaultDate: false
     });
   },
   //解决Ueditor在线编辑器与顶部导航条遮挡的问题

@@ -17392,6 +17392,21 @@ footer #footer-inner a:hover {
   float: right;
 }
 
+.list .filter-report {
+  width: 80%;
+  float: left;
+  margin-bottom: 0px;
+}
+
+.list .filter-report label {
+  width: 100px;
+  line-height: 30px;
+}
+
+.list .filter-report .datetimeStyle {
+  float: left;
+}
+
 .list .up-container {
   margin: 0px;
 }
@@ -17769,6 +17784,30 @@ div.dataTables_wrapper div.dataTables_info {
 
 .breadcrumb-line .breadcrumb {
   border-radius: 0px;
+}
+
+@media (max-width: 768px) {
+  .breadcrumb-line {
+    overflow: hidden;
+  }
+
+  .breadcrumb-line li {
+    display: inline;
+  }
+
+  .list .filter-report {
+    float: none;
+  }
+
+  .list .filter-report .datetimeStyle {
+    float: none;
+  }
+
+  .list .btns-container {
+    float: none;
+    clear: both;
+    margin-top: 20px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
