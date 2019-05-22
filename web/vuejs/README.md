@@ -85,8 +85,12 @@
   * Vuex        : https://vuex.vuejs.org/
   * iView       : https://www.iviewui.com/
   * iview-admin : https://github.com/iview/iview-admin
+  * Quasar      : https://quasar-framework.org/
+  * Quasar(zh)  : http://www.quasarchs.com/
+  * Vue Native  : https://vue-native.io/
 
   - Vue UI
+    * Quasar    : https://quasar-framework.org/
     * VueStrap    : http://yuche.github.io/vue-strap/
     * BV          : https://bootstrap-vue.js.org/
     * Vue Material: https://vuematerial.io/
@@ -95,16 +99,17 @@
     * vux         : https://vux.li/ [微信页面]
 
     * Muse UI   : http://www.muse-ui.org/
+    * Vue 全家桶 : https://github.com/hzzly/xyy-vue
+    * vue-was   : https://github.com/VincentPat/vue-was
+    * Mint UI   : https://mint-ui.github.io/
+    * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
     * VUM       : http://getvum.com/
     * Vue-MDL   : https://posva.net/vue-mdl-docs/
     * WDUI      : https://wdfe.github.io/wdui/
     * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
     * Buefy     : https://buefy.github.io
     * AT UI     : https://at-ui.github.io/at-ui
-    * Mint UI   : http://mint-ui.github.io/
-    * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
     * FISH-UI   : https://myliang.github.io/fish-ui/
-    * Quasar    : http://quasar-framework.org/
 
   - Vue 案例
     * Element   : http://element.eleme.io/ (饿了吗)
@@ -124,6 +129,7 @@
     - vue init webpack my-project
   * Vue DevTools: https://github.com/vuejs/vue-devtools
 
-  * Vuejs的一些总结    : https://segmentfault.com/a/1190000005832164
-  * Vue.js 的11个组件库: https://juejin.im/entry/5a3879705188257d6929b4b1
-  * [11 Vue.js Component Libraries] (https://blog.bitsrc.io/11-vue-js-component-libraries-you-should-know-in-2018-3d35ad0ae37f)
+  * [Vue.js经典开源项目汇总](http://www.html5dw.com/post/5570)
+  * [Vuejs的一些总结](https://segmentfault.com/a/1190000005832164)
+  * [Vue.js 的11个组件库](https://juejin.im/entry/5a3879705188257d6929b4b1)
+  * [11 Vue.js Component Libraries](https://blog.bitsrc.io/11-vue-js-component-libraries-you-should-know-in-2018-3d35ad0ae37f)

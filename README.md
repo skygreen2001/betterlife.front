@@ -108,9 +108,12 @@
 
 - 🔰
   - Vue.js
-    * VueJS       : https://cn.vuejs.org/
-    * Vuex        : https://vuex.vuejs.org/
-    * iView       : https://www.iviewui.com/
+    * VueJS     : https://cn.vuejs.org/
+    * Vuex      : https://vuex.vuejs.org/
+    * iView     : https://www.iviewui.com/
+    * Quasar    : https://quasar-framework.org/
+    * Quasar(zh): http://www.quasarchs.com/
+    * Vue Native: https://vue-native.io/
 
   - Vue UI
     - Web 优先
@@ -121,19 +124,19 @@
       * uiv         : https://uiv.wxsm.space/
       * Vuetify     : https://vuetifyjs.com/
       * vux         : https://vux.li/ [微信页面]
-      * Muse UI     : http://www.muse-ui.org/
       * Buefy       : https://buefy.github.io
       * FISH-UI     : https://myliang.github.io/fish-ui/
 
     - Mobile 优先
-      * VUM       : http://getvum.com/
-      * Vue-MDL   : https://posva.net/vue-mdl-docs/
+      * Muse UI   : http://www.muse-ui.org/
+      * Vue 全家桶 : https://github.com/hzzly/xyy-vue
+      * vue-was   : https://github.com/VincentPat/vue-was
+      * Mint UI   : https://mint-ui.github.io
+      * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
       * WDUI      : https://wdfe.github.io/wdui/
       * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
-      * Mint UI   : http://mint-ui.github.io/
-      * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
-      * Quasar    : http://quasar-framework.org/
-      * Vue 全家桶 : https://github.com/hzzly/xyy-vue
+      * VUM       : http://getvum.com/
+      * Vue-MDL   : https://posva.net/vue-mdl-docs/
 
 - ⚛️
   - React
@@ -187,6 +190,12 @@
   - ART-TEMPLATE: http://aui.github.io/art-template/zh-cn/
   - Immutable   : http://facebook.github.io/immutable-js/
 
+-  🖥 (Customize IDE)
+  - Electron: http://electron.atom.io/
+    - electron-vue: https://github.com/SimulatedGREG/electron-vue
+  - Orion   : https://orionhub.org/
+  - APICloud: http://www.apicloud.com/
+
 - 资源
   - 掘金     : https://juejin.im/  
   - bit.blog: https://blog.bitsrc.io/
@@ -207,10 +216,7 @@
 - Riot             : http://riotjs.com/
 - elm              : http://elm-lang.org/
 - PM2 Runtime      : https://pm2.io/
-- Customize IDE
-  - Electron: http://electron.atom.io/
-  - Orion   : https://orionhub.org/
-  - APICloud: http://www.apicloud.com/
+
 
 ## Faq
 - Node 10 运行异常: Assertion 'args[1]->IsString()' failed
