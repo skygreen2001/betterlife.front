@@ -7,21 +7,23 @@
 专注于前端开发，并提供可供快速开发使用的通用前端模版
 
 框架目标定义分为三部分:
-* Html5开发生成Native原生应用[iOS,Andriod]
-  - `AngularJS`     [AngularJS + Mobile Angular UI + jQuery WeUI]
-  - `Vue.js`        [Vue.js + ( iView | Framework7)]
-  - `Angular`       [Angular + Typescript + Ionic]
-  - `React Native`  [React + React Material]
-  - `Native Script` [Native Script+ NativeScript UI]
 
 * 专用于移动APP内嵌的html5 UI界面, 也可用于html5 web页面；可嵌入微信；手机端优先。
-  - `Vue.js` [Vue.js + （iView | BV) + HTML5 Boilerplate]
+  - Vue.js + Quasar
 
 * 专用于Web开发的html5自适应界面，用于Pc电脑端，也可用于嵌入原生应用的[iOS,Andriod]的Html5页面；可嵌入微信；Pc Web端优先。
   - jQuery + Bootstrap3                           [ IE9  + ]
-  - Vue.js + iView Admin                          [ IE9  + ]
+  - Ant Design Pro                                [ IE9  + ]
+  - Vue.js + iView + HTML5 Boilerplate            [ IE9  + ]
   - AngularJS + (Semantic-UI | Angular Material)  [ IE11 + ]
   - jQuery + Layui                                [ IE9  + ]
+
+* Html5开发生成Native原生应用[iOS,Andriod]
+  - `React Native`  [React + React Material]
+  - `AngularJS`     [AngularJS + Mobile Angular UI + jQuery WeUI]
+  - `Vue.js`        [Vue.js + ( iView | Framework7)]
+  - `Angular`       [Angular + Typescript + Ionic]
+  - `Native Script` [Native Script+ NativeScript UI]
 
 ## 准备工作
 
@@ -88,62 +90,21 @@
   * Ant Design     : https://ant.design
   * Blocs For Mac  : https://blocsapp.com/
   * Boilerplate    : https://html5boilerplate.com/
-  * Bulma          : https://bulma.io/
-
-- 🅰️
-  - Angular 1.*
-    * AngularJS Github  : https://github.com/angular/angular.js
-    * AngularJS 官方教程 : https://docs.angularjs.org/tutorial
-    * Think in AngularJS: http://www.angularjs.cn/A0bz
-    * AngularJS 初识     : https://docs.angularjs.org/guide/concepts
-    * AngularJS 教程     : http://www.runoob.com/angularjs/angularjs-tutorial.html
-    * 学习AngularJS 1.x  : https://hairui219.gitbooks.io/learning_angular/content/zh/index.html
-    * AngularJS经验分享平台: http://docs.ngnice.com/
-    * 极客学院            : http://wiki.jikexueyuan.com/project/angularjs/
-
-    - Mobile 优先
-      * MAUI        : http://mobileangularui.com/
-      * UI Bootstrap: https://angular-ui.github.io/bootstrap/
-      * AngularUI   : https://angular-ui.github.io/
-
-    - Web 优先
-
-
-  - Angular
-    * Angular    : https://angular.io/
-    * Angular 中文: https://angular.cn/
-    * 大道至简:Angular2只有一个核心概念: http://www.angularjs.cn/A2Ar
-    * awesome-angular-components   : https://github.com/brillout/awesome-angular-components
-
-    - Mobile Only
-      * Ionic : http://ionicframework.com/
-      * Meteor: https://www.meteor.com/
-
-    - Mobile 优先    
-      * Onsen UI        : https://onsen.io/
-      * Angular Material: https://material.angular.io/
-      * ngx-bootstrap   : https://valor-software.com/ngx-bootstrap
-      * Covalent        : https://teradata.github.io/covalent/
-
-    - Web 优先
-      - Ant Design of Angular: https://ng.ant.design
-      - ng-bootstrap         : https://github.com/ng-bootstrap/ng-bootstrap
-      - PrimeNG              : https://www.primefaces.org/
-      - ng-semantic          : https://github.com/vladotesanovic/ngSemantic
 
 - 🔰
   - Vue.js
     * VueJS     : https://cn.vuejs.org/
     * Vuex      : https://vuex.vuejs.org/
     * iView     : https://www.iviewui.com/
-    * Quasar    : https://quasar-framework.org/
+    * Quasar    : https://quasar.dev
     * Quasar(zh): http://www.quasarchs.com/
 
   - Vue UI
     - Mobile Only
-      * Vue Native: https://vue-native.io/* Ionic     
+      * Vue Native: https://vue-native.io/
       * Framework7: http://framework7.io/
       * Meteor    : https://www.meteor.com/
+      * Ionic     : http://ionicframework.com/
 
     - Web 优先
       * VueStrap    : http://yuche.github.io/vue-strap/
@@ -158,10 +119,10 @@
       * Vue Antd    : https://github.com/okoala/vue-antd
 
     - Mobile 优先
+      * Onsen UI  : https://onsen.io/
       * Muse UI   : http://www.muse-ui.org/
       * Vue 全家桶 : https://github.com/hzzly/xyy-vue
       * vue-was   : https://github.com/VincentPat/vue-was
-      * Onsen UI  : https://onsen.io/
       * Mint UI   : https://mint-ui.github.io
       * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
       * WDUI      : https://wdfe.github.io/wdui/
@@ -201,8 +162,47 @@
     * Fabric         : https://developer.microsoft.com/en-us/fabric
     * React-md       : https://react-md.mlaursen.com/
     * Grommet        : https://github.com/grommet/grommet
+    * FUSION.JS      : https://fusionjs.com/
     * PrimeNG        : https://www.primefaces.org/
     * React Bootstrap: https://react-bootstrap.github.io
+
+- 🅰️
+  - Angular 1.*
+    * AngularJS Github  : https://github.com/angular/angular.js
+    * AngularJS 官方教程 : https://docs.angularjs.org/tutorial
+    * Think in AngularJS: http://www.angularjs.cn/A0bz
+    * AngularJS 初识     : https://docs.angularjs.org/guide/concepts
+    * AngularJS 教程     : http://www.runoob.com/angularjs/angularjs-tutorial.html
+    * 学习AngularJS 1.x  : https://hairui219.gitbooks.io/learning_angular/content/zh/index.html
+    * AngularJS经验分享平台: http://docs.ngnice.com/
+    * 极客学院            : http://wiki.jikexueyuan.com/project/angularjs/
+
+    - Mobile 优先
+      * MAUI        : http://mobileangularui.com/
+      * UI Bootstrap: https://angular-ui.github.io/bootstrap/
+      * AngularUI   : https://angular-ui.github.io/
+
+  - Angular
+    * Angular    : https://angular.io/
+    * Angular 中文: https://angular.cn/
+    * 大道至简:Angular2只有一个核心概念: http://www.angularjs.cn/A2Ar
+    * awesome-angular-components   : https://github.com/brillout/awesome-angular-components
+
+    - Mobile Only
+      * Ionic : http://ionicframework.com/
+      * Meteor: https://www.meteor.com/
+
+    - Mobile 优先    
+      * Onsen UI        : https://onsen.io/
+      * Angular Material: https://material.angular.io/
+      * ngx-bootstrap   : https://valor-software.com/ngx-bootstrap
+      * Covalent        : https://teradata.github.io/covalent/
+
+    - Web 优先
+      - Ant Design of Angular: https://ng.ant.design
+      - ng-bootstrap         : https://github.com/ng-bootstrap/ng-bootstrap
+      - PrimeNG              : https://www.primefaces.org/
+      - ng-semantic          : https://github.com/vladotesanovic/ngSemantic
 
 - 🏆
   - Mobile 优先    
@@ -228,7 +228,11 @@
     - YDUI Touch : http://www.ydui.org/
     - YDUI Vue   :http://vue.ydui.org/
     - iView weapp: https://weapp.iviewui.com/
-    - PureCss    : https://purecss.io/start/
+
+- Css
+  - PureCss: https://purecss.io/start/
+  - Bulma  : https://bulma.io/
+  - PostCSS: https://postcss.org/
 
 - 🔧
   - underscore  : http://underscorejs.org

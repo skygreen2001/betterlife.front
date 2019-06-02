@@ -1,26 +1,13 @@
 <template>
-  <div>
-    <router-view/>
+  <div id="q-app">
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
-  data () {
-    return {}
-  },
-  mounted () {
-
-  },
-  beforeDestroy () {
-
-  },
-  methods: {
-
-  }
-}
+  name: "App"
+};
 </script>
 
-<style>
-</style>
+<style></style>

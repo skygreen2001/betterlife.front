@@ -9,7 +9,7 @@
 * 专用于移动APP开发的html5 UI界面，可发布成原生应用[iOS,Andriod],也可用于html5 web页面；可嵌入微信；手机端优先。
 
   实现框架底层采用:
-    - `Vue.js` [Vue.js + iView Admin]
+    - `Vue.js` [Vue.js + iView + HTML5 Boilerplate]
 
 ## 准备工作
 
@@ -35,39 +35,47 @@
   > sudo npm install
   ```
 
-* **开始学习**
-
-  ```
-  > sudo npm install -g gulp
-  > sudo gulp
-  ```
-
 * **开发测试**
+  - 直接使用
 
-  ```
-  > sudo npm start
-  ```
+    通过gulp工具整合了vue、iview、bootstrap工具。
+    ```
+    > sudo npm install -g gulp
+    > sudo gulp
+    ```
+
+  - NPM 安装使用ES6语法开发Web网站工程
+
+    ```
+    > sudo npm start
+    ```
 
 * **生产发布**
+  - 直接使用
 
-  ```
-  > sudo npm run build
-  ```
+    直接复制www目录下所有网站创建新的网站，自动带有标准的HTML5 Boilerplate规范，可直接使用vue、iview及bootstrap样式。
+
+  - 生成所有的静态文件到dist目录下，可直接使用。
+    ```
+    > sudo npm run build
+    ```
 
 * **安装开发工具 IDE**
 
-  Atom: https://atom.io/
-  IDE : https://ide.atom.io/
+  - [Visual Studio Code](https://code.visualstudio.com/)
+  - [Atom](https://atom.io/)
+  - [Atom IDE](https://ide.atom.io/)
+    - `Atom` 推荐安装 Package
 
-  - `Atom` 推荐安装 Package
-
-    ```
-    > apm install atom-beautify file-icons markdown-themeable-pdf
-    ```
+      ```
+      > apm install atom-beautify file-icons markdown-themeable-pdf
+      ```
+  - [Sublime](http://www.sublimetext.com)
 
 * **使用JS框架**
   - Vue.js
-  - iView Admin
+  - iView
+  - HTML5 Boilerplate
 
 ## 学习资料
 
@@ -81,13 +89,10 @@
   * PureCss          : https://purecss.io/start/
 
 - Vue.js
-  * VueJS       : https://cn.vuejs.org/
-  * Vuex        : https://vuex.vuejs.org/
-  * iView       : https://www.iviewui.com/
-  * iview-admin : https://github.com/iview/iview-admin
-  * Quasar      : https://quasar-framework.org/
-  * Quasar(zh)  : http://www.quasarchs.com/
-  * Vue Native  : https://vue-native.io/
+  * VueJS      : https://cn.vuejs.org/
+  * Vuex       : https://vuex.vuejs.org/
+  * iView      : https://www.iviewui.com/
+  * iview-admin: https://github.com/iview/iview-admin
 
   - Vue UI
     - Web 优先
@@ -97,20 +102,9 @@
       * Vue Material: https://vuematerial.io/
       * uiv         : https://uiv.wxsm.space/
       * Vuetify     : https://vuetifyjs.com/
-      * vux         : https://vux.li/ [微信页面]
+      * Muse UI     : http://www.muse-ui.org/
       * Buefy       : https://buefy.github.io
       * FISH-UI     : https://myliang.github.io/fish-ui/
-
-    - Mobile 优先
-      * Muse UI   : http://www.muse-ui.org/
-      * Vue 全家桶 : https://github.com/hzzly/xyy-vue
-      * vue-was   : https://github.com/VincentPat/vue-was
-      * Mint UI   : https://mint-ui.github.io
-      * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
-      * WDUI      : https://wdfe.github.io/wdui/
-      * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
-      * VUM       : http://getvum.com/
-      * Vue-MDL   : https://posva.net/vue-mdl-docs/
 
   - Vue 案例
     * Element   : http://element.eleme.io/ (饿了吗)

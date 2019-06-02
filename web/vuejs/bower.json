@@ -1,0 +1,41 @@
+{
+  "name": "betterlife.front.html5.vuejs",
+  "version": "1.0.0",
+  "description": "The most popular front-end framework for developing responsive, web first projects on the web.",
+  "keywords": [
+    "css",
+    "js",
+    "less",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "homepage": "https://github.com/skygreen2001/betterlife.front",
+  "license": "Apache-2.0",
+  "moduleType": "globals",
+  "main": [
+    "src/less/bootstrap.less",
+    "src/js/main.js"
+  ],
+  "ignore": [
+    "/.*",
+    "CONTRIBUTING.md",
+    "docs"
+  ],
+  "dependencies": {
+    "Modernizr": "https://github.com/Modernizr/Modernizr.git#2.8.3",
+    "lodash": "^4.17.4",
+    "vue": "^2.6.10",
+    "axios": "^0.17.1",
+    "animate.css": "^3.5.2",
+    "velocity": "^1.5.1",
+    "tween.js": "tweenjs/tween.js#^16.7.1",
+    "gsap": "^1.20.3",
+    "vue-router": "^3.0.6"
+  },
+  "_dependencies_ignored": {
+    "font-awesome": "4.7"
+  }
+}

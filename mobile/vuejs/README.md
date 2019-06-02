@@ -9,7 +9,7 @@
 * 专用于移动APP开发的html5 UI界面，可发布成原生应用[iOS,Andriod],也可用于html5 web页面；可嵌入微信；手机端优先。
 
   实现框架底层采用:
-    - `Vue.js` [Vue.js + ]
+    - `Vue.js` [Vue.js + Onsen UI]
 
 ## 准备工作
 
@@ -84,26 +84,17 @@
 
   - Vue UI
     - Mobile 优先
-      * VUM      : http://getvum.com/
-      * WDUI      : https://wdfe.github.io/wdui/
-      * Mint UI   : http://mint-ui.github.io/
-      * Quasar    : http://quasar-framework.org/
-      * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
-      * Vue-MDL   : https://posva.net/vue-mdl-docs/
-      * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
-
-    - Web 优先
-      * iView       : https://www.iviewui.com/
-      * VueStrap    : http://yuche.github.io/vue-strap/
-      * BV          : https://bootstrap-vue.js.org/
-      * AT UI     : https://at-ui.github.io/at-ui
-      * Vue Material: https://vuematerial.io/
-      * uiv         : https://uiv.wxsm.space/
-      * Vuetify     : https://vuetifyjs.com/
-      * vux         : https://vux.li/ [微信页面]
+      * Onsen UI  : https://onsen.io/
       * Muse UI   : http://www.muse-ui.org/
-      * Buefy     : https://buefy.github.io
-      * FISH-UI   : https://myliang.github.io/fish-ui/
+      * Vue 全家桶 : https://github.com/hzzly/xyy-vue
+      * vue-was   : https://github.com/VincentPat/vue-was
+      * Mint UI   : https://mint-ui.github.io
+      * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
+      * WDUI      : https://wdfe.github.io/wdui/
+      * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
+      * VUM       : http://getvum.com/
+      * Vue-MDL   : https://posva.net/vue-mdl-docs/
+
 
   - Vue 案例
     * Element   : http://element.eleme.io/ (饿了吗)
