@@ -15,10 +15,6 @@
   "homepage": "https://github.com/skygreen2001/betterlife.front",
   "license": "Apache-2.0",
   "moduleType": "globals",
-  "main": [
-    "src/less/bootstrap.less",
-    "src/js/main.js"
-  ],
   "ignore": [
     "/.*",
     "CONTRIBUTING.md",
