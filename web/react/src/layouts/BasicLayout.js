@@ -120,6 +120,8 @@ class BasicLayout extends React.Component {
     if (process.env.NODE_ENV === 'production' && APP_TYPE !== 'site') {
       return null;
     }
+    const { floatSetting } = this.props;
+    if (!floatSetting) return null;
     return <SettingDrawer />;
   };
 

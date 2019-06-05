@@ -36,7 +36,8 @@ const ThemeColor = ({ colors, title, value, onChange }) => {
       },
       {
         key: 'green',
-        color: '#52C41A',
+        // color: '#52C41A',
+        color: '#77cc6d',
       },
       {
         key: 'daybreak',

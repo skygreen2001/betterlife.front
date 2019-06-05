@@ -1,7 +1,16 @@
 module.exports = {
+  /**
+   * skygreen customize
+   */
+  title: 'Betterlife',
+  primaryColor: '#77cc6d', // '#52C41A',
+  layout: 'topmenu',
+  // floatSetting: false, // float on right for setting config
+
+  floatSetting: true,
   navTheme: 'dark', // theme for nav menu
-  primaryColor: '#52C41A', // '#1890FF', // primary color of ant design
-  layout: 'sidemenu', // nav menu position: sidemenu or topmenu
+  // primaryColor: '#1890FF', // primary color of ant design
+  // layout: 'sidemenu', // nav menu position: sidemenu or topmenu
   contentWidth: 'Fluid', // layout of content: Fluid or Fixed, only works when layout is topmenu
   fixedHeader: false, // sticky header
   autoHideHeader: false, // auto hide header
@@ -9,7 +18,7 @@ module.exports = {
   menu: {
     disableLocal: false,
   },
-  title: 'Ant Design Pro',
+  // title: 'Ant Design Pro',
   pwa: true,
   // your iconfont Symbol Scrip Url
   // eg：//at.alicdn.com/t/font_1039637_btcrd5co4w.js
