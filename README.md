@@ -96,6 +96,7 @@
     * VueJS     : https://cn.vuejs.org/
     * Vuex      : https://vuex.vuejs.org/
     * iView     : https://www.iviewui.com/
+    * uni-app   : https://uniapp.dcloud.io/
     * Quasar    : https://quasar.dev
     * Quasar(zh): http://www.quasarchs.com/
 
@@ -119,11 +120,14 @@
       * Vue Antd    : https://github.com/okoala/vue-antd
 
     - Mobile 优先
+      * MUI       : http://dev.dcloud.net.cn/mui/
       * Onsen UI  : https://onsen.io/
+      * Vant      : https://youzan.github.io/vant/
       * Muse UI   : http://www.muse-ui.org/
       * Vue 全家桶 : https://github.com/hzzly/xyy-vue
       * vue-was   : https://github.com/VincentPat/vue-was
       * Mint UI   : https://mint-ui.github.io
+      * VUM       : http://getvum.com/
       * vue-carbon: https://myronliu347.github.io/vue-carbon/#!/
       * WDUI      : https://wdfe.github.io/wdui/
       * Keen-UI   : https://josephuspaye.github.io/Keen-UI/
@@ -140,6 +144,7 @@
     * React全家桶实战    : https://github.com/Juliiii/React-Cnode
     * Create React App : https://facebook.github.io/create-react-app/  
     * React Starter Kit: https://reactstarter.com/
+    * Taro             : https://taro.aotu.io/
 
   - Mobile Only
     * Reactive Native: http://facebook.github.io/react-native/
@@ -208,8 +213,6 @@
   - Mobile 优先    
     * Onsen UI  : https://onsen.io/
     * Fronzen UI: http://frozenui.github.io/
-    * VUM       : http://getvum.com/
-    * MUI       : http://dev.dcloud.net.cn/mui/
 
   - Web 优先
     * Bootstrap  : http://getbootstrap.com/
@@ -224,10 +227,12 @@
 
   - 💬 [微信页面]
     - JqWeUI     : http://jqweui.com/
+    - iView weapp: https://weapp.iviewui.com/
+    - vant       : https://youzan.github.io/vant-weapp/
+    - Chameleon  : https://cml.js.org/
     - vux        : https://vux.li/
     - YDUI Touch : http://www.ydui.org/
-    - YDUI Vue   :http://vue.ydui.org/
-    - iView weapp: https://weapp.iviewui.com/
+    - YDUI Vue   : http://vue.ydui.org/
 
 - Css
   - PureCss: https://purecss.io/start/
