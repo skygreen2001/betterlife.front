@@ -81,7 +81,7 @@
 - 🔰
   * VueJS     : https://cn.vuejs.org/
   * Quasar    : https://quasar.dev
-  * Quasar(zh): http://www.quasarchs.com/
+  * Quasar(zh): http://www.quasarchs.com/    
 
   - Quasar
     - Github   : https://github.com/quasarframework/quasar
@@ -90,3 +90,4 @@
     - App Icons: https://quasar.dev/quasar-cli/app-icons
     - Build    : https://quasar.dev/quasar-cli/cli-documentation/build-commands
     - IE       : https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
+    - Awesome  : https://github.com/quasarframework/quasar-awesome

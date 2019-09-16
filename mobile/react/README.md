@@ -92,7 +92,8 @@
   * React 官方网站    : https://reactjs.org/
   * Material-UI设计  : http://www.material-ui.com/
   * React 入门教程    : https://hulufei.gitbooks.io/react-tutorial/content/introduction.html
-  * Reactive Native  : http://facebook.github.io/react-native/
+  * React Native     : http://facebook.github.io/react-native/
+  * Deco IDE         : https://www.decoide.org/
   * Preact           : https://preactjs.com/
   * Create React App : https://facebook.github.io/create-react-app/  
   * React Starter Kit: https://reactstarter.com/

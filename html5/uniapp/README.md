@@ -53,6 +53,8 @@
 
 - 0⃣️
   * Code Guide : http://alloyteam.github.io/CodeGuide/
+  * uni-app    : https://uniapp.dcloud.io/
+  * 开发资源汇总 : http://git.azurewebsites.net/youc3576/awesome-uni-app
   * Vue.js     : https://vuejs.org/
   * awesome-vue: https://github.com/vuejs/awesome-vue
 

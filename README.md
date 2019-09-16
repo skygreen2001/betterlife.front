@@ -147,9 +147,9 @@
     * Taro             : https://taro.aotu.io/
 
   - Mobile Only
-    * Reactive Native: http://facebook.github.io/react-native/
-    * Meteor         : https://www.meteor.com/
-    * Framework7     : http://framework7.io/
+    * React Native: http://facebook.github.io/react-native/
+    * Meteor      : https://www.meteor.com/
+    * Framework7  : http://framework7.io/
 
   - Web 优先
     * Ant Design Pro   : https://pro.ant.design/
