@@ -34,6 +34,7 @@
                 <h2>
                     <p>Welcome to your iView app!</p>
                     <Button type="primary" @click="handleStart">Start iView</Button><br><br>
+                    <Button type="primary" @click="openLayout">iView Layout</Button><br><br>
                     <Button type="primary" @click="goBack"><Icon type="ios-arrow-back" />返回</Button><br>
                 </h2>
             </i-col>
@@ -56,6 +57,9 @@ export default {
   methods: {
     goBack () {
       this.$router.go(-1)
+    },
+    openLayout () {
+      this.$router.push('layout')
     },
     handleStart () {
       this.$Modal.info({

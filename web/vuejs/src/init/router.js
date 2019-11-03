@@ -1,22 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import iView from 'iview'
-import 'iview/dist/styles/iview.css'
+import ViewUI from 'view-design'
+import 'view-design/dist/styles/iview.css'
 
 // 适用于手机端UI组件
-import Mint from 'mint-ui'
-import 'mint-ui/lib/style.css'
 
 import Util from '@/init/util'
 
 import HelloWorld from '@/components/HelloWorld'
 import Hi from '@/components/Hi'
-import Picker from '@/components/Picker'
+import LayoutView from '@/components/LayoutView'
 
 Vue.use(VueRouter)
-Vue.use(iView)
-Vue.use(Mint)
+Vue.use(ViewUI)
 
 const routers = [
   {
@@ -31,9 +28,10 @@ const routers = [
     props: (route) => ({ query: route.query.q })
   },
   {
-    path: '/mint',
-    name: 'Picker',
-    component: Picker
+    path: '/layout',
+    name: 'LayoutView',
+    component: LayoutView,
+    props: (route) => ({ query: route.query.q })
   }
 ]
 
@@ -52,13 +50,13 @@ if (process.env.NODE_ENV === 'production') RouterConfig.base = window.location.p
 const router = new VueRouter(RouterConfig)
 
 router.beforeEach((to, from, next) => {
-  iView.LoadingBar.start()
+  ViewUI.LoadingBar.start()
   Util.title(to.meta.title)
   next()
 })
 
 router.afterEach((to, from, next) => {
-  iView.LoadingBar.finish()
+  ViewUI.LoadingBar.finish()
   window.scrollTo(0, 0)
 })
 
