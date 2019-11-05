@@ -29,7 +29,8 @@
     "velocity": "^1.5.1",
     "tween.js": "tweenjs/tween.js#^16.7.1",
     "gsap": "^1.20.3",
-    "vue-router": "^3.0.6"
+    "vue-router": "^3.0.6",
+    "jquery": "^3.4.1"
   },
   "_dependencies_ignored": {
     "font-awesome": "4.7"
