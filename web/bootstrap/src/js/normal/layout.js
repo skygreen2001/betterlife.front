@@ -2,40 +2,46 @@ $(function(){
   //自动高亮当前页面链接地址对应的导航菜单
   function showLayoutMenuActive(linkName){
     var urlstatus = false;
-    var urlstr    = location.href;
+    // var urlstr = location.href;
+    var urlstr    = window.location.pathname + window.location.search;
     $(linkName).each(function () {
       if ( !$(this).attr('href') ) return;
-      var link = $(this).attr('href').replace(/\.\.\//g, "");
+      var link     = $(this).attr('href');
       var isActive = false;
-      // if ( $(this).attr('href').indexOf("?go") > 7 ) {
-      //   link     = $_.params("go", link);
-      //   url_p    = $_.params("go", urlstr);
-      //   isActive = link && ( url_p == link) && ( link != '' ) && ( link != '#' );
-      // } else {
-      //   link     = link.substring(0, link.lastIndexOf(".")+1);
-      //   isActive = link && ( (urlstr + '/').indexOf(link) > -1) && ( link != '' ) && ( link != '#' );
-      // }
-      if ( urlstr.includes(link) ) {
+      if ( link.includes(urlstr) ) {
         isActive = true;
+      }
+
+      if ( !isActive && $(this).attr('href').indexOf("?go") > 7 ) {
+        link  = $_.params("go", link);
+        url_p = $_.params("go", urlstr);
+
+        if ( link && link != '' && link != '#' ) {
+          link     = link.substring(0, link.lastIndexOf("."));
+          url_p    = url_p.substring(0, url_p.lastIndexOf("."));
+          isActive = url_p == link;
+        }
       }
 
       if ( isActive ) {
         $(this).addClass('active');
-        urlstatus = true;
+        urlstatus  = true;
         var parent = $(this).parent().parent();
-        if (parent.hasClass("sub-menu")) {
+        if ( parent.hasClass("sub-menu") ) {
           parent.parent().find("a.has-ul").addClass('hover');
           parent.slideToggle(200);
           parent.parent().find("i.menu-right").toggleClass("rotated");
         }
-      } else {
-        $(this).removeClass('active');
-      }
-      if($(linkName + ".active").length>1){
-        $(linkName).eq(0).removeClass('active');
-      }
+        return false;
+      } 
+      // else {
+      //   $(this).removeClass('active');
+      // }
+      // if ( $(linkName + ".active").length > 1 ) {
+      //   $(linkName).eq(0).removeClass('active');
+      // }
     });
-    if (!urlstatus) {
+    if ( !urlstatus ) {
       $(linkName).eq(0).addClass('active');
     }
   }
