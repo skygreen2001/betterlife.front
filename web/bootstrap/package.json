@@ -22,17 +22,18 @@
     "gulp-replace": "^0.4.0",
     "gulp-sourcemaps": "^1.1.0",
     "gulp-strip-comments": "^2.4.5",
-    "gulp-uglify": "^2.0.0",
     "run-sequence": "^0.3.6",
     "streamqueue": "^0.1.1"
   },
   "dependencies": {
     "gulp-file-include": "^1.0.0",
     "gulp-load-plugins": "^1.5.0",
+    "gulp-uglify": "^3.0.2",
     "main-bower-files": "^2.13.1",
     "natives": "^1.1.6"
   },
   "_dependencies": {
-    "gulp-image": "^4.0.0"
+    "gulp-image": "^4.0.0",
+    "gulp-uglify": "^2.0.0"
   }
 }

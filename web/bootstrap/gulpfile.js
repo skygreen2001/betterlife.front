@@ -199,7 +199,6 @@ gulp.task('js', function() {
     )
     .pipe($.sourcemaps.init())
     .pipe($.concat('bower.js'))
-    // .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')))
     .pipe($.uglify())
     .pipe($.rename({suffix: '.min'}))
     .pipe($.sourcemaps.write('.'))
@@ -207,7 +206,6 @@ gulp.task('js', function() {
 
     gulp.src('./src/js/index/bower/**/*.js')
     .pipe($.concat('index.bower.js'))
-    // .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')))
     .pipe($.uglify())
     .pipe($.rename({suffix: '.min'}))
     .pipe(gulp.dest(path.join(config.dest, 'js', 'common', 'bower')));

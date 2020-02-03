@@ -24,12 +24,12 @@
 
     /************************* 函数区:start ************************/
     // 校验是否正确的手机号码
-    isMobilePhone(value) {
+    isMobilePhone: function(value) {
         var reg = /^1[3456789]\d{9}$/
         return reg.test(value);
     },
     // 校验是否中国电话号码（包括移动和固定电话）
-    isPhone(value) {
+    isPhone: function(value) {
         var reg = /(\(\d{3,4}\)|\d{3,4}-|\s)?\d{7,14}/
         return reg.test(value);
     },
