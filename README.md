@@ -88,8 +88,7 @@
   * Bootstrap      : http://getbootstrap.com/
   * Material Design: https://material.io/
   * Ant Design     : https://ant.design
-  * Blocs For Mac  : https://blocsapp.com/
-  * Boilerplate    : https://html5boilerplate.com/
+  * Svelte         : https://www.sveltejs.cn/
 
 - 🔰
   - Vue.js
@@ -263,6 +262,8 @@
   - PhoneGap         : https://phonegap.com/
   - TypeScript       : http://www.typescriptlang.org/
   - Flutter          : https://flutter.io/
+  - Blocs For Mac  : https://blocsapp.com/
+  - Boilerplate    : https://html5boilerplate.com/
   - JSUI             : https://github.com/kitze/JSUI
   - web-starter-kit  : https://github.com/google/web-starter-kit
   - Backbone.js      : http://backbonejs.org/
