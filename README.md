@@ -133,6 +133,13 @@
       * VUM       : http://getvum.com/
       * Vue-MDL   : https://posva.net/vue-mdl-docs/
 
+  - 小程序
+    * iView weapp: https://weapp.iviewui.com/
+    * vant       : https://youzan.github.io/vant-weapp/
+    * mpvue      : http://mpvue.com/
+    * vux        : https://vux.li/
+    * YDUI Vue   : http://vue.ydui.org/
+
 - ⚛️
   - React
     * React 官方网站    : https://facebook.github.io/react/
@@ -143,7 +150,6 @@
     * React全家桶实战    : https://github.com/Juliiii/React-Cnode
     * Create React App : https://facebook.github.io/create-react-app/  
     * React Starter Kit: https://reactstarter.com/
-    * Taro             : https://taro.aotu.io/
 
   - Mobile Only
     * React Native: http://facebook.github.io/react-native/
@@ -169,6 +175,11 @@
     * FUSION.JS      : https://fusionjs.com/
     * PrimeNG        : https://www.primefaces.org/
     * React Bootstrap: https://react-bootstrap.github.io
+    
+  - 小程序
+    * Taro   : https://taro.aotu.io/
+    * Remax  : https://remaxjs.org/
+    * Nanachi: http://ued.qunar.com/nanachi-doc/
 
 - 🅰️
   - Angular 1.*
@@ -225,13 +236,12 @@
     * AT UI      : https://at-ui.github.io/at-ui
 
   - 💬 [微信页面]
-    - JqWeUI     : http://jqweui.com/
-    - iView weapp: https://weapp.iviewui.com/
-    - vant       : https://youzan.github.io/vant-weapp/
-    - Chameleon  : https://cml.js.org/
-    - vux        : https://vux.li/
-    - YDUI Touch : http://www.ydui.org/
-    - YDUI Vue   : http://vue.ydui.org/
+    - JqWeUI   : http://jqweui.com/
+    - Chameleon: https://cml.js.org/
+    - WePY     : https://wepyjs.github.io/wepy-docs
+    - Megalo   : http://megalojs.org/#/quickstart
+    - kbone    : https://developers.weixin.qq.com/miniprogram/dev/extended/kbone/
+    - MPX      : https://didi.github.io/mpx/
 
 - Css
   - PureCss: https://purecss.io/start/
