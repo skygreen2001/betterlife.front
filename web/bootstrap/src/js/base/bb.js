@@ -245,6 +245,13 @@
       var p = {};
       url.replace(/[?&]+([^=&]+) = ([^&]*)/gi,function(s,k,v){p[k]=v})
       return k ? p[k] : p;
+
+      // url = url || window.location.href;
+      // var results = new RegExp('[\?&]' + k + '=([^&#]*)').exec(url);
+      // if ( results == null ) {
+      //   return null;
+      // }
+      // return decodeURI(results[1]) || 0;
     }
     /************************* 函数区:  end ************************/
   };
