@@ -144,12 +144,14 @@
 }
 
 /************************* select2:start ************************/
+
 .select2-container{
   width: 100% !important;
   z-index: 10000;
   .select2-selection--single, .select2-selection--multiple{
     outline: none;
     height: 36px;
+    padding-left: 5px;
     .select2-selection__rendered{
       line-height: 36px;
     }
@@ -176,6 +178,7 @@
 }
 .select2-container--default.select2-container--focus .select2-selection--multiple{
   border: 1px solid @color-input !important;
+  padding-left: 5px;
 }
 .select2-container--default .select2-results__option--highlighted[aria-selected]
 {
