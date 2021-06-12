@@ -19799,13 +19799,12 @@ body.login .login-container footer #footer-inner a:hover {
 }
 
 .blog .main-header {
-  background: url(../../images/beauty.jpg) no-repeat #000;
-  background-position: 0px -300px;
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  height: 90vh;
-  max-height: 415px;
+  height: 640px;
   overflow: hidden;
 }
 
@@ -19814,7 +19813,6 @@ body.login .login-container footer #footer-inner a:hover {
   color: #fff;
   top: 0px;
   text-align: center;
-  height: 368px;
   width: 100%;
 }
 
@@ -19824,7 +19822,7 @@ body.login .login-container footer #footer-inner a:hover {
   font-size: 70px;
   font-weight: 900;
   line-height: 100%;
-  padding-top: 120px;
+  padding-top: 240px;
   height: 100%;
   margin: 0px;
 }
@@ -19864,6 +19862,24 @@ body.login .login-container footer #footer-inner a:hover {
   padding: 0px;
   height: 60px;
   line-height: 60px;
+}
+
+.blog #top-panel .top-menus .menu-navs ul .menu-nav:active,
+.blog #top-panel .top-menus .menu-navs li .menu-nav:active,
+.blog #top-panel .top-menus .menu-navs ul .menu-nav:hover,
+.blog #top-panel .top-menus .menu-navs li .menu-nav:hover,
+.blog #top-panel .top-menus .menu-navs ul .menu-nav:focus,
+.blog #top-panel .top-menus .menu-navs li .menu-nav:focus {
+  background-color: #eee;
+}
+
+.blog #top-panel .top-menus .menu-navs ul .menu-nav:active .menu-nav-link,
+.blog #top-panel .top-menus .menu-navs li .menu-nav:active .menu-nav-link,
+.blog #top-panel .top-menus .menu-navs ul .menu-nav:hover .menu-nav-link,
+.blog #top-panel .top-menus .menu-navs li .menu-nav:hover .menu-nav-link,
+.blog #top-panel .top-menus .menu-navs ul .menu-nav:focus .menu-nav-link,
+.blog #top-panel .top-menus .menu-navs li .menu-nav:focus .menu-nav-link {
+  color: #77cc6d !important;
 }
 
 .blog #top-panel .top-menus .menu-navs ul .menu-nav .menu-nav-link,
@@ -20034,15 +20050,11 @@ body.login .login-container footer #footer-inner a:hover {
 }
 
 @media (max-width: 480px) {
-  .blog .main-header {
-    background-position: 0px -100px;
-  }
-
   .blog .main-header .head-container .header-title {
     font-size: 32px;
     font-weight: 600;
     line-height: 200%;
-    padding-top: 180px;
+    padding-top: 300px;
   }
 
   .blog #top-panel .top-menus .menu-navs ul {

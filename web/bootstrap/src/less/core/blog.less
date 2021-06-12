@@ -2,20 +2,18 @@
 .blog{
   background-color: #f6f6f6;
   .main-header{
-    background: url(../../images/beauty.jpg) no-repeat #000 ;
-    background-position: 0px -300px;
+    background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     width: 100%;
-    height: 90vh;
-    max-height: 415px;
+    height: 640px;
     overflow: hidden;
     .head-container{
       position: absolute;
       color: #fff;
       top: 0px;
       text-align: center;
-      height: 368px;
       width: 100%;
       .header-title{
         position: fixed;
@@ -23,7 +21,7 @@
         font-size: 70px;
         font-weight: 900;
         line-height: 100%;
-        padding-top: 120px;
+        padding-top: 240px;
 
         height: 100%;
         margin: 0px;
@@ -55,6 +53,12 @@
             padding: 0px;
             height: 60px;
             line-height: 60px;
+            &:active,&:hover,&:focus {
+              background-color: #eee;
+              .menu-nav-link{
+                color: @color-main !important;
+              }
+            }
             .menu-nav-link{
               position: relative;
               color: #666;
@@ -196,13 +200,12 @@
 @media (max-width: @screen-xs-min){
   .blog{
     .main-header{
-      background-position: 0px -100px;
       .head-container{
         .header-title{
           font-size: 32px;
           font-weight: 600;
           line-height: 200%;
-          padding-top: 180px;
+          padding-top: 300px;
         }
       }
     }

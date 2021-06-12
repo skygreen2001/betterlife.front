@@ -8,8 +8,8 @@ $(function(){
         if ( $(window).scrollTop() == $(document).height() - $(window).height() ) {
           mimicData(++currentScreen);
         }
-        adsShow();
       }
+      adsShow();
     });
 
     $(".btn-load-more button").click(function(){
@@ -17,7 +17,7 @@ $(function(){
     });
 
     function adsShow() {
-      if ( $(window).scrollTop() <= 415) {
+      if ( $(window).scrollTop() <= 640) {
         var opacity = 1 - $(window).scrollTop() / 200;
         $(".header-title").css("opacity", opacity);
         // $(".blog .main-header").css("opacity", opacity);

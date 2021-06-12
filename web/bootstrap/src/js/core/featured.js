@@ -15,10 +15,6 @@ $(function(){
       mimicData(++currentScreen);
     });
 
-    // var window_width =
-    // if (window_width)
-    // $(".head-img img").css("margin-top","-300px");
-
     function mimicData(screen){
       $.get("../../data/blog.json", function(response){
         var data = response.data;
