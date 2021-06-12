@@ -134,9 +134,16 @@ button,
         height: @nav-height;
         line-height: @nav-height;
         padding: 0px 15px;
-        background-color: #444;
+        // background-color: #444;
         width: @sidebar-width;
         color: #fff;
+        img {
+          width: 25px;
+          display: inline-block;
+        }
+        span {
+          vertical-align: middle;
+        }
       }
     }
     i{
@@ -544,10 +551,28 @@ footer {
   padding-top: 260px;
 }
 
-@media (max-width: 319px){
+
+
+
+@media (max-width: 357px){
   .navbar .navbar-container .navbar-header a.navbar-brand{
       width: 100%;
       max-width: 200px;
+  }
+
+
+  .navbar .navbar-container .navbar-header {
+    a.navbar-brand{
+      width: 160px;
+      max-width: 160px;
+      img {
+        width: 35px;
+        margin-top: -2px;
+      }
+      span {
+        display: none;
+      }
+    }
   }
 }
 
