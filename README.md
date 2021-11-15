@@ -251,6 +251,7 @@
 - 🔧
   - underscore  : http://underscorejs.org
   - lodash      : https://lodash.com/
+  - Ramda       : https://ramdajs.com/
   - Moment.js   : http://momentjs.com/
   - ART-TEMPLATE: http://aui.github.io/art-template/zh-cn/
   - Immutable   : http://facebook.github.io/immutable-js/
