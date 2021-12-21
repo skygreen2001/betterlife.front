@@ -245,6 +245,7 @@
 
 - Css
   - PureCss: https://purecss.io/start/
+  - tailwindcss: https://tailwindcss.com/
   - Bulma  : https://bulma.io/
   - PostCSS: https://postcss.org/
 
