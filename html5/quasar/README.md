@@ -32,7 +32,16 @@
 
 * **安装NodeJs**
 
-  下载地址: https://nodejs.org/en/download/
+  - 下载地址: https://nodejs.org/en/download/
+  - 版本号  : 12.14.1
+  - 安装nvm
+    - 淘宝npm镜像: http://npm.taobao.org/
+         npm install -g cnpm --registry=https://registry.npm.taobao.org
+    - 安装nvm: https://www.jianshu.com/p/622ad36ee020
+      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+      - export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+  - nvm install 12.14.1
 
 * **安装目录下运行**
 
@@ -81,7 +90,7 @@
 - 🔰
   * VueJS     : https://cn.vuejs.org/
   * Quasar    : https://quasar.dev
-  * Quasar(zh): http://www.quasarchs.com/    
+  * Quasar(zh): http://www.quasarchs.com/
 
   - Quasar
     - Github   : https://github.com/quasarframework/quasar
