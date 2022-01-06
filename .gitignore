@@ -7,3 +7,4 @@ web/vuejs/bower_components
 web/react1
 html5/vuejs/bower_components
 html5/vuejs/node_modules
+**/package-lock.json
