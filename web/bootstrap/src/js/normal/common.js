@@ -17,8 +17,8 @@ var commonLibrary = {
         // if (offset>440 || $(window).height()<525) $(".content-wrapper .container-fluid").css("height", offset);
         $(".content-wrapper .container-fluid").removeAttr("style");
 
-        if (($(".content-wrapper .container-fluid").height()<635)||($("body").height()<$(window).height())) {
-            $(".content-wrapper .container-fluid").css("height", offset);
+        if (($(".content-wrapper .container-fluid").height()<625)||($("body").height()<$(window).height())) {
+            $(".content-wrapper .container-fluid").css("height", offset+1);
         }
 
         if ( $(window).width() > 752 ) $(".sidebar").removeAttr("style");

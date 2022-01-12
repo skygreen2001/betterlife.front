@@ -290,7 +290,16 @@
   - WEEX             : http://weex.incubator.apache.org/
 
 ## Faq
+  - How to run things locally: https://threejs.org/docs/index.html#manual/en/introduction/How-to-run-things-locally
+
   - Node 10 运行异常: Assertion 'args[1]->IsString()' failed
     - npm i natives (参考: https://github.com/karma-runner/karma/issues/3051)
 
-  - How to run things locally: https://threejs.org/docs/index.html#manual/en/introduction/How-to-run-things-locally
+  - Mac电脑运行gulp提示: ReferenceError: primordials is not defined
+
+    - 安装nvm[Mac OS 下 NVM 的安装与使用]: https://www.jianshu.com/p/622ad36ee020
+      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+      - export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+    - nvm install 10.15.3
