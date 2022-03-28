@@ -252,8 +252,8 @@
 - 🔧
   - underscore  : http://underscorejs.org
   - lodash      : https://lodash.com/
-  - Ramda       : https://ramdajs.com/
   - Moment.js   : http://momentjs.com/
+  - Ramda       : https://ramdajs.com/
   - ART-TEMPLATE: http://aui.github.io/art-template/zh-cn/
   - Immutable   : http://facebook.github.io/immutable-js/
 
@@ -277,6 +277,7 @@
   - [GitHub最全的前端资源汇总仓库](https://github.com/FrontEndGitHub/FrontEndGitHub)
   - PhoneGap         : https://phonegap.com/
   - TypeScript       : http://www.typescriptlang.org/
+  - Alpine.js        : https://alpinejs.dev/
   - 在线编辑器
     - [StackBlitz](https://stackblitz.com/): The fastest, most secure dev environment
     - [Code from anywhere](https://codesandbox.io/)
