@@ -86,6 +86,8 @@
   * Code Guide     : http://alloyteam.github.io/CodeGuide/
   * jQuery         : https://learn.jquery.com/
   * Bootstrap      : http://getbootstrap.com/
+    * By Parcel    : https://getbootstrap.com/docs/5.1/getting-started/parcel/
+    * Parcel       : https://en.parceljs.org/getting_started.html
   * Material Design: https://material.io/
   * Ant Design     : https://ant.design
   * Svelte         : https://www.sveltejs.cn/
